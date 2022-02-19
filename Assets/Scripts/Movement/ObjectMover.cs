@@ -47,7 +47,19 @@ namespace Osiris.TimeTravelPuzzler.Movement
                 return true;
             }
 
-            return false;
+            for (int i = 0; i < resultCount; i++)
+            {
+                RaycastHit2D result = castResults[i];
+
+                if (!result.collider.isTrigger)
+                {
+                    return false;
+                }
+                //Debug.Log("Box Cast is to trigger collider.");
+                continue;
+            }
+
+            return true;
         }
 
         public virtual void Move(Vector2 movementDirection)

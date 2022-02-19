@@ -58,6 +58,13 @@ namespace Osiris.TimeTravelPuzzler.Player
             for (int i = 0; i < resultCount; i++)
             {
                 RaycastHit2D result = castResults[i];
+
+                if (result.collider.isTrigger)
+                {
+                    //Debug.Log("Cast is to trigger collider.");
+                    continue;
+                }
+
                 if (!(result.collider.GetComponent<IMoveable>() is IMoveable movable))
                 {
                     return false;
