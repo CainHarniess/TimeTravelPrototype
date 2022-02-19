@@ -1,0 +1,36 @@
+using Osiris.TimeTravelPuzzler.Editor;
+using Osiris.TimeTravelPuzzler.Timeline;
+using UnityEngine;
+
+namespace Osiris.TimeTravelPuzzler.Movement
+{
+
+    public class MoveableObject : MonoBehaviour, IMoveable
+    {
+        private ObjectMover _objectMover;
+        private Transform _transform;
+        private BoxCollider2D _collider;
+
+        [SerializeField] private float _ColliderCastDistance = 1;
+
+        [Header(InspectorHeaders.BroadcastsOn)]
+        [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
+
+        private void Awake()
+        {
+            _transform = transform;
+            _collider = GetComponent<BoxCollider2D>();
+            _objectMover = new ObjectMover(_transform, _collider, _ColliderCastDistance, _TimelineEventChannel);
+        }
+
+        public bool CanMove(Vector2 movementDirection)
+        {
+            return _objectMover.CanMove(movementDirection);
+        }
+
+        public void Move(Vector2 movementDirection)
+        {
+            _objectMover.Move(movementDirection);
+        }
+    }
+}
