@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3644603443879121594}
   - component: {fileID: 3644603443879121543}
   - component: {fileID: 3644603443879121542}
+  - component: {fileID: 1121137051}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1198288655
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.735849, g: 0.3379848, b: 0.1492524, a: 1}
@@ -144,5 +145,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e95e887446ecc4a843c6cb6d44b0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colliderCastDistance: 1
-  _timelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+  _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &1121137051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644603443879121595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd32784094532845a365ee1c2d67d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Weight:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 6db497c8bcb1ed54ea2ec28b0cff89f8, type: 2}

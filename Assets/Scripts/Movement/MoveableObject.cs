@@ -1,4 +1,4 @@
-using Osiris.TimeTravelPuzzler.Editor;
+using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
 using UnityEngine;
 
@@ -10,8 +10,7 @@ namespace Osiris.TimeTravelPuzzler.Movement
         private ObjectMover _objectMover;
         private Transform _transform;
         private BoxCollider2D _collider;
-
-        [SerializeField] private float _ColliderCastDistance = 1;
+        private float _ColliderCastDistance = 1;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
