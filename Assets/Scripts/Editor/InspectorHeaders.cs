@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Editor
+﻿namespace Osiris.TimeTravelPuzzler.EditorCustomisation
 {
     public struct InspectorHeaders
     {

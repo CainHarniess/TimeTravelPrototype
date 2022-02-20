@@ -1,4 +1,5 @@
-﻿using Osiris.TimeTravelPuzzler.Editor;
+﻿using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core;
 using UnityEngine;
 using UnityEngine.Events;
 

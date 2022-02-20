@@ -1,6 +1,6 @@
 using System.Linq;
 using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.Editor;
+using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Extensions;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.TimeTravelPuzzler.Timeline;
@@ -61,7 +61,6 @@ namespace Osiris.TimeTravelPuzzler.Player
 
                 if (result.collider.isTrigger)
                 {
-                    //Debug.Log("Cast is to trigger collider.");
                     continue;
                 }
 
