@@ -1,3 +1,6 @@
+using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Timeline;
+using System.Collections;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler
@@ -8,7 +11,14 @@ namespace Osiris.TimeTravelPuzzler
         private BoxCollider2D _collider;
         private WeightedObjectTriggerHandler _triggerHandler;
 
+        [Header(InspectorHeaders.ControlVariables)]
+        [SerializeField] private float _deactivationDelay = 1;
+
+        [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private bool _IsActive;
+
+        [Header(InspectorHeaders.ListensTo)]
+        [SerializeField] private RewindEventChannelSO _rewindCompleteEventChannel;
 
         private void Awake()
         {
@@ -33,6 +43,17 @@ namespace Osiris.TimeTravelPuzzler
             SetStatus(false);
         }
 
+        private void DelayedDeactivation()
+        {
+            StartCoroutine(DeactivateWithDelay(_deactivationDelay));
+        }
+
+        private IEnumerator DeactivateWithDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            Deactivate();
+        }
+
         private void SetStatus(bool isActive)
         {
             if (_IsActive == isActive)
@@ -45,6 +66,16 @@ namespace Osiris.TimeTravelPuzzler
             _triggerHandler.enabled = isActive;
 
             _IsActive = isActive;
+        }
+
+        private void OnEnable()
+        {
+            _rewindCompleteEventChannel.Event += DelayedDeactivation;
+        }
+
+        private void OnDisable()
+        {
+            _rewindCompleteEventChannel.Event -= DelayedDeactivation;
         }
     }
 }

@@ -9,18 +9,21 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineManager : MonoBehaviour
     {
-        private Stack<TimelineEvent> _eventHistory = new Stack<TimelineEvent>(50);
+        [SerializeField] private List<TimelineEvent> _eventHistory = new List<TimelineEvent>(50);
+
+        [Header(InspectorHeaders.BroadcastsOn)]
+        [SerializeField] private RewindEventChannelSO _rewindCompleteEventChannel;
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
-        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
+        [SerializeField] private RewindEventChannelSO _startRewindEventChannel;
 
         private event Action<float> TimelineEventUndone;
 
         private void Record(IRewindableCommand command)
         {
             TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
-            _eventHistory.Push(timelineEvent);
+            Push(timelineEvent);
         }
 
         private void StartRewind()
@@ -34,17 +37,15 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private void WaitThenUndoEvent(float rewindStartTime)
         {
-            TimelineEvent previousEvent = _eventHistory.Pop();
+            TimelineEvent previousEvent = Pop();
 
             StartCoroutine(UndoEventAfterSeconds(rewindStartTime, previousEvent));
         }
 
         private IEnumerator UndoEventAfterSeconds(float rewindStartTime, TimelineEvent timelineEventToUndo)
         {
-            TimelineEventUndone += WaitThenUndoEvent;
-            
             float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
-
+            
             yield return new WaitForSeconds(rewindWaitTime);
             
             timelineEventToUndo.Undo();
@@ -52,23 +53,43 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             if (_eventHistory.Count == 0)
             {
                 Debug.Log("Event stack is empty. No more events to undo.");
+                _rewindCompleteEventChannel.Raise();
                 yield break;
             }
 
             TimelineEventUndone.Invoke(timelineEventToUndo.EventTime);
-            TimelineEventUndone -= WaitThenUndoEvent;
+        }
+
+        private void Push(TimelineEvent item)
+        {
+            _eventHistory.Add(item);
+        }
+
+        private TimelineEvent Pop()
+        {
+            if (_eventHistory.Count == 0)
+            {
+                throw new IndexOutOfRangeException("There are now actions in the event history.");
+            }
+
+            int index = _eventHistory.Count - 1;
+            TimelineEvent output = _eventHistory[_eventHistory.Count - 1];
+            _eventHistory.RemoveAt(index);
+            return output;
         }
 
         private void OnEnable()
         {
+            TimelineEventUndone += WaitThenUndoEvent;
             _timelineEventChannel.Event += Record;
-            _rewindEventChannel.Event += StartRewind;
+            _startRewindEventChannel.Event += StartRewind;
         }
 
         private void OnDisable()
         {
+            TimelineEventUndone -= WaitThenUndoEvent;
             _timelineEventChannel.Event -= Record;
-            _rewindEventChannel.Event -= StartRewind;
+            _startRewindEventChannel.Event -= StartRewind;
         }
     }
 }
