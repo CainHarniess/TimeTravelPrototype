@@ -20,14 +20,4 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             EventAction.Inverse.Execute();
         }
     }
-
-    public interface IITimelineHistory
-    {
-        
-    }
-
-    public class TimelineHistory
-    {
-
-    }
 }
