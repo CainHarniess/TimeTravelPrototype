@@ -2,14 +2,16 @@ using Osiris.TimeTravelPuzzler.Commands;
 using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineManager : MonoBehaviour
     {
-        [SerializeField] private List<TimelineEvent> _eventHistory = new List<TimelineEvent>(50);
+        [SerializeField] private Timeline _timeline = new Timeline();
+
+        [Header(InspectorHeaders.DebugVariables)]
+        [ReadOnly] [SerializeField] private bool _rewindInProgress;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _rewindCompleteEventChannel;
@@ -18,78 +20,52 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
         [SerializeField] private RewindEventChannelSO _startRewindEventChannel;
 
-        private event Action<float> TimelineEventUndone;
-
         private void Record(IRewindableCommand command)
         {
-            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
-            Push(timelineEvent);
-        }
-
-        private void StartRewind()
-        {
-            if (_eventHistory.Count == 0)
+            if (_rewindInProgress)
             {
+                Debug.Log("Rewind in progress. Action not recorded");
                 return;
             }
-            WaitThenUndoEvent(Time.time);
+            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
+            _timeline.Push(timelineEvent);
         }
 
-        private void WaitThenUndoEvent(float rewindStartTime)
+        private void QueuePreviousActionForRewind(float rewindStartTime)
         {
-            TimelineEvent previousEvent = Pop();
+            if (_timeline.Count == 0)
+            {
+                Debug.Log("No actions to undo. Rewind not initiated.");
+                _rewindCompleteEventChannel.NotifyRewindCompletion();
+                _rewindInProgress = false;
+                return;
+            }
 
-            StartCoroutine(UndoEventAfterSeconds(rewindStartTime, previousEvent));
+            _rewindInProgress = true;
+            StartCoroutine(UndoAction(rewindStartTime, _timeline.Peek(), QueuePreviousActionForRewind));
         }
 
-        private IEnumerator UndoEventAfterSeconds(float rewindStartTime, TimelineEvent timelineEventToUndo)
+        private IEnumerator UndoAction(float rewindStartTime,
+                                       TimelineEvent timelineEventToUndo,
+                                       Action<float> onUndone)
         {
             float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
-            
             yield return new WaitForSeconds(rewindWaitTime);
-            
             timelineEventToUndo.Undo();
-
-            if (_eventHistory.Count == 0)
-            {
-                Debug.Log("Event stack is empty. No more events to undo.");
-                _rewindCompleteEventChannel.Raise();
-                yield break;
-            }
-
-            TimelineEventUndone.Invoke(timelineEventToUndo.EventTime);
-        }
-
-        private void Push(TimelineEvent item)
-        {
-            _eventHistory.Add(item);
-        }
-
-        private TimelineEvent Pop()
-        {
-            if (_eventHistory.Count == 0)
-            {
-                throw new IndexOutOfRangeException("There are now actions in the event history.");
-            }
-
-            int index = _eventHistory.Count - 1;
-            TimelineEvent output = _eventHistory[_eventHistory.Count - 1];
-            _eventHistory.RemoveAt(index);
-            return output;
+            _timeline.Pop();
+            onUndone(timelineEventToUndo.EventTime);
         }
 
         private void OnEnable()
         {
-            TimelineEventUndone += WaitThenUndoEvent;
             _timelineEventChannel.Event += Record;
-            _startRewindEventChannel.Event += StartRewind;
+            _startRewindEventChannel.RewindRequested += QueuePreviousActionForRewind;
         }
 
         private void OnDisable()
         {
-            TimelineEventUndone -= WaitThenUndoEvent;
             _timelineEventChannel.Event -= Record;
-            _startRewindEventChannel.Event -= StartRewind;
+            _startRewindEventChannel.RewindRequested -= QueuePreviousActionForRewind;
         }
     }
 }

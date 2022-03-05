@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private void OnRewindPerformed(InputAction.CallbackContext obj)
         {
-            _rewindEventChannel.Raise();
+            _rewindEventChannel.RaiseRewindRequest();
             _cloneInitialiser.Activate(transform.position);
         }
 

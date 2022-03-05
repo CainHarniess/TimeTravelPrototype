@@ -20,6 +20,8 @@ namespace Osiris.TimeTravelPuzzler.Commands
         public ICommand Inverse { get; protected set; }
         public Vector2 Direction => _movementDirection.ToVector2();
 
+        public override string Description => $"Move - {Direction}";
+
         public override bool CanExecute(object parameter = null)
         {
             return true;

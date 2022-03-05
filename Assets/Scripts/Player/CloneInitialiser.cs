@@ -45,6 +45,7 @@ namespace Osiris.TimeTravelPuzzler
 
         private void DelayedDeactivation()
         {
+            Debug.Log("Rewind completion received.");
             StartCoroutine(DeactivateWithDelay(_deactivationDelay));
         }
 
@@ -70,12 +71,12 @@ namespace Osiris.TimeTravelPuzzler
 
         private void OnEnable()
         {
-            _rewindCompleteEventChannel.Event += DelayedDeactivation;
+            _rewindCompleteEventChannel.RewindCompleted += DelayedDeactivation;
         }
 
         private void OnDisable()
         {
-            _rewindCompleteEventChannel.Event -= DelayedDeactivation;
+            _rewindCompleteEventChannel.RewindCompleted -= DelayedDeactivation;
         }
     }
 }
