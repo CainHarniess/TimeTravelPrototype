@@ -13,12 +13,13 @@ namespace Osiris.TimeTravelPuzzler
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private float _deactivationDelay = 1;
+        [SerializeField] private Transform _playerTransform;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private bool _IsActive;
+        [ReadOnly] [SerializeField] private bool _IsActive;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private RewindEventChannelSO _rewindCompleteEventChannel;
+        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
 
         private void Awake()
         {
@@ -71,12 +72,14 @@ namespace Osiris.TimeTravelPuzzler
 
         private void OnEnable()
         {
-            _rewindCompleteEventChannel.RewindCompleted += DelayedDeactivation;
+            _rewindEventChannel.RewindCompleted += DelayedDeactivation;
+            _rewindEventChannel.RewindCancellationRequested += DelayedDeactivation;
         }
 
         private void OnDisable()
         {
-            _rewindCompleteEventChannel.RewindCompleted -= DelayedDeactivation;
+            _rewindEventChannel.RewindCompleted -= DelayedDeactivation;
+            _rewindEventChannel.RewindCancellationRequested -= DelayedDeactivation;
         }
     }
 }

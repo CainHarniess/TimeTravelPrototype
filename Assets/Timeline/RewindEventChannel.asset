@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd4532531569934b984b409ac588335, type: 3}
-  m_Name: RewindCompleteEventChannel
+  m_Name: RewindEventChannel
   m_EditorClassIdentifier: 
-  _description: A channel for notifying that a rewind has been completed.
+  _description: A channel for notifying the Timeline Manager that a rewind event
+    has been initiated.

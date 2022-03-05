@@ -18,9 +18,9 @@ namespace Osiris.TimeTravelPuzzler.Movement
         [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
 
         public ObjectMover(Transform transform,
-                     BoxCollider2D collider,
-                     float colliderCastDistance,
-                     TimelineEventChannelSO timelineEventChannel)
+                           BoxCollider2D collider,
+                           float colliderCastDistance,
+                           TimelineEventChannelSO timelineEventChannel)
         {
             _transform = transform;
             _collider = collider;
@@ -55,7 +55,6 @@ namespace Osiris.TimeTravelPuzzler.Movement
                 {
                     return false;
                 }
-                //Debug.Log("Box Cast is to trigger collider.");
                 continue;
             }
 
