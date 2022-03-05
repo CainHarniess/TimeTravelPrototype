@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3282648814424052199}
   - component: {fileID: 3282648814424052200}
   - component: {fileID: 3282648814424052198}
+  - component: {fileID: 605596110}
+  - component: {fileID: 605596111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -73,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1198288655
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.38892844, g: 0.8679245, b: 0.8679245, a: 1}
@@ -190,3 +192,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
+--- !u!114 &605596110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282648814424052203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd32784094532845a365ee1c2d67d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Weight:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
+--- !u!114 &605596111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282648814424052203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcb87acefb3234469dab35a82d27f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

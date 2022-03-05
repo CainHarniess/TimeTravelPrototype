@@ -1,6 +1,6 @@
 using System.Linq;
 using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.Editor;
+using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Extensions;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.TimeTravelPuzzler.Timeline;
@@ -58,6 +58,12 @@ namespace Osiris.TimeTravelPuzzler.Player
             for (int i = 0; i < resultCount; i++)
             {
                 RaycastHit2D result = castResults[i];
+
+                if (result.collider.isTrigger)
+                {
+                    continue;
+                }
+
                 if (!(result.collider.GetComponent<IMoveable>() is IMoveable movable))
                 {
                     return false;
