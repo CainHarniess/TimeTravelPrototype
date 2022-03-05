@@ -441,6 +441,10 @@ PrefabInstance:
       propertyPath: _cloneInitialiser
       value: 
       objectReference: {fileID: 6045626072486025020}
+    - target: {fileID: 3282648814424052198, guid: 21f8fa2ad5b4512409f6720423f36114, type: 3}
+      propertyPath: _stopRewindEventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
     - target: {fileID: 3282648814424052200, guid: 21f8fa2ad5b4512409f6720423f36114, type: 3}
       propertyPath: _cloneTransfrom
       value: 
@@ -624,10 +628,8 @@ MonoBehaviour:
   _timeline:
     _eventHistory: []
   _rewindInProgress: 0
-  _rewindCompleteEventChannel: {fileID: 11400000, guid: 77183e42ed650fc4dadc90c8779ab0df, type: 2}
   _timelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
-  _startRewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
-  _stopRewindEventChannel: {fileID: 0}
+  _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
 --- !u!1 &831657532
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +660,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &841515453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3282648814424052201, guid: 21f8fa2ad5b4512409f6720423f36114, type: 3}
+  m_PrefabInstance: {fileID: 472130114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1195353148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1791,8 +1798,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deactivationDelay: 1
+  _playerTransform: {fileID: 841515453}
   _IsActive: 0
-  _rewindCompleteEventChannel: {fileID: 11400000, guid: 77183e42ed650fc4dadc90c8779ab0df, type: 2}
+  _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
 --- !u!61 &7296235254751300384
 BoxCollider2D:
   m_ObjectHideFlags: 0
