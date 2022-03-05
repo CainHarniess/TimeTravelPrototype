@@ -8,17 +8,30 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     [CreateAssetMenu(fileName = AssetMenu.RewindEventChannelFileName, menuName = AssetMenu.RewindEventChannelPath)]
     public class RewindEventChannelSO : DescriptionSO
     {
-        public event UnityAction Event;
+        public event UnityAction<float> RewindRequested;
+        public event UnityAction RewindCompleted;
 
-        public void Raise()
+        public void RaiseRewindRequest()
         {
-            if (Event != null)
+            if (RewindRequested != null)
             {
-                Event.Invoke();
+                RewindRequested.Invoke(Time.time);
             }
             else
             {
-                Debug.LogWarning("A rewind event occured, but no listeners are configured.");
+                Debug.LogWarning("A rewind was requested, but no listeners are configured.");
+            }
+        }
+
+        public void NotifyRewindCompletion()
+        {
+            if (RewindCompleted != null)
+            {
+                RewindCompleted.Invoke();
+            }
+            else
+            {
+                Debug.LogWarning("A rewind was completed, but no listeners are configured.");
             }
         }
     }

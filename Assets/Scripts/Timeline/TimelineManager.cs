@@ -2,73 +2,70 @@ using Osiris.TimeTravelPuzzler.Commands;
 using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineManager : MonoBehaviour
     {
-        private Stack<TimelineEvent> _eventHistory = new Stack<TimelineEvent>(50);
+        [SerializeField] private Timeline _timeline = new Timeline();
+
+        [Header(InspectorHeaders.DebugVariables)]
+        [ReadOnly] [SerializeField] private bool _rewindInProgress;
+
+        [Header(InspectorHeaders.BroadcastsOn)]
+        [SerializeField] private RewindEventChannelSO _rewindCompleteEventChannel;
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
-        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
-
-        private event Action<float> TimelineEventUndone;
+        [SerializeField] private RewindEventChannelSO _startRewindEventChannel;
 
         private void Record(IRewindableCommand command)
         {
-            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
-            _eventHistory.Push(timelineEvent);
-        }
-
-        private void StartRewind()
-        {
-            if (_eventHistory.Count == 0)
+            if (_rewindInProgress)
             {
+                Debug.Log("Rewind in progress. Action not recorded");
                 return;
             }
-            WaitThenUndoEvent(Time.time);
+            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
+            _timeline.Push(timelineEvent);
         }
 
-        private void WaitThenUndoEvent(float rewindStartTime)
+        private void QueuePreviousActionForRewind(float rewindStartTime)
         {
-            TimelineEvent previousEvent = _eventHistory.Pop();
-
-            StartCoroutine(UndoEventAfterSeconds(rewindStartTime, previousEvent));
-        }
-
-        private IEnumerator UndoEventAfterSeconds(float rewindStartTime, TimelineEvent timelineEventToUndo)
-        {
-            TimelineEventUndone += WaitThenUndoEvent;
-            
-            float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
-
-            yield return new WaitForSeconds(rewindWaitTime);
-            
-            timelineEventToUndo.Undo();
-
-            if (_eventHistory.Count == 0)
+            if (_timeline.Count == 0)
             {
-                Debug.Log("Event stack is empty. No more events to undo.");
-                yield break;
+                Debug.Log("No actions to undo. Rewind not initiated.");
+                _rewindCompleteEventChannel.NotifyRewindCompletion();
+                _rewindInProgress = false;
+                return;
             }
 
-            TimelineEventUndone.Invoke(timelineEventToUndo.EventTime);
-            TimelineEventUndone -= WaitThenUndoEvent;
+            _rewindInProgress = true;
+            StartCoroutine(UndoAction(rewindStartTime, _timeline.Peek(), QueuePreviousActionForRewind));
+        }
+
+        private IEnumerator UndoAction(float rewindStartTime,
+                                       TimelineEvent timelineEventToUndo,
+                                       Action<float> onUndone)
+        {
+            float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
+            yield return new WaitForSeconds(rewindWaitTime);
+            timelineEventToUndo.Undo();
+            _timeline.Pop();
+            onUndone(timelineEventToUndo.EventTime);
         }
 
         private void OnEnable()
         {
             _timelineEventChannel.Event += Record;
-            _rewindEventChannel.Event += StartRewind;
+            _startRewindEventChannel.RewindRequested += QueuePreviousActionForRewind;
         }
 
         private void OnDisable()
         {
             _timelineEventChannel.Event -= Record;
-            _rewindEventChannel.Event -= StartRewind;
+            _startRewindEventChannel.RewindRequested -= QueuePreviousActionForRewind;
         }
     }
 }

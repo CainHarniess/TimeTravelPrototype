@@ -1,6 +1,6 @@
 ﻿namespace Osiris.TimeTravelPuzzler.Commands
 {
-    public interface IRewindableCommand
+    public interface IRewindableCommand : ICommand
     {
         ICommand Inverse { get; }
     }

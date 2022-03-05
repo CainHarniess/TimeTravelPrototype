@@ -19,6 +19,8 @@ namespace Osiris.TimeTravelPuzzler.Player
         private float _colliderCastDistance = 1f;
         private List<IMoveable> _currentMovables;
 
+        [SerializeField] private Transform _cloneTransfrom;
+
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
 
@@ -81,8 +83,9 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         public void Move(Vector2 movementDirection)
         {
-            var movementCommand = new MovementCommand(_transform,
-                                                      movementDirection.ToVector3());
+            var movementCommand = new PlayerMovementCommand(_transform,
+                                                            movementDirection.ToVector3(),
+                                                            _cloneTransfrom);
             movementCommand.Execute();
             _TimelineEventChannel.RecordTimelineEvent(movementCommand);
 

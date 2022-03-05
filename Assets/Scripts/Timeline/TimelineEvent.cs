@@ -1,15 +1,20 @@
 ﻿using Osiris.TimeTravelPuzzler.Commands;
+using System;
 using System.Diagnostics;
+using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [DebuggerDisplay("Event Time - {EventTime}")]
+    [Serializable]
     public class TimelineEvent
     {
+        [SerializeField] private string _description = "HAHAHAHAW";
         public TimelineEvent(float eventTime, IRewindableCommand eventAction)
         {
             EventTime = eventTime;
             EventAction = eventAction;
+            _description = $"{eventAction.Description} + {eventTime}";
         }
 
         public IRewindableCommand EventAction { get; }
@@ -19,15 +24,5 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             EventAction.Inverse.Execute();
         }
-    }
-
-    public interface IITimelineHistory
-    {
-        
-    }
-
-    public class TimelineHistory
-    {
-
     }
 }
