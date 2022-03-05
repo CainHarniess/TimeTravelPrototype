@@ -9,10 +9,12 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     public class RewindEventChannelSO : DescriptionSO
     {
         public event UnityAction<float> RewindRequested;
+        public event UnityAction RewindCancellationRequested;
         public event UnityAction RewindCompleted;
 
         public void RaiseRewindRequest()
         {
+            Debug.Log("Rewind request received on channel.");
             if (RewindRequested != null)
             {
                 RewindRequested.Invoke(Time.time);
@@ -20,6 +22,18 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             else
             {
                 Debug.LogWarning("A rewind was requested, but no listeners are configured.");
+            }
+        }
+
+        public void RaiseRewindCancellation()
+        {
+            if (RewindCancellationRequested != null)
+            {
+                RewindCancellationRequested.Invoke();
+            }
+            else
+            {
+                Debug.LogWarning("A rewind cancellation was requested, but no listeners are configured.");
             }
         }
 

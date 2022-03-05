@@ -42,5 +42,10 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _eventHistory.RemoveAt(index);
             return output;
         }
+
+        public void Clear()
+        {
+            _eventHistory.Clear();
+        }
     }
 }

@@ -21,20 +21,27 @@ namespace Osiris.TimeTravelPuzzler.Player
             _rewindAction = _playerInput.actions["RewindTime"];
         }
 
-        private void OnRewindPerformed(InputAction.CallbackContext obj)
+        private void OnRewindStarted(InputAction.CallbackContext obj)
         {
             _rewindEventChannel.RaiseRewindRequest();
             _cloneInitialiser.Activate(transform.position);
         }
 
+        private void OnRewindCancelled(InputAction.CallbackContext obj)
+        {
+            _rewindEventChannel.RaiseRewindCancellation();
+        }
+
         private void OnEnable()
         {
-            _rewindAction.performed += OnRewindPerformed;
+            _rewindAction.performed += OnRewindStarted;
+            _rewindAction.canceled += OnRewindCancelled;
         }
 
         private void OnDisable()
         {
-            _rewindAction.performed -= OnRewindPerformed;
+            _rewindAction.performed -= OnRewindStarted;
+            _rewindAction.canceled -= OnRewindCancelled;
         }
     }
 }
