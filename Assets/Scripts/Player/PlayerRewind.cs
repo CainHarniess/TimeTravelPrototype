@@ -10,6 +10,8 @@ namespace Osiris.TimeTravelPuzzler.Player
         private PlayerInput _playerInput;
         private InputAction _rewindAction;
 
+        [SerializeField] private CloneInitialiser _cloneInitialiser;
+
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _rewindEventChannel;
 
@@ -22,6 +24,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         private void OnRewindPerformed(InputAction.CallbackContext obj)
         {
             _rewindEventChannel.Raise();
+            _cloneInitialiser.Activate(transform.position);
         }
 
         private void OnEnable()
