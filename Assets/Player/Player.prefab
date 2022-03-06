@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3282648814424052199}
   - component: {fileID: 3282648814424052200}
   - component: {fileID: 3282648814424052198}
-  - component: {fileID: 605596110}
   - component: {fileID: 605596111}
+  - component: {fileID: 6724544578139946949}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500aab95fd4b77e458f77d20e024c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cloneTransfrom: {fileID: 0}
   _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
 --- !u!114 &3282648814424052198
 MonoBehaviour:
@@ -191,23 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83195732814afb2438c13b8b95ccb9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cloneInitialiser: {fileID: 0}
+  _maximumRewindTime: 7
   _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
---- !u!114 &605596110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282648814424052203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd32784094532845a365ee1c2d67d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Weight:
-    _UseConstant: 1
-    _VariableValue: 0
-    _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
 --- !u!114 &605596111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +207,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcb87acefb3234469dab35a82d27f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6724544578139946949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282648814424052203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec8e8529e48bb344ae9e8beaea8f00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Weight:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}

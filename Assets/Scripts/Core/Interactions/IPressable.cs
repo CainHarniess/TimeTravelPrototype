@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Environment
+﻿namespace Osiris.TimeTravelPuzzler.Core.Interactions
 {
     public interface IPressable
     {

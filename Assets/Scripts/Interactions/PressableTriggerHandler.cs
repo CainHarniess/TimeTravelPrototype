@@ -1,10 +1,10 @@
+using Osiris.TimeTravelPuzzler.Core.Interactions;
 using Osiris.TimeTravelPuzzler.Core.References;
-using Osiris.TimeTravelPuzzler.Environment;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler
 {
-    public class WeightedObjectTriggerHandler : MonoBehaviour
+    public class PressableTriggerHandler : MonoBehaviour
     {
         [SerializeField] private IntReference _Weight;
 

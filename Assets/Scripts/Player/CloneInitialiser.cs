@@ -9,7 +9,7 @@ namespace Osiris.TimeTravelPuzzler
     {
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
-        private WeightedObjectTriggerHandler _triggerHandler;
+        private PressableTriggerHandler _triggerHandler;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private float _deactivationDelay = 1;
@@ -25,7 +25,7 @@ namespace Osiris.TimeTravelPuzzler
         {
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
-            _triggerHandler = GetComponent<WeightedObjectTriggerHandler>();
+            _triggerHandler = GetComponent<PressableTriggerHandler>();
         }
 
         private void Start()
