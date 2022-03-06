@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "ch.osiris.scenemanagement": {
+      "version": "file:C:/Users/cainh/UnityProjects/Osiris/ch.osiris.scenemanagement",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "5.0.10",
       "depth": 0,

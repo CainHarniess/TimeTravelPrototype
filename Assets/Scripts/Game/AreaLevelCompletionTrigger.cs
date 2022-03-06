@@ -1,3 +1,4 @@
+using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Game
@@ -5,6 +6,9 @@ namespace Osiris.TimeTravelPuzzler.Game
     public class AreaLevelCompletionTrigger : MonoBehaviour, ILevelCompletionTrigger
     {
         [SerializeField] private GoalSpriteAnimator _spriteAnimator;
+
+        [Header(InspectorHeaders.BroadcastsOn)]
+        [SerializeField] private LevelCompletionEventChannelSO _levelCompletion;
 
         private void Awake()
         {
@@ -21,6 +25,7 @@ namespace Osiris.TimeTravelPuzzler.Game
         public void TriggerLevelCompletion()
         {
             _spriteAnimator.ChangeColour(Color.green);
+            _levelCompletion.RaiseLevelCompletion();
         }
 
         public void UndoLevelCompletion()

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ch.osiris.scenemanagement": "file:C:/Users/cainh/UnityProjects/Osiris/ch.osiris.scenemanagement",
     "com.unity.2d.animation": "5.0.10",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.1.3",

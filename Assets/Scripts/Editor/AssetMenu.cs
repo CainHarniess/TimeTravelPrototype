@@ -10,6 +10,9 @@
         public const string RewindEventChannelFileName = "RewindEventChannel";
         public const string RewindEventChannelPath = AssetMenu.MenuRoot + "RewindEventChannel";
 
+        public const string LevelCompletionEventChannelFileName = "LevelCompletionEventChannel";
+        public const string LevelCompletionEventChannelPath = AssetMenu.MenuRoot + "LevelCompletionEventChannel";
+
         public const string MoverFileName = "New Mover";
         public const string MoverPath = AssetMenu.MenuRoot + "Mover";
 
