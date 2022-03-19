@@ -1,8 +1,7 @@
-using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core;
+using Osiris.TimeTravelPuzzler.Core.Commands;
 using UnityEngine;
 using UnityEngine.Events;
-using Osiris.TimeTravelPuzzler.Core;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {

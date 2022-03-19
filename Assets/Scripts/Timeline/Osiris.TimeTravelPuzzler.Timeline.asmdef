@@ -1,0 +1,18 @@
+{
+    "name": "Osiris.TimeTravelPuzzler.Timeline",
+    "rootNamespace": "Osiris.TimeTravelPuzzlerTimeline",
+    "references": [
+        "GUID:000b6455690447b4099fe4c00b9ff7db",
+        "GUID:3ea6b9fbbfdae0747a43c9358e9513e4",
+        "GUID:957c197060d45864b89a011791540076"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

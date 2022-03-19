@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Osiris.TimeTravelPuzzler.Commands
+namespace Osiris.TimeTravelPuzzler.Core.Commands
 {
     public abstract class CommandBase : ICommand
     {

@@ -1,11 +1,11 @@
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Osiris.TimeTravelPuzzler
 {
     [CreateAssetMenu(fileName = AssetMenu.LevelCompletionEventChannelFileName,
-        menuName = AssetMenu.LevelCompletionEventChannelPath)]
+                     menuName = AssetMenu.LevelCompletionEventChannelPath)]
     public class LevelCompletionEventChannelSO : ScriptableObject
     {
         public event UnityAction LevelCompleted;

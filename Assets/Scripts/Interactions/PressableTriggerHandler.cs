@@ -1,5 +1,5 @@
 using Osiris.TimeTravelPuzzler.Core.Interactions;
-using Osiris.TimeTravelPuzzler.Core.References;
+using Osiris.Utilities.References;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler

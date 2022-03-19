@@ -1,0 +1,14 @@
+{
+    "name": "Osiris.TimeTravelPuzzler.Timeline.Tests",
+    "rootNamespace": "Osiris.TimeTravelPuzzler.Timeline.Tests",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

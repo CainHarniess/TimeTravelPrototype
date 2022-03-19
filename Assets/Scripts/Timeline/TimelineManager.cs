@@ -1,9 +1,9 @@
-using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.Core.Logging;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.EditorCustomisation;
 using System;
 using System.Collections;
 using UnityEngine;
+using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -11,8 +11,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     {
         IEnumerator _currentCoroutine;
 
-        [SerializeField] private Timeline _rewindTimeline = new Timeline();
-        [SerializeField] private Timeline _replayTimeline = new Timeline();
+        [SerializeField] private ListTimeline _rewindTimeline = new ListTimeline();
+        [SerializeField] private ListTimeline _replayTimeline = new ListTimeline();
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _logger;

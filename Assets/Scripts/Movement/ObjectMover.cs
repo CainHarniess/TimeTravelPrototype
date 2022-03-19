@@ -1,7 +1,8 @@
+using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
-using Osiris.Utilities.Extensions;
+using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.Extensions;
 using System.Linq;
 using UnityEngine;
 
@@ -63,7 +64,7 @@ namespace Osiris.TimeTravelPuzzler.Movement
 
         public virtual void Move(Vector2 movementDirection)
         {
-            var movementCommand = new MovementCommand(_transform,
+            IRewindableCommand movementCommand = new MovementCommand(_transform,
                                                       movementDirection.ToVector3());
             movementCommand.Execute();
             _RecordableActionOccurred.Raise(movementCommand);

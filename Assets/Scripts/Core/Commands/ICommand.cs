@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Commands
+﻿namespace Osiris.TimeTravelPuzzler.Core.Commands
 {
     public interface ICommand
     {

@@ -1,6 +1,6 @@
-using Osiris.TimeTravelPuzzler.Core.Logging;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.Logging;
 using System.Collections;
 using UnityEngine;
 
