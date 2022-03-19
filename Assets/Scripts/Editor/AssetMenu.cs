@@ -27,5 +27,8 @@
 
         public const string FloatValueFileName = "New Float Value";
         public const string FloatValuePath = AssetMenu.MenuRoot + "FloatValue";
+
+        public const string UnityConsoleLoggerFileName = "New Unity Console Logger";
+        public const string UnityConsoleLoggerPath = AssetMenu.MenuRoot + "UnityConsoleLogger";
     }
 }

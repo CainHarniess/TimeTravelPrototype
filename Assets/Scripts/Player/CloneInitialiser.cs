@@ -1,3 +1,4 @@
+using Osiris.TimeTravelPuzzler.Core.Logging;
 using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
 using System.Collections;
@@ -16,6 +17,7 @@ namespace Osiris.TimeTravelPuzzler
         [SerializeField] private Transform _playerTransform;
 
         [Header(InspectorHeaders.DebugVariables)]
+        [SerializeField] private UnityConsoleLogger _logger;
         [ReadOnly] [SerializeField] private bool _IsActive;
 
         [Header(InspectorHeaders.ListensTo)]
@@ -26,6 +28,11 @@ namespace Osiris.TimeTravelPuzzler
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
             _triggerHandler = GetComponent<PressableTriggerHandler>();
+
+            if (_logger == null)
+            {
+                _logger = new NullConsoleLogger();
+            }
         }
 
         private void Start()
@@ -46,7 +53,7 @@ namespace Osiris.TimeTravelPuzzler
 
         private void DelayedDeactivation()
         {
-            Debug.Log("Rewind completion received.");
+            _logger.Log("Rewind completion received.", gameObject);
             StartCoroutine(DeactivateWithDelay(_deactivationDelay));
         }
 

@@ -1,4 +1,5 @@
 using Osiris.TimeTravelPuzzler.Commands;
+using Osiris.TimeTravelPuzzler.Core.Logging;
 using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using System;
 using System.Collections;
@@ -8,11 +9,13 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineManager : MonoBehaviour
     {
+        [SerializeField] private UnityConsoleLogger _logger;
+        IEnumerator _currentCoroutine;
+
         [SerializeField] private Timeline _timeline = new Timeline();
 
-        [SerializeField] IEnumerator _currentCoroutine;
-
         [Header(InspectorHeaders.DebugVariables)]
+        [SerializeField] private bool _displayLogging = false;
         [ReadOnly] [SerializeField] private bool _rewindInProgress;
 
         [Header(InspectorHeaders.ListensTo)]
@@ -21,11 +24,19 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [Header(InspectorHeaders.BroadcastsOnListensTo)]
         [SerializeField] private RewindEventChannelSO _rewindEventChannel;
 
+        private void Awake()
+        {
+            if (_logger == null)
+            {
+                _logger = new NullConsoleLogger();
+            }
+        }
+
         private void Record(IRewindableCommand command)
         {
             if (_rewindInProgress)
             {
-                Debug.Log("Rewind in progress. Action not recorded");
+                _logger.Log("Rewind in progress. Action not recorded", gameObject);
                 return;
             }
             TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
@@ -38,11 +49,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             {
                 if (!_rewindInProgress)
                 {
-                    Debug.Log("No actions to undo. Rewind not initiated.");
+                    _logger.Log("No actions to undo. Rewind not initiated.", gameObject);
                     return;
                 }
 
-                Debug.Log("No more actions to undo. Rewind completed.");
+                _logger.Log("No more actions to undo. Rewind completed.", gameObject);
                 _rewindEventChannel.NotifyRewindCompletion();
                 _rewindInProgress = false;
                 return;
@@ -69,11 +80,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private void OnRewindCancelled()
         {
-            Debug.Log("Rewind cancellation request received.");
+            _logger.Log("Rewind cancellation request received.", gameObject);
 
             if (!_rewindInProgress)
             {
-                Debug.Log("No rewind to cancel.");
+                _logger.Log("No rewind to cancel.", gameObject);
                 return;
             }
 
