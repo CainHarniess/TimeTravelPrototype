@@ -31,7 +31,6 @@ namespace Osiris.TimeTravelPuzzler.Core.Logging
                     Debug.Log(PrefixMessage(message, sender));
                     break;
             }
-            Debug.Log(PrefixMessage(message, sender));
         }
 
         protected string PrefixMessage(string message, GameObject sender = null)
