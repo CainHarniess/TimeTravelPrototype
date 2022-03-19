@@ -2,6 +2,7 @@
 using Osiris.TimeTravelPuzzler.Core;
 using UnityEngine;
 using UnityEngine.Events;
+using Osiris.TimeTravelPuzzler.Core.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -12,16 +13,19 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         public event UnityAction RewindCancellationRequested;
         public event UnityAction RewindCompleted;
 
+        [Header(InspectorHeaders.DebugVariables)]
+        [SerializeField] private UnityConsoleLogger _logger;
+
         public void RaiseRewindRequest()
         {
-            Debug.Log("Rewind request received on channel.");
+            _logger.Log("Rewind request received on channel.");
             if (RewindRequested != null)
             {
                 RewindRequested.Invoke(Time.time);
             }
             else
             {
-                Debug.LogWarning("A rewind was requested, but no listeners are configured.");
+                _logger.Log("A rewind was requested, but no listeners are configured.");
             }
         }
 
@@ -33,7 +37,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             }
             else
             {
-                Debug.LogWarning("A rewind cancellation was requested, but no listeners are configured.");
+                _logger.Log("A rewind cancellation was requested, but no listeners are configured.",
+                            logLevel: LogLevel.Warning);
             }
         }
 
@@ -45,7 +50,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             }
             else
             {
-                Debug.LogWarning("A rewind was completed, but no listeners are configured.");
+                _logger.Log("A rewind was completed, but no listeners are configured.",
+                                   logLevel: LogLevel.Warning);
             }
         }
     }

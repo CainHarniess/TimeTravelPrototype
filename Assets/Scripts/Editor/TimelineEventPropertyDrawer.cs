@@ -1,4 +1,5 @@
-﻿using Osiris.TimeTravelPuzzler.Timeline;
+﻿using Osiris.TimeTravelPuzzler.Core.Logging;
+using Osiris.TimeTravelPuzzler.Timeline;
 using UnityEditor;
 using UnityEngine;
 
