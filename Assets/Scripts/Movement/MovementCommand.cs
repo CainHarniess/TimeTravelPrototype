@@ -1,4 +1,4 @@
-﻿using Osiris.TimeTravelPuzzler.Extensions;
+﻿using Osiris.Utilities.Extensions;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Commands

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Extensions
+namespace Osiris.Utilities.Extensions
 {
     public static class Vector2Extensions
     {

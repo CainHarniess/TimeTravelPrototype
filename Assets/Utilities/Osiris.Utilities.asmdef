@@ -1,11 +1,7 @@
 {
-    "name": "Osiris.TimeTravelPuzzler",
-    "rootNamespace": "Osiris.TimeTravelPuzzler",
-    "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:b35101da131c1fb489d2a2b588cca340",
-        "GUID:000b6455690447b4099fe4c00b9ff7db"
-    ],
+    "name": "Osiris.Utilities",
+    "rootNamespace": "Osiris.Utilities",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
