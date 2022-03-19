@@ -33,7 +33,7 @@ namespace Osiris.TimeTravelPuzzler.Commands
             UpdateInverse();
         }
 
-        protected virtual void UpdateInverse()
+        public virtual void UpdateInverse()
         {
             Inverse = new MovementCommand(_transform, -_movementDirection);
         }

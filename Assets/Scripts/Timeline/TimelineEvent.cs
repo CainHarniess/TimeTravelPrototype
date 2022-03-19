@@ -24,5 +24,10 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             EventAction.Inverse.Execute();
         }
+
+        public void Redo()
+        {
+            EventAction.Execute();
+        }
     }
 }

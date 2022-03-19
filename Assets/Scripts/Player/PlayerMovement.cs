@@ -86,8 +86,13 @@ namespace Osiris.TimeTravelPuzzler.Player
             var movementCommand = new PlayerMovementCommand(_transform,
                                                             movementDirection.ToVector3(),
                                                             _cloneTransfrom);
+
+            var recordedMovement = new MovementCommand(_cloneTransfrom,
+                                                       movementDirection.ToVector3());
+            recordedMovement.UpdateInverse();
+
             movementCommand.Execute();
-            _TimelineEventChannel.RecordTimelineEvent(movementCommand);
+            _TimelineEventChannel.RecordTimelineEvent(recordedMovement);
 
             if (_currentMovables.Count == 0)
             {

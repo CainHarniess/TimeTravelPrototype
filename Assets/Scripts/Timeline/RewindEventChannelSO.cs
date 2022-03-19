@@ -41,18 +41,5 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                             logLevel: LogLevel.Warning);
             }
         }
-
-        public void NotifyRewindCompletion()
-        {
-            if (RewindCompleted != null)
-            {
-                RewindCompleted.Invoke();
-            }
-            else
-            {
-                _logger.Log("A rewind was completed, but no listeners are configured.",
-                                   logLevel: LogLevel.Warning);
-            }
-        }
     }
 }
