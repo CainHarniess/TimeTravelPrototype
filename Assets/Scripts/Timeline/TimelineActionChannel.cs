@@ -7,11 +7,11 @@ using Osiris.TimeTravelPuzzler.Core;
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [CreateAssetMenu(fileName = AssetMenu.TimelineEventChannelFileName, menuName = AssetMenu.TimelineEventChannelPath)]
-    public class TimelineEventChannelSO : DescriptionSO
+    public class TimelineActionChannel : DescriptionSO
     {
         public event UnityAction<IRewindableCommand> Event;
 
-        public void RecordTimelineEvent(IRewindableCommand command)
+        public void Raise(IRewindableCommand command)
         {
             if (Event != null)
             {

@@ -22,7 +22,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private Stopwatch _rewindStopwatch = new Stopwatch();
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
 
         [Header(InspectorHeaders.BroadcastsOnListensTo)]
         [SerializeField] private RewindEventChannelSO _rewindEventChannel;
@@ -146,14 +146,14 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private void OnEnable()
         {
-            _timelineEventChannel.Event += Record;
+            _RecordableActionOccurred.Event += Record;
             _rewindEventChannel.RewindRequested += IterateRewind;
             _rewindEventChannel.RewindCancellationRequested += OnRewindCancelled;
         }
 
         private void OnDisable()
         {
-            _timelineEventChannel.Event -= Record;
+            _RecordableActionOccurred.Event -= Record;
             _rewindEventChannel.RewindRequested -= IterateRewind;
             _rewindEventChannel.RewindCancellationRequested += OnRewindCancelled;
         }

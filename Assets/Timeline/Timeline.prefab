@@ -60,6 +60,6 @@ MonoBehaviour:
     _stopTime: 0
     _deltaTime: 0
     _isRunning: 0
-  _timelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+  _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
   _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
   _replayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}

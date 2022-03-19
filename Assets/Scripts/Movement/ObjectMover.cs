@@ -15,22 +15,22 @@ namespace Osiris.TimeTravelPuzzler.Movement
         [SerializeField] private float _colliderCastDistance = 1;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
 
         public ObjectMover(Transform transform,
                            BoxCollider2D collider,
                            float colliderCastDistance,
-                           TimelineEventChannelSO timelineEventChannel)
+                           TimelineActionChannel recordableActionOccuredChannel)
         {
             _transform = transform;
             _collider = collider;
-            _timelineEventChannel = timelineEventChannel;
+            _RecordableActionOccurred = recordableActionOccuredChannel;
             _colliderCastDistance = colliderCastDistance;
         }
 
         protected Transform Transform { get => _transform; }
         protected BoxCollider2D Collider { get => _collider; }
-        protected TimelineEventChannelSO TimelineEventChannel { get => _timelineEventChannel; }
+        protected TimelineActionChannel TimelineEventChannel { get => _RecordableActionOccurred; }
         protected float ColliderCastDistance { get => _colliderCastDistance; }
 
         public virtual bool CanMove(Vector2 movementDirection)
@@ -66,7 +66,7 @@ namespace Osiris.TimeTravelPuzzler.Movement
             var movementCommand = new MovementCommand(_transform,
                                                       movementDirection.ToVector3());
             movementCommand.Execute();
-            _timelineEventChannel.RecordTimelineEvent(movementCommand);
+            _RecordableActionOccurred.Raise(movementCommand);
         }
     }
 }

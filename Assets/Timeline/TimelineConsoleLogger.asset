@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
   m_Name: TimelineConsoleLogger
   m_EditorClassIdentifier: 
-  _DisplayLogging: {fileID: 11400000, guid: c264c57d18854a04492114c657d22dba, type: 2}
+  _DisplayLogging: 1

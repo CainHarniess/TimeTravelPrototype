@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ReplayCompletedEventChannel
   m_EditorClassIdentifier: 
   _description: 
-  _logger: {fileID: 0}
+  _logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}

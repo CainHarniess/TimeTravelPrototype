@@ -22,7 +22,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         [SerializeField] private Transform _cloneTransfrom;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
 
         void Awake()
         {
@@ -92,7 +92,7 @@ namespace Osiris.TimeTravelPuzzler.Player
             recordedMovement.UpdateInverse();
 
             movementCommand.Execute();
-            _TimelineEventChannel.RecordTimelineEvent(recordedMovement);
+            _RecordableActionOccurred.Raise(recordedMovement);
 
             if (_currentMovables.Count == 0)
             {

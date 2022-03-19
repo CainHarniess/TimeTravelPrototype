@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: _cloneTransfrom
       value: 
       objectReference: {fileID: 6045626072486025016}
+    - target: {fileID: 3282648814424052200, guid: 21f8fa2ad5b4512409f6720423f36114, type: 3}
+      propertyPath: _RecordableActionOccurred
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
     - target: {fileID: 3282648814424052201, guid: 21f8fa2ad5b4512409f6720423f36114, type: 3}
       propertyPath: m_RootOrder
       value: 1

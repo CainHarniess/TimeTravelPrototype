@@ -13,13 +13,13 @@ namespace Osiris.TimeTravelPuzzler.Movement
         private float _ColliderCastDistance = 1;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
 
         private void Awake()
         {
             _transform = transform;
             _collider = GetComponent<BoxCollider2D>();
-            _objectMover = new ObjectMover(_transform, _collider, _ColliderCastDistance, _TimelineEventChannel);
+            _objectMover = new ObjectMover(_transform, _collider, _ColliderCastDistance, _RecordableActionOccurred);
         }
 
         public bool CanMove(Vector2 movementDirection)
