@@ -10,6 +10,10 @@
         public const string RewindEventChannelFileName = "RewindEventChannel";
         public const string RewindEventChannelPath = AssetMenu.MenuRoot + "RewindEventChannel";
 
+
+        public const string ReplayEventChannelFileName = "New Replay Event Channel";
+        public const string ReplayEventChannelPath = AssetMenu.MenuRoot + "ReplayEventChannel";
+
         public const string LevelCompletionEventChannelFileName = "LevelCompletionEventChannel";
         public const string LevelCompletionEventChannelPath = AssetMenu.MenuRoot + "LevelCompletionEventChannel";
 

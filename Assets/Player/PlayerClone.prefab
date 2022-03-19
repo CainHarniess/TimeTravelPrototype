@@ -150,6 +150,7 @@ MonoBehaviour:
   _logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _IsActive: 0
   _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
+  _replayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}
 --- !u!114 &4805412194791503996
 MonoBehaviour:
   m_ObjectHideFlags: 0
