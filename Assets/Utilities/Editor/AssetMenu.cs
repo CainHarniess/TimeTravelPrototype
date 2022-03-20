@@ -13,15 +13,6 @@
         public const string FloatValueFileName = "New Float Value";
         public const string FloatValuePath = MenuRoot + "Float Value";
 
-        public const string IntReferenceFileName = "New Integer Reference";
-        public const string IntReferencePath = MenuRoot + "Int Reference";
-
-        public const string BoolReferenceFileName = "New Bool Reference";
-        public const string BoolReferencePath = MenuRoot + "Bool Reference";
-
-        public const string FloatReferenceFileName = "New Float Reference";
-        public const string FloatReferencePath = MenuRoot + "Float Reference";
-
         public const string UnityConsoleLoggerFileName = "New Unity Console Logger";
         public const string UnityConsoleLoggerPath = MenuRoot + "UnityConsoleLogger";
     }
