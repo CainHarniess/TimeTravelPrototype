@@ -42,13 +42,21 @@ namespace Osiris.TimeTravelPuzzler
 
         public void Activate(Vector3 position)
         {
-            transform.position = position;
+            if (_IsActive)
+            {
+                return;
+            }
             SetStatus(true);
+            transform.position = position;
             _replayCompletedChannel.Event += DelayedDeactivation;
         }
 
         public void Deactivate()
         {
+            if (!_IsActive)
+            {
+                return;
+            }
             SetStatus(false);
             _replayCompletedChannel.Event -= DelayedDeactivation;
         }
@@ -67,15 +75,9 @@ namespace Osiris.TimeTravelPuzzler
 
         private void SetStatus(bool isActive)
         {
-            if (_IsActive == isActive)
-            {
-                return;
-            }
-
             _sprite.enabled = isActive;
             _collider.enabled = isActive;
             _triggerHandler.enabled = isActive;
-
             _IsActive = isActive;
         }
     }
