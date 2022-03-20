@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Osiris.Utilities.Extensions;
+using System;
 
 namespace Osiris.Utilities.Tests
 {
@@ -18,7 +19,21 @@ namespace Osiris.Utilities.Tests
         {
             bool valueToChange = false;
             valueToChange.ChangeStatus(false);
+        }
+
+        [Test]
+        public void ChangeStatusWithException_ShouldChangeStatus()
+        {
+            bool valueToChange = true;
+            valueToChange.ChangeStatusWithException(false);
             Assert.AreEqual(false, valueToChange);
+        }
+
+        [Test]
+        public void ChangeStatusWithException_ShouldThrowException()
+        {
+            bool valueToChange = false;
+            Assert.Throws<ArgumentException>(() => valueToChange.ChangeStatusWithException(false));
         }
     }
 }

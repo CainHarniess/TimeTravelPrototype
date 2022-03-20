@@ -1,27 +1,28 @@
-﻿using System;
+﻿using Osiris.TimeTravelPuzzler.Timeline.Core;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [Serializable]
-    public class ListTimeline : IStackable<TimelineEvent>
+    public class ListTimeline : IStackable<ITimelineEvent>
     {
-        [SerializeField] private List<TimelineEvent> _eventHistory;
+        [SerializeField] private List<ITimelineEvent> _eventHistory;
 
-        public ListTimeline()
+        public ListTimeline(List<ITimelineEvent> timeline)
         {
-            _eventHistory = new List<TimelineEvent>(50);
+            _eventHistory = timeline;
         }
 
         public int Count => _eventHistory.Count;
 
-        public void Push(TimelineEvent item)
+        public void Push(ITimelineEvent item)
         {
             _eventHistory.Add(item);
         }
 
-        public TimelineEvent Peek()
+        public ITimelineEvent Peek()
         {
             if (_eventHistory.Count == 0)
             {
@@ -30,7 +31,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             return _eventHistory[_eventHistory.Count - 1];
         }
 
-        public TimelineEvent Pop()
+        public ITimelineEvent Pop()
         {
             if (_eventHistory.Count == 0)
             {
@@ -38,7 +39,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             }
 
             int index = _eventHistory.Count - 1;
-            TimelineEvent output = _eventHistory[_eventHistory.Count - 1];
+            ITimelineEvent output = _eventHistory[_eventHistory.Count - 1];
             _eventHistory.RemoveAt(index);
             return output;
         }

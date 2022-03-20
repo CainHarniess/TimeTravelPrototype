@@ -4,6 +4,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Osiris.Utilities.Logging;
+using System.Collections.Generic;
+using Osiris.TimeTravelPuzzler.Timeline.Core;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -11,8 +13,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     {
         IEnumerator _currentCoroutine;
 
-        [SerializeField] private ListTimeline _rewindTimeline = new ListTimeline();
-        [SerializeField] private ListTimeline _replayTimeline = new ListTimeline();
+        [SerializeField] private ListTimeline _rewindTimeline;
+        [SerializeField] private ListTimeline _replayTimeline;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _logger;
@@ -34,6 +36,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             {
                 _logger = new NullConsoleLogger();
             }
+
+            _rewindTimeline = new ListTimeline(new List<ITimelineEvent>(50));
+            _replayTimeline = new ListTimeline(new List<ITimelineEvent>(50));
         }
 
         private void Record(IRewindableCommand command)
@@ -43,7 +48,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 _logger.Log("Rewind in progress. Action not recorded", gameObject);
                 return;
             }
-            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
+            ITimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
             _rewindTimeline.Push(timelineEvent);
         }
 
@@ -69,11 +74,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         }
 
         private IEnumerator QueueUndo(float rewindStartTime,
-                                      TimelineEvent timelineEventToUndo,
+                                      ITimelineEvent timelineEventToUndo,
                                       Action<float> onUndone)
         {
             _rewindStopwatch.Start();
-            float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
+            float rewindWaitTime = rewindStartTime - timelineEventToUndo.Time;
             yield return new WaitForSeconds(rewindWaitTime);
             
             timelineEventToUndo.Undo();
@@ -82,7 +87,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _rewindStopwatch.Stop();
 
             StopCoroutine(_currentCoroutine);
-            onUndone(_replayTimeline.Peek().EventTime);
+            onUndone(_replayTimeline.Peek().Time);
         }
 
         private void IterateReplay(float waitTime)
@@ -106,7 +111,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         }
 
         private IEnumerator QueueRedo(float waitTime,
-                                      TimelineEvent timelineEventToRedo,
+                                      ITimelineEvent timelineEventToRedo,
                                       Action<float> onRedone)
         {
             _replayStopwatch.Start();
@@ -123,7 +128,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 _replayCompletedChannel.Raise();
                 yield break;
             }
-            onRedone(_replayTimeline.Peek().EventTime - timelineEventToRedo.EventTime);
+            onRedone(_replayTimeline.Peek().Time - timelineEventToRedo.Time);
         }
 
         private void OnRewindCancelled()
