@@ -21,7 +21,6 @@ namespace Osiris.TimeTravelPuzzler
         [ReadOnly] [SerializeField] private bool _IsActive;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
         [SerializeField] private ReplayEventChannelSO _replayCompletedChannel;
 
         private void Awake()
@@ -45,11 +44,13 @@ namespace Osiris.TimeTravelPuzzler
         {
             transform.position = position;
             SetStatus(true);
+            _replayCompletedChannel.Event += DelayedDeactivation;
         }
 
         public void Deactivate()
         {
             SetStatus(false);
+            _replayCompletedChannel.Event -= DelayedDeactivation;
         }
 
         private void DelayedDeactivation()
@@ -76,16 +77,6 @@ namespace Osiris.TimeTravelPuzzler
             _triggerHandler.enabled = isActive;
 
             _IsActive = isActive;
-        }
-
-        private void OnEnable()
-        {
-            _replayCompletedChannel.Event += DelayedDeactivation;
-        }
-
-        private void OnDisable()
-        {
-            _replayCompletedChannel.Event -= DelayedDeactivation;
         }
     }
 }
