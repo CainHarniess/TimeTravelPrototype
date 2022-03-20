@@ -45,29 +45,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _EventHistory:
     id: 0
-  _rewindTimeline:
+  _rewindPlayer:
     id: 0
-  _replayTimeline:
+  _replayPlayer:
     id: 0
   _logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
-  _rewindInProgress: 0
-  _replayInProgress: 0
-  _replayStopwatch:
-    _startTime: 0
-    _stopTime: 0
-    _deltaTime: 0
-    _isRunning: 0
   _rewindStopwatch:
     _startTime: 0
     _stopTime: 0
     _deltaTime: 0
     _isRunning: 0
   _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
-  _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
   _PlayerRewindRequested: {fileID: 11400000, guid: 1a2820802e59e754aa7f261568ad0fc9, type: 2}
   _PlayerRewindCancelled: {fileID: 11400000, guid: a8746ebcd4b123f4991c3a2c99f135bd, type: 2}
   _RewindCompleted: {fileID: 11400000, guid: ea35bb84944fc234fa7e85d037a5d641, type: 2}
-  _replayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}
+  _ReplayCompleted: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}
   references:
     version: 1
     00000000:

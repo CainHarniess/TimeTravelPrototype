@@ -31,10 +31,6 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private void OnRewindStarted(InputAction.CallbackContext obj)
         {
-            // TODO: Remove old event invocation.
-            //_RewindEventChannel.RaiseRewindRequest();
-
-            // New event invocation to be used going forwards.
             _PlayerRewindRequested.Raise();
 
             // TODO:    The TimelineManager should be responsible for activating the clone once

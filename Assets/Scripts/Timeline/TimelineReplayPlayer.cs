@@ -22,6 +22,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         public TimelineReplayPlayer(ReplayEventChannelSO replayCompleted, UnityConsoleLogger logger)
         {
+            _ReplayCompleted = replayCompleted;
             _logger = logger;
         }
 
@@ -55,11 +56,10 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
             for (int i = 0; i < initialRewindCount; i++)
             {
-                ITimelineEvent timelineEventToUndo = _ReplayPlaylist.Peek();
                 yield return new WaitForSeconds(waitTime);
 
+                ITimelineEvent timelineEventToUndo = _ReplayPlaylist.Pop();
                 timelineEventToUndo.Redo();
-                _ReplayPlaylist.Pop();
 
                 if (_ReplayPlaylist.Count == 0)
                 {

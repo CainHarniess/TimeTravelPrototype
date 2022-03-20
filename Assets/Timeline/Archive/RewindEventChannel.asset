@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd4532531569934b984b409ac588335, type: 3}
   m_Name: RewindEventChannel
   m_EditorClassIdentifier: 
-  _description: A channel for notifying the Timeline Manager that a rewind event
-    has been initiated.
+  _description: Channel notifying the Timeline Manager that a rewind event has been
+    initiated.
   _logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
