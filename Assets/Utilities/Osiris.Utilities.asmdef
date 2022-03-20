@@ -1,7 +1,9 @@
 {
     "name": "Osiris.Utilities",
     "rootNamespace": "Osiris.Utilities",
-    "references": [],
+    "references": [
+        "GUID:3ea6b9fbbfdae0747a43c9358e9513e4"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

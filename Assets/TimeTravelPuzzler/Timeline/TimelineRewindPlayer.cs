@@ -1,6 +1,7 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
 using Osiris.Utilities.Logging;
+using Osiris.Utilities.Timing;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,8 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         public class TimelineRewindPlayer : ITimelinePlayer
     {
         private readonly ITimelinePlayer _replayPlayer;
-        private Stopwatch _rewindStopwatch;
-        private IEnumerator _currentCoroutine;
+        private IStopwatch _rewindStopwatch;
         private ListEventHistory _ReplayPlaylist;
 
         [Header(InspectorHeaders.DebugVariables)]
@@ -27,7 +27,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private const string LogPrefix = "TimelineRewindPlayer";
 
         public TimelineRewindPlayer(ITimelinePlayer replayPlayer,
-                                    Stopwatch stopwatch,
+                                    IStopwatch stopwatch,
                                     RewindEventChannelSO rewindCompleted,
                                     UnityConsoleLogger logger)
         {

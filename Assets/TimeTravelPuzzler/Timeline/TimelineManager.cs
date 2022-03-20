@@ -6,6 +6,7 @@ using UnityEngine;
 using Osiris.Utilities.Logging;
 using System.Collections.Generic;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
+using Osiris.Utilities.Timing;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -20,7 +21,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private UnityConsoleLogger _logger;
         [SerializeReference] private ListEventHistory _EventHistory;
         [SerializeReference] private ITimelinePlayer _rewindPlayback;
-        [SerializeField] private Stopwatch _rewindProgressStopwatch;
+        [SerializeReference] private IStopwatch _rewindProgressStopwatch;
         [SerializeReference] private ITimelinePlayer _replayPlayback;
 
         [Header(InspectorHeaders.ListensTo)]

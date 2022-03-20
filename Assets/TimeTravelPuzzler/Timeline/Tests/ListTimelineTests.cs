@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 namespace Osiris.TimeTravelPuzzler.Timeline.Tests
 {
-
     public class ListTimelineTests
     {
         private ITimelineEvent _timelineEvent;
