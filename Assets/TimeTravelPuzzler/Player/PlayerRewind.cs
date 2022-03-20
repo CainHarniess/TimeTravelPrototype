@@ -1,5 +1,6 @@
 using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.References;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +17,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         [SerializeField] private CloneInitialiser _CloneInitialiser;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private float _MaximumRewindTime = 7f;
+        [SerializeField] private FloatReference _MaximumRewindTimeRef;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _RewindEventChannel;
@@ -43,7 +44,7 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private IEnumerator RewindTimer()
         {
-            yield return new WaitForSeconds(_MaximumRewindTime);
+            yield return new WaitForSeconds(_MaximumRewindTimeRef.Value);
             _PlayerRewindCancelled.Raise();
         }
 

@@ -1,16 +1,16 @@
-using Osiris.Utilities.References;
-using System.Linq;
+﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.EditorCustomisation
 {
-    [CustomPropertyDrawer(typeof(IntReference))]
-    public class IntReferencePropertyDrawer : PropertyDrawer
+    public abstract class GenericReferencePropertyDrawer<T> : PropertyDrawer
     {
         private const string _useConstantPropName = "_UseConstant";
         private const string _variableValuePropName = "_VariableValue";
         private const string _constantPropName = "_Constant";
+
+        protected string VariableValuePropertyName => _variableValuePropName;
 
         public override void OnGUI(Rect position,
                                    SerializedProperty property,
@@ -24,7 +24,7 @@ namespace Osiris.TimeTravelPuzzler.EditorCustomisation
                                                       label);
             Rect dropDownRect = DrawDropDown(property, useConstant, propertyRect);
             DrawValueField(property, useConstant, propertyRect, dropDownRect);
-            
+
             EditorGUI.EndProperty();
         }
 
@@ -58,7 +58,7 @@ namespace Osiris.TimeTravelPuzzler.EditorCustomisation
         private void DrawValueField(SerializedProperty property, bool useConstant, Rect propertyRect, Rect dropDownRect)
         {
             Rect valueRect = GetValueRect(propertyRect, dropDownRect);
-            int variableValue = property.FindPropertyRelative(_variableValuePropName).intValue;
+            T variableValue = FindRelativeProperty(property);
             if (useConstant)
             {
                 EditorGUI.ObjectField(valueRect,
@@ -67,11 +67,13 @@ namespace Osiris.TimeTravelPuzzler.EditorCustomisation
             }
             else
             {
-                string newValue = EditorGUI.TextField(valueRect, variableValue.ToString());
-                int.TryParse(newValue, out variableValue);
-                property.FindPropertyRelative(_variableValuePropName).intValue = variableValue;
+                SetRelativeProperty(property, valueRect, variableValue);
             }
         }
+
+        protected abstract void SetRelativeProperty(SerializedProperty property, Rect valueRect, T variableValue);
+
+        protected abstract T FindRelativeProperty(SerializedProperty property);
 
         private Rect GetValueRect(Rect propertyRect, Rect dropDownRect)
         {
