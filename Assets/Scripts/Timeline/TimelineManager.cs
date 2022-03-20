@@ -115,6 +115,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             StopCoroutine(_coroutine);
         }
 
+        #region Recording
         private void StartRecording()
         {
             _RecordableActionOccurred.Event += Record;
@@ -130,7 +131,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             _RecordableActionOccurred.Event -= Record;
             _eventRecorder.StopRecording();
-        }
+        } 
+        #endregion
 
         #region Initialisation
         private void ConfigurePlaybacks()
