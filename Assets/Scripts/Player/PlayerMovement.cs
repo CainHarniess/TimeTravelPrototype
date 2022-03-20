@@ -1,10 +1,10 @@
-using System.Linq;
+using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Extensions;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.Extensions;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,7 +22,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         [SerializeField] private Transform _cloneTransfrom;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private TimelineEventChannelSO _TimelineEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
 
         void Awake()
         {
@@ -86,8 +86,13 @@ namespace Osiris.TimeTravelPuzzler.Player
             var movementCommand = new PlayerMovementCommand(_transform,
                                                             movementDirection.ToVector3(),
                                                             _cloneTransfrom);
+
+            var recordedMovement = new MovementCommand(_cloneTransfrom,
+                                                       movementDirection.ToVector3());
+            recordedMovement.UpdateInverse();
+
             movementCommand.Execute();
-            _TimelineEventChannel.RecordTimelineEvent(movementCommand);
+            _RecordableActionOccurred.Raise(recordedMovement);
 
             if (_currentMovables.Count == 0)
             {

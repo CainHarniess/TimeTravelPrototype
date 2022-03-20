@@ -1,0 +1,19 @@
+{
+    "name": "Osiris.TimeTravelPuzzler.Movement",
+    "rootNamespace": "Osiris.TimeTravelPuzzler.Movement",
+    "references": [
+        "GUID:3819f011f3a56d2489a956292e3036fb",
+        "GUID:3ea6b9fbbfdae0747a43c9358e9513e4",
+        "GUID:957c197060d45864b89a011791540076",
+        "GUID:000b6455690447b4099fe4c00b9ff7db"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

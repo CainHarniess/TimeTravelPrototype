@@ -14,7 +14,7 @@ namespace Osiris.TimeTravelPuzzler.Commands
 
         public override string Description => $"Player move - {Direction}";
 
-        protected override void UpdateInverse()
+        public override void UpdateInverse()
         {
             Inverse = new MovementCommand(_altTransform, -MovementDirection);
         }

@@ -1,4 +1,5 @@
-﻿using Osiris.TimeTravelPuzzler.Extensions;
+﻿using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.Utilities.Extensions;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Commands
@@ -33,7 +34,7 @@ namespace Osiris.TimeTravelPuzzler.Commands
             UpdateInverse();
         }
 
-        protected virtual void UpdateInverse()
+        public virtual void UpdateInverse()
         {
             Inverse = new MovementCommand(_transform, -_movementDirection);
         }

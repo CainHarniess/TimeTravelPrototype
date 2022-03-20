@@ -1,6 +1,6 @@
-using Osiris.TimeTravelPuzzler.Core.Logging;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.Logging;
 using System.Collections;
 using UnityEngine;
 
@@ -22,6 +22,7 @@ namespace Osiris.TimeTravelPuzzler
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private RewindEventChannelSO _rewindEventChannel;
+        [SerializeField] private ReplayEventChannelSO _replayCompletedChannel;
 
         private void Awake()
         {
@@ -54,12 +55,12 @@ namespace Osiris.TimeTravelPuzzler
         private void DelayedDeactivation()
         {
             _logger.Log("Rewind completion received.", gameObject);
-            StartCoroutine(DeactivateWithDelay(_deactivationDelay));
+            StartCoroutine(DeactivateWithDelay());
         }
 
-        private IEnumerator DeactivateWithDelay(float delay)
+        private IEnumerator DeactivateWithDelay()
         {
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(_deactivationDelay);
             Deactivate();
         }
 
@@ -79,14 +80,12 @@ namespace Osiris.TimeTravelPuzzler
 
         private void OnEnable()
         {
-            _rewindEventChannel.RewindCompleted += DelayedDeactivation;
-            _rewindEventChannel.RewindCancellationRequested += DelayedDeactivation;
+            _replayCompletedChannel.Event += DelayedDeactivation;
         }
 
         private void OnDisable()
         {
-            _rewindEventChannel.RewindCompleted -= DelayedDeactivation;
-            _rewindEventChannel.RewindCancellationRequested -= DelayedDeactivation;
+            _replayCompletedChannel.Event -= DelayedDeactivation;
         }
     }
 }

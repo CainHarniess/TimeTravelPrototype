@@ -1,110 +1,176 @@
-using Osiris.TimeTravelPuzzler.Commands;
-using Osiris.TimeTravelPuzzler.Core.Logging;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.EditorCustomisation;
 using System;
 using System.Collections;
 using UnityEngine;
+using Osiris.Utilities.Logging;
+using System.Collections.Generic;
+using Osiris.TimeTravelPuzzler.Timeline.Core;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineManager : MonoBehaviour
     {
-        [SerializeField] private UnityConsoleLogger _logger;
-        IEnumerator _currentCoroutine;
+        private ITimelineEventFactory<ITimelineEvent> _eventFactory;
+        private IRecorder _eventRecorder;
 
-        [SerializeField] private Timeline _timeline = new Timeline();
+        private IEnumerator _coroutine;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private bool _displayLogging = false;
-        [ReadOnly] [SerializeField] private bool _rewindInProgress;
+        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeReference] private ListEventHistory _EventHistory;
+        [SerializeReference] private ITimelinePlayer _rewindPlayback;
+        [SerializeField] private Stopwatch _rewindProgressStopwatch;
+        [SerializeReference] private ITimelinePlayer _replayPlayback;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private TimelineEventChannelSO _timelineEventChannel;
-
-        [Header(InspectorHeaders.BroadcastsOnListensTo)]
-        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
+        [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
+        [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
+        [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
+        [SerializeField] private RewindEventChannelSO _RewindCompleted;
+        [SerializeField] private ReplayEventChannelSO _ReplayCompleted;
 
         private void Awake()
+        {
+            ConfigureLogger();
+            ConfigureEventRecorder();
+            ConfigurePlaybacks();
+        }
+
+        private void Start()
+        {
+            StartRecording();
+        }
+
+        private void StartRewindProcess()
+        {
+            _rewindPlayback.Build(_EventHistory);
+            if (!_rewindPlayback.CanPlay())
+            {
+                _logger.Log("Rewind request rejected.", gameObject.name);
+                return;
+            }
+
+            _logger.Log("Rewind request approved.", gameObject.name);
+
+            StopRecording();
+            _RewindCompleted.Event += StopRewindStartReplay;
+            _coroutine = _rewindPlayback.Play(Time.time);
+            StartCoroutine(_coroutine);
+        }
+
+        private void StopRewindProcess()
+        {
+            if (!_rewindPlayback.CanStop())
+            {
+                _logger.Log("Rewind cancellation request rejected.", gameObject.name);
+                return;
+            }
+            
+            _rewindPlayback.Stop();
+            if (_coroutine == null)
+            {
+                _logger.Log("No coroutine to stop.", name, LogLevel.Error);
+                return;
+            }
+            StopCoroutine(_coroutine);
+            _RewindCompleted.Event -= StopRewindStartReplay;
+        }
+
+        private void StopRewindStartReplay()
+        {
+            StopRewindProcess();
+            StartReplayProcess(_rewindProgressStopwatch.DeltaTime);
+        }
+
+        private void StartReplayProcess(float initialWaitTime)
+        {
+            if (!_replayPlayback.CanPlay())
+            {
+                return;
+            }
+            _ReplayCompleted.Event += StopReplayProcess;
+            _coroutine = _replayPlayback.Play(initialWaitTime);
+            StartCoroutine(_coroutine);
+        }
+
+        private void StopReplayProcess()
+        {
+            _logger.Log("Stop replay request received.", gameObject.name);
+            if (!_replayPlayback.CanStop())
+            {
+                _logger.Log("Replay cancellation request rejected.", gameObject.name);
+                return;
+            }
+
+            _replayPlayback.Stop();
+            _ReplayCompleted.Event += StopReplayProcess;
+            StartRecording();
+
+            if (_coroutine == null)
+            {
+                _logger.Log("No coroutine to stop.", name, LogLevel.Error);
+                return;
+            }
+            StopCoroutine(_coroutine);
+        }
+
+        #region Recording
+        private void StartRecording()
+        {
+            _RecordableActionOccurred.Event += Record;
+            _eventRecorder.StartRecording();
+        }
+
+        private void Record(IRewindableCommand command)
+        {
+            _eventRecorder.Record(command);
+        }
+
+        private void StopRecording()
+        {
+            _RecordableActionOccurred.Event -= Record;
+            _eventRecorder.StopRecording();
+        } 
+        #endregion
+
+        #region Initialisation
+        private void ConfigurePlaybacks()
+        {
+            _replayPlayback = new TimelineReplayPlayer(_ReplayCompleted, _logger);
+            _rewindProgressStopwatch = new Stopwatch();
+            _rewindPlayback = new TimelineRewindPlayer(_replayPlayback,
+                                                     _rewindProgressStopwatch,
+                                                     _RewindCompleted,
+                                                     _logger);
+        }
+
+        private void ConfigureEventRecorder()
+        {
+            _EventHistory = new ListEventHistory(new List<ITimelineEvent>(50));
+            _eventFactory = new TimelineEventFactory();
+            _eventRecorder = new TimelineEventRecorder(_EventHistory, _eventFactory);
+        }
+
+        private void ConfigureLogger()
         {
             if (_logger == null)
             {
                 _logger = new NullConsoleLogger();
             }
-        }
-
-        private void Record(IRewindableCommand command)
-        {
-            if (_rewindInProgress)
-            {
-                _logger.Log("Rewind in progress. Action not recorded", gameObject);
-                return;
-            }
-            TimelineEvent timelineEvent = new TimelineEvent(Time.time, command);
-            _timeline.Push(timelineEvent);
-        }
-
-        private void IterateRewind(float rewindStartTime)
-        {
-            if (_timeline.Count == 0)
-            {
-                if (!_rewindInProgress)
-                {
-                    _logger.Log("No actions to undo. Rewind not initiated.", gameObject);
-                    return;
-                }
-
-                _logger.Log("No more actions to undo. Rewind completed.", gameObject);
-                _rewindEventChannel.NotifyRewindCompletion();
-                _rewindInProgress = false;
-                return;
-            }
-
-            _rewindInProgress = true;
-            _currentCoroutine = QueueUndo(rewindStartTime, _timeline.Peek(), IterateRewind);
-            StartCoroutine(_currentCoroutine);
-        }
-
-        private IEnumerator QueueUndo(float rewindStartTime,
-                                      TimelineEvent timelineEventToUndo,
-                                      Action<float> onUndone)
-        {
-            float rewindWaitTime = rewindStartTime - timelineEventToUndo.EventTime;
-            yield return new WaitForSeconds(rewindWaitTime);
-            
-            timelineEventToUndo.Undo();
-            _timeline.Pop();
-            
-            StopCoroutine(_currentCoroutine);
-            onUndone(timelineEventToUndo.EventTime);
-        }
-
-        private void OnRewindCancelled()
-        {
-            _logger.Log("Rewind cancellation request received.", gameObject);
-
-            if (!_rewindInProgress)
-            {
-                _logger.Log("No rewind to cancel.", gameObject);
-                return;
-            }
-
-            _rewindInProgress = false;
-            StopCoroutine(_currentCoroutine);
-            _timeline.Clear();
-        }
+        } 
+        #endregion
 
         private void OnEnable()
         {
-            _timelineEventChannel.Event += Record;
-            _rewindEventChannel.RewindRequested += IterateRewind;
-            _rewindEventChannel.RewindCancellationRequested += OnRewindCancelled;
+            _PlayerRewindRequested.Event += StartRewindProcess;
+            _PlayerRewindCancelled.Event += StopRewindStartReplay;
         }
 
         private void OnDisable()
         {
-            _timelineEventChannel.Event -= Record;
-            _rewindEventChannel.RewindRequested -= IterateRewind;
-            _rewindEventChannel.RewindCancellationRequested += OnRewindCancelled;
+            _PlayerRewindRequested.Event -= StartRewindProcess;
+            _PlayerRewindCancelled.Event -= StopRewindStartReplay;
         }
     }
 }

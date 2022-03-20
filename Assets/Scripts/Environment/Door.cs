@@ -1,4 +1,4 @@
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
+using Osiris.EditorCustomisation;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Environment
