@@ -13,13 +13,15 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private IEnumerator _rewindTimer;
 
-        [SerializeField] private CloneInitialiser _cloneInitialiser;
+        [SerializeField] private CloneInitialiser _CloneInitialiser;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private float _maximumRewindTime = 7f;
+        [SerializeField] private float _MaximumRewindTime = 7f;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private RewindEventChannelSO _rewindEventChannel;
+        [SerializeField] private RewindEventChannelSO _RewindEventChannel;
+        [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
+        [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
 
         void Awake()
         {
@@ -29,9 +31,15 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private void OnRewindStarted(InputAction.CallbackContext obj)
         {
-            _rewindEventChannel.RaiseRewindRequest();
+            // TODO: Remove old event invocation.
+            //_RewindEventChannel.RaiseRewindRequest();
 
-            _cloneInitialiser.Activate(transform.position);
+            // New event invocation to be used going forwards.
+            _PlayerRewindRequested.Raise();
+
+            // TODO:    The TimelineManager should be responsible for activating the clone once
+            //          the rewind request has been approved.
+            _CloneInitialiser.Activate(transform.position);
 
             _rewindTimer = RewindTimer();
             StartCoroutine(_rewindTimer);
@@ -39,8 +47,8 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private IEnumerator RewindTimer()
         {
-            yield return new WaitForSeconds(_maximumRewindTime);
-            _rewindEventChannel.RaiseRewindCancellation();
+            yield return new WaitForSeconds(_MaximumRewindTime);
+            _PlayerRewindCancelled.Raise();
         }
 
         private void OnRewindCancelled(InputAction.CallbackContext obj)
@@ -49,7 +57,7 @@ namespace Osiris.TimeTravelPuzzler.Player
             {
                 StopCoroutine(_rewindTimer);
             }
-            _rewindEventChannel.RaiseRewindCancellation();
+            _PlayerRewindCancelled.Raise();
         }
 
         private void OnEnable()

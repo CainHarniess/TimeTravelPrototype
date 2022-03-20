@@ -2,7 +2,7 @@
 {
     internal class AssetMenu
     {
-        public const string MenuRoot = "ScriptableObjects/Utilities";
+        public const string MenuRoot = "ScriptableObjects/Utilities/";
 
         public const string IntValueFileName = "New Integer Value";
         public const string IntValuePath = MenuRoot + "Int Value";

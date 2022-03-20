@@ -6,6 +6,6 @@ namespace Osiris.TimeTravelPuzzler.Core
     {
         [TextArea] [SerializeField] private string _description;
 
-        protected string Description { get => _description; }
+        protected string Description => _description;
     }
 }

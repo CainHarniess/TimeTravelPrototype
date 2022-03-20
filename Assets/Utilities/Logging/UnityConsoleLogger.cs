@@ -12,7 +12,12 @@ namespace Osiris.Utilities.Logging
 
         public virtual void Log(string message, GameObject sender = null, LogLevel logLevel = LogLevel.Info)
         {
-            if (!DisplayLogging)
+            Log(message, sender.name, logLevel);
+        }
+
+        public void Log(string message, string senderName = null, LogLevel logLevel = LogLevel.Info)
+        {
+            if (!DisplayLogging & logLevel == LogLevel.Info)
             {
                 return;
             }
@@ -20,22 +25,22 @@ namespace Osiris.Utilities.Logging
             switch (logLevel)
             {
                 case LogLevel.Error:
-                    Debug.LogError(PrefixMessage(message, sender));
+                    Debug.LogError(PrefixMessage(message, senderName));
                     break;
                 case LogLevel.Warning:
-                    Debug.LogWarning(PrefixMessage(message, sender));
+                    Debug.LogWarning(PrefixMessage(message, senderName));
                     break;
                 default:
-                    Debug.Log(PrefixMessage(message, sender));
+                    Debug.Log(PrefixMessage(message, senderName));
                     break;
             }
         }
 
-        protected string PrefixMessage(string message, GameObject sender = null)
+        protected string PrefixMessage(string message, string prefix = null)
         {
-            if (sender != null)
+            if (prefix != null)
             {
-                return $"[{sender.name}] " + message;
+                return $"[{prefix}] " + message;
             }
             return message;
         }

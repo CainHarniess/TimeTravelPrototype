@@ -8,9 +8,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     [Serializable]
     public class ListEventHistory : IStackable<ITimelineEvent>
     {
-        [SerializeField] private IList<ITimelineEvent> _EventHistory;
+        [SerializeReference] private List<ITimelineEvent> _EventHistory;
 
-        public ListEventHistory(IList<ITimelineEvent> eventHistory)
+        public ListEventHistory(List<ITimelineEvent> eventHistory)
         {
             _EventHistory = eventHistory;
         }

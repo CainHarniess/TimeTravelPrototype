@@ -2,7 +2,7 @@
 {
     internal struct AssetMenu
     {
-        public const string MenuRoot = "ScriptableObjects/Timeline";
+        public const string MenuRoot = "ScriptableObjects/Timeline/";
 
         public const string TimelineEventChannelFileName = "TimelineEventChannel";
         public const string TimelineEventChannelPath = AssetMenu.MenuRoot + "TimelineEventChannel";

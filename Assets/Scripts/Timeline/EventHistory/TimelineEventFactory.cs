@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
-    public class TimelineEventFactory : ITimelineEventFactory<TimelineEvent>
+    public class TimelineEventFactory : ITimelineEventFactory<ITimelineEvent>
     {
-        public TimelineEvent Create(IRewindableCommand rewindableCommand)
+        public ITimelineEvent Create(IRewindableCommand rewindableCommand)
         {
             return new TimelineEvent(Time.time, rewindableCommand);
         }
