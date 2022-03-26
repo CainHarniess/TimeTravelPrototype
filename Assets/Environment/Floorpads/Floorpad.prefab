@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5014206954706808520}
   - component: {fileID: 9020805402313102217}
   m_Layer: 0
-  m_Name: Floorpad
+  m_Name: FloorPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

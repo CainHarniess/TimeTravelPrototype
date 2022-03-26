@@ -10,22 +10,20 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     public class ReplayEventChannelSO : DescriptionSO
     {
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
 
         public event UnityAction Event;
 
-        private const string LogPrefix = "ReplayEventChannelSO";
-
         public void Raise()
         {
-            _logger.Log("Replay event received on channel.", name);
+            _Logger.Log("Replay event received on channel.", name);
             if (Event != null)
             {
                 Event.Invoke();
             }
             else
             {
-                _logger.Log("A replay event was raised, but no listeners are configured.", name);
+                _Logger.Log("A replay event was raised, but no listeners are configured.", name);
             }
         }
     }

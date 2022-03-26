@@ -1,14 +1,15 @@
 ﻿using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Osiris.TimeTravelPuzzler.Core.Events
+namespace Osiris.Utilities.Events
 {
     public class GameEventListener : MonoBehaviour
     {
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private GameEventSO _gameEvent;
-        
+
         [SerializeField] private UnityEvent _eventHandler;
 
         private void OnEnable()

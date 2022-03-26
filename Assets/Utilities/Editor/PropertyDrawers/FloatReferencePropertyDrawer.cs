@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.EditorCustomisation
+namespace Osiris.Utilities.Editor
 {
     [CustomPropertyDrawer(typeof(FloatReference))]
     public class FloatReferencePropertyDrawer : GenericReferencePropertyDrawer<float>
