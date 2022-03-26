@@ -4,7 +4,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public class OneWayFloorPad : FloorPad
     {
-        public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger) : base(floorPadBehaviour, logger)
+        public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger, string gameObjectName)
+            : base(floorPadBehaviour, logger, gameObjectName)
         {
 
         }

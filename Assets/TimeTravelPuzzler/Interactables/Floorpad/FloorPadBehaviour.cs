@@ -22,7 +22,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         protected virtual void Awake()
         {
-            _FloorPad = new FloorPad(this, Logger);
+            _Logger.Configure();
+            _FloorPad = new FloorPad(this, Logger, gameObject.name);
         }
 
         public virtual bool CanPress(int additionalWeight)

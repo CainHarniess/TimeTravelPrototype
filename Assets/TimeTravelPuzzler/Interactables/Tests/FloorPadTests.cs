@@ -20,9 +20,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _floorPadBehaviourSub.RequiredPressWeight.Returns(50);
 
             _logger = (UnityConsoleLogger)ScriptableObject.CreateInstance(typeof(UnityConsoleLogger));
-            _logger.DisplayLogging = true;
+            _logger.DisplayLogging = false;
 
-            _floorPad = new FloorPad(_floorPadBehaviourSub, _logger);
+            _floorPad = new FloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix);
         }
 
         #region CanPress

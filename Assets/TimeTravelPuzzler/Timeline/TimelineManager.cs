@@ -157,7 +157,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             if (_logger == null)
             {
-                _logger = new NullConsoleLogger();
+                _logger = ScriptableObject.CreateInstance<NullConsoleLogger>();
             }
         } 
         #endregion

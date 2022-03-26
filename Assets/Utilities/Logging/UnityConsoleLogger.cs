@@ -45,5 +45,4 @@ namespace Osiris.Utilities.Logging
             return message;
         }
     }
-
 }

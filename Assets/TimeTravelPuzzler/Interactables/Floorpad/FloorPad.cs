@@ -15,7 +15,13 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         [ReadOnly] [SerializeField] private int _CurrentPressWeight;
         [ReadOnly] [SerializeField] private bool _IsPressed;
 
-        public FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger)
+        public FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger, string gameObjectName)
+            : this(floorPadBehaviour, logger)
+        {
+            _gameObjectName = gameObjectName;
+        }
+
+        private FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger)
         {
             _floorPadBehaviour = floorPadBehaviour;
             _Logger = logger;
