@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Interactables;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Game

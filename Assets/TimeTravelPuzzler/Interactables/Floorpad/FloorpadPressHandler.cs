@@ -1,11 +1,10 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core.Events;
 using Osiris.TimeTravelPuzzler.Core.Interactions;
-using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.Utilities.References;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Environment.Floorpad
+namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public abstract class FloorpadPressHandler : MonoBehaviour, IPressable
     {
@@ -20,7 +19,7 @@ namespace Osiris.TimeTravelPuzzler.Environment.Floorpad
         [SerializeField] private GameEventSO _PressedEvent;
         [SerializeField] private GameEventSO _ReleasedEvent;
 
-        protected int MinPressWeight { get => _MinPressWeight.Value;}
+        protected int MinPressWeight { get => _MinPressWeight.Value; }
         protected int CurrentPressWeight { get => _CurrentPressWeight; set => _CurrentPressWeight = value; }
 
         protected GameEventSO PressedEvent => _PressedEvent;

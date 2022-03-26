@@ -1,7 +1,7 @@
 using Osiris.EditorCustomisation;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Environment
+namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public class Door : MonoBehaviour
     {

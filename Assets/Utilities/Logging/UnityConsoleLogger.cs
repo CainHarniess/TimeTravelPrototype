@@ -8,7 +8,7 @@ namespace Osiris.Utilities.Logging
     {
         [SerializeField] private bool _DisplayLogging;
 
-        public bool DisplayLogging { get => _DisplayLogging; }
+        public bool DisplayLogging { get => _DisplayLogging; set => _DisplayLogging = value; }
 
         public virtual void Log(string message, GameObject sender = null, LogLevel logLevel = LogLevel.Info)
         {

@@ -1,8 +1,5 @@
-using Osiris.TimeTravelPuzzler.Core.Interactions;
-
-namespace Osiris.TimeTravelPuzzler.Environment.Floorpad
+namespace Osiris.TimeTravelPuzzler.Interactables
 {
-
     public class OneWayFloorpadPressHandler : FloorpadPressHandler
     {
         public override bool CanPress(int additionalWeight)

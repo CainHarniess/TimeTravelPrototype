@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler
+namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public class GoalSpriteAnimator// : MonoBehaviour
     {
