@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5014206954706808566}
   - component: {fileID: 5014206954706808567}
   - component: {fileID: 5014206954706808520}
+  - component: {fileID: 9020805402313102217}
   m_Layer: 0
   m_Name: Floorpad
   m_TagString: Untagged
@@ -135,3 +136,26 @@ PolygonCollider2D:
       - {x: 0.265625, y: -0.4375}
       - {x: 0.29296875, y: -0.390625}
       - {x: 0.30859375, y: -0.36328125}
+--- !u!114 &9020805402313102217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014206954706808522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2e491ac87b9e14f870c3cb215f56d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredPressWeight:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 34197d51ff1cce0428abad310abc4d5c, type: 2}
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  _FloorPad:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }

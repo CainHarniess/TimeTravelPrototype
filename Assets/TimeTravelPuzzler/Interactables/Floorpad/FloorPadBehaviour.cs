@@ -8,10 +8,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     public class FloorPadBehaviour : MonoBehaviour, IFloorPad
     {
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private readonly IntReference _RequiredPressWeight;
+        [Tooltip("Added at run time.")]
+        [SerializeField] private IntReference _RequiredPressWeight;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private readonly UnityConsoleLogger _Logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeReference] private IFloorPad _FloorPad;
 
         protected UnityConsoleLogger Logger => _Logger;
@@ -23,7 +24,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         protected virtual void Awake()
         {
             _Logger.Configure();
-            _FloorPad = new FloorPad(this, Logger, gameObject.name);
+            _FloorPad = new FloorPad(this, _Logger, gameObject.name);
         }
 
         public virtual bool CanPress(int additionalWeight)

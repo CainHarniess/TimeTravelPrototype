@@ -1,9 +1,11 @@
 using Osiris.TimeTravelPuzzler.Core.Interactions;
 using Osiris.Utilities.References;
+using System;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler
 {
+    [Obsolete("Class has been refactored. Use FloorPadInteractorBehaviour instead.", true)]
     public class PressableTriggerHandler : MonoBehaviour
     {
         [SerializeField] private IntReference _Weight;

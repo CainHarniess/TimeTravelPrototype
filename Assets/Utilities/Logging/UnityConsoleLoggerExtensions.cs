@@ -1,4 +1,6 @@
-﻿namespace Osiris.Utilities.Logging
+﻿using UnityEngine;
+
+namespace Osiris.Utilities.Logging
 {
     public static class UnityConsoleLoggerExtensions
     {
@@ -6,7 +8,7 @@
         {
             if (logger == null)
             {
-                logger = new NullConsoleLogger();
+                logger = (NullConsoleLogger)ScriptableObject.CreateInstance(typeof(NullConsoleLogger));
             }
         }
     }
