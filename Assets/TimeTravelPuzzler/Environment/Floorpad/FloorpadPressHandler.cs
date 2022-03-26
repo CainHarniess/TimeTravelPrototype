@@ -1,12 +1,13 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core.Events;
+using Osiris.TimeTravelPuzzler.Core.Interactions;
 using Osiris.TimeTravelPuzzler.EditorCustomisation;
 using Osiris.Utilities.References;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Environment.Floorpad
 {
-    public abstract class FloorpadPressHandler : MonoBehaviour
+    public abstract class FloorpadPressHandler : MonoBehaviour, IPressable
     {
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private IntReference _MinPressWeight;
