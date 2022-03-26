@@ -1,7 +1,8 @@
 ﻿using Osiris.EditorCustomisation;
-using O = Osiris.Utilities.Logging;
+using Osiris.TimeTravelPuzzler.Interactables.Core;
 using System;
 using UnityEngine;
+using O = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {

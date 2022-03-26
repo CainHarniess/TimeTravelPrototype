@@ -1,4 +1,5 @@
-﻿using O = Osiris.Utilities.Logging;
+﻿using Osiris.TimeTravelPuzzler.Interactables.Core;
+using O = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {

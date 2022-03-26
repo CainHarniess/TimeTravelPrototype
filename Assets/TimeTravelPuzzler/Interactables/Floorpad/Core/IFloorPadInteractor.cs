@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Osiris.TimeTravelPuzzler.Interactables
+﻿namespace Osiris.TimeTravelPuzzler.Interactables.Core
 {
     public interface IFloorPadInteractor
     {

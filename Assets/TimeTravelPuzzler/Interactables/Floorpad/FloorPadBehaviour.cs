@@ -1,4 +1,5 @@
 ﻿using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using UnityEngine;

@@ -2,6 +2,7 @@ using NSubstitute;
 using NUnit.Framework;
 using O = Osiris.Utilities.Logging;
 using UnityEngine;
+using Osiris.TimeTravelPuzzler.Interactables.Core;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NSubstitute;
 using NUnit.Framework;
+using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 using UnityEngine.TestTools;
