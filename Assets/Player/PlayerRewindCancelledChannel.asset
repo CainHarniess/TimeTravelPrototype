@@ -15,4 +15,4 @@ MonoBehaviour:
   _description: 'Channel notifying the TimelineManager of player rewind cancellation
     requests. The Timeline manager will either: reject the request; or approve it
     and cancel the rewind process.'
-  _logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
+  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}

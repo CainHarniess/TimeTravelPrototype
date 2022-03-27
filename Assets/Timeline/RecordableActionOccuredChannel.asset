@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _description: Channel notifying of the occurence of actions that should be recorded
     for rewind.
+  _Logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Osiris.TimeTravelPuzzler.Timeline
+namespace Osiris.TimeTravelPuzzler.Timeline.Core
 {
     public interface ITimelinePlayer
     {

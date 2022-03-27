@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [Serializable]
+    [Obsolete("No longer in use following on from timeline refactor. Use ListEventHistory class instead.", true)]
     public class ListTimeline : IStackable<ITimelineEvent>
     {
         [SerializeReference] private List<ITimelineEvent> _eventHistory;
