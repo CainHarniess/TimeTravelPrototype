@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f44f86405e8f13478f308e1033cd4e6, type: 3}
-  m_Name: FloorpadReleasedEvent
+  m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
+  m_Name: DoorConsoleLogger
   m_EditorClassIdentifier: 
-  _description: 
+  _DisplayLogging: 1

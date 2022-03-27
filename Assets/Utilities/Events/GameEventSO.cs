@@ -1,5 +1,6 @@
 ﻿using Osiris.Utilities.Editor;
 using Osiris.Utilities.Events;
+using Osiris.Utilities.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 

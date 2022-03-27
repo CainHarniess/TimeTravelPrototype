@@ -3,6 +3,7 @@ using NUnit.Framework;
 using O = Osiris.Utilities.Logging;
 using UnityEngine;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.Utilities.Events;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 {
@@ -12,6 +13,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 
         private IFloorPad _floorPadBehaviourSub;
         private FloorPad _floorPad;
+        private IEventChannelSO _pressedChannelSub;
+        private IEventChannelSO _releasedChannelSub;
         private O::UnityConsoleLogger _logger;
 
         [SetUp]
@@ -23,7 +26,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _logger = (O::UnityConsoleLogger)ScriptableObject.CreateInstance(typeof(O::UnityConsoleLogger));
             _logger.DisplayLogging = false;
 
-            _floorPad = new OneWayFloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix);
+            _floorPad = new OneWayFloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix, _pressedChannelSub,
+                                           _releasedChannelSub);
         }
 
         [Test]
@@ -37,7 +41,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         public void Release_ShouldLogErrorToUnityConsole()
         {
             O::ILogger loggerSub = Substitute.For<O::ILogger>();
-            OneWayFloorPad floorPad = new OneWayFloorPad(_floorPadBehaviourSub, loggerSub, _testLogPrefix);
+            OneWayFloorPad floorPad = new OneWayFloorPad(_floorPadBehaviourSub, loggerSub, _testLogPrefix,
+                                                         _pressedChannelSub, _releasedChannelSub);
             floorPad.Press();
             floorPad.Release();
 

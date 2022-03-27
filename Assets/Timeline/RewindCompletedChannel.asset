@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RewindCompletedChannel
   m_EditorClassIdentifier: 
   _description: Channel notifying the TimelineManager of rewind completion. The Timeline
-    manager then initiate the replay process.
-  _logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
+    manager will then initiate the replay process.
+  _Logger: {fileID: 0}

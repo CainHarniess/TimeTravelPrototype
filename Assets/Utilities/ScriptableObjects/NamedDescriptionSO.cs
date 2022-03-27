@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Core
+namespace Osiris.Utilities.ScriptableObjects
 {
     public class NamedDescriptionSO : DescriptionSO
     {
         [SerializeField] private string _name;
 
-        protected string Name 
+        protected string Name
         {
-            get => _name; 
+            get => _name;
             private set
             {
                 if (_name == value)

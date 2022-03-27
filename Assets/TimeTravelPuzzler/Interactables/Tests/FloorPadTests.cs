@@ -1,6 +1,7 @@
 using NSubstitute;
 using NUnit.Framework;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 
         private IFloorPad _floorPadBehaviourSub;
         private FloorPad _floorPad;
+        private IEventChannelSO _pressedChannelSub;
+        private IEventChannelSO _releasedChannelSub;
         private UnityConsoleLogger _logger;
 
         [SetUp]
@@ -20,11 +23,32 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _floorPadBehaviourSub = Substitute.For<IFloorPad>();
             _floorPadBehaviourSub.RequiredPressWeight.Returns(50);
 
+            _pressedChannelSub = Substitute.For<IEventChannelSO>();
+            _releasedChannelSub = Substitute.For<IEventChannelSO>();
+
             _logger = (UnityConsoleLogger)ScriptableObject.CreateInstance(typeof(UnityConsoleLogger));
             _logger.DisplayLogging = false;
 
-            _floorPad = new FloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix);
+            _floorPad = new FloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix, _pressedChannelSub,
+                                     _releasedChannelSub);
         }
+
+        #region RequiredPressWeight
+        [Test]
+        public void RequiredPressWeight_AccessesBehaviourValue()
+        {
+            int requiredPressWeight = _floorPad.RequiredPressWeight;
+            int behaviourPressWeight = _floorPadBehaviourSub.Received().RequiredPressWeight;
+        }
+
+        [Test]
+        public void RequiredPressWeight_ShouldEqualBehaviorValue()
+        {
+            int requiredPressWeight = _floorPad.RequiredPressWeight;
+            int behaviourPressWeight = _floorPadBehaviourSub.RequiredPressWeight;
+            Assert.AreEqual(behaviourPressWeight, requiredPressWeight);
+        } 
+        #endregion
 
         #region CanPress
         [Test]
@@ -60,15 +84,49 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             Assert.IsFalse(_floorPad.CanPress(49));
             _logger.Log("Add sufficient additional weight.", _testLogPrefix);
             Assert.IsTrue(_floorPad.CanPress(1));
-        } 
+        }
+
+        [Test]
+        public void CanPress_ShouldAccessBehaviourRequiredWeight()
+        {
+            _floorPad.CanPress(50);
+            int behaviourRequiredWeight = _floorPadBehaviourSub.Received().RequiredPressWeight;
+        }
         #endregion
 
+        #region Press
         [Test]
         public void Press_ShouldChangePressStatusIfNotPressed()
         {
             _floorPad.Press();
             Assert.IsTrue(_floorPad.IsPressed);
         }
+
+        [Test]
+        public void Press_ShouldBroadcastOnPressChannel()
+        {
+            _floorPad.Press();
+            _pressedChannelSub.Received().Raise();
+            _releasedChannelSub.DidNotReceive().Raise();
+        }
+
+        [Test]
+        public void Press_ShouldBroadcastOnPressChannelOnceIfNotReleased()
+        {
+            _floorPad.Press();
+            _floorPad.Press();
+            _pressedChannelSub.Received(1).Raise();
+        }
+
+        [Test]
+        public void Press_ShouldBroadcastOnPressChannelTwiceReleased()
+        {
+            _floorPad.Press();
+            _floorPad.Release();
+            _floorPad.Press();
+            _pressedChannelSub.Received(2).Raise();
+        } 
+        #endregion
 
         #region CanRelease
         [Test]
@@ -118,6 +176,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         }
         #endregion
 
+        #region Release
         [Test]
         public void Release_ShouldChangePressStatusIfNotPressed()
         {
@@ -126,5 +185,33 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _floorPad.Release();
             Assert.IsFalse(_floorPad.IsPressed);
         }
+
+        [Test]
+        public void Release_ShouldBroadcastOnReleaseChannel()
+        {
+            _floorPad.Press();
+            _floorPad.Release();
+            _releasedChannelSub.Received().Raise();
+        }
+
+        [Test]
+        public void Release_ShouldBroadcastOnReleaseChannelOnceIfNotPressedAgain()
+        {
+            _floorPad.Press();
+            _floorPad.Release();
+            _floorPad.Release();
+            _releasedChannelSub.Received(1).Raise();
+        }
+
+        [Test]
+        public void Release_ShouldBroadcastOnReleaseChannelOnceIfPressedAgain()
+        {
+            _floorPad.Press();
+            _floorPad.Release();
+            _floorPad.Press();
+            _floorPad.Release();
+            _releasedChannelSub.Received(2).Raise();
+        } 
+        #endregion
     }
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32009fae868122144b13f833c5a9ab28, type: 3}
   m_Name: ReplayCompletedChannel
   m_EditorClassIdentifier: 
-  _description: 
-  _logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
+  _description: Channel notifying the TimelineManager of replay completion. The Timeline
+    manager will then stop the replay process and re-activate timeline event recording.
+  _Logger: {fileID: 0}

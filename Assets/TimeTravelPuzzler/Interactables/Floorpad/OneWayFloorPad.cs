@@ -1,12 +1,14 @@
 ﻿using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public class OneWayFloorPad : FloorPad
     {
-        public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger, string gameObjectName)
-            : base(floorPadBehaviour, logger, gameObjectName)
+        public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger, string gameObjectName,
+                              IEventChannelSO pressChannel, IEventChannelSO releaseChannel)
+            : base(floorPadBehaviour, logger, gameObjectName, pressChannel, releaseChannel)
         {
 
         }

@@ -4,7 +4,7 @@
     {
         protected override void Awake()
         {
-            FloorPad = new OneWayFloorPad(this, Logger, gameObject.name);
+            FloorPad = new OneWayFloorPad(this, Logger, gameObject.name, Pressed, Released);
         }
     }
 }

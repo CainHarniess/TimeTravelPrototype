@@ -1,5 +1,6 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.Utilities.Events;
 using System;
 using UnityEngine;
 using O = Osiris.Utilities.Logging;
@@ -12,16 +13,13 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         private readonly string _gameObjectName;
         private readonly O::ILogger _Logger;
         private readonly IFloorPad _floorPadBehaviour;
+        private readonly IEventChannelSO _pressed;
+        private readonly IEventChannelSO _released;
         
         [ReadOnly] [SerializeField] private int _CurrentPressWeight;
         [ReadOnly] [SerializeField] private bool _IsPressed;
 
-        public FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger, string gameObjectName)
-            : this(floorPadBehaviour, logger)
-        {
-            _gameObjectName = gameObjectName;
-        }
-
+        #region Constructors
         private FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger)
         {
             _floorPadBehaviour = floorPadBehaviour;
@@ -29,6 +27,20 @@ namespace Osiris.TimeTravelPuzzler.Interactables
             _CurrentPressWeight = 0;
             _IsPressed = false;
         }
+        private FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger, string gameObjectName)
+            : this(floorPadBehaviour, logger)
+        {
+            _gameObjectName = gameObjectName;
+        }
+
+        public FloorPad(IFloorPad floorPadBehaviour, O::ILogger logger, string gameObjectName,
+                        IEventChannelSO pressChannel, IEventChannelSO releaseChannel)
+            : this(floorPadBehaviour, logger, gameObjectName)
+        {
+            _pressed = pressChannel;
+            _released = releaseChannel;
+        } 
+        #endregion
 
         protected string GameObjectName => _gameObjectName;
         protected O::ILogger Logger => _Logger;
@@ -63,6 +75,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
                 _Logger.Log("Pressing floor pad that is already pressed.", _gameObjectName, O::LogLevel.Warning);
                 return;
             }
+            _pressed.Raise();
             _IsPressed = true;
         }
 
@@ -93,6 +106,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
                 _Logger.Log("Releasing floor pad that is already released.", _gameObjectName, O::LogLevel.Warning);
                 return;
             }
+            _released.Raise();
             _IsPressed = false;
         }
     }

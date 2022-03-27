@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4102972334562530826}
   - component: {fileID: 4102972334562530827}
   - component: {fileID: 4102972334562530824}
-  - component: {fileID: 4102972334562530868}
-  - component: {fileID: 4102972334562530871}
-  - component: {fileID: 4102972334562530869}
+  - component: {fileID: 1112991950}
+  - component: {fileID: 1112991951}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -112,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4102972334562530868
+--- !u!114 &1112991950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,26 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4102972334562530825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527f404c71e1d4741b49ea034401d0e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f66127e01982454aad0a953314302f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: 432b6cede19e9a5459b08744695aaec7, type: 2}
-  _eventHandler:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4102972334562530869}
-        m_TargetAssemblyTypeName: Door, Osiris.TimeTravelPuzzler
-        m_MethodName: Open
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4102972334562530871
+--- !u!114 &1112991951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,35 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4102972334562530825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527f404c71e1d4741b49ea034401d0e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ecb5c91ad96ea24e9eaf26968c81ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: f18a053858989004992cc4ca693ee507, type: 2}
-  _eventHandler:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4102972334562530869}
-        m_TargetAssemblyTypeName: Osiris.TimeTravelPuzzler.Environment.Door, Osiris.TimeTravelPuzzler
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4102972334562530869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4102972334562530825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364a28d51a006fb4f80db9efe3c10e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _IsOpen: 0
+  _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}

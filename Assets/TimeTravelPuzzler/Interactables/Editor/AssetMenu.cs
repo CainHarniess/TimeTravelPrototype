@@ -4,7 +4,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     {
         public const string MenuRoot = "ScriptableObjects/Interactables/";
 
-        public const string FloorPadPressEventChannelFileName = "New Floor Pad Press Event Channel";
-        public const string FloorPadPressEventChannelPath = MenuRoot + "FloorPadPressEventChannel";
+        public const string FloorPadEventChannelFileName = "New Floor Pad Event Channel";
+        public const string FloorPadEventChannelPath = MenuRoot + "FloorPadEventChannel";
     }
 }

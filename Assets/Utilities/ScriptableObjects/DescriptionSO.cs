@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Core
+namespace Osiris.Utilities.ScriptableObjects
 {
     public class DescriptionSO : ScriptableObject
     {

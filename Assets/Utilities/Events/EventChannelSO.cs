@@ -1,13 +1,14 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.Utilities.Editor;
 using Osiris.Utilities.Logging;
+using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Osiris.Utilities.Events
 {
     [CreateAssetMenu(fileName = AssetMenu.EventChannelFileName, menuName = AssetMenu.EventChannelPath)]
-    public class EventChannelSO : ScriptableObject
+    public class EventChannelSO : DescriptionSO, IEventChannelSO
     {
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -31,7 +32,7 @@ namespace Osiris.Utilities.Events
     }
 
     [CreateAssetMenu(fileName = AssetMenu.EventChannel1FileName, menuName = AssetMenu.EventChannel1Path)]
-    public class EventChannelSO<T> : ScriptableObject
+    public class EventChannelSO<T> : ScriptableObject, IEventChannelSO<T>
     {
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
