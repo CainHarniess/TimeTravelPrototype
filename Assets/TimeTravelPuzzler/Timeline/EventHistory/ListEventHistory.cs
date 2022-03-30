@@ -21,6 +21,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             _EventHistory.Add(item);
         }
+
         public ITimelineEvent Peek()
         {
             if (_EventHistory.Count == 0)

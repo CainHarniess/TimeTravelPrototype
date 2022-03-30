@@ -1,4 +1,5 @@
 ﻿using Osiris.EditorCustomisation;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.Events;
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [CreateAssetMenu(fileName = AssetMenu.ReplayEventChannelFileName, menuName = AssetMenu.ReplayEventChannelPath)]
-    public class ReplayEventChannelSO : DescriptionSO
+    public class ReplayEventChannelSO : DescriptionSO, IEventChannelSO
     {
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;

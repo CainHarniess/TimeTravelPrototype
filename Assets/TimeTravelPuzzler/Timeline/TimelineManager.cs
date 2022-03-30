@@ -1,12 +1,11 @@
-using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.EditorCustomisation;
-using System;
-using System.Collections;
-using UnityEngine;
-using Osiris.Utilities.Logging;
-using System.Collections.Generic;
+using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
+using Osiris.Utilities.Logging;
 using Osiris.Utilities.Timing;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -141,9 +140,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _ReplayPlayback = new TimelineReplayPlayer(_ReplayCompleted, _Logger);
             _RewindProgressStopwatch = new Stopwatch();
             _RewindPlayback = new TimelineRewindPlayer(_ReplayPlayback,
-                                                     _RewindProgressStopwatch,
-                                                     _RewindCompleted,
-                                                     _Logger);
+                                                       _RewindProgressStopwatch,
+                                                       _RewindCompleted,
+                                                       _Logger);
         }
 
         private void ConfigureEventRecorder()

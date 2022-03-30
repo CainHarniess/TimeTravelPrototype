@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
-    public class GoalSpriteAnimator// : MonoBehaviour
+    public class GoalSpriteAnimator
     {
         private SpriteRenderer _sprite;
 
