@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.Testing;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
@@ -17,7 +18,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         {
             _collider = GetComponent<BoxCollider2D>();
             _sprite = GetComponent<SpriteRenderer>();
-            _Door = new Door(gameObject.name, _Logger);
+
+            var colliderProxy = new BehaviourProxy(_collider);
+            var rendererProxy = new RendererProxy(_sprite);
+
+            _Door = new Door(gameObject.name, _Logger, rendererProxy, colliderProxy);
         }
 
         public bool IsOpen => _Door.IsOpen;
@@ -30,7 +35,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         public void Open()
         {
             _Door.Open();
-            SetComponentStatus(false);
         }
 
         public bool CanClose()
@@ -41,7 +45,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         public void Close()
         {
             _Door.Close();
-            SetComponentStatus(true);
         }
 
         private void SetComponentStatus(bool isActive)

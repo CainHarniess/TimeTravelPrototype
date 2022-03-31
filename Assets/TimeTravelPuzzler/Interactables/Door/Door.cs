@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.Testing;
 using System;
 using UnityEngine;
 using OUL = Osiris.Utilities.Logging;
@@ -10,13 +11,22 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     {
         private readonly string _gameObjectName;
         private readonly OUL.ILogger _logger;
+        private readonly IRendererProxy _rendererProxy;
+        private readonly IBehaviourProxy _colliderProxy;
 
         [ReadOnly] [SerializeField] private bool _IsOpen;
 
-        public Door(string gameObjectName, OUL.ILogger logger)
+        private Door(string gameObjectName, OUL.ILogger logger)
         {
             _gameObjectName = gameObjectName;
             _logger = logger;
+        }
+
+        public Door(string gameObjectName, OUL.ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy)
+            : this (gameObjectName, logger)
+        {
+            _rendererProxy = rendererProxy;
+            _colliderProxy = colliderProxy;
         }
 
         public bool IsOpen => _IsOpen;
@@ -35,6 +45,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         public void Open()
         {
             _IsOpen = true;
+            SetComponentStatus(false);
         }
 
         public bool CanClose()
@@ -51,6 +62,13 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         public void Close()
         {
             _IsOpen = false;
+            SetComponentStatus(true);
+        }
+
+        private void SetComponentStatus(bool isActive)
+        {
+            _rendererProxy.Enabled = isActive;
+            _colliderProxy.Enabled = isActive;
         }
     }
 }

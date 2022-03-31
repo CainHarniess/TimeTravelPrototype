@@ -23,6 +23,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _floorPadBehaviourSub = Substitute.For<IFloorPad>();
             _floorPadBehaviourSub.RequiredPressWeight.Returns(50);
 
+            _pressedChannelSub = Substitute.For<IEventChannelSO>();
+            _releasedChannelSub = Substitute.For<IEventChannelSO>();
+
             _logger = (O::UnityConsoleLogger)ScriptableObject.CreateInstance(typeof(O::UnityConsoleLogger));
             _logger.DisplayLogging = false;
 
@@ -34,7 +37,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         public void CanRelease_ShouldReturnFalseAfterBeingPressed()
         {
             _floorPad.Press();
-            Assert.IsFalse(_floorPad.CanRelease(-_floorPad.CurrentPressWeight));
+            Assert.False(_floorPad.CanRelease(-_floorPad.CurrentPressWeight));
         }
 
         [Test]
