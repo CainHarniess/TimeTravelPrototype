@@ -2,7 +2,7 @@ using NSubstitute;
 using NUnit.Framework;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Events;
-using Osiris.Utilities.Logging;
+using OUL = Osiris.Utilities.Logging;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Tests
@@ -15,7 +15,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         private FloorPad _floorPad;
         private IEventChannelSO _pressedChannelSub;
         private IEventChannelSO _releasedChannelSub;
-        private UnityConsoleLogger _logger;
+        private OUL.ILogger _loggerSub;
 
         [SetUp]
         public void Initialise()
@@ -26,10 +26,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _pressedChannelSub = Substitute.For<IEventChannelSO>();
             _releasedChannelSub = Substitute.For<IEventChannelSO>();
 
-            _logger = (UnityConsoleLogger)ScriptableObject.CreateInstance(typeof(UnityConsoleLogger));
-            _logger.DisplayLogging = false;
+            _loggerSub = Substitute.For<OUL.ILogger>();
 
-            _floorPad = new FloorPad(_floorPadBehaviourSub, _logger, _testLogPrefix, _pressedChannelSub,
+            _floorPad = new FloorPad(_floorPadBehaviourSub, _loggerSub, _testLogPrefix, _pressedChannelSub,
                                      _releasedChannelSub);
         }
 
@@ -80,9 +79,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         [Test]
         public void CanPress_ShouldReturnTrueWithSufficientCombinedWeight()
         {
-            _logger.Log("Add insufficient weight.", _testLogPrefix);
+            _loggerSub.Log("Add insufficient weight.", _testLogPrefix);
             Assert.IsFalse(_floorPad.CanPress(49));
-            _logger.Log("Add sufficient additional weight.", _testLogPrefix);
+            _loggerSub.Log("Add sufficient additional weight.", _testLogPrefix);
             Assert.IsTrue(_floorPad.CanPress(1));
         }
 
