@@ -25,9 +25,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private const string LogPrefix = "TimelineRewindPlayer";
 
-        public TimelineRewindPlayer(ITimelinePlayer replayPlayer,
-                                    IStopwatch stopwatch,
-                                    IEventChannelSO rewindCompleted,
+        public TimelineRewindPlayer(ITimelinePlayer replayPlayer, IStopwatch stopwatch, IEventChannelSO rewindCompleted,
                                     OUL.ILogger logger)
         {
             _replayPlayer = replayPlayer;

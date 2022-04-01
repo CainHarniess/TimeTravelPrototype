@@ -148,8 +148,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private void ConfigureEventRecorder()
         {
             _EventHistory = new ListEventHistory(new List<ITimelineEvent>(50));
-            _eventFactory = new TimelineEventFactory();
-            _eventRecorder = new TimelineEventRecorder(_EventHistory, _eventFactory);
+            _eventFactory = new TimelineEventFactory(_Logger);
+            _eventRecorder = new TimelineEventRecorder(_EventHistory, _eventFactory, _Logger);
         }
 
         private void ConfigureLogger()
