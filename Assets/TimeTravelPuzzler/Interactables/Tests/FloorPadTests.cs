@@ -3,7 +3,6 @@ using NUnit.Framework;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Events;
 using OUL = Osiris.Utilities.Logging;
-using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 {

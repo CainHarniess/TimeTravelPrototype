@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Osiris.Utilities.PlayTestSupport
+namespace Osiris.Testing
 {
     public class TestRoutineRunner : MonoBehaviour
     {

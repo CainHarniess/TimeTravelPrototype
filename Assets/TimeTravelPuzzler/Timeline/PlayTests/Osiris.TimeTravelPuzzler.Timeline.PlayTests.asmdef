@@ -6,7 +6,8 @@
         "UnityEditor.TestRunner",
         "Osiris.TimeTravelPuzzler.Timeline",
         "Osiris.Utilities",
-        "Osiris.TimeTravelPuzzler.Core"
+        "Osiris.TimeTravelPuzzler.Core",
+        "Osiris.Testing"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
