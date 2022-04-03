@@ -1,12 +1,11 @@
-using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.EditorCustomisation;
-using System;
-using System.Collections;
-using UnityEngine;
-using Osiris.Utilities.Logging;
-using System.Collections.Generic;
+using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
+using Osiris.Utilities.Logging;
 using Osiris.Utilities.Timing;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -18,11 +17,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private IEnumerator _coroutine;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeReference] private ListEventHistory _EventHistory;
-        [SerializeReference] private ITimelinePlayer _rewindPlayback;
-        [SerializeReference] private IStopwatch _rewindProgressStopwatch;
-        [SerializeReference] private ITimelinePlayer _replayPlayback;
+        [SerializeReference] private ITimelinePlayer _RewindPlayback;
+        [SerializeReference] private IStopwatch _RewindProgressStopwatch;
+        [SerializeReference] private ITimelinePlayer _ReplayPlayback;
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
@@ -45,33 +44,33 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private void StartRewindProcess()
         {
-            _rewindPlayback.Build(_EventHistory);
-            if (!_rewindPlayback.CanPlay())
+            _RewindPlayback.Build(_EventHistory);
+            if (!_RewindPlayback.CanPlay())
             {
-                _logger.Log("Rewind request rejected.", gameObject.name);
+                _Logger.Log("Rewind request rejected.", gameObject.name);
                 return;
             }
 
-            _logger.Log("Rewind request approved.", gameObject.name);
+            _Logger.Log("Rewind request approved.", gameObject.name);
 
             StopRecording();
             _RewindCompleted.Event += StopRewindStartReplay;
-            _coroutine = _rewindPlayback.Play(Time.time);
+            _coroutine = _RewindPlayback.Play(Time.time);
             StartCoroutine(_coroutine);
         }
 
         private void StopRewindProcess()
         {
-            if (!_rewindPlayback.CanStop())
+            if (!_RewindPlayback.CanStop())
             {
-                _logger.Log("Rewind cancellation request rejected.", gameObject.name);
+                _Logger.Log("Rewind cancellation request rejected.", gameObject.name);
                 return;
             }
             
-            _rewindPlayback.Stop();
+            _RewindPlayback.Stop();
             if (_coroutine == null)
             {
-                _logger.Log("No coroutine to stop.", name, LogLevel.Error);
+                _Logger.Log("No coroutine to stop.", name, LogLevel.Error);
                 return;
             }
             StopCoroutine(_coroutine);
@@ -81,36 +80,36 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private void StopRewindStartReplay()
         {
             StopRewindProcess();
-            StartReplayProcess(_rewindProgressStopwatch.DeltaTime);
+            StartReplayProcess(_RewindProgressStopwatch.DeltaTime);
         }
 
         private void StartReplayProcess(float initialWaitTime)
         {
-            if (!_replayPlayback.CanPlay())
+            if (!_ReplayPlayback.CanPlay())
             {
                 return;
             }
             _ReplayCompleted.Event += StopReplayProcess;
-            _coroutine = _replayPlayback.Play(initialWaitTime);
+            _coroutine = _ReplayPlayback.Play(initialWaitTime);
             StartCoroutine(_coroutine);
         }
 
         private void StopReplayProcess()
         {
-            _logger.Log("Stop replay request received.", gameObject.name);
-            if (!_replayPlayback.CanStop())
+            _Logger.Log("Stop replay request received.", gameObject.name);
+            if (!_ReplayPlayback.CanStop())
             {
-                _logger.Log("Replay cancellation request rejected.", gameObject.name);
+                _Logger.Log("Replay cancellation request rejected.", gameObject.name);
                 return;
             }
 
-            _replayPlayback.Stop();
+            _ReplayPlayback.Stop();
             _ReplayCompleted.Event += StopReplayProcess;
             StartRecording();
 
             if (_coroutine == null)
             {
-                _logger.Log("No coroutine to stop.", name, LogLevel.Error);
+                _Logger.Log("No coroutine to stop.", name, LogLevel.Error);
                 return;
             }
             StopCoroutine(_coroutine);
@@ -138,26 +137,27 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         #region Initialisation
         private void ConfigurePlaybacks()
         {
-            _replayPlayback = new TimelineReplayPlayer(_ReplayCompleted, _logger);
-            _rewindProgressStopwatch = new Stopwatch();
-            _rewindPlayback = new TimelineRewindPlayer(_replayPlayback,
-                                                     _rewindProgressStopwatch,
-                                                     _RewindCompleted,
-                                                     _logger);
+            _ReplayPlayback = new TimelineReplayPlayer(_ReplayCompleted, _Logger);
+            _RewindProgressStopwatch = new Stopwatch();
+            _RewindPlayback = new TimelineRewindPlayer(_ReplayPlayback,
+                                                       _RewindProgressStopwatch,
+                                                       _RewindCompleted,
+                                                       _Logger);
         }
 
         private void ConfigureEventRecorder()
         {
             _EventHistory = new ListEventHistory(new List<ITimelineEvent>(50));
-            _eventFactory = new TimelineEventFactory();
-            _eventRecorder = new TimelineEventRecorder(_EventHistory, _eventFactory);
+            _eventFactory = new TimelineEventFactory(_Logger);
+            _eventRecorder = new TimelineEventRecorder(_EventHistory, _eventFactory, _Logger);
         }
 
         private void ConfigureLogger()
         {
-            if (_logger == null)
+            if (_Logger == null)
             {
-                _logger = new NullConsoleLogger();
+                _Logger = ScriptableObject.CreateInstance<NullConsoleLogger>();
+                _Logger.Configure();
             }
         } 
         #endregion

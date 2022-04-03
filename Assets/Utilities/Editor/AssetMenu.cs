@@ -1,6 +1,6 @@
-﻿namespace Osiris.Utilities
+﻿namespace Osiris.Utilities.Editor
 {
-    internal class AssetMenu
+    internal struct AssetMenu
     {
         public const string MenuRoot = "ScriptableObjects/Utilities/";
 
@@ -15,5 +15,14 @@
 
         public const string UnityConsoleLoggerFileName = "New Unity Console Logger";
         public const string UnityConsoleLoggerPath = MenuRoot + "UnityConsoleLogger";
+
+        public const string GameEventFileName = "New Game Event";
+        public const string GameEventPath = MenuRoot + "GameEvent";
+
+        public const string EventChannelFileName = "New Event Channel";
+        public const string EventChannelPath = MenuRoot + "EventChannel";
+
+        public const string EventChannel1FileName = "New Event Channel 1";
+        public const string EventChannel1Path = MenuRoot + "EventChannel 1";
     }
 }

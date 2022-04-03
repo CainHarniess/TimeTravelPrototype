@@ -11,7 +11,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     public class TimelineReplayPlayer : ITimelinePlayer
     {
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
         [ReadOnly] [SerializeField] private bool _InProgress;
         [SerializeReference] private ListEventHistory _ReplayPlaylist;
 
@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         public TimelineReplayPlayer(ReplayEventChannelSO replayCompleted, UnityConsoleLogger logger)
         {
             _ReplayCompleted = replayCompleted;
-            _logger = logger;
+            _Logger = logger;
         }
 
         public void Build(ListEventHistory eventHistory)
@@ -35,13 +35,13 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             if (_InProgress)
             {
-                _logger.Log("Rewind already in progress.", LogPrefix, LogLevel.Warning);
+                _Logger.Log("Rewind already in progress.", LogPrefix, LogLevel.Warning);
                 return false;
             }
 
             if (_ReplayPlaylist.Count == 0)
             {
-                _logger.Log("Rewind playlist is empty.", LogPrefix, LogLevel.Warning);
+                _Logger.Log("Rewind playlist is empty.", LogPrefix, LogLevel.Warning);
                 return false;
             }
             return true;
@@ -64,7 +64,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 if (_ReplayPlaylist.Count == 0)
                 {
                     _ReplayCompleted.Raise();
-                    yield break;
+                    //yield break;
                 }
 
                 waitTime = _ReplayPlaylist.Peek().Time - timelineEventToUndo.Time;
@@ -73,10 +73,10 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         public bool CanStop()
         {
-            _logger.Log("Stop replay request received.", LogPrefix);
+            _Logger.Log("Stop replay request received.", LogPrefix);
             if (!_InProgress)
             {
-                _logger.Log("Replay not in progress.", LogPrefix, LogLevel.Warning);
+                _Logger.Log("Replay not in progress.", LogPrefix, LogLevel.Warning);
                 return false;
             }
             return true;

@@ -1,31 +1,30 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Core;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
+using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [CreateAssetMenu(fileName = AssetMenu.ReplayEventChannelFileName, menuName = AssetMenu.ReplayEventChannelPath)]
-    public class ReplayEventChannelSO : DescriptionSO
+    public class ReplayEventChannelSO : DescriptionSO, IEventChannelSO
     {
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
 
         public event UnityAction Event;
 
-        private const string LogPrefix = "ReplayEventChannelSO";
-
         public void Raise()
         {
-            _logger.Log("Replay event received on channel.", name);
+            _Logger.Log("Replay event received on channel.", name);
             if (Event != null)
             {
                 Event.Invoke();
             }
             else
             {
-                _logger.Log("A replay event was raised, but no listeners are configured.", name);
+                _Logger.Log("A replay event was raised, but no listeners are configured.", name);
             }
         }
     }

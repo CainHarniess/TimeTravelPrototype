@@ -1,0 +1,26 @@
+{
+    "name": "Osiris.TimeTravelPuzzler.Timeline.PlayTests",
+    "rootNamespace": "Osiris.TimeTravelPuzzler.Timeline.PlayTests",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Osiris.TimeTravelPuzzler.Timeline",
+        "Osiris.Utilities",
+        "Osiris.TimeTravelPuzzler.Core",
+        "Osiris.Testing"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

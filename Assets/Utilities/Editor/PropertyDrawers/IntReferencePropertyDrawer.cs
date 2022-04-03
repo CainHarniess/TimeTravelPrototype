@@ -1,9 +1,8 @@
 using Osiris.Utilities.References;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.EditorCustomisation
+namespace Osiris.Utilities.Editor
 {
     [CustomPropertyDrawer(typeof(IntReference))]
     public class IntReferencePropertyDrawer : GenericReferencePropertyDrawer<int>

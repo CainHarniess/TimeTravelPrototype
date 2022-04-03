@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3214537018688143617}
   - component: {fileID: 4928823404502158353}
   - component: {fileID: 1890205401387670813}
-  - component: {fileID: 4805412194791503996}
+  - component: {fileID: 7787925141115598109}
   m_Layer: 0
   m_Name: PlayerClone
   m_TagString: Untagged
@@ -149,9 +149,8 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _IsActive: 0
-  _rewindEventChannel: {fileID: 11400000, guid: 377c995971eb02644a2ff35b8d1205c4, type: 2}
   _replayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}
---- !u!114 &4805412194791503996
+--- !u!114 &7787925141115598109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,10 +159,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1890205401387670811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec8e8529e48bb344ae9e8beaea8f00b, type: 3}
+  m_Script: {fileID: 11500000, guid: a36fc3843da17f94a92cadad7eeaf289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Weight:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}

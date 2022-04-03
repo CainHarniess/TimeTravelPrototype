@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.EditorCustomisation
+namespace Osiris.Utilities.Editor
 {
     public abstract class GenericReferencePropertyDrawer<T> : PropertyDrawer
     {
@@ -77,8 +77,8 @@ namespace Osiris.TimeTravelPuzzler.EditorCustomisation
 
         private Rect GetValueRect(Rect propertyRect, Rect dropDownRect)
         {
-            Vector2 valueRectPosition = dropDownRect.position + (dropDownRect.width * Vector2.right);
-            Vector2 valueRectSize = propertyRect.size - (dropDownRect.width * Vector2.right);
+            Vector2 valueRectPosition = dropDownRect.position + dropDownRect.width * Vector2.right;
+            Vector2 valueRectSize = propertyRect.size - dropDownRect.width * Vector2.right;
             Rect valueRect = new Rect(valueRectPosition, valueRectSize);
             return valueRect;
         }

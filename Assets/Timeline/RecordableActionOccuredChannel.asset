@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df83921be8b159c40ac50709e003dfc4, type: 3}
   m_Name: RecordableActionOccuredChannel
   m_EditorClassIdentifier: 
-  _description: An event channel notifying of the occurence of actions that should
-    be recorded for rewind.
+  _description: Channel notifying of the occurence of actions that should be recorded
+    for rewind.
+  _Logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}

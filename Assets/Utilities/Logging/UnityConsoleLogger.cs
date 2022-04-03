@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Osiris.Utilities.Editor;
+using UnityEngine;
 
 namespace Osiris.Utilities.Logging
 {
@@ -8,7 +9,7 @@ namespace Osiris.Utilities.Logging
     {
         [SerializeField] private bool _DisplayLogging;
 
-        public bool DisplayLogging { get => _DisplayLogging; }
+        public bool DisplayLogging { get => _DisplayLogging; set => _DisplayLogging = value; }
 
         public virtual void Log(string message, GameObject sender = null, LogLevel logLevel = LogLevel.Info)
         {
@@ -45,5 +46,4 @@ namespace Osiris.Utilities.Logging
             return message;
         }
     }
-
 }

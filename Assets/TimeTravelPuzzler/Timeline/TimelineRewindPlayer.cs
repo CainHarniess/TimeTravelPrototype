@@ -1,6 +1,7 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
-using Osiris.Utilities.Logging;
+using Osiris.Utilities.Events;
+using OUL = Osiris.Utilities.Logging;
 using Osiris.Utilities.Timing;
 using System;
 using System.Collections;
@@ -15,21 +16,17 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private readonly ITimelinePlayer _replayPlayer;
         private IStopwatch _rewindStopwatch;
         private ListEventHistory _ReplayPlaylist;
+        private IEventChannelSO _RewindCompleted;
+        private OUL.ILogger _logger;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeReference] private ListEventHistory _RewindPlaylist;
         [ReadOnly] [SerializeField] private bool _InProgress;
-        [SerializeField] private UnityConsoleLogger _logger;
-
-        [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private RewindEventChannelSO _RewindCompleted;
 
         private const string LogPrefix = "TimelineRewindPlayer";
 
-        public TimelineRewindPlayer(ITimelinePlayer replayPlayer,
-                                    IStopwatch stopwatch,
-                                    RewindEventChannelSO rewindCompleted,
-                                    UnityConsoleLogger logger)
+        public TimelineRewindPlayer(ITimelinePlayer replayPlayer, IStopwatch stopwatch, IEventChannelSO rewindCompleted,
+                                    OUL.ILogger logger)
         {
             _replayPlayer = replayPlayer;
             _rewindStopwatch = stopwatch;
@@ -47,13 +44,13 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             if (_InProgress)
             {
-                _logger.Log("Rewind already in progress.", LogPrefix, LogLevel.Warning);
+                _logger.Log("Rewind already in progress.", LogPrefix, OUL.LogLevel.Warning);
                 return false;
             }
 
             if (_RewindPlaylist.Count == 0)
             {
-                _logger.Log("Rewind playlist is empty.", LogPrefix, LogLevel.Warning);
+                _logger.Log("Rewind playlist is empty.", LogPrefix, OUL.LogLevel.Warning);
                 return false;
             }
             return true;
@@ -94,7 +91,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _logger.Log("Stop rewind request received.", LogPrefix);
             if (!_InProgress)
             {
-                _logger.Log("Rewind not in progress.", LogPrefix, LogLevel.Warning);
+                _logger.Log("Rewind not in progress.", LogPrefix, OUL.LogLevel.Warning);
                 return false;
             }
             return true;

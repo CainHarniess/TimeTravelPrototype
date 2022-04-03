@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace Osiris.TimeTravelPuzzler.Timeline.Tests
 {
+    [Obsolete("ListTimeline is not longer in use. Tests are therefore unnecessary.")]
     public class ListTimelineTests
     {
         private ITimelineEvent _timelineEvent;

@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Interactables;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.Logging;
 using System.Collections;
@@ -10,7 +11,6 @@ namespace Osiris.TimeTravelPuzzler
     {
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
-        private PressableTriggerHandler _triggerHandler;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private float _deactivationDelay = 1;
@@ -27,7 +27,6 @@ namespace Osiris.TimeTravelPuzzler
         {
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
-            _triggerHandler = GetComponent<PressableTriggerHandler>();
 
             if (_logger == null)
             {
@@ -77,7 +76,6 @@ namespace Osiris.TimeTravelPuzzler
         {
             _sprite.enabled = isActive;
             _collider.enabled = isActive;
-            _triggerHandler.enabled = isActive;
             _IsActive = isActive;
         }
     }

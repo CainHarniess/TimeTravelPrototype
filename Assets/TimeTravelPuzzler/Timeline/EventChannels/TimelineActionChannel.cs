@@ -1,25 +1,12 @@
-using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.Utilities.Events;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     [CreateAssetMenu(fileName = AssetMenu.TimelineEventChannelFileName, menuName = AssetMenu.TimelineEventChannelPath)]
-    public class TimelineActionChannel : DescriptionSO
+    public class TimelineActionChannel : EventChannelSO<IRewindableCommand>, IEventChannelSO<IRewindableCommand>
     {
-        public event UnityAction<IRewindableCommand> Event;
-
-        public void Raise(IRewindableCommand command)
-        {
-            if (Event != null)
-            {
-                Event.Invoke(command);
-            }
-            else
-            {
-                Debug.LogWarning("A timeline event occured, but no listeners are configured.");
-            }
-        }
+        
     }
 }
