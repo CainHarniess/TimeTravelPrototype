@@ -2,8 +2,8 @@
 {
     public interface IFloorPad
     {
-        int CurrentPressWeight { get; }
-        bool IsPressed { get; }
+        int CurrentPressWeight { get; set; }
+        bool IsPressed { get; set; }
         int RequiredPressWeight { get; }
         bool CanPress(int additionalWeight);
         bool CanRelease(int weightRemoved);

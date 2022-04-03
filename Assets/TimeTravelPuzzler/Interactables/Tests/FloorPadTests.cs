@@ -1,9 +1,9 @@
 using NSubstitute;
 using NUnit.Framework;
+using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Events;
 using OUL = Osiris.Utilities.Logging;
-using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Tests
 {
@@ -15,6 +15,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         private FloorPad _floorPad;
         private IEventChannelSO _pressedChannelSub;
         private IEventChannelSO _releasedChannelSub;
+        private IEventChannelSO<IRewindableCommand> _recordableEventChannelSub;
         private OUL.ILogger _loggerSub;
 
         [SetUp]
@@ -26,10 +27,12 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _pressedChannelSub = Substitute.For<IEventChannelSO>();
             _releasedChannelSub = Substitute.For<IEventChannelSO>();
 
+            _recordableEventChannelSub = Substitute.For<IEventChannelSO<IRewindableCommand>>();
+
             _loggerSub = Substitute.For<OUL.ILogger>();
 
             _floorPad = new FloorPad(_floorPadBehaviourSub, _loggerSub, _testLogPrefix, _pressedChannelSub,
-                                     _releasedChannelSub);
+                                     _releasedChannelSub, _recordableEventChannelSub);
         }
 
         #region RequiredPressWeight
@@ -55,6 +58,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         {
             _floorPad.Press();
             Assert.IsFalse(_floorPad.CanPress(_floorPadBehaviourSub.RequiredPressWeight));
+        }
+
+        [Test]
+        public void CanPress_ShouldAlwaysIncreaseCurrentWeightFirst()
+        {
+            _floorPad.Press();
+            _floorPad.CanPress(49); // Setting this to 50 should cause a pass.
+            Assert.AreEqual(_floorPadBehaviourSub.RequiredPressWeight, _floorPad.CurrentPressWeight);
         }
 
         [Test]
