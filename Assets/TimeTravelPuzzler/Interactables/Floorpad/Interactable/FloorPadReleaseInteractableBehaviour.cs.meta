@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 7f974167934ecaa46b6d3d43d0cf9c74
+guid: 19172b1428cd4744db237d03d6617612
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  - _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -13,25 +13,22 @@ namespace Osiris.TimeTravelPuzzler
         private BoxCollider2D _collider;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private float _deactivationDelay = 1;
-        [SerializeField] private Transform _playerTransform;
+        [SerializeField] private float _DeactivationDelay = 1;
+        [SerializeField] private Transform _PlayerTransform;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _logger;
+        [SerializeField] private UnityConsoleLogger _Logger;
         [ReadOnly] [SerializeField] private bool _IsActive;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private ReplayEventChannelSO _replayCompletedChannel;
+        [SerializeField] private ReplayEventChannelSO _ReplayCompletedChannel;
 
         private void Awake()
         {
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
 
-            if (_logger == null)
-            {
-                _logger = new NullConsoleLogger();
-            }
+            _Logger.Configure();
         }
 
         private void Start()
@@ -47,7 +44,7 @@ namespace Osiris.TimeTravelPuzzler
             }
             SetStatus(true);
             transform.position = position;
-            _replayCompletedChannel.Event += DelayedDeactivation;
+            _ReplayCompletedChannel.Event += DelayedDeactivation;
         }
 
         public void Deactivate()
@@ -57,18 +54,18 @@ namespace Osiris.TimeTravelPuzzler
                 return;
             }
             SetStatus(false);
-            _replayCompletedChannel.Event -= DelayedDeactivation;
+            _ReplayCompletedChannel.Event -= DelayedDeactivation;
         }
 
         private void DelayedDeactivation()
         {
-            _logger.Log("Rewind completion received.", gameObject);
+            _Logger.Log("Rewind completion received.", gameObject);
             StartCoroutine(DeactivateWithDelay());
         }
 
         private IEnumerator DeactivateWithDelay()
         {
-            yield return new WaitForSeconds(_deactivationDelay);
+            yield return new WaitForSeconds(_DeactivationDelay);
             Deactivate();
         }
 

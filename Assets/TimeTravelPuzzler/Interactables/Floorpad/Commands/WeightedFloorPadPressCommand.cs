@@ -5,6 +5,7 @@ using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
+
     public class WeightedFloorPadPressCommand : WeightedFloorPadCommand
     {
         public WeightedFloorPadPressCommand(IFloorPad floorPad, int weightChange, IEventChannelSO pressedChannel,

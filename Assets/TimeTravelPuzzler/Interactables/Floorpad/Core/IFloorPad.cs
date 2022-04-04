@@ -5,8 +5,8 @@
         int CurrentPressWeight { get; set; }
         bool IsPressed { get; set; }
         int RequiredPressWeight { get; }
-        bool CanPress(int additionalWeight);
-        bool CanRelease(int weightRemoved);
+        bool CanPress();
+        bool CanRelease();
         void Press();
         void Release();
     }

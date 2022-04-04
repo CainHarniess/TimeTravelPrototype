@@ -5,39 +5,24 @@ using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
-    public class OneWayFloorPad : FloorPad
+    public class OneWayFloorPad : WeightedFloorPad
     {
         public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger, string gameObjectName,
-                              IEventChannelSO pressChannel, IEventChannelSO releaseChannel,
-                              IEventChannelSO<IRewindableCommand> recordableEventOccurredChannel)
-            : base(floorPadBehaviour, logger, gameObjectName, pressChannel, releaseChannel,
-                   recordableEventOccurredChannel)
-        {
-
-        }
-
-        public OneWayFloorPad(IFloorPad floorPadBehaviour, ILogger logger, string gameObjectName,
-                              IEventChannelSO pressChannel, IEventChannelSO releaseChannel,
-                              IEventChannelSO<IRewindableCommand> recordableEventOccurredChannel,
                               PressSpriteEffect spriteEffect)
-            : base(floorPadBehaviour, logger, gameObjectName, pressChannel, releaseChannel,
-                   recordableEventOccurredChannel, spriteEffect)
+            : base(floorPadBehaviour, logger, gameObjectName, spriteEffect)
         {
 
         }
 
-        public override bool CanRelease(int weightRemoved)
+        public override bool CanRelease()
         {
-            TempCommand = new WeightedOneWayFloorPadReleaseCommand(this, weightRemoved, PressedChannel, ReleasedChannel,
-                                                                   SpriteEffect, RecordableActionOccurredChannel, Logger,
-                                                                   GameObjectName);
-            return TempCommand.CanExecute();
+            return false;
         }
 
         public override void Release()
         {
-            Logger.Log("One-way floor pads may not be released.", GameObjectName, LogLevel.Error);
             base.Release();
+            Logger.Log("One-way floor pads released.", GameObjectName);
         }
     }
 }
