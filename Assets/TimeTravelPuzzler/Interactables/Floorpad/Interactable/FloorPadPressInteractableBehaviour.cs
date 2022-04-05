@@ -5,11 +5,15 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 {
     public class FloorPadPressInteractableBehaviour : FloorPadInteractableBehaviourBase, IFloorPadPressInteractable
     {
+        protected override void Awake()
+        {
+            base.Awake();
+            CommandFactory = new FloorPadPressCommandFactory(FloorPad);
+        }
+
         public override void Interact(int candidateWeight)
         {
-            FloorPad.AddWeight(candidateWeight);
-            IRewindableCommand pressCommand = new NewFloorPadPressCommand(FloorPad, candidateWeight, Logger,
-                                                                          GameObjectName);
+            IRewindableCommand pressCommand = CommandFactory.Create(candidateWeight);
             if (!pressCommand.CanExecute())
             {
                 Logger.Log("Press request rejected.", GameObjectName);

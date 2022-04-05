@@ -13,6 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     {
         private IWeightedFloorPad _floorPad;
         private string _gameObjectName;
+        private FloorPadCommandFactoryBase _commandFactory;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -37,8 +38,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         protected OUL.ILogger Logger { get => _Logger; }
         protected IEventChannelSO Interacted { get => _Interacted; }
         protected IEventChannelSO<IRewindableCommand> RecordableActionOccurred { get => _RecordableActionOccurred; }
+        protected FloorPadCommandFactoryBase CommandFactory { get => _commandFactory; set => _commandFactory = value; }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _floorPad = GetComponent<IWeightedFloorPad>();
             _Logger.Configure();

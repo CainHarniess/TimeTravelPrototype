@@ -151,8 +151,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables
             
             if (_CurrentPressWeight - weightToRemove < 0)
             {
-                Logger.Log("Remaining weight on floor pad after removal may not be negative.", GameObjectName,
-                           OUL.LogLevel.Error);
+                Logger.Log("Remaining weight on floor pad after removal may not be negative.",
+                           GameObjectName, OUL.LogLevel.Error);
                 return false;
             }
             return true;

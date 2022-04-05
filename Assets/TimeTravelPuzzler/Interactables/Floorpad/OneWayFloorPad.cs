@@ -1,6 +1,4 @@
-﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.TimeTravelPuzzler.Interactables.Core;
-using Osiris.Utilities.Events;
+﻿using Osiris.TimeTravelPuzzler.Interactables.Core;
 using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
@@ -12,17 +10,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables
             : base(floorPadBehaviour, logger, gameObjectName, spriteEffect)
         {
 
-        }
-
-        public override bool CanRelease()
-        {
-            return false;
-        }
-
-        public override void Release()
-        {
-            base.Release();
-            Logger.Log("One-way floor pads released.", GameObjectName);
         }
     }
 }

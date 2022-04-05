@@ -4,6 +4,7 @@ using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
+
     public class NewFloorPadReleaseCommand : IRewindableCommand
     {
         private IWeightedFloorPad _floorPad;
@@ -29,10 +30,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         public virtual bool CanExecute(object parameter = null)
         {
-            if (_isReplayExecution)
-            {
-                _floorPad.RemoveWeight(CandidateWeight);
-            }
+            _floorPad.RemoveWeight(CandidateWeight);
             return _floorPad.CanRelease();
         }
 
