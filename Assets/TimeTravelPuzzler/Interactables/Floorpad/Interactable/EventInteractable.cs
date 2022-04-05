@@ -5,7 +5,7 @@ using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public abstract class FloorPadInteractable : IInteractable<int>
+    public abstract class EventInteractable : IInteractable<int>
     {
         private readonly string _gameObjectName;
         private readonly IFactory<IRewindableCommand, int> _commandFactory;
@@ -13,7 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         private readonly IEventChannelSO _interacted;
         private readonly IEventChannelSO<IRewindableCommand> _recordableActionOccurred;
 
-        protected FloorPadInteractable(string gameObjectName, IFactory<IRewindableCommand, int> commandFactory,
+        protected EventInteractable(string gameObjectName, IFactory<IRewindableCommand, int> commandFactory,
                                        ILogger logger, IEventChannelSO interacted,
                                        IEventChannelSO<IRewindableCommand> recordableActionOccurred)
         {

@@ -1,7 +1,7 @@
 ﻿using Osiris.EditorCustomisation;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     public class DoorEventChannelInteractorBehaviour : EventChannelInteractorBehaviour
     {

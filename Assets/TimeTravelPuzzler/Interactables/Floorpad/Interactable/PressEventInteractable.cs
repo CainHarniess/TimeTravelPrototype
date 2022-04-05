@@ -5,9 +5,9 @@ using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class PressInteractable : FloorPadInteractable
+    public class PressEventInteractable : EventInteractable
     {
-        public PressInteractable(string gameObjectName, IFactory<IRewindableCommand, int> commandFactory,
+        public PressEventInteractable(string gameObjectName, IFactory<IRewindableCommand, int> commandFactory,
                                          ILogger logger, IEventChannelSO interacted,
                                          IEventChannelSO<IRewindableCommand> recordableActionOccurred)
             : base(gameObjectName, commandFactory, logger, interacted, recordableActionOccurred)

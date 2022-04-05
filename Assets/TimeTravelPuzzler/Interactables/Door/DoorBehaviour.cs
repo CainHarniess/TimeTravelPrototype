@@ -3,7 +3,7 @@ using Osiris.Testing;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     public class DoorBehaviour : MonoBehaviour, IDoor
     {

@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using OUL = Osiris.Utilities.Logging;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     [Serializable]
     public class Door : IDoor
@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         }
 
         public Door(string gameObjectName, OUL.ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy)
-            : this (gameObjectName, logger)
+            : this(gameObjectName, logger)
         {
             _rendererProxy = rendererProxy;
             _colliderProxy = colliderProxy;

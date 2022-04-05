@@ -1,4 +1,4 @@
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     public interface IDoor
     {
