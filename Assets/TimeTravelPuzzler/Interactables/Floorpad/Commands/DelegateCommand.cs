@@ -1,9 +1,9 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
 using System;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
-    public class DelegateFloorPadCommand : IRewindableCommand
+    public class DelegateCommand : IRewindableCommand
     {
         private int _candidateWeight;
         private Func<bool> _canExecute;
@@ -12,8 +12,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         private ICommand _inverse;
         private string _description;
 
-        public DelegateFloorPadCommand(int candidateWeight, Func<bool> canExecute, Action execute,
-                                       Action<int> adjustWeight, string description)
+        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
+                               string description)
         {
             _candidateWeight = candidateWeight;
             _canExecute = canExecute;
@@ -22,9 +22,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables
             _description = description;
         }
 
-        public DelegateFloorPadCommand(int candidateWeight, Func<bool> canExecute, Action execute,
+        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute,
                                        Action<int> adjustWeight, string description, ICommand inverse)
-            : this(candidateWeight, canExecute,execute, adjustWeight, description)
+            : this(candidateWeight, canExecute, execute, adjustWeight, description)
         {
             _inverse = inverse;
         }

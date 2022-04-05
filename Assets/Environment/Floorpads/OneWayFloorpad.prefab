@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5014206954706808522, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
       propertyPath: m_Name
-      value: OneWayFloorPad
+      value: OneWayFloorpad
       objectReference: {fileID: 0}
     - target: {fileID: 5014206954706808566, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
       propertyPath: m_RootOrder
@@ -69,13 +69,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9020805402313102217, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
+    - {fileID: 61250484, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
 --- !u!1 &4132715362194545909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5014206954706808522, guid: 0706db9866178ef449edb28a9bdfabb6, type: 3}
   m_PrefabInstance: {fileID: 8992650591992836671}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &375064371407055983
+--- !u!114 &7801547746597161322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,7 +85,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4132715362194545909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c2c774b9abb2044823bd51724c693d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cb22a6ffcb89df409f5710e7623a5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  _Interacted: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
+  _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &60745823278436039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132715362194545909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2e491ac87b9e14f870c3cb215f56d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _RequiredPressWeight:
@@ -94,9 +110,6 @@ MonoBehaviour:
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
   _FloorPad:
     id: 0
-  _Pressed: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
-  _Released: {fileID: 11400000, guid: 56a5504b115e034439d867e92ea46f64, type: 2}
-  _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
   references:
     version: 1
     00000000:

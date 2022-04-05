@@ -1,7 +1,7 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
     public class OneWayFloorPadReleaseCommandFactory : FloorPadReleaseCommandFactory
     {
@@ -12,9 +12,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         public override IRewindableCommand Create(int candidateWeight)
         {
-            var inverse = new DelegateFloorPadCommand(candidateWeight, FloorPad.CanPress, FloorPad.Press, FloorPad.AddWeight,
+            var inverse = new DelegateCommand(candidateWeight, FloorPad.CanPress, FloorPad.Press, FloorPad.AddWeight,
                                                "One-way floor pad release inverse");
-            return new DelegateFloorPadCommand(candidateWeight, FloorPad.CanRelease, () => { },
+            return new DelegateCommand(candidateWeight, FloorPad.CanRelease, () => { },
                                                FloorPad.RemoveWeight, "One-way floor pad release", inverse);
         }
     }

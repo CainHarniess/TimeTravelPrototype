@@ -1,26 +1,27 @@
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class PressSpriteEffect
+    public class PrimitiveFloorPadSpriteHandler : IFloorPadSpriteHandler
     {
         private SpriteRenderer _spriteRenderer;
         private Color _colour;
         private Color _pressedColour;
 
-        public PressSpriteEffect(SpriteRenderer spriteRenderer)
+        public PrimitiveFloorPadSpriteHandler(SpriteRenderer spriteRenderer)
         {
             _spriteRenderer = spriteRenderer;
             _colour = spriteRenderer.color;
             _pressedColour = Color.grey;
         }
 
-        public void Darken()
+        public void OnPress()
         {
             _spriteRenderer.color = _pressedColour;
         }
 
-        public void Lighten()
+        public void OnRelease()
         {
             _spriteRenderer.color = _colour;
         }

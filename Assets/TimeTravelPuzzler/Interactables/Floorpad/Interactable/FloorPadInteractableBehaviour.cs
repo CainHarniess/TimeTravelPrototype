@@ -1,19 +1,21 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Interactables.Core;
-using Osiris.Utilities.Logging;
-using OUL = Osiris.Utilities.Logging;
-using UnityEngine;
-using Osiris.Utilities.Events;
 using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities;
+using Osiris.Utilities.Events;
+using Osiris.Utilities.Logging;
+using UnityEngine;
+using OUL = Osiris.Utilities.Logging;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public abstract class FloorPadInteractableBehaviourBase : MonoBehaviour, IInteractable<int>
+    public abstract class FloorPadInteractableBehaviour : MonoBehaviour, IInteractable<int>
     {
         private IWeightedFloorPad _floorPad;
         private string _gameObjectName;
-        private FloorPadCommandFactoryBase _commandFactory;
+        private IFactory<IRewindableCommand, int> _commandFactory;
+        private IInteractable<int> _interactable;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -38,14 +40,22 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         protected OUL.ILogger Logger { get => _Logger; }
         protected IEventChannelSO Interacted { get => _Interacted; }
         protected IEventChannelSO<IRewindableCommand> RecordableActionOccurred { get => _RecordableActionOccurred; }
-        protected FloorPadCommandFactoryBase CommandFactory { get => _commandFactory; set => _commandFactory = value; }
+        protected IFactory<IRewindableCommand, int> CommandFactory { get => _commandFactory; set => _commandFactory = value; }
 
-        protected virtual void Awake()
+        private void Awake()
         {
             _floorPad = GetComponent<IWeightedFloorPad>();
             _Logger.Configure();
+            _interactable = GetInteractable();
         }
 
-        public abstract void Interact(int candidateWeight);
+        public void Interact(int candidateWeight)
+        {
+            _interactable.Interact(candidateWeight);
+        }
+
+        protected abstract IInteractable<int> GetInteractable();
+
+        protected abstract IFactory<IRewindableCommand, int> GetFactory(IFloorPad floorPad);
     }
 }

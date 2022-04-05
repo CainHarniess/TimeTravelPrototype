@@ -1,9 +1,10 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+using Osiris.Utilities;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
-    public abstract class FloorPadCommandFactoryBase : IFloorPadCommandFactory
+    public abstract class FloorPadCommandFactoryBase : IFactory<IRewindableCommand, int>
     {
         private readonly IWeightedFloorPad _floorPad;
 

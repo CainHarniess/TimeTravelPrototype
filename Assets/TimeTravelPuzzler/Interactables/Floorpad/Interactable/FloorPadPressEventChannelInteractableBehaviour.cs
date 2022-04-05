@@ -5,17 +5,17 @@ using Osiris.Utilities;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class FloorPadReleaseInteractableBehaviour : FloorPadInteractableBehaviour, IReleaseInteractable
+    public class FloorPadPressEventChannelInteractableBehaviour : FloorPadInteractableBehaviour, IPressInteractable
     {
         protected override IFactory<IRewindableCommand, int> GetFactory(IFloorPad floorPad)
         {
-            return new FloorPadReleaseCommandFactory(FloorPad);
+            return new FloorPadPressCommandFactory(FloorPad);
         }
 
         protected override IInteractable<int> GetInteractable()
         {
-            return new FloorPadReleaseInteractable(GameObjectName, GetFactory(FloorPad), Logger, Interacted,
-                                                   RecordableActionOccurred);
+            return new FloorPadPressInteractable(GameObjectName, GetFactory(FloorPad), Logger, Interacted,
+                                                 RecordableActionOccurred);
         }
     }
 }

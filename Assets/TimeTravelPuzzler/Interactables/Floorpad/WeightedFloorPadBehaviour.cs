@@ -1,15 +1,16 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Interactables.Core;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Validation;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     public class WeightedFloorPadBehaviour : MonoBehaviour, IWeightedFloorPad
     {
         private string _gameObjectName;
-        private PressSpriteEffect _spriteEffect;
+        private PrimitiveFloorPadSpriteHandler _spriteEffect;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private IntReference _RequiredPressWeight;
@@ -18,12 +19,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeReference] private IWeightedFloorPad _FloorPad;
 
-        protected UnityConsoleLogger Logger => _Logger;
-        public int RequiredPressWeight => _RequiredPressWeight.Value;
-        public int CurrentPressWeight { get => _FloorPad.CurrentPressWeight; set => _FloorPad.CurrentPressWeight = value; }
-        public bool IsPressed { get => _FloorPad.IsPressed; set => _FloorPad.IsPressed = value; }
-        public IWeightedFloorPad FloorPad { get => _FloorPad; protected set => _FloorPad = value; }
-        public PressSpriteEffect SpriteEffect { get => _spriteEffect; protected set => _spriteEffect = value; }
         protected string GameObjectName
         {
             get
@@ -35,27 +30,27 @@ namespace Osiris.TimeTravelPuzzler.Interactables
                 return _gameObjectName;
             }
         }
+        public PrimitiveFloorPadSpriteHandler SpriteEffect { get => _spriteEffect; }
+        public int RequiredPressWeight => _RequiredPressWeight.Value;
+        public int CurrentPressWeight { get => _FloorPad.CurrentPressWeight; }
+        public bool IsPressed { get => _FloorPad.IsPressed; }
 
         protected virtual void Awake()
         {
             _Logger.Configure();
-            _spriteEffect = new PressSpriteEffect(GetComponent<SpriteRenderer>());
-            _FloorPad = new WeightedFloorPad(this, _Logger, GameObjectName, _spriteEffect);
+            _spriteEffect = new PrimitiveFloorPadSpriteHandler(GetComponent<SpriteRenderer>());
+
+            var pressValidator = new FloorPadPressValidator(this, _Logger, GameObjectName);
+            var releaseValidator = new FloorPadReleaseValidator(this, _Logger, GameObjectName);
+
+            _FloorPad = new WeightedFloorPad(this, _Logger, GameObjectName, _spriteEffect, pressValidator, releaseValidator);
         }
 
-        /// <summary>
-        /// Forwards the execution on to the nested CLR object.
-        /// </summary>
-        /// <param name="weightToRemove">The amount that should be added. This should be a positive number.</param>
         public void AddWeight(int weightToAdd)
         {
             _FloorPad.AddWeight(weightToAdd);
         }
 
-        /// <summary>
-        /// Forwards the execution on to the nested CLR object.
-        /// </summary>
-        /// <param name="weightToRemove">The amount that should be deducted. This should be a positive number.</param>
         public void RemoveWeight(int weightToRemove)
         {
             _FloorPad.RemoveWeight(weightToRemove);

@@ -1,11 +1,15 @@
-﻿namespace Osiris.TimeTravelPuzzler.Interactables
+﻿using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+using Osiris.Utilities;
+
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     public class OneWayFloorPadReleaseInteractableBehaviour : FloorPadReleaseInteractableBehaviour
     {
-        protected override void Awake()
+        protected override IFactory<IRewindableCommand, int> GetFactory(IFloorPad floorPad)
         {
-            base.Awake();
-            CommandFactory = new OneWayFloorPadReleaseCommandFactory(FloorPad);
+            return new OneWayFloorPadReleaseCommandFactory(FloorPad);
         }
     }
 }
