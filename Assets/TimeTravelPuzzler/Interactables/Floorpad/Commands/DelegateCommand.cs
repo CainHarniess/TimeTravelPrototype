@@ -22,8 +22,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
             _description = description;
         }
 
-        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute,
-                                       Action<int> adjustWeight, string description, ICommand inverse)
+        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
+                               string description, ICommand inverse)
             : this(candidateWeight, canExecute, execute, adjustWeight, description)
         {
             _inverse = inverse;

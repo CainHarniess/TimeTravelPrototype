@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class PrimitiveFloorPadSpriteHandler : IFloorPadSpriteHandler
+    public class PrimitiveFloorPadSpriteHandler : ISpriteHandler
     {
         private SpriteRenderer _spriteRenderer;
         private Color _colour;

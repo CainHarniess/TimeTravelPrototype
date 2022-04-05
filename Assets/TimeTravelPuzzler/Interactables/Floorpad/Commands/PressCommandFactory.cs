@@ -3,9 +3,9 @@ using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
-    public class FloorPadPressCommandFactory : FloorPadCommandFactoryBase
+    public class PressCommandFactory : CommandFactoryBase
     {
-        public FloorPadPressCommandFactory(IWeightedFloorPad floorPad) : base(floorPad)
+        public PressCommandFactory(IWeightedFloorPad floorPad) : base(floorPad)
         {
 
         }

@@ -5,7 +5,7 @@ using Osiris.Utilities;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class OneWayFloorPadReleaseInteractableBehaviour : FloorPadReleaseInteractableBehaviour
+    public class OneWayEventReleaseInteractableBehaviour : EventReleaseInteractableBehaviour
     {
         protected override IFactory<IRewindableCommand, int> GetFactory(IFloorPad floorPad)
         {

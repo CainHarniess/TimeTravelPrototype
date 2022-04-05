@@ -7,7 +7,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     {
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (!(other.GetComponent<IReleaseInteractable>() is IReleaseInteractable floorPad))
+            if (!(other.GetComponent<IFloorPadReleaseInteractable>() is IFloorPadReleaseInteractable floorPad))
             {
                 Logger.Log("Component implementing IFloorPadReleaseInteractable not found on candidate.", GameObjectName);
                 return;

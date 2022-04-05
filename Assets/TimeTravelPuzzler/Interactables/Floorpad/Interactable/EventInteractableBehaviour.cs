@@ -10,7 +10,7 @@ using OUL = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public abstract class FloorPadInteractableBehaviour : MonoBehaviour, IInteractable<int>
+    public abstract class EventInteractableBehaviour : MonoBehaviour, IInteractable<int>
     {
         private IWeightedFloorPad _floorPad;
         private string _gameObjectName;

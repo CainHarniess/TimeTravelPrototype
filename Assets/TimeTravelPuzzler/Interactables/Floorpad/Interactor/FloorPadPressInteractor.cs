@@ -7,13 +7,13 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!(other.GetComponent<IPressInteractable>() is IPressInteractable floorPad))
+            if (!(other.GetComponent<IFloorPadPressInteractable>() is IFloorPadPressInteractable pressInteractable))
             {
                 Logger.Log("Component implementing IFloorPadPressInteractable not found on candidate.", GameObjectName);
                 return;
             }
 
-            floorPad.Interact(Weight);
+            pressInteractable.Interact(Weight);
         }
     }
 }

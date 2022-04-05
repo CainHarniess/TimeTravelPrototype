@@ -13,7 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         private readonly string _gameObjectName;
         private readonly OUL::ILogger _Logger;
         private readonly IFloorPad _floorPadBehaviour;
-        private readonly IFloorPadSpriteHandler _spriteEffect;
+        private readonly ISpriteHandler _spriteEffect;
         private readonly IValidator<int> _pressValidator;
         private readonly IValidator<int> _releaseValidator;
 
@@ -21,7 +21,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         [ReadOnly] [SerializeField] private bool _IsPressed;
 
         public WeightedFloorPad(IFloorPad floorPadBehaviour, OUL::ILogger logger, string gameObjectName,
-                                IFloorPadSpriteHandler spriteEffect, IValidator<int> pressValidator,
+                                ISpriteHandler spriteEffect, IValidator<int> pressValidator,
                                 IValidator<int> releaseValidator)
         {
             _floorPadBehaviour = floorPadBehaviour;

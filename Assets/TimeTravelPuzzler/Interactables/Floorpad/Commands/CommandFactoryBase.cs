@@ -4,11 +4,11 @@ using Osiris.Utilities;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
-    public abstract class FloorPadCommandFactoryBase : IFactory<IRewindableCommand, int>
+    public abstract class CommandFactoryBase : IFactory<IRewindableCommand, int>
     {
         private readonly IWeightedFloorPad _floorPad;
 
-        protected FloorPadCommandFactoryBase(IWeightedFloorPad floorPad)
+        protected CommandFactoryBase(IWeightedFloorPad floorPad)
         {
             _floorPad = floorPad;
         }
