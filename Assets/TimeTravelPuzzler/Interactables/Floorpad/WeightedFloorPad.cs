@@ -1,5 +1,6 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Validation;
 using System;
 using UnityEngine;
@@ -7,22 +8,25 @@ using OUL = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
+
     [Serializable]
     public class WeightedFloorPad : IWeightedFloorPad
     {
         private readonly string _gameObjectName;
         private readonly OUL::ILogger _Logger;
         private readonly IFloorPad _floorPadBehaviour;
-        private readonly ISpriteHandler _spriteEffect;
+        private readonly IFloorPadSpriteHandler _spriteEffect;
         private readonly IValidator<int> _pressValidator;
         private readonly IValidator<int> _releaseValidator;
+        private readonly IEventChannelSO _pressed;
+        private readonly IEventChannelSO _released;
 
         [ReadOnly] [SerializeField] private int _CurrentPressWeight;
         [ReadOnly] [SerializeField] private bool _IsPressed;
 
         public WeightedFloorPad(IFloorPad floorPadBehaviour, OUL::ILogger logger, string gameObjectName,
-                                ISpriteHandler spriteEffect, IValidator<int> pressValidator,
-                                IValidator<int> releaseValidator)
+                                IFloorPadSpriteHandler spriteEffect, IValidator<int> pressValidator,
+                                IValidator<int> releaseValidator, IEventChannelSO pressed, IEventChannelSO released)
         {
             _floorPadBehaviour = floorPadBehaviour;
             _Logger = logger;
@@ -30,12 +34,15 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             _spriteEffect = spriteEffect;
             _pressValidator = pressValidator;
             _releaseValidator = releaseValidator;
+            _pressed = pressed;
+            _released = released;
         }
 
         public string GameObjectName => _gameObjectName;
         public int CurrentPressWeight => _CurrentPressWeight;
-        public bool IsPressed { get => _IsPressed; }
+        public bool IsPressed { get => _IsPressed; protected set => _IsPressed = value; }
         public int RequiredPressWeight => _floorPadBehaviour.RequiredPressWeight;
+        protected IFloorPadSpriteHandler SpriteEffect => _spriteEffect;
 
         public void AddWeight(int weightToAdd)
         {
@@ -77,6 +84,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         {
             _IsPressed = true;
             _spriteEffect.OnPress();
+            _pressed.Raise();
         }
 
         public bool CanRelease()
@@ -97,10 +105,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             return true;
         }
 
-        public void Release()
+        public virtual void Release()
         {
             _IsPressed = false;
             _spriteEffect.OnRelease();
+            _released.Raise();
         }
     }
 }

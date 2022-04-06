@@ -1,6 +1,6 @@
 ﻿namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core
 {
-    public interface ISpriteHandler
+    public interface IFloorPadSpriteHandler
     {
         void OnPress();
         void OnRelease();

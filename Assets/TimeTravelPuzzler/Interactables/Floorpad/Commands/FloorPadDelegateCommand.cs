@@ -1,29 +1,27 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
+using Osiris.Utilities.Commands;
 using System;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 {
-    public class DelegateCommand : IRewindableCommand
+    public class FloorPadDelegateCommand : DelegateCommand, IRewindableCommand
     {
         private int _candidateWeight;
-        private Func<bool> _canExecute;
-        private Action _execute;
         private Action<int> _adjustWeight;
         private ICommand _inverse;
         private string _description;
 
-        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
+        public FloorPadDelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
                                string description)
+            : base(canExecute, execute)
         {
             _candidateWeight = candidateWeight;
-            _canExecute = canExecute;
-            _execute = execute;
             _adjustWeight = adjustWeight;
             _description = description;
         }
 
-        public DelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
-                               string description, ICommand inverse)
+        public FloorPadDelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute,
+                               Action<int> adjustWeight, string description, ICommand inverse)
             : this(candidateWeight, canExecute, execute, adjustWeight, description)
         {
             _inverse = inverse;
@@ -33,15 +31,10 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
 
         public string Description => _description;
 
-        public bool CanExecute(object parameter = null)
+        public override bool CanExecute(object parameter = null)
         {
             _adjustWeight(_candidateWeight);
-            return _canExecute();
-        }
-
-        public void Execute(object parameter = null)
-        {
-            _execute();
+            return base.CanExecute();
         }
     }
 }

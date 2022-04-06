@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: dccc5b48d2ad6ff4787a279e2948afe0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
+  - _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

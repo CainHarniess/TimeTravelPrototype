@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 5014206954706808520}
   - component: {fileID: 9020805402313102217}
   - component: {fileID: 61250485}
+  - component: {fileID: 488020234}
   - component: {fileID: 1019352445640772498}
+  - component: {fileID: 488020233}
   m_Layer: 0
   m_Name: FloorPad
   m_TagString: Untagged
@@ -157,6 +159,8 @@ MonoBehaviour:
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
   _FloorPad:
     id: 0
+  _Pressed: {fileID: 0}
+  _Released: {fileID: 0}
   references:
     version: 1
     00000000:
@@ -174,8 +178,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
-  _Interacted: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
   _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &488020234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014206954706808522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e8ae1cf0c0dcf4f93a9a49fe26bd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Channel: {fileID: 0}
+  _InteractionType: 0
+  _interactables: []
 --- !u!114 &1019352445640772498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,5 +207,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
-  _Interacted: {fileID: 11400000, guid: 56a5504b115e034439d867e92ea46f64, type: 2}
   _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &488020233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014206954706808522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e8ae1cf0c0dcf4f93a9a49fe26bd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Channel: {fileID: 0}
+  _InteractionType: 1
+  _interactables: []
