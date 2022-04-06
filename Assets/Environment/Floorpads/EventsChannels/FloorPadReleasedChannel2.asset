@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e258d5f182e6d384b9494423fdd4d752, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f974167934ecaa46b6d3d43d0cf9c74, type: 3}
   m_Name: FloorPadReleasedChannel2
   m_EditorClassIdentifier: 
-  _description: Channel notifying of a floor pad press. Any interactors listening
-    to this channel wioll balh blah...
+  _description: 
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}

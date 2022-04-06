@@ -1,9 +1,9 @@
 ﻿using Osiris.EditorCustomisation;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
-    public class DoorEventChannelInteractorBehaviour : EventChannelInteractorBehaviour
+    public partial class DoorEventChannelInteractorBehaviour : EventChannelInteractorBehaviour
     {
         [Header(InspectorHeaders.Usability)]
         [Tooltip(ToolTips.DoorInteractionType)]
@@ -11,17 +11,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         [Header(InspectorHeaders.ControlVariables)]
         [Tooltip(ToolTips.Interactables)]
-        [SerializeField] private DoorInteractableBehaviour[] _interactables;
+        [SerializeField] private CyclicDoorInteractableBehaviour[] _interactables;
 
         public override IInteractable[] Interactables => _interactables;
-
-
-
-        private enum DoorInteractionType
-        {
-            Open,
-            Close,
-        }
 
         private struct ToolTips
         {

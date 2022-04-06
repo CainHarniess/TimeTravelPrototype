@@ -20,7 +20,6 @@ namespace Osiris.TimeTravelPuzzler.Player
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private RewindEventChannelSO _RewindEventChannel;
         [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
         [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
 

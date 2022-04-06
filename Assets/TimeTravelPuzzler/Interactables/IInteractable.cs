@@ -4,4 +4,9 @@
     {
         void Interact();
     }
+
+    public interface IInteractable<T>
+    {
+        void Interact(T parameter);
+    }
 }

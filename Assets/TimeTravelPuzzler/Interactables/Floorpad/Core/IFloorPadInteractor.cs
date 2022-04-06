@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Interactables.Core
+﻿namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core
 {
     public interface IFloorPadInteractor
     {
