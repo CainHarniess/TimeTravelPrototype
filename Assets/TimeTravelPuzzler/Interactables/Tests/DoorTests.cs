@@ -21,7 +21,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
             _rendererSub = Substitute.For<IRendererProxy>();
             _colliderSub = Substitute.For<IBehaviourProxy>();
 
-            _door = new Door(string.Empty, _loggerSub, _rendererSub, _colliderSub);
+            _door = new Door(string.Empty, _loggerSub, _rendererSub, _colliderSub, false);
         }
 
         [Test]

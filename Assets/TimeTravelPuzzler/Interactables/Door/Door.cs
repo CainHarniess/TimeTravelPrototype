@@ -16,12 +16,13 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         [ReadOnly] [SerializeField] private bool _IsOpen;
 
-        public Door(string gameObjectName, ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy)
+        public Door(string gameObjectName, ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy, bool isOpen)
         {
             _gameObjectName = gameObjectName;
             _logger = logger;
             _rendererProxy = rendererProxy;
             _colliderProxy = colliderProxy;
+            _IsOpen = isOpen;
         }
 
         public bool IsOpen => _IsOpen; 

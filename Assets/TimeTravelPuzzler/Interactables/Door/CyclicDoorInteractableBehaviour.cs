@@ -35,6 +35,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         {
             if (_doorBehaviour.CanOpen())
             {
+                _Logger.Log("Door can open.", GameObjectName);
                 _doorBehaviour.Open();
             }
             else if (_doorBehaviour.CanClose())

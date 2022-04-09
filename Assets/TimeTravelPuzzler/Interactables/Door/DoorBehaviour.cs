@@ -16,6 +16,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         [SerializeField] private DoorBuildDirectorSO _BuildDirector;
 
         [Header(InspectorHeaders.DebugVariables)]
+        [ReadOnly] [SerializeField] private bool _isOpenInEditMode;
         [Tooltip(ILoggerToolTips.ToolTip)]
         [SerializeField] private UnityConsoleLogger _Logger;
         [Tooltip(ToolTips.Door)]
@@ -35,19 +36,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         private void Awake()
         {
-            if (_Door != null)
-            {
-                return;
-            }
             InitialiseDoor();
         }
 
-        private void InitialiseDoor()
-        {
-            _collider = GetComponent<BoxCollider2D>();
-            _sprite = GetComponent<SpriteRenderer>();
-            _Door = _BuildDirector.Construct(GameObjectName, _Logger, _sprite, _collider);
-        }
 
         public bool IsOpen => _Door.IsOpen;
 
@@ -76,6 +67,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         {
             InitialiseDoor();
             _Door.Open();
+            _isOpenInEditMode = true;
         }
 
         [ContextMenu("Close door")]
@@ -83,6 +75,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         {
             InitialiseDoor();
             _Door.Close();
+            _isOpenInEditMode = false;
+        }
+        
+        private void InitialiseDoor()
+        {
+            _collider = GetComponent<BoxCollider2D>();
+            _sprite = GetComponent<SpriteRenderer>();
+            _Door = _BuildDirector.Construct(GameObjectName, _Logger, _sprite, _collider, _isOpenInEditMode);
         }
 
 

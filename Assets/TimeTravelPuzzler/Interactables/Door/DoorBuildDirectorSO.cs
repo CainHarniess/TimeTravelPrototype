@@ -11,11 +11,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     {
         [SerializeField] private DoorBuilderSO _doorBuilder;
 
-        public IDoor Construct(string gameObjectName, ILogger logger, SpriteRenderer renderer, BoxCollider2D collider)
+        public IDoor Construct(string gameObjectName, ILogger logger, SpriteRenderer renderer, BoxCollider2D collider, bool isOpen)
         {
             return _doorBuilder.WithGameObjectName(gameObjectName).WithLogger(logger)
                                .WithSpriteRenderer(renderer).WithBoxCollider2D(collider)
-                               .Build();
+                               .WithStatus(isOpen).Build();
         }
     }
 }

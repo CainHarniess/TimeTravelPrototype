@@ -1,6 +1,7 @@
 using Osiris.Testing;
 using Osiris.TimeTravelPuzzler.Interactables.Doors;
 using Osiris.Utilities.ScriptableObjects;
+using System;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
 
@@ -37,12 +38,19 @@ namespace Osiris.TimeTravelPuzzler.Interactables
             return this;
         }
 
+        public bool IsOpen { get; private set; }
+        internal DoorBuilderSO WithStatus(bool isOpen)
+        {
+            IsOpen = isOpen;
+            return this;
+        }
+
         public IDoor Build()
         {
             ISpriteRendererProxy rendererProxy = new SpriteRendererProxy(SpriteRenderer);
             IBehaviourProxy colliderProxy = new BehaviourProxy(BoxCollider2D);
 
-            return new Door(GameObjectName, Logger, rendererProxy, colliderProxy);
+            return new Door(GameObjectName, Logger, rendererProxy, colliderProxy, IsOpen);
         }
     }
 }
