@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
-  m_Name: DoorConsoleLogger
+  m_Script: {fileID: 11500000, guid: e3046530928016749ac41dc833f98758, type: 3}
+  m_Name: Two One-Way Doors
   m_EditorClassIdentifier: 
-  _DisplayLogging: 0
+  description: Simple schene with two one-way door blocking the goal.
+  _name: Two One-Way Doors
+  _buildIndex: 4

@@ -419,6 +419,14 @@ PrefabInstance:
       value: LevelCompletionController
       objectReference: {fileID: 0}
     - target: {fileID: 4580658348159812303, guid: 0a8af1bb67e7be246bdf3d816ad4b1fe, type: 3}
+      propertyPath: _LevelCompleted
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+    - target: {fileID: 4580658348159812303, guid: 0a8af1bb67e7be246bdf3d816ad4b1fe, type: 3}
+      propertyPath: _SceneSequencerChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+    - target: {fileID: 4580658348159812303, guid: 0a8af1bb67e7be246bdf3d816ad4b1fe, type: 3}
       propertyPath: _scenesToLoad.Array.size
       value: 1
       objectReference: {fileID: 0}

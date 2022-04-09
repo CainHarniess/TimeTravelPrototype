@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a017e7c3da08e774aaeba5f3c98f2c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenesToLoad: []
-  _scenesToUnload: []
-  _levelCompletionChannel: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
-  _sceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
+  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
+  _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}

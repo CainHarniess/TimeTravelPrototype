@@ -8,13 +8,13 @@ namespace Osiris.TimeTravelPuzzler
                      menuName = AssetMenu.LevelCompletionEventChannelPath)]
     public class LevelCompletionEventChannelSO : ScriptableObject
     {
-        public event UnityAction LevelCompleted;
+        public event UnityAction Event;
 
-        public void RaiseLevelCompletion()
+        public void Raise()
         {
-            if (LevelCompleted != null)
+            if (Event != null)
             {
-                LevelCompleted.Invoke();
+                Event.Invoke();
             }
             else
             {
