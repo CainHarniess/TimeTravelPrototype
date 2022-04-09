@@ -144,8 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10460e59504a55b479ab2049c84f1ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DeactivationDelay: 1
+  _DeactivationDelay:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 6d2630b92ff5b194285fa47bb02ea85d, type: 2}
   _PlayerTransform: {fileID: 0}
-  _Logger: {fileID: 0}
+  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _IsActive: 0
-  _ReplayCompletedChannel: {fileID: 0}
+  _ReplayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}

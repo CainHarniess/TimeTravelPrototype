@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 326ec9407aa7ef2448a4dcfb76c5b6f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _FloorPadBuilder: {fileID: 11400000, guid: 2bd4e639cbcba6445bd190a6d45ae680, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

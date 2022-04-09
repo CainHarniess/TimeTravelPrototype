@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6256f65786ebd34f9ba40415d73375a, type: 3}
+  m_Name: OneWayFloorPadBuildDirector
+  m_EditorClassIdentifier: 
+  _description: Consumed by the WeightedFloorPadBehaviour class to construct a OneWayFloorPad
+    object with the correct properties at run time.
+  _FloorPadBuilder: {fileID: 11400000, guid: 707a22e2b9e67f94c93655ece29db30f, type: 2}

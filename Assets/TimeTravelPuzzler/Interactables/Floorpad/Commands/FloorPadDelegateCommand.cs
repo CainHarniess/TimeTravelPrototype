@@ -11,8 +11,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands
         private ICommand _inverse;
         private string _description;
 
-        public FloorPadDelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute, Action<int> adjustWeight,
-                               string description)
+        public FloorPadDelegateCommand(int candidateWeight, Func<bool> canExecute, Action execute,
+                                       Action<int> adjustWeight, string description)
             : base(canExecute, execute)
         {
             _candidateWeight = candidateWeight;

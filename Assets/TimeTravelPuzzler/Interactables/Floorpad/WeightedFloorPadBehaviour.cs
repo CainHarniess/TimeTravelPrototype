@@ -1,7 +1,6 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.Testing;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
-using Osiris.Utilities;
 using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
@@ -14,11 +13,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     public class WeightedFloorPadBehaviour : MonoBehaviour, IWeightedFloorPad
     {
         private string _gameObjectName;
-        private IFloorPadSpriteHandler _spriteEffect;
-        private IFactory<IWeightedFloorPad, IFloorPad> _floorPadFactory;
+        private IFloorPadSpriteHandler _spriteHandler;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private IntReference _RequiredPressWeight;
+        [SerializeField] private FloorPadBuildDirectorSO _floorPadBuildDirector;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -39,7 +38,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
                 return _gameObjectName;
             }
         }
-        protected IFloorPadSpriteHandler SpriteEffect { get => _spriteEffect; }
+        protected IFloorPadSpriteHandler SpriteHandler { get => _spriteHandler; }
         protected ILogger Logger { get => _Logger; }
         protected IEventChannelSO Pressed { get => _Pressed; }
         protected IEventChannelSO Released { get => _Released; }
@@ -47,13 +46,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public int RequiredPressWeight => _RequiredPressWeight.Value;
         public int CurrentPressWeight { get => _FloorPad.CurrentPressWeight; }
         public bool IsPressed { get => _FloorPad.IsPressed; }
+        public IWeightedFloorPad FloorPad { get => _FloorPad; }
 
         protected virtual void Awake()
         {
             _Logger.Configure();
-            _spriteEffect = new PrimitiveFloorPadSpriteHandler(new SpriteRendererProxy(GetComponent<SpriteRenderer>()));
-            _floorPadFactory = GetFactory();
-            _FloorPad = _floorPadFactory.Create(this);
+            _spriteHandler = new PrimitiveFloorPadSpriteHandler(new SpriteRendererProxy(GetComponent<SpriteRenderer>()));
+            _FloorPad = _floorPadBuildDirector.Construct(this, _Logger, GameObjectName, SpriteHandler, _Pressed,
+                                                         _Released);
         }
 
         public void AddWeight(int weightToAdd)
@@ -84,11 +84,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Release()
         {
             _FloorPad.Release();
-        }
-
-        protected virtual IFactory<IWeightedFloorPad, IFloorPad> GetFactory()
-        {
-            return new FloorPadFactory(_Logger, GameObjectName, _spriteEffect, _Pressed, _Released);
         }
     }
 }

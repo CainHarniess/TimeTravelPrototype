@@ -6,7 +6,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads.Validation
 {
     public class FloorPadPressValidator : FloorPadValidator, IValidator<int>
     {
-        public FloorPadPressValidator(IFloorPad floorPad, OUL.ILogger logger, string gameObjectName)
+        public FloorPadPressValidator(IWeightedFloorPad floorPad, OUL.ILogger logger, string gameObjectName)
             : base(floorPad, logger, gameObjectName)
         {
 

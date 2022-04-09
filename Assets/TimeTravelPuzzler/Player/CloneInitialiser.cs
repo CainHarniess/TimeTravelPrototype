@@ -2,6 +2,7 @@ using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Interactables;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.Logging;
+using Osiris.Utilities.References;
 using System.Collections;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace Osiris.TimeTravelPuzzler
         private BoxCollider2D _collider;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private float _DeactivationDelay = 1;
+        [SerializeField] private IntReference _DeactivationDelay;
         [SerializeField] private Transform _PlayerTransform;
 
         [Header(InspectorHeaders.DebugVariables)]
@@ -65,7 +66,7 @@ namespace Osiris.TimeTravelPuzzler
 
         private IEnumerator DeactivateWithDelay()
         {
-            yield return new WaitForSeconds(_DeactivationDelay);
+            yield return new WaitForSeconds(_DeactivationDelay.Value);
             Deactivate();
         }
 

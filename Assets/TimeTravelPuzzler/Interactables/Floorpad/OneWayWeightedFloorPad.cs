@@ -9,7 +9,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     [Serializable]
     public class OneWayWeightedFloorPad : WeightedFloorPad
     {
-        public OneWayWeightedFloorPad(IFloorPad floorPadBehaviour, OUL::ILogger logger, string gameObjectName,
+        public OneWayWeightedFloorPad(IWeightedFloorPad floorPadBehaviour, OUL::ILogger logger, string gameObjectName,
                                       IFloorPadSpriteHandler spriteEffect, IValidator<int> pressValidator,
                                       IValidator<int> releaseValidator, IEventChannelSO pressed,
                                       IEventChannelSO released)
@@ -20,6 +20,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         }
 
         public override void Release()
+        {
+
+        }
+
+        public void PressInverse()
         {
             IsPressed = false;
             SpriteEffect.OnRelease();

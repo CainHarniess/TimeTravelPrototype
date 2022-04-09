@@ -13,7 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         {
 
         }
-        public override IWeightedFloorPad Create(IFloorPad floorPadBehaviour)
+        public override IWeightedFloorPad Create(IWeightedFloorPad floorPadBehaviour)
         {
             var pressValidator = new FloorPadPressValidator(floorPadBehaviour, Logger, GameObjectName);
             var releaseValidator = new FloorPadReleaseValidator(floorPadBehaviour, Logger, GameObjectName);

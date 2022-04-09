@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1019352445640772498}
   - component: {fileID: 488020233}
   m_Layer: 0
-  m_Name: FloorPad
+  m_Name: Floorpad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,11 +156,12 @@ MonoBehaviour:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 34197d51ff1cce0428abad310abc4d5c, type: 2}
+  _floorPadBuildDirector: {fileID: 11400000, guid: 6c74b5b667a1a2943b5bf5b160e24cb1, type: 2}
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
   _FloorPad:
     id: 0
-  _Pressed: {fileID: 0}
-  _Released: {fileID: 0}
+  _Pressed: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
+  _Released: {fileID: 11400000, guid: 56a5504b115e034439d867e92ea46f64, type: 2}
   references:
     version: 1
     00000000:
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e8ae1cf0c0dcf4f93a9a49fe26bd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Channel: {fileID: 0}
+  _Channel: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
   _InteractionType: 0
   _interactables: []
 --- !u!114 &1019352445640772498
@@ -220,6 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e8ae1cf0c0dcf4f93a9a49fe26bd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Channel: {fileID: 0}
+  _Channel: {fileID: 11400000, guid: 56a5504b115e034439d867e92ea46f64, type: 2}
   _InteractionType: 1
   _interactables: []

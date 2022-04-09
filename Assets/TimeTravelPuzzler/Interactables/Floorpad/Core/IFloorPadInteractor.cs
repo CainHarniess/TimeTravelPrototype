@@ -2,6 +2,6 @@
 {
     public interface IFloorPadInteractor
     {
-        void Interact(IFloorPad floorPad, int candidateWeight);
+        void Interact(IWeightedFloorPad floorPad, int candidateWeight);
     }
 }

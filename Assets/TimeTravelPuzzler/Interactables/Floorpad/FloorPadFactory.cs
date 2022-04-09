@@ -6,7 +6,7 @@ using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public class FloorPadFactory : IFactory<IWeightedFloorPad, IFloorPad>
+    public class FloorPadFactory : IFactory<IWeightedFloorPad, IWeightedFloorPad>
     {
         private readonly ILogger _logger;
         private readonly string _gameObjectName;
@@ -34,7 +34,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 
         public IEventChannelSO Released => _Released;
 
-        public virtual IWeightedFloorPad Create(IFloorPad floorPadBehaviour)
+        public virtual IWeightedFloorPad Create(IWeightedFloorPad floorPadBehaviour)
         {
             var pressValidator = new FloorPadPressValidator(floorPadBehaviour, _logger, _gameObjectName);
             var releaseValidator = new FloorPadReleaseValidator(floorPadBehaviour, _logger, _gameObjectName);

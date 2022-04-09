@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
-    public partial class DoorEventChannelInteractorBehaviour : EventChannelInteractorBehaviour
+    public class DoorEventChannelInteractorBehaviour : EventChannelInteractorBehaviour
     {
         [Header(InspectorHeaders.Usability)]
         [Tooltip(ToolTips.DoorInteractionType)]

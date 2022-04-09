@@ -1,31 +1,28 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.Utilities;
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.Events;
-using Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     public class FloorPadInteractable : IInteractable<int>
     {
-        private readonly string _gameObjectName;
-        private readonly IFactory<IRewindableCommand, int> _commandFactory;
-        private readonly ILogger _logger;
+        private readonly IWeightedFloorPad _floorPad;
+        private readonly FloorPadCommandBuildDirectorSO _commandBuildDirector;
         private readonly IEventChannelSO<IRewindableCommand> _recordableActionOccurred;
 
-        public FloorPadInteractable(string gameObjectName, IFactory<IRewindableCommand, int> commandFactory,
-                                       ILogger logger, IEventChannelSO<IRewindableCommand> recordableActionOccurred)
+        public FloorPadInteractable(IWeightedFloorPad floorPad, FloorPadCommandBuildDirectorSO commandBuildDirector,
+                                    IEventChannelSO<IRewindableCommand> recordableActionOccurred)
         {
-            _gameObjectName = gameObjectName;
-            _commandFactory = commandFactory;
-            _logger = logger;
+            _floorPad = floorPad;
+            _commandBuildDirector = commandBuildDirector;
             _recordableActionOccurred = recordableActionOccurred;
         }
 
         protected IEventChannelSO<IRewindableCommand> RecordableActionOccurred => _recordableActionOccurred;
 
-        public void Interact(int parameter)
+        public void Interact(int interactorWeight)
         {
-            IRewindableCommand command = _commandFactory.Create(parameter);
+            IRewindableCommand command = _commandBuildDirector.Construct(_floorPad, interactorWeight);
             if (!command.CanExecute())
             {
                 return;
