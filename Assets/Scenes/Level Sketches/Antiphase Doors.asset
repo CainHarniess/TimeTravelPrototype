@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Antiphase Doors
   m_EditorClassIdentifier: 
   description: A pair of anti-phase doors block the goal.
-  _name: Antiphase Doors
+  _name: Antiphase Doorss
   _buildIndex: 5

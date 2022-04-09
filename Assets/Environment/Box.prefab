@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3644603443879121594}
   - component: {fileID: 3644603443879121543}
   - component: {fileID: 3644603443879121542}
-  - component: {fileID: 5356312479930949569}
+  - component: {fileID: 8993467666119217868}
+  - component: {fileID: 1204761145421690239}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
---- !u!114 &5356312479930949569
+--- !u!114 &8993467666119217868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,11 +156,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 3644603443879121595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a36fc3843da17f94a92cadad7eeaf289, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b2f830f13ca5044192fdc12a17f9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Weight:
+  _WeightReference:
     _UseConstant: 1
     _VariableValue: 0
-    _Constant: {fileID: 11400000, guid: 34197d51ff1cce0428abad310abc4d5c, type: 2}
+    _Constant: {fileID: 11400000, guid: 6db497c8bcb1ed54ea2ec28b0cff89f8, type: 2}
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+--- !u!114 &1204761145421690239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644603443879121595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9996715a7a8e874789bd7ac021c1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WeightReference:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 6db497c8bcb1ed54ea2ec28b0cff89f8, type: 2}
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}

@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 86e8b268e6e79224e92111b1747ed352
+guid: a0614d13ab1cc3e45a606a759a7c0041
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
   - _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
-  - _CurrentLevel: {instanceID: 0}
-  - _NextLevel: {instanceID: 0}
-  - _PreviousLevel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

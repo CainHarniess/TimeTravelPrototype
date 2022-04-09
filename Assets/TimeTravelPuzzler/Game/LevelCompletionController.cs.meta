@@ -5,8 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
-  - _levelCompletionChannel: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
-  - _sceneChangeChannel: {fileID: 11400000, guid: d1b27facaa2843442a7c66483dfbdb25, type: 2}
+  - _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  - _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
