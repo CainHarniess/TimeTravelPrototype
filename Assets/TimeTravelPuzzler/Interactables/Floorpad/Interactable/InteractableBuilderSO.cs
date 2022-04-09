@@ -6,24 +6,24 @@ using UnityEngine;
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     [CreateAssetMenu(fileName = AssetMenu.InteractableBuilderFileName, menuName = AssetMenu.InteractableBuilderPath)]
-    public class FloorPadInteractableBuilderSO : ScriptableObject
+    public class InteractableBuilderSO : ScriptableObject
     {
         public IWeightedFloorPad FloorPad { get; private set; }
-        public FloorPadInteractableBuilderSO WithFloorPad(IWeightedFloorPad floorPad)
+        public InteractableBuilderSO WithFloorPad(IWeightedFloorPad floorPad)
         {
             FloorPad = floorPad;
             return this;
         }
 
         public FloorPadCommandBuildDirectorSO CommandBuildDirector { get; private set; }
-        public FloorPadInteractableBuilderSO WithDirector(FloorPadCommandBuildDirectorSO commandBuildDirector)
+        public InteractableBuilderSO WithDirector(FloorPadCommandBuildDirectorSO commandBuildDirector)
         {
             CommandBuildDirector = commandBuildDirector;
             return this;
         }
 
         public IEventChannelSO<IRewindableCommand> TimelineEventChannel { get; private set; }
-        public FloorPadInteractableBuilderSO WithTimelineEventChannel(IEventChannelSO<IRewindableCommand> timelineEventChannel)
+        public InteractableBuilderSO WithTimelineEventChannel(IEventChannelSO<IRewindableCommand> timelineEventChannel)
         {
             TimelineEventChannel = timelineEventChannel;
             return this;
