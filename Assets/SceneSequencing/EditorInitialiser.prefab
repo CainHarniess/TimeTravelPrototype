@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3138662205483129145
+--- !u!1 &7881881907002186773
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3138662205483129144}
-  - component: {fileID: 4580658348159812303}
+  - component: {fileID: 2022620604204277306}
+  - component: {fileID: 2871614437489919374}
   m_Layer: 0
-  m_Name: LevelCompletionController
+  m_Name: EditorInitialiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3138662205483129144
+--- !u!4 &2022620604204277306
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138662205483129145}
+  m_GameObject: {fileID: 7881881907002186773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,18 +31,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4580658348159812303
+--- !u!114 &2871614437489919374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138662205483129145}
+  m_GameObject: {fileID: 7881881907002186773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a017e7c3da08e774aaeba5f3c98f2c0c, type: 3}
+  m_Script: {fileID: 11500000, guid: a0614d13ab1cc3e45a606a759a7c0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
-  _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
-  _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+  _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}

@@ -26,7 +26,7 @@ namespace Osiris.TimeTravelPuzzler.Game
         public void TriggerLevelCompletion()
         {
             _spriteAnimator.ChangeColour(Color.green);
-            _levelCompletion.RaiseLevelCompletion();
+            _levelCompletion.Raise();
         }
 
         public void UndoLevelCompletion()

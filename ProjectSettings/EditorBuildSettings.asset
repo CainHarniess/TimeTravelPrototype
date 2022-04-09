@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Persistant.unity
     guid: a9a4eb29de331234fb95eb11705d1e1d
   - enabled: 1
-    path: Assets/Scenes/Level Sketches/Level 1.unity
-    guid: 50a17e10a38a37940829a4f5c63358d7
+    path: Assets/Scenes/Level Sketches/Goal Only.unity
+    guid: b5d175b19e5ff914892c1a908c57fa70
   - enabled: 1
-    path: Assets/Scenes/Level Sketches/Level 2.unity
-    guid: 5091eca9dd6c053419d566418abc9e29
+    path: Assets/Scenes/Level Sketches/Single One-Way Door.unity
+    guid: 71f0154911d8f404c99ccae92981c39b
   - enabled: 1
-    path: Assets/Scenes/Level Sketches/Level 3.unity
-    guid: 6163cb6749b6f6542a8bff2f40954324
+    path: Assets/Scenes/Level Sketches/Two One-Way Doors.unity
+    guid: 897a120b6aa935448b7592cbbf471cc3
   - enabled: 1
-    path: Assets/Scenes/Level Sketches/Level 4.unity
-    guid: b0b884d091781b9489cc0c3cba6e4ad5
+    path: Assets/Scenes/Level Sketches/Antiphase Doors.unity
+    guid: 108e2e10583b40b4596164f897b3264b
+  - enabled: 1
+    path: Assets/Scenes/Level Sketches/Press-and-Hold Door.unity
+    guid: 34c37a082b177da4ab9a13c8f04aeb97
   m_configObjects: {}

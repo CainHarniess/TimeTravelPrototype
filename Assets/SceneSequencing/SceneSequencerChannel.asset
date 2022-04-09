@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b3210a148314fc4a93c12d300508a84, type: 3}
-  m_Name: LevelCompletionEventChannel
+  m_Name: SceneSequencerChannel
   m_EditorClassIdentifier: 
-  _description: 
-  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
+  _description: Event channel for passing on level completion notifications to the
+    SceneSequencer class.
+  _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}

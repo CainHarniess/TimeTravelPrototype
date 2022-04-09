@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 86e8b268e6e79224e92111b1747ed352
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  - _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  - _CurrentLevel: {instanceID: 0}
+  - _NextLevel: {instanceID: 0}
+  - _PreviousLevel: {instanceID: 0}
+  - _SceneSequencerChannel: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  - _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

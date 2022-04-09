@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4149211200277140739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6119413360453999194}
+  - component: {fileID: 6551234885753695821}
+  m_Layer: 0
+  m_Name: SceneSequencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &6119413360453999194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149211200277140739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8584247, y: -0.90833867, z: -2.0310385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6551234885753695821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149211200277140739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e8b268e6e79224e92111b1747ed352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  _LevelArray:
+  - {fileID: 11400000, guid: 921d7eefcd3050e4e8f4ee75a6115087, type: 2}
+  - {fileID: 11400000, guid: fa62c5f1c1c8ffa468cc54929b1fb081, type: 2}
+  - {fileID: 11400000, guid: a851c5a7ccd005a4aaf897a902bb4c88, type: 2}
+  - {fileID: 11400000, guid: 5ccdffafbafdf0a468d61199e5190f8a, type: 2}
+  - {fileID: 11400000, guid: cc8d01b492f94de45abc1ae8287f7dfc, type: 2}
+  _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  _currentLevelSequenceIndex: 0
+  _CurrentLevel: {fileID: 0}
+  _nextLevelSequenceIndex: 0
+  _NextLevel: {fileID: 0}
+  _previousLevelSequenceIndex: 0
+  _PreviousLevel: {fileID: 0}
+  _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+  _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}

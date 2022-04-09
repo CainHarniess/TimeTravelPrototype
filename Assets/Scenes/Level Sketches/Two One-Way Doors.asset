@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3210a148314fc4a93c12d300508a84, type: 3}
-  m_Name: LevelCompletionEventChannel
+  m_Script: {fileID: 11500000, guid: e3046530928016749ac41dc833f98758, type: 3}
+  m_Name: Two One-Way Doors
   m_EditorClassIdentifier: 
-  _description: 
-  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
+  description: Simple schene with two one-way door blocking the goal.
+  _name: Two One-Way Doors
+  _buildIndex: 4
