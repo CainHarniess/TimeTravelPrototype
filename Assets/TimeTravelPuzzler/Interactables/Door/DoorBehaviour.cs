@@ -1,28 +1,52 @@
 using Osiris.EditorCustomisation;
-using Osiris.Testing;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
+    [ExecuteInEditMode]
     public class DoorBehaviour : MonoBehaviour, IDoor
     {
+        private string _gameObjectName;
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
 
+        [Header(InspectorHeaders.ControlVariables)]
+        [Tooltip(ToolTips.DoorBuildDirector)]
+        [SerializeField] private DoorBuildDirectorSO _BuildDirector;
+
         [Header(InspectorHeaders.DebugVariables)]
+        [Tooltip(ILoggerToolTips.ToolTip)]
         [SerializeField] private UnityConsoleLogger _Logger;
+        [Tooltip(ToolTips.Door)]
         [SerializeReference] private IDoor _Door;
+
+        private string GameObjectName
+        {
+            get
+            {
+                if (_gameObjectName == null)
+                {
+                    _gameObjectName = gameObject.name;
+                }
+                return _gameObjectName;
+            }
+        }
 
         private void Awake()
         {
+            if (_Door != null)
+            {
+                return;
+            }
+            InitialiseDoor();
+        }
+
+        private void InitialiseDoor()
+        {
             _collider = GetComponent<BoxCollider2D>();
             _sprite = GetComponent<SpriteRenderer>();
-
-            var colliderProxy = new BehaviourProxy(_collider);
-            var rendererProxy = new RendererProxy(_sprite);
-
-            _Door = new Door(gameObject.name, _Logger, rendererProxy, colliderProxy);
+            _Door = _BuildDirector.Construct(GameObjectName, _Logger, _sprite, _collider);
         }
 
         public bool IsOpen => _Door.IsOpen;
@@ -47,10 +71,35 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
             _Door.Close();
         }
 
-        private void SetComponentStatus(bool isActive)
+        [ContextMenu("Open door")]
+        public void EditorOpen()
         {
-            _sprite.enabled = isActive;
-            _collider.enabled = isActive;
+            InitialiseDoor();
+            _Door.Open();
+        }
+
+        [ContextMenu("Close door")]
+        public void EditorClose()
+        {
+            InitialiseDoor();
+            _Door.Close();
+        }
+
+
+
+
+        private struct ToolTips
+        {
+            public const string DoorBuildDirector = "The instance of the DoorBuildDirectorSO class responsible for instantiating the nested CLR door."
+                                                    + "\n"
+                                                    + "\n"
+                                                    + "The DoorBehaviour class will not function correctly if this is not populated at run time.";
+
+            public const string Door = "The nested CLR object representing the door containing the core logic."
+                                       + "\n"
+                                       + "\n"
+                                       + "This field is intentionally read-only.\n"
+                                       + "Use the context menu commands to manually change the state of the door.";
         }
     }
 }

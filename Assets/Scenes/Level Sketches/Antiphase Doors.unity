@@ -476,6 +476,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1112991951, guid: c3fd2407a49144c4eb216cacf2e64f71, type: 3}
+      propertyPath: _isInitiallyOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102972334562530824, guid: c3fd2407a49144c4eb216cacf2e64f71, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4102972334562530825, guid: c3fd2407a49144c4eb216cacf2e64f71, type: 3}
       propertyPath: m_Name
       value: FloorPadDoor
@@ -522,6 +530,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102972334562530826, guid: c3fd2407a49144c4eb216cacf2e64f71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102972334562530827, guid: c3fd2407a49144c4eb216cacf2e64f71, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -2,7 +2,7 @@ using Osiris.EditorCustomisation;
 using Osiris.Testing;
 using System;
 using UnityEngine;
-using OUL = Osiris.Utilities.Logging;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
@@ -10,26 +10,21 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
     public class Door : IDoor
     {
         private readonly string _gameObjectName;
-        private readonly OUL.ILogger _logger;
+        private readonly ILogger _logger;
         private readonly IRendererProxy _rendererProxy;
         private readonly IBehaviourProxy _colliderProxy;
 
         [ReadOnly] [SerializeField] private bool _IsOpen;
 
-        private Door(string gameObjectName, OUL.ILogger logger)
+        public Door(string gameObjectName, ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy)
         {
             _gameObjectName = gameObjectName;
             _logger = logger;
-        }
-
-        public Door(string gameObjectName, OUL.ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy)
-            : this(gameObjectName, logger)
-        {
             _rendererProxy = rendererProxy;
             _colliderProxy = colliderProxy;
         }
 
-        public bool IsOpen => _IsOpen;
+        public bool IsOpen => _IsOpen; 
 
         public bool CanOpen()
         {
