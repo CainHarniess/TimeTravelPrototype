@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a851c5a7ccd005a4aaf897a902bb4c88, type: 2}
   - {fileID: 11400000, guid: 5ccdffafbafdf0a468d61199e5190f8a, type: 2}
   - {fileID: 11400000, guid: cc8d01b492f94de45abc1ae8287f7dfc, type: 2}
+  _MainMenuSceneData: {fileID: 11400000, guid: 74efb6e48cd2e29448db63fd0ae83d62, type: 2}
+  _PauseMenuSceneData: {fileID: 11400000, guid: 6ff1607d5640b8e4a9186b6be68027bd, type: 2}
   _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
   _currentLevelSequenceIndex: 0
   _CurrentLevel: {fileID: 0}

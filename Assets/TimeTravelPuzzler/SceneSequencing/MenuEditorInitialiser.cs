@@ -1,16 +1,14 @@
-using Osiris.EditorCustomisation;
+﻿using Osiris.EditorCustomisation;
 using Osiris.SceneManagement.Core;
-using Osiris.SceneManagement.Core.Events;
 using Osiris.Utilities.Logging;
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Osiris.TimeTravelPuzzler
 {
-    public class EditorInitialiser : MonoBehaviour
-    {
 #if UNITY_EDITOR
+    public class MenuEditorInitialiser : MonoBehaviour
+    {
         private string _gameObjectName;
 
         [Header(InspectorHeaders.ControlVariables)]
@@ -21,7 +19,16 @@ namespace Osiris.TimeTravelPuzzler
 
         private void Awake()
         {
-            CacheGameObjectName();
+            _gameObjectName = gameObject.name;
+        }
+
+        private void Start()
+        {
+            LoadPersistantSceneIfNotLoaded();
+        }
+
+        private void LoadPersistantSceneIfNotLoaded()
+        {
             if (SceneManager.GetSceneByBuildIndex(_PersistantScene.BuildIndex).isLoaded)
             {
                 _Logger.Log("Persistant scene is already loaded.", _gameObjectName);
@@ -30,14 +37,6 @@ namespace Osiris.TimeTravelPuzzler
             _Logger.Log("Persistant load being loaded.", _gameObjectName);
             SceneManager.LoadSceneAsync(_PersistantScene.BuildIndex, LoadSceneMode.Additive);
         }
-
-        private void CacheGameObjectName()
-        {
-            if (_gameObjectName == null)
-            {
-                _gameObjectName = gameObject.name;
-            }
-        }
-#endif
     }
+#endif
 }

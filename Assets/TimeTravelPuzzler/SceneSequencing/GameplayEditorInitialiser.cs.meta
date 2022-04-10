@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  - _GameplayPersistantScene: {fileID: 11400000, guid: 1f0b8f6425c50da4f809b69680f18c10, type: 2}
   - _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

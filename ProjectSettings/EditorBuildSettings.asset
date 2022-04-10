@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Initialiser.unity
     guid: 8e349943edee80e4f8e2a64883f558bc
   - enabled: 1
-    path: Assets/Scenes/Game/Persistant.unity
+    path: Assets/Scenes/Game/Persistant Application.unity
     guid: a9a4eb29de331234fb95eb11705d1e1d
   - enabled: 1
     path: Assets/Scenes/Level Sketches/Goal Only.unity
@@ -24,6 +24,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Sketches/Antiphase Doors.unity
     guid: 108e2e10583b40b4596164f897b3264b
   - enabled: 1
-    path: Assets/Scenes/Level Sketches/Press-and-Hold Door.unity
+    path: Assets/Scenes/Level Sketches/Press-and-hold Door.unity
     guid: 34c37a082b177da4ab9a13c8f04aeb97
+  - enabled: 1
+    path: Assets/Scenes/Game/Main Menu.unity
+    guid: 889025ca4c5d72c41afb1bfb019da7aa
+  - enabled: 1
+    path: Assets/Scenes/Game/Pause Menu.unity
+    guid: d426c12efd98fff4f8c85d03a4e78bdf
+  - enabled: 1
+    path: Assets/Scenes/Game/Persistant Gameplay.unity
+    guid: 263de1154905a8d4cbae896f7e9895de
   m_configObjects: {}

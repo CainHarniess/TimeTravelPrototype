@@ -33,7 +33,7 @@ namespace Osiris.TimeTravelPuzzler
 
         private void Awake()
         {
-            CacheGameObjectName();
+            _gameObjectName = gameObject.name;
         }
 
         private void Start()
@@ -84,14 +84,6 @@ namespace Osiris.TimeTravelPuzzler
             _NextLevel = _LevelArray[_nextLevelSequenceIndex];
             _Logger.Log($"New next level: {_NextLevel.Name}.", _gameObjectName);
 
-        }
-
-        private void CacheGameObjectName()
-        {
-            if (_gameObjectName == null)
-            {
-                _gameObjectName = gameObject.name;
-            }
         }
 
         private void OnEnable()
