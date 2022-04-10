@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
-  m_Name: SceneSequenceLogger
+  m_Script: {fileID: 11500000, guid: 9c830c40102b26c4c94db447ad18b07b, type: 3}
+  m_Name: GameUnpausedChannel
   m_EditorClassIdentifier: 
-  _DisplayLogging: 0
+  _description: Event channel notifying when the game is no longer in a paused state.
+  _Logger: {fileID: 11400000, guid: 1807665ea57c48d4c9623fc06baff0ee, type: 2}

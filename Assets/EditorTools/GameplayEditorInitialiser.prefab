@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0614d13ab1cc3e45a606a759a7c0041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLoadUtility: {fileID: 11400000, guid: 353b887e6b04c3e4cb537243693acffa, type: 2}
   _ApplicationPersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
   _GameplayPersistantScene: {fileID: 11400000, guid: 1f0b8f6425c50da4f809b69680f18c10, type: 2}
-  _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  _PauseMenuScene: {fileID: 11400000, guid: 6ff1607d5640b8e4a9186b6be68027bd, type: 2}
+  _Logger: {fileID: 11400000, guid: 0d47e0ec4c849d04fa101381b492353e, type: 2}

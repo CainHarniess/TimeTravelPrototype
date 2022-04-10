@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3282648814424052199}
   - component: {fileID: 3282648814424052200}
   - component: {fileID: 3282648814424052198}
+  - component: {fileID: 4239520520554023156}
   - component: {fileID: 605596111}
   - component: {fileID: 3824431566885776034}
   - component: {fileID: 5620323513873613148}
@@ -179,6 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500aab95fd4b77e458f77d20e024c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isControlActive: 0
+  _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
+  _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
+  _colliderCastDistance:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 809ece2504644ce49a2088ce34ccd41f, type: 2}
   _cloneTransfrom: {fileID: 0}
   _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
 --- !u!114 &3282648814424052198
@@ -193,13 +201,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83195732814afb2438c13b8b95ccb9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CloneInitialiser: {fileID: 0}
+  _isControlActive: 0
+  _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
+  _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
   _MaximumRewindTimeRef:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 611af761ddf94bc48b65e2ba5efbfd14, type: 2}
+  _CloneInitialiser: {fileID: 0}
   _PlayerRewindRequested: {fileID: 11400000, guid: 1a2820802e59e754aa7f261568ad0fc9, type: 2}
   _PlayerRewindCancelled: {fileID: 11400000, guid: a8746ebcd4b123f4991c3a2c99f135bd, type: 2}
+--- !u!114 &4239520520554023156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282648814424052203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae035126d11d9eb4bb28937b8e40ec92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isControlActive: 0
+  _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
+  _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
+  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
+  _PauseButtonPressed: {fileID: 11400000, guid: 6ebca37493d4c9446b7544be0ddf327e, type: 2}
 --- !u!114 &605596111
 MonoBehaviour:
   m_ObjectHideFlags: 0

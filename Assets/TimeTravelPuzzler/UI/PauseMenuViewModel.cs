@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.GameManagement;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
@@ -10,9 +11,14 @@ namespace Osiris.TimeTravelPuzzler.UI
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private GameObject _MainCameraPrefab;
+        [SerializeField] private GameObject _PauseMenuUI;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
+
+        [Header(InspectorHeaders.ListensTo)]
+        [SerializeField] private PauseEventChannel _GamePaused;
+        [SerializeField] private PauseEventChannel _GameUnpaused;
 
         private void Awake()
         {
@@ -35,6 +41,36 @@ namespace Osiris.TimeTravelPuzzler.UI
         public void MainMenu()
         {
             _Logger.Log("Main Menu clicked.", _gameObjectName);
+        }
+
+        private void OnPaused()
+        {
+            if (_PauseMenuUI.activeInHierarchy)
+            {
+                _Logger.Log("Pause UI is already inactive in the scene hierarchy.", _gameObjectName, LogLevel.Warning);
+            }
+            _PauseMenuUI.SetActive(true);
+        }
+
+        private void OnUnpaused()
+        {
+            if (!_PauseMenuUI.activeInHierarchy)
+            {
+                _Logger.Log("Pause UI is already active in the scene hierarchy.", _gameObjectName, LogLevel.Warning);
+            }
+            _PauseMenuUI.SetActive(false);
+        }
+
+        private void OnEnable()
+        {
+            _GamePaused.Event += OnPaused;
+            _GameUnpaused.Event += OnUnpaused;
+        }
+
+        private void OnDisable()
+        {
+            _GamePaused.Event -= OnPaused;
+            _GameUnpaused.Event -= OnUnpaused;
         }
 
 

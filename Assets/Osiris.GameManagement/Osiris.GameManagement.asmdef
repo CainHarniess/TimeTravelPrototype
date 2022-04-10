@@ -1,11 +1,8 @@
 {
-    "name": "Osiris.TimeTravelPuzzler.UI",
-    "rootNamespace": "Osiris.TimeTravelPuzzler.UI",
+    "name": "Osiris.GameManagement",
+    "rootNamespace": "Osiris.GameManagement",
     "references": [
-        "GUID:3ea6b9fbbfdae0747a43c9358e9513e4",
-        "GUID:000b6455690447b4099fe4c00b9ff7db",
-        "GUID:b35101da131c1fb489d2a2b588cca340",
-        "GUID:b07f17dae5f7c364fb75579e92e338a9"
+        "GUID:000b6455690447b4099fe4c00b9ff7db"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

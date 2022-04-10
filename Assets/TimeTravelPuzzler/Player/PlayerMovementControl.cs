@@ -3,6 +3,7 @@ using Osiris.TimeTravelPuzzler.Commands;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.Extensions;
+using Osiris.Utilities.References;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,15 +11,19 @@ using UnityEngine.InputSystem;
 
 namespace Osiris.TimeTravelPuzzler.Player
 {
-    public class PlayerMovement : MonoBehaviour
+
+    public class PlayerMovementControl : PlayerControl
     {
         private PlayerInput _playerInput;
         private InputAction _movementAction;
         private BoxCollider2D _collider;
         private Transform _transform;
-        private float _colliderCastDistance = 1f;
         private List<IMoveable> _currentMovables;
+        
+        [Header(InspectorHeaders.ControlVariables)]
+        [SerializeField] private FloatReference _colliderCastDistance;
 
+        [Header(InspectorHeaders.Injections)]
         [SerializeField] private Transform _cloneTransfrom;
 
         [Header(InspectorHeaders.BroadcastsOn)]
@@ -28,13 +33,18 @@ namespace Osiris.TimeTravelPuzzler.Player
         {
             _playerInput = GetComponent<PlayerInput>();
             _collider = GetComponent<BoxCollider2D>();
-            _movementAction = _playerInput.actions["Movement"];
+            _movementAction = _playerInput.actions[ControlActions.Movement];
             _transform = transform;
             _currentMovables = new List<IMoveable>(8);
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext obj)
         {
+            if (!IsControlActive)
+            {
+                return;
+            }
+
             Vector2 movementDirection = obj.ReadValue<Vector2>();
             if (!CanMove(movementDirection))
             {
@@ -46,7 +56,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         public bool CanMove(Vector2 movementDirection)
         {
             RaycastHit2D[] castResults = new RaycastHit2D[8];
-            int resultCount = _collider.Cast(movementDirection, castResults, _colliderCastDistance);
+            int resultCount = _collider.Cast(movementDirection, castResults, _colliderCastDistance.Value);
             if (resultCount == 0)
             {
                 return true;
@@ -105,13 +115,15 @@ namespace Osiris.TimeTravelPuzzler.Player
             _currentMovables.Clear();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _movementAction.performed += OnMovementPerformed;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _movementAction.performed -= OnMovementPerformed;
         }
     }

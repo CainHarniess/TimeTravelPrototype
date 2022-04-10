@@ -1,4 +1,5 @@
 using Osiris.EditorCustomisation;
+using Osiris.GameManagement;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.References;
 using System.Collections;
@@ -7,17 +8,17 @@ using UnityEngine.InputSystem;
 
 namespace Osiris.TimeTravelPuzzler.Player
 {
-    public class PlayerRewind : MonoBehaviour
+    public class PlayerRewindControl : PlayerControl
     {
         private PlayerInput _playerInput;
         private InputAction _rewindAction;
-
         private IEnumerator _rewindTimer;
-
-        [SerializeField] private CloneInitialiser _CloneInitialiser;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
+
+        [Header(InspectorHeaders.Injections)]
+        [SerializeField] private CloneInitialiser _CloneInitialiser;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
@@ -26,11 +27,16 @@ namespace Osiris.TimeTravelPuzzler.Player
         void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
-            _rewindAction = _playerInput.actions["RewindTime"];
+            _rewindAction = _playerInput.actions[ControlActions.RewindTime];
         }
 
         private void OnRewindStarted(InputAction.CallbackContext obj)
         {
+            if (!IsControlActive)
+            {
+                return;
+            }
+
             _PlayerRewindRequested.Raise();
 
             // TODO:    The TimelineManager should be responsible for activating the clone once
@@ -49,6 +55,11 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private void OnRewindCancelled(InputAction.CallbackContext obj)
         {
+            if (!IsControlActive)
+            {
+                return;
+            }
+
             if (_rewindTimer != null)
             {
                 StopCoroutine(_rewindTimer);
@@ -56,14 +67,16 @@ namespace Osiris.TimeTravelPuzzler.Player
             _PlayerRewindCancelled.Raise();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _rewindAction.performed += OnRewindStarted;
             _rewindAction.canceled += OnRewindCancelled;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _rewindAction.performed -= OnRewindStarted;
             _rewindAction.canceled -= OnRewindCancelled;
         }

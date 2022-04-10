@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308f4c440d65db54f93ebcf2b3a38879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLoadUtility: {fileID: 11400000, guid: 353b887e6b04c3e4cb537243693acffa, type: 2}
   _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
-  _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  _Logger: {fileID: 11400000, guid: 0d47e0ec4c849d04fa101381b492353e, type: 2}

@@ -8,5 +8,6 @@
         public const string ControlVariables = "Control Variables";
         public const string DebugVariables = "Debug Variables";
         public const string Usability = "Usability";
+        public const string Injections = "Injections";
     }
 }
