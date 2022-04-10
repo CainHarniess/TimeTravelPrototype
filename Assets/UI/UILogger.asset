@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
   m_Name: UILogger
   m_EditorClassIdentifier: 
-  _DisplayLogging: 0
+  _DisplayLogging: 1
