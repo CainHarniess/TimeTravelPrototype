@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace Osiris.EditorCustomisation
 {
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
-    public class ReadOnlyDrawer : UnityEditor.PropertyDrawer
+    public class ReadOnlyDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -13,4 +14,5 @@ namespace Osiris.EditorCustomisation
             GUI.enabled = true;
         }
     }
+#endif
 }

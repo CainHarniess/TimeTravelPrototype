@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c4937fc44c51b4bbdbda92d571bf97, type: 3}
-  m_Name: LevelCompletionEventChannel
+  m_Script: {fileID: 11500000, guid: 105d0e826cd422b4b81762110ed41529, type: 3}
+  m_Name: TransitionDuration
   m_EditorClassIdentifier: 
-  _description: 
-  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
+  _value: 1

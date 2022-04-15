@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.EditorCustomisation
+namespace Osiris.TimeTravelPuzzler.Editor
 {
     [CustomPropertyDrawer(typeof(TimelineEvent))]
     public class TimelineEventPropertyDrawer : PropertyDrawer

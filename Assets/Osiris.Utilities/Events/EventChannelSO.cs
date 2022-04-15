@@ -1,5 +1,4 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.Utilities.Editor;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;

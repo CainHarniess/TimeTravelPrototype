@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f929467573b304293b3daa47921480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: df4ba5f83e8adb642bc8de79839f8c9f, type: 2}
   _loadEventChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
   _transitionChannel: {fileID: 11400000, guid: dd59ba3cdef4931489721e4347915707, type: 2}

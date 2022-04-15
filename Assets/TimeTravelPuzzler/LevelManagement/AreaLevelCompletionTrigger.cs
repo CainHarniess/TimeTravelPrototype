@@ -9,7 +9,7 @@ namespace Osiris.TimeTravelPuzzler.Game
         [SerializeField] private GoalSpriteAnimator _spriteAnimator;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private LevelCompletionEventChannelSO _levelCompletion;
+        [SerializeField] private LevelCompletionEventChannel _levelCompletion;
 
         private void Awake()
         {

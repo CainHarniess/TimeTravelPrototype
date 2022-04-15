@@ -1,5 +1,4 @@
-﻿using Osiris.Utilities.Editor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Osiris.Utilities.Logging
 {
@@ -18,6 +17,7 @@ namespace Osiris.Utilities.Logging
 
         public void Log(string message, string senderName = null, LogLevel logLevel = LogLevel.Info)
         {
+#if UNITY_EDITOR
             if (!DisplayLogging & logLevel == LogLevel.Info)
             {
                 return;
@@ -35,6 +35,7 @@ namespace Osiris.Utilities.Logging
                     Debug.Log(PrefixMessage(message, senderName));
                     break;
             }
+#endif
         }
 
         protected string PrefixMessage(string message, string prefix = null)

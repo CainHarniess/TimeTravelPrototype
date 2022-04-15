@@ -1,8 +1,12 @@
 {
-    "name": "Osiris.EditorCustomisation",
-    "rootNamespace": "Osiris.EditorCustomisation",
-    "references": [],
-    "includePlatforms": [],
+    "name": "Osiris.Utilities.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:000b6455690447b4099fe4c00b9ff7db"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

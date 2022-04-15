@@ -14,10 +14,10 @@ namespace Osiris.TimeTravelPuzzler
         [SerializeField] private UnityConsoleLogger _Logger;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private LevelCompletionEventChannelSO _LevelCompleted;
+        [SerializeField] private LevelCompletionEventChannel _LevelCompleted;
 
         [Header(InspectorHeaders.BroadcastsOn)]
-        [SerializeField] private LevelCompletionEventChannelSO _SceneSequencerChannel;
+        [SerializeField] private LevelCompletionEventChannel _SceneSequencerChannel;
 
         private void TriggerSceneChange()
         {

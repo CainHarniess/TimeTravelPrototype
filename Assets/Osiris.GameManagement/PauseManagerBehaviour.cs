@@ -1,9 +1,8 @@
 using Osiris.EditorCustomisation;
-using Osiris.GameManagement;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.GameManagement
+namespace Osiris.GameManagement
 {
     public class PauseManagerBehaviour : MonoBehaviour
     {
@@ -50,7 +49,7 @@ namespace Osiris.TimeTravelPuzzler.GameManagement
         {
             _Logger.Log("Game unpaused.", _gameObjectName);
             _GameUnpaused.Raise();
-            Time.timeScale = 0;
+            Time.timeScale = 1;
             _IsPaused = false;
         }
 

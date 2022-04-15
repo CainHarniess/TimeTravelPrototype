@@ -4,12 +4,15 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  - _PersistantApplication: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  - _PersistantGameplay: {fileID: 11400000, guid: 1f0b8f6425c50da4f809b69680f18c10, type: 2}
+  - _MainMenu: {fileID: 11400000, guid: 74efb6e48cd2e29448db63fd0ae83d62, type: 2}
   - _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
   - _CurrentLevel: {instanceID: 0}
   - _NextLevel: {instanceID: 0}
   - _PreviousLevel: {instanceID: 0}
-  - _SceneSequencerChannel: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  - _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+  - _ReturnToMainMenu: {fileID: 11400000, guid: d85e57c98ff94894996a93d20e607aeb, type: 2}
   - _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

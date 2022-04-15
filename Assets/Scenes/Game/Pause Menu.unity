@@ -269,6 +269,10 @@ PrefabInstance:
       value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906298, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 965027411732906298, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1186100390}
@@ -346,11 +350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500.00006
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -310.56952
+      value: -310.51355
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -526,11 +530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500.00006
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.52318
+      value: -103.50452
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -601,6 +605,8 @@ MonoBehaviour:
   _MainCameraPrefab: {fileID: 1106836752845392153, guid: 9948923bf7b34544b9acaa8602da731a, type: 3}
   _PauseMenuUI: {fileID: 1231100689}
   _Logger: {fileID: 11400000, guid: 9e2b3c547e9b818499f5e37998380b30, type: 2}
+  _PlayerPaused: {fileID: 11400000, guid: 6ebca37493d4c9446b7544be0ddf327e, type: 2}
+  _ReturnToMainMenu: {fileID: 11400000, guid: d85e57c98ff94894996a93d20e607aeb, type: 2}
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
 --- !u!1 &1231100689
@@ -973,11 +979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500.00006
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -517.6159
+      value: -517.5226
       objectReference: {fileID: 0}
     - target: {fileID: 965027411732906299, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

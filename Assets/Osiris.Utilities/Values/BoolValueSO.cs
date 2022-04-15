@@ -1,5 +1,4 @@
-﻿using Osiris.Utilities.Editor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Osiris.Utilities.Values
 {

@@ -1,4 +1,4 @@
-﻿namespace Osiris.Utilities.Editor
+﻿namespace Osiris.Utilities
 {
     internal struct AssetMenu
     {

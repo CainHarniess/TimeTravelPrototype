@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2e85fd7ce957c28418a0cfc94267a94a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _Logger: {fileID: 11400000, guid: 1807665ea57c48d4c9623fc06baff0ee, type: 2}
+  - _ApplicationExit: {fileID: 11400000, guid: 3fad0613bbca82943bff10511b419d69, type: 2}
+  - _ShutDown: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

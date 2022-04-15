@@ -6,7 +6,7 @@ namespace Osiris.TimeTravelPuzzler
 {
     [CreateAssetMenu(fileName = AssetMenu.LevelCompletionEventChannelFileName,
                      menuName = AssetMenu.LevelCompletionEventChannelPath)]
-    public class LevelCompletionEventChannelSO : EventChannelSO
+    public class LevelCompletionEventChannel : EventChannelSO
     {
         
     }

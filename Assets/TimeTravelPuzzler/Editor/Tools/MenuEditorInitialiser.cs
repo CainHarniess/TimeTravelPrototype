@@ -15,7 +15,7 @@ namespace Osiris.TimeTravelPuzzler.EditorTools
         [SerializeField] private SceneLoadUtilitySO _sceneLoadUtility;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private SceneSO _PersistantScene;
+        [SerializeField] private SceneSO _PersistantApplication;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -32,7 +32,7 @@ namespace Osiris.TimeTravelPuzzler.EditorTools
 
         private void LoadPersistantSceneIfNotLoaded()
         {
-            _sceneLoadUtility.LoadSceneIfNotAlreadyLoaded(_PersistantScene, _gameObjectName, _Logger);
+            _sceneLoadUtility.LoadSceneIfNotAlreadyLoaded(_PersistantApplication, _gameObjectName, _Logger);
         }
     }
 #endif

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c4937fc44c51b4bbdbda92d571bf97, type: 3}
-  m_Name: LevelCompletionEventChannel
+  m_Script: {fileID: 11500000, guid: 8266bf4d5e41fa64eab953d58adf2041, type: 3}
+  m_Name: ApplicationExitChannel
   m_EditorClassIdentifier: 
-  _description: 
-  _Logger: {fileID: 11400000, guid: 3e31458ed9ac00943beebdfdba39b2ab, type: 2}
+  _description: Channel notifying of application-level events, such as start-up and
+    shutdown.
+  _Logger: {fileID: 11400000, guid: 1807665ea57c48d4c9623fc06baff0ee, type: 2}

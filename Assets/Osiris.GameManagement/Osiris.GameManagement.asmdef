@@ -2,7 +2,9 @@
     "name": "Osiris.GameManagement",
     "rootNamespace": "Osiris.GameManagement",
     "references": [
-        "GUID:000b6455690447b4099fe4c00b9ff7db"
+        "GUID:000b6455690447b4099fe4c00b9ff7db",
+        "GUID:3ea6b9fbbfdae0747a43c9358e9513e4",
+        "GUID:b35101da131c1fb489d2a2b588cca340"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

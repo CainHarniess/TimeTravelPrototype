@@ -43,16 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e8b268e6e79224e92111b1747ed352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PersistantScene: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  _PersistantApplication: {fileID: 11400000, guid: e6a24ffbc761aa24d8234bd60fed8059, type: 2}
+  _PersistantGameplay: {fileID: 11400000, guid: 1f0b8f6425c50da4f809b69680f18c10, type: 2}
+  _PauseMenu: {fileID: 11400000, guid: 6ff1607d5640b8e4a9186b6be68027bd, type: 2}
+  _MainMenu: {fileID: 11400000, guid: 74efb6e48cd2e29448db63fd0ae83d62, type: 2}
   _LevelArray:
   - {fileID: 11400000, guid: 921d7eefcd3050e4e8f4ee75a6115087, type: 2}
   - {fileID: 11400000, guid: fa62c5f1c1c8ffa468cc54929b1fb081, type: 2}
   - {fileID: 11400000, guid: a851c5a7ccd005a4aaf897a902bb4c88, type: 2}
   - {fileID: 11400000, guid: 5ccdffafbafdf0a468d61199e5190f8a, type: 2}
   - {fileID: 11400000, guid: cc8d01b492f94de45abc1ae8287f7dfc, type: 2}
-  _MainMenuSceneData: {fileID: 11400000, guid: 74efb6e48cd2e29448db63fd0ae83d62, type: 2}
-  _PauseMenuSceneData: {fileID: 11400000, guid: 6ff1607d5640b8e4a9186b6be68027bd, type: 2}
   _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
+  _scenesToLoad: 2
+  _scenesLoaded: 0
   _currentLevelSequenceIndex: 0
   _CurrentLevel: {fileID: 0}
   _nextLevelSequenceIndex: 0
@@ -60,4 +63,6 @@ MonoBehaviour:
   _previousLevelSequenceIndex: 0
   _PreviousLevel: {fileID: 0}
   _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+  _ReturnToMainMenu: {fileID: 11400000, guid: d85e57c98ff94894996a93d20e607aeb, type: 2}
   _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
+  _TransitionChannel: {fileID: 11400000, guid: dd59ba3cdef4931489721e4347915707, type: 2}
