@@ -6,7 +6,7 @@ namespace Osiris.Utilities.Commands
     public abstract class CommandBuilderSO : DescriptionSO
     {
         public Func<bool> CanExecute { get; protected set; }
-        public CommandBuilderSO WithCanExecute(Func<bool> candidateWeight)
+        public CommandBuilderSO WithCanExecute<T>(Func<bool> candidateWeight)
         {
             CanExecute = candidateWeight;
             return this;
@@ -18,7 +18,5 @@ namespace Osiris.Utilities.Commands
             Execute = execute;
             return this;
         }
-
-        public abstract Command Build();
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Osiris.Testing.Abstractions;
+using UnityEngine;
 
 namespace Osiris.Testing
 {
@@ -14,6 +15,15 @@ namespace Osiris.Testing
             _component = component;
         }
 
-        protected T Component => _component;
+    }
+
+    public class TransformProxy : ComponentProxy<Transform>, ITransformProxy
+    {
+        public TransformProxy(Transform transform) : base(transform)
+        {
+
+        }
+
+        public Vector3 Position { get; set; }
     }
 }

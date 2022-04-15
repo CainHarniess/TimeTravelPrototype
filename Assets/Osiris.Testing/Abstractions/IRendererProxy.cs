@@ -1,4 +1,4 @@
-﻿namespace Osiris.Testing
+﻿namespace Osiris.Testing.Abstractions
 {
     /// <summary>
     /// Interface for wrapping classes that derive from <c>UnityEngine.Renderer</c> to support

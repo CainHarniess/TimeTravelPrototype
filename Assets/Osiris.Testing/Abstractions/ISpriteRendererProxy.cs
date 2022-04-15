@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Osiris.Testing
+namespace Osiris.Testing.Abstractions
 {
     public interface ISpriteRendererProxy : IRendererProxy
     {

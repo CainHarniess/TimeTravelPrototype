@@ -1,6 +1,6 @@
-﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.TimeTravelPuzzler.Interactables.FloorPads;
+﻿using Osiris.TimeTravelPuzzler.Interactables.FloorPads;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+using Osiris.Utilities.Commands;
 using System;
 using UnityEngine;
 

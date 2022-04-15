@@ -1,6 +1,6 @@
 using NSubstitute;
 using NUnit.Framework;
-using Osiris.Testing;
+using Osiris.Testing.Abstractions;
 using Osiris.TimeTravelPuzzler.Interactables.Doors;
 using OUL = Osiris.Utilities.Logging;
 

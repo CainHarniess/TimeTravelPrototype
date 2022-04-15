@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     public class GoalSpriteAnimator
     {

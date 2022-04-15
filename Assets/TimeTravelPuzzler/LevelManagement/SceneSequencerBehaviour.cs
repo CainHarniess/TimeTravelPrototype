@@ -7,7 +7,7 @@ using Osiris.Utilities.Logging;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Osiris.TimeTravelPuzzler
+namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     public class SceneSequencerBehaviour : MonoBehaviour
     {
@@ -97,7 +97,7 @@ namespace Osiris.TimeTravelPuzzler
         }
         private void GetPreviousLevelReferences()
         {
-            _previousLevelSequenceIndex = (_currentLevelSequenceIndex == 0)
+            _previousLevelSequenceIndex = _currentLevelSequenceIndex == 0
                             ? _LevelArray.Length - 1
                             : _currentLevelSequenceIndex - 1;
             _PreviousLevel = _LevelArray[_previousLevelSequenceIndex];
@@ -105,7 +105,7 @@ namespace Osiris.TimeTravelPuzzler
 
         private void GetNextLevelReference()
         {
-            _nextLevelSequenceIndex = (_currentLevelSequenceIndex == _LevelArray.Length - 1)
+            _nextLevelSequenceIndex = _currentLevelSequenceIndex == _LevelArray.Length - 1
                             ? 0
                             : _currentLevelSequenceIndex + 1;
             _NextLevel = _LevelArray[_nextLevelSequenceIndex];
@@ -134,7 +134,7 @@ namespace Osiris.TimeTravelPuzzler
                 _PauseMenu
             };
             _Logger.Log(scenesToUnload.Stringify(), _gameObjectName);
-            
+
             var scenesToLoad = new SceneSO[]
             {
                 _MainMenu
@@ -156,11 +156,11 @@ namespace Osiris.TimeTravelPuzzler
             _ReturnToMainMenu.Event -= ReturnToMainMenu;
         }
 
-        
-        
-        
-        
-        
+
+
+
+
+
         private struct ToolTips
         {
             public const string PersistantApplication = "Doesn't seem to be used for anything in this class.\n"

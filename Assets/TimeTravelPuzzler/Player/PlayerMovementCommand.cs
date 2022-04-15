@@ -19,4 +19,5 @@ namespace Osiris.TimeTravelPuzzler.Commands
             Inverse = new MovementCommand(_altTransform, -MovementDirection);
         }
     }
+
 }

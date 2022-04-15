@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Core
+﻿namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     internal struct AssetMenu
     {

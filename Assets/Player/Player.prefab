@@ -109,7 +109,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.36, y: 0.48}
+    oldSize: {x: 1.0285715, y: 1.3714286}
     newSize: {x: 0.36, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -188,8 +188,15 @@ MonoBehaviour:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 809ece2504644ce49a2088ce34ccd41f, type: 2}
+  _playerMovement:
+    id: 0
   _cloneTransfrom: {fileID: 0}
-  _RecordableActionOccurred: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+  _movementBuildDirector: {fileID: 11400000, guid: 8e7305de8847cf64d9fdd85d99efde65, type: 2}
+  _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }
 --- !u!114 &3282648814424052198
 MonoBehaviour:
   m_ObjectHideFlags: 0

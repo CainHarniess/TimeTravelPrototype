@@ -1,4 +1,4 @@
-﻿using Osiris.TimeTravelPuzzler.Game;
+﻿using Osiris.TimeTravelPuzzler.LevelManagement;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler

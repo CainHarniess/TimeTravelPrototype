@@ -10,9 +10,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     [CreateAssetMenu(fileName = AssetMenu.WeightedFloorPadBuildDirectorFileName, menuName = AssetMenu.WeightedFloorPadBuildDirectorPath)]
     public class WeightedFloorPadBuildDirector : FloorPadBuildDirectorSO
     {
-        public override IWeightedFloorPad Construct(IWeightedFloorPad floorPadBehaviour, ILogger logger, string gameObjectName,
-                                            IFloorPadSpriteHandler spriteHandler, IEventChannelSO pressedChannel,
-                                            IEventChannelSO releasedChannel)
+        public override IWeightedFloorPad Construct(IWeightedFloorPad floorPadBehaviour, ILogger logger,
+                                                    string gameObjectName, IFloorPadSpriteHandler spriteHandler,
+                                                    IEventChannelSO pressedChannel, IEventChannelSO releasedChannel)
         {
             IValidator<int> pressValidator = new FloorPadPressValidator(floorPadBehaviour, logger, gameObjectName);
             IValidator<int> releaseValidator = new FloorPadReleaseValidator(floorPadBehaviour, logger, gameObjectName);

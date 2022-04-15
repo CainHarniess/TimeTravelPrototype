@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Game
+﻿namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     public interface ILevelCompletionTrigger
     {

@@ -1,18 +1,13 @@
-﻿using UnityEngine;
+﻿using Osiris.Testing.Abstractions;
+using UnityEngine;
 
 namespace Osiris.Testing
 {
-    public class SpriteRendererProxy : ComponentProxy<SpriteRenderer>, ISpriteRendererProxy
+    public class SpriteRendererProxy : RendererProxy<SpriteRenderer>, ISpriteRendererProxy
     {
         public SpriteRendererProxy(SpriteRenderer spriteRenderer) : base(spriteRenderer)
         {
 
-        }
-
-        public bool Enabled
-        {
-            get => Component.enabled;
-            set => Component.enabled = value;
         }
 
         public Color Colour

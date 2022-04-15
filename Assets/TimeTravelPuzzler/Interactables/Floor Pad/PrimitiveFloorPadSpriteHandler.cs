@@ -1,4 +1,4 @@
-using Osiris.Testing;
+using Osiris.Testing.Abstractions;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using UnityEngine;
 

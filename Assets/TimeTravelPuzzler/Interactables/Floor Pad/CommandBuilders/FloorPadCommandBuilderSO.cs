@@ -1,5 +1,6 @@
 using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Commands;
+using Osiris.Utilities.Commands;
 using System;
 using UnityEngine;
 
@@ -8,16 +9,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables
     [CreateAssetMenu(fileName = AssetMenu.CommandBuilderFileName, menuName = AssetMenu.CommandBuilderPath)]
     public class FloorPadCommandBuilderSO : ScriptableObject
     {
-        public void Reset()
-        {
-            CandidateWeight = 0;
-            CanExecute = null;
-            Execute = null;
-            AdjustWeight = null;
-            CommandDescription = null;
-            Inverse = null;
-        }
-
         public int CandidateWeight { get; private set; }
         public FloorPadCommandBuilderSO WithCandidateWeight(int candidateWeight)
         {
@@ -63,6 +54,16 @@ namespace Osiris.TimeTravelPuzzler.Interactables
         {
             return new FloorPadDelegateCommand(CandidateWeight, CanExecute, Execute, AdjustWeight, CommandDescription,
                                                Inverse);
+        }
+
+        public void Reset()
+        {
+            CandidateWeight = 0;
+            CanExecute = null;
+            Execute = null;
+            AdjustWeight = null;
+            CommandDescription = null;
+            Inverse = null;
         }
     }
 }

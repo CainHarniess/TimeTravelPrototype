@@ -1,10 +1,8 @@
 using Osiris.EditorCustomisation;
-using Osiris.SceneManagement.Core;
-using Osiris.SceneManagement.Core.Events;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler
+namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     public class LevelCompletionController : MonoBehaviour
     {
