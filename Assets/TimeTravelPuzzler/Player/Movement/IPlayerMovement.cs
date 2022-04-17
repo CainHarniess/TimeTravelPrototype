@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Player
+namespace Osiris.TimeTravelPuzzler.Player.Movement
 {
     public interface IPlayerMovement
     {

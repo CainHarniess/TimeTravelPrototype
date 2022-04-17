@@ -6,7 +6,8 @@ namespace Osiris.Testing
     /// <summary>
     /// Wraps objects derived from <c>UnityEngine.Component</c> to support unit testing.
     /// </summary>
-    public class ComponentProxy<T> where T : Component
+    public class ComponentProxy<T> : IComponentProxy<T>
+        where T : Component
     {
         private T _component;
 
@@ -14,16 +15,6 @@ namespace Osiris.Testing
         {
             _component = component;
         }
-
-    }
-
-    public class TransformProxy : ComponentProxy<Transform>, ITransformProxy
-    {
-        public TransformProxy(Transform transform) : base(transform)
-        {
-
-        }
-
-        public Vector3 Position { get; set; }
+        public T Component => _component;
     }
 }

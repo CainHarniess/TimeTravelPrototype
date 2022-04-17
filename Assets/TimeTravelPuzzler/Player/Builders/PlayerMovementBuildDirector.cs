@@ -1,6 +1,6 @@
-﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.Utilities.Events;
+﻿using Osiris.TimeTravelPuzzler.Player.Movement;
 using Osiris.Utilities.ScriptableObjects;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Player
@@ -9,12 +9,10 @@ namespace Osiris.TimeTravelPuzzler.Player
     public class PlayerMovementBuildDirector : DescriptionSO
     {
         [SerializeField] private PlayerMovementBuilder _Builder;
-        public IPlayerMovement Construct(Collider2D collider, float castDistance, Transform transform,
-                                         Transform cloneTransfrom,
-                                         IEventChannelSO<IRewindableCommand> timelineEventChannel)
+        public IPlayerMovement Construct(Collider2D collider, float castDistance, Transform transform, ILogger logger, string gameObjectName)
         {
             return _Builder.WithCollider2D(collider).WithCastDistance(castDistance).WithTransform(transform)
-                           .WithCloneTransform(cloneTransfrom).WithTimelineEventChannel(timelineEventChannel).Build();
+                           .WithLogger(logger).WithGameObjectName(gameObjectName).Build();
         }
     }
 }

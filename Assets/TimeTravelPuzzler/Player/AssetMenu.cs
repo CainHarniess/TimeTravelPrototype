@@ -9,5 +9,8 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         public const string MovementBuildDirectorFileName = "New Movement Build Director";
         public const string MovementBuildDirectorPath = MenuRoot + "MovementBuilderDirector";
+
+        public const string MovementChannelFileName = "New Movement Channel";
+        public const string MovementChannelPath = MenuRoot + "MovementChannel";
     }
 }

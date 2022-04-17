@@ -1,9 +1,9 @@
 ﻿using Osiris.Testing;
 using Osiris.Testing.Abstractions;
-using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.Utilities.Events;
+using Osiris.TimeTravelPuzzler.Player.Movement;
 using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Player
 {
@@ -38,17 +38,23 @@ namespace Osiris.TimeTravelPuzzler.Player
             return this;
         }
 
-        public IEventChannelSO<IRewindableCommand> TimelineEventChannel { get; private set; }
-        public PlayerMovementBuilder WithTimelineEventChannel(IEventChannelSO<IRewindableCommand> timelineEventChannel)
+        public ILogger Logger { get; private set; }
+        public PlayerMovementBuilder WithLogger(ILogger logger)
         {
-            TimelineEventChannel = timelineEventChannel;
+            Logger = logger;
+            return this;
+        }
+
+        public string GameObjectName { get; private set; }
+        public PlayerMovementBuilder WithGameObjectName(string gameObjectName)
+        {
+            GameObjectName = gameObjectName;
             return this;
         }
 
         public IPlayerMovement Build()
         {
-            return new PlayerMovement(Collider2D, CastDistance, Transform, CloneTransform,
-                                      TimelineEventChannel);
+            return new PlayerMovement(Collider2D, CastDistance, Transform, Logger, GameObjectName);
         }
     }
 }
