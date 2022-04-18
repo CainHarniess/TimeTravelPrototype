@@ -10,10 +10,8 @@ using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Player.Movement
 {
-    public class PlayerMovementScheduler : MonoBehaviour, ILoggableBehaviour
+    public class PlayerMovementScheduler : OsirisMonoBehaviour, ILoggableBehaviour
     {
-        public string GameObjectName { get; private set; }
-
         private PlayerMovementBehaviour _playerMovement;
 
         [Header(InspectorHeaders.Injections)]
@@ -28,9 +26,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         public ILogger Logger => _Logger;
 
-        private void Awake()
+        protected override void Awake()
         {
-            GameObjectName = gameObject.name;
             _playerMovement = GetComponent<PlayerMovementBehaviour>();
         }
 

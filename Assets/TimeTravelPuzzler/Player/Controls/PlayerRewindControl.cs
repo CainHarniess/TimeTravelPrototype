@@ -10,7 +10,6 @@ namespace Osiris.TimeTravelPuzzler.Player
 {
     public class PlayerRewindControl : PlayerControl, ILoggableBehaviour
     {
-        private string _gameObjectName;
         private PlayerInput _playerInput;
         private InputAction _rewindAction;
 
@@ -21,12 +20,11 @@ namespace Osiris.TimeTravelPuzzler.Player
         [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
         [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
 
-        public string GameObjectName => _gameObjectName;
         public ILogger Logger => _Logger;
 
-        void Awake()
+        protected override void Awake()
         {
-            _gameObjectName = gameObject.name;
+            base.Awake();
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
             
             _playerInput = GetComponent<PlayerInput>();

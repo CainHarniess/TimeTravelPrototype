@@ -164,14 +164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb80e5b51e6e7a945ac0dfddf0b39565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colliderCastDistance:
+  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
+  _ColliderCastDistance:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 809ece2504644ce49a2088ce34ccd41f, type: 2}
-  _playerMovement:
+  _MovementDurationRef:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 348aa73ec1b527d4f8029cb4bc084a60, type: 2}
+  _MovementBuildDirector: {fileID: 11400000, guid: 8e7305de8847cf64d9fdd85d99efde65, type: 2}
+  _Animator: {fileID: 546639531983230542}
+  _PlayerMovement:
     id: 0
-  _movementBuildDirector: {fileID: 11400000, guid: 8e7305de8847cf64d9fdd85d99efde65, type: 2}
-  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   references:
     version: 1
     00000000:

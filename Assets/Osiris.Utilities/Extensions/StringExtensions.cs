@@ -14,6 +14,7 @@ namespace Osiris.Utilities.Extensions
             }
 
             StringBuilder output = new StringBuilder(name.Length);
+            bool isPrefixedWithUnderscore = false;
 
             for (int i = 0; i < name.Length; i++)
             {
@@ -23,12 +24,23 @@ namespace Osiris.Utilities.Extensions
 
                     if (firstCharacter == '_')
                     {
+                        isPrefixedWithUnderscore = true;
                         continue;
                     }
 
                     if (char.IsLetter(firstCharacter) && char.IsLower(firstCharacter))
                     {
                         output.Append(char.ToUpper(firstCharacter));
+                        continue;
+                    }
+                }
+
+                if (i == 1 && isPrefixedWithUnderscore)
+                {
+                    char secondCharacter = name[i];
+                    if (char.IsLetter(secondCharacter) && char.IsLower(secondCharacter))
+                    {
+                        output.Append(char.ToUpper(secondCharacter));
                         continue;
                     }
                 }

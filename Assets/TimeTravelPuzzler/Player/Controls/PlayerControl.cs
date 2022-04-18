@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler
 {
-    public abstract class PlayerControl : MonoBehaviour
+    public abstract class PlayerControl : OsirisMonoBehaviour
     {
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _isControlActive;

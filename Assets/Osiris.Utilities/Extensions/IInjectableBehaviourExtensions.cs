@@ -3,18 +3,20 @@ using UnityEngine;
 
 namespace Osiris.Utilities.Extensions
 {
+
     public static class IInjectableBehaviourExtensions
     {
         public static bool IsInjectionPresent<T>(this IInjectableBehaviour behaviour, T field, string fieldName,
                                                  LogLevel logLevel = LogLevel.Warning)
+            where T : Object
         {
+            string editorFieldName = fieldName.ToEditorName();
             if (field != null)
             {
                 return true;
             }
 
-            string message = string.Format(GenericMessages.MissingInjection,
-                                           fieldName.ToEditorName());
+            string message = string.Format(GenericMessages.MissingInjection, editorFieldName);
             UnityConsoleLogger.LogAtLevel(message, logLevel, behaviour.GameObjectName);
             return false;
         }

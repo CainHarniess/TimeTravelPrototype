@@ -7,13 +7,12 @@ using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using Osiris.Utilities.Timing;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
-    public class TimelineManager : MonoBehaviour, ILoggableBehaviour
+    public class TimelineManager : OsirisMonoBehaviour, ILoggableBehaviour
     {
         private ITimelineEventFactory<ITimelineEvent> _eventFactory;
         private IRecorder _eventRecorder;
@@ -42,15 +41,14 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private ReplayEventChannelSO _ReplayCompleted;
 
         public Utilities.Logging.ILogger Logger => _Logger;
-        public string GameObjectName { get; private set; }
-
-        private void Awake()
+        
+        protected override void Awake()
         {
-            GameObjectName = gameObject.name;
+            base.Awake();
 
             _timer = new CoroutineTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
 
-            this.IsInjectionPresent(Logger, nameof(Logger).ToEditorName());
+            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
             string initialiserName = nameof(_CloneInitialiser).ToEditorName();
             this.AddComponentInjectionByTagIfNotPresent(ref _CloneInitialiser, initialiserName,
                                                         Tags.PlayerClone);

@@ -9,9 +9,8 @@ using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
-    public class CloneInitialiser : MonoBehaviour, ILoggableBehaviour
+    public class CloneInitialiser : OsirisMonoBehaviour, ILoggableBehaviour
     {
-        private string _gameObjectName;
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
         private Animator _animator;
@@ -27,12 +26,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private ReplayEventChannelSO _ReplayCompletedChannel;
 
-        public string GameObjectName => _gameObjectName;
         public ILogger Logger => _Logger;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _gameObjectName = gameObject.name;
+            base.Awake();
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
             _animator = GetComponent<Animator>();
