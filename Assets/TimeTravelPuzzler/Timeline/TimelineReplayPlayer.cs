@@ -4,6 +4,7 @@ using Osiris.Utilities.Logging;
 using System;
 using System.Collections;
 using UnityEngine;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -11,7 +12,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     public class TimelineReplayPlayer : ITimelinePlayer
     {
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
+        [SerializeField] private ILogger _Logger;
         [ReadOnly] [SerializeField] private bool _InProgress;
         [SerializeReference] private ListEventHistory _ReplayPlaylist;
 
@@ -20,7 +21,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private const string LogPrefix = "TimelineRewindPlayer";
 
-        public TimelineReplayPlayer(ReplayEventChannelSO replayCompleted, UnityConsoleLogger logger)
+        public TimelineReplayPlayer(ReplayEventChannelSO replayCompleted, ILogger logger)
         {
             _ReplayCompleted = replayCompleted;
             _Logger = logger;
@@ -64,7 +65,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 if (_ReplayPlaylist.Count == 0)
                 {
                     _ReplayCompleted.Raise();
-                    //yield break;
+                    yield break;
                 }
 
                 waitTime = _ReplayPlaylist.Peek().Time - timelineEventToUndo.Time;

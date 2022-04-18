@@ -1,4 +1,5 @@
 ﻿using Osiris.Testing.Abstractions;
+using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.Utilities.Extensions;
 using System.Collections.Generic;
@@ -50,6 +51,12 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
                 if (result.collider.isTrigger)
                 {
+                    continue;
+                }
+                string otherTag = result.collider.gameObject.tag;
+                if (otherTag == Tags.Player || otherTag == Tags.PlayerClone)
+                {
+                    _Logger.Log("Collider cast result is with player or clone.", _gameObjectName);
                     continue;
                 }
 

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
-  m_Name: TimelineConsoleLogger
+  m_Name: PlayerControlConsoleLogger
   m_EditorClassIdentifier: 
-  _DisplayLogging: 1
+  _DisplayLogging: 0

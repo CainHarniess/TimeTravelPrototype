@@ -1,9 +1,7 @@
 using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
-using Osiris.Utilities;
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
-using Osiris.Utilities.References;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ILogger = Osiris.Utilities.Logging.ILogger;
@@ -15,14 +13,9 @@ namespace Osiris.TimeTravelPuzzler.Player
         private string _gameObjectName;
         private PlayerInput _playerInput;
         private InputAction _rewindAction;
-        private IEnumerator _rewindTimer;
-
-        [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private FloatReference _MaximumRewindTimeRef;
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
-        [SerializeField] private CloneInitialiser _CloneInitialiser;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
@@ -34,13 +27,8 @@ namespace Osiris.TimeTravelPuzzler.Player
         void Awake()
         {
             _gameObjectName = gameObject.name;
-            
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
-
-            string initialiserName = nameof(_CloneInitialiser).ToEditorName();
-            this.AddComponentInjectionByTagIfNotPresent(ref _CloneInitialiser, initialiserName,
-                                                        Constants.PlayerCloneTag);
-
+            
             _playerInput = GetComponent<PlayerInput>();
             _rewindAction = _playerInput.actions[ControlActions.RewindTime];
         }
@@ -51,21 +39,7 @@ namespace Osiris.TimeTravelPuzzler.Player
             {
                 return;
             }
-
             _PlayerRewindRequested.Raise();
-
-            // TODO:    The TimelineManager should be responsible for activating the clone once
-            //          the rewind request has been approved.
-            _CloneInitialiser.Activate();
-
-            _rewindTimer = RewindTimer();
-            StartCoroutine(_rewindTimer);
-        }
-
-        private IEnumerator RewindTimer()
-        {
-            yield return new WaitForSeconds(_MaximumRewindTimeRef.Value);
-            _PlayerRewindCancelled.Raise();
         }
 
         private void OnRewindCancelled(InputAction.CallbackContext obj)
@@ -73,11 +47,6 @@ namespace Osiris.TimeTravelPuzzler.Player
             if (!IsControlActive)
             {
                 return;
-            }
-
-            if (_rewindTimer != null)
-            {
-                StopCoroutine(_rewindTimer);
             }
             _PlayerRewindCancelled.Raise();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Osiris.Utilities.Logging;
+using System;
 
 namespace Osiris.Utilities.Extensions
 {
@@ -13,12 +14,14 @@ namespace Osiris.Utilities.Extensions
             status = value;
         }
 
+        private const string StatusChangeException = "Current value is equal to the new value."
+                                                     + " Check the use of ChangeStatusWithException.";
+
         public static void ChangeStatusWithException(this ref bool status, bool value)
         {
             if (status == value)
             {
-                throw new ArgumentException("Current value is equal to the new value. Check"
-                                            + "the use of ChangeStatusWithException.");
+                UnityConsoleLogger.LogAtLevel(StatusChangeException, LogLevel.Error);
             }
             status = value;
         }

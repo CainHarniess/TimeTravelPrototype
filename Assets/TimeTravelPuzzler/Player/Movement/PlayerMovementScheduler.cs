@@ -1,7 +1,9 @@
 using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.Commands;
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
@@ -34,7 +36,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         private void Start()
         {
-            this.AddComponentInjectionByTagIfNotPresent(ref _CloneMovement, nameof(_CloneMovement), Constants.PlayerCloneTag);
+            this.AddComponentInjectionByTagIfNotPresent(ref _CloneMovement, nameof(_CloneMovement), Tags.PlayerClone);
         }
 
         private void OnMovement(Vector2 movementDirection)

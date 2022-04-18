@@ -1,8 +1,7 @@
-﻿using Osiris.TimeTravelPuzzler.Core.Commands;
-using Osiris.Utilities.Commands;
+﻿using Osiris.Utilities.Commands;
 using System;
 
-namespace Osiris.TimeTravelPuzzler.Player
+namespace Osiris.TimeTravelPuzzler.Core.Commands
 {
     public abstract class RewindableDelegateCommand<T> : IRewindableCommand
     {

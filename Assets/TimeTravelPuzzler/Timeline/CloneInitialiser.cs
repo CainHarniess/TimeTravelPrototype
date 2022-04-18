@@ -1,19 +1,20 @@
 using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Timeline;
-using Osiris.Utilities;
+using Osiris.TimeTravelPuzzler.Core;
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using System.Collections;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
 
-namespace Osiris.TimeTravelPuzzler.Player
+namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class CloneInitialiser : MonoBehaviour, ILoggableBehaviour
     {
         private string _gameObjectName;
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
+        private Animator _animator;
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -34,11 +35,12 @@ namespace Osiris.TimeTravelPuzzler.Player
             _gameObjectName = gameObject.name;
             _sprite = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
+            _animator = GetComponent<Animator>();
 
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
             this.AddComponentInjectionByTagIfNotPresent(ref _PlayerTransform,
                                                         nameof(_PlayerTransform).ToEditorName(),
-                                                        Constants.PlayerTag);
+                                                        Tags.Player);
         }
 
         private void Start()
@@ -85,6 +87,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         {
             _sprite.enabled = isActive;
             _collider.enabled = isActive;
+            _animator.enabled = isActive;
             _IsActive = isActive;
         }
     }

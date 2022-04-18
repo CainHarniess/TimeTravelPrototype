@@ -1,6 +1,7 @@
+using Osiris.Utilities.Logging;
 using UnityEngine;
 
-namespace Osiris.Utilities.Logging
+namespace Osiris.Utilities.Extensions
 {
     public static class IInjectableBehaviourExtensions
     {
@@ -14,10 +15,7 @@ namespace Osiris.Utilities.Logging
 
             string message = string.Format(GenericMessages.MissingInjection,
                                            fieldName.ToEditorName());
-
-            string messageWithPrefix = $"[{behaviour.GameObjectName}] " + message;
-
-            LogAtLevel(messageWithPrefix, logLevel);
+            UnityConsoleLogger.LogAtLevel(message, logLevel, behaviour.GameObjectName);
             return false;
         }
 
@@ -32,7 +30,9 @@ namespace Osiris.Utilities.Logging
             }
 
             field = gameObject.GetComponent<T>();
-            LogAtLevel($"[{behaviour.GameObjectName}] Component injection added at run time.", logLevel);
+            UnityConsoleLogger.LogAtLevel("Component injection added at run time.",
+                                          logLevel,
+                                          behaviour.GameObjectName);
         }
 
         public static void AddComponentInjectionByTagIfNotPresent<T>(this IInjectableBehaviour behaviour, ref T field,
@@ -46,23 +46,9 @@ namespace Osiris.Utilities.Logging
             }
 
             field = GameObject.FindGameObjectWithTag(tag).GetComponent<T>();
-            LogAtLevel($"[{behaviour.GameObjectName}] Component injection added at run time.", logLevel);
-        }
-
-        private static void LogAtLevel(string message, LogLevel logLevel)
-        {
-            switch (logLevel)
-            {
-                case LogLevel.Warning:
-                    Debug.LogWarning(message);
-                    break;
-                case LogLevel.Error:
-                    Debug.LogError(message);
-                    break;
-                default:
-                    Debug.Log(message);
-                    break;
-            }
+            UnityConsoleLogger.LogAtLevel("Component injection added at run time.",
+                                          logLevel,
+                                          behaviour.GameObjectName);
         }
     }
 }

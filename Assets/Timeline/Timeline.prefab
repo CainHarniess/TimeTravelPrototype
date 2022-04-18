@@ -44,6 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
+  _CloneInitialiser: {fileID: 0}
+  _MaximumRewindTimeRef:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 611af761ddf94bc48b65e2ba5efbfd14, type: 2}
   _EventHistory:
     id: 0
   _RewindPlayback:

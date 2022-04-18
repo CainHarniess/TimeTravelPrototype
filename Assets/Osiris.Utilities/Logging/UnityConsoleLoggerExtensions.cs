@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Osiris.Utilities.Extensions;
+using UnityEngine;
 
 namespace Osiris.Utilities.Logging
 {

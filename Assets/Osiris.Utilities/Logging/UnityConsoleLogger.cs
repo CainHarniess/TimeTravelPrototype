@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Osiris.Utilities.Logging
 {
@@ -38,7 +39,28 @@ namespace Osiris.Utilities.Logging
 #endif
         }
 
-        protected string PrefixMessage(string message, string prefix = null)
+        public static void LogAtLevel(string message, LogLevel logLevel, string prefix = null)
+        {
+            if (prefix != null)
+            {
+                message = PrefixMessage(message, prefix);
+            }
+
+            switch (logLevel)
+            {
+                case LogLevel.Warning:
+                    Debug.LogWarning(message);
+                    break;
+                case LogLevel.Error:
+                    Debug.LogError(message);
+                    break;
+                default:
+                    Debug.Log(message);
+                    break;
+            }
+        }
+
+        public static string PrefixMessage(string message, string prefix = null)
         {
             if (prefix != null)
             {

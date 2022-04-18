@@ -1,15 +1,15 @@
 ﻿using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
 using UnityEngine;
-using OUL = Osiris.Utilities.Logging;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
     public class TimelineEventFactory : ITimelineEventFactory<ITimelineEvent>
     {
-        private readonly OUL.ILogger _logger;
+        private readonly ILogger _logger;
 
-        public TimelineEventFactory(OUL.ILogger logger)
+        public TimelineEventFactory(ILogger logger)
         {
             _logger = logger;
         }

@@ -33,12 +33,14 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         protected override void DeactivateControl()
         {
-
+            // No operation override of base method because pause control should
+            // always be active.
         }
 
         protected override void ActivateControl()
         {
-
+            // No operation override of base method because pause control should
+            // always be active.
         }
 
         protected override void OnEnable()

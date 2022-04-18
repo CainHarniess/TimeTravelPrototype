@@ -3,7 +3,7 @@ using Osiris.TimeTravelPuzzler.Timeline.Core;
 using Osiris.Utilities.Extensions;
 using System;
 using UnityEngine;
-using OUL = Osiris.Utilities.Logging;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
@@ -11,7 +11,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
     public class TimelineEventRecorder : IRecorder
     {
         private readonly ITimelineEventFactory<ITimelineEvent> _eventFactory;
-        private readonly OUL.ILogger _logger;
+        private readonly ILogger _logger;
         private IStackable<ITimelineEvent> _eventHistory;
 
         public TimelineEventRecorder(IStackable<ITimelineEvent> eventHistory,
@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         public TimelineEventRecorder(IStackable<ITimelineEvent> eventHistory,
                                      ITimelineEventFactory<ITimelineEvent> eventFactory,
-                                     OUL.ILogger logger)
+                                     ILogger logger)
             : this(eventHistory, eventFactory)
         {
             _logger = logger;

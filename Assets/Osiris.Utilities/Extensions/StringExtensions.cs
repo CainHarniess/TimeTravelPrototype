@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Osiris.Utilities
+namespace Osiris.Utilities.Extensions
 {
     public static class StringExtensions
     {
@@ -12,7 +12,7 @@ namespace Osiris.Utilities
             {
                 throw new ArgumentException("Input string is empty or whitespace.");
             }
-            
+
             StringBuilder output = new StringBuilder(name.Length);
 
             for (int i = 0; i < name.Length; i++)
