@@ -121,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2f830f13ca5044192fdc12a17f9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
   _WeightReference:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
-  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
 --- !u!114 &5789216068853177809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +142,23 @@ MonoBehaviour:
   _CloneMovement: {fileID: 0}
   _PlayerMoveButtonPressed: {fileID: 11400000, guid: da15777f25a713f44836ad72e8cda7fa, type: 2}
   _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &6721297795453072377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907864465930945080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9996715a7a8e874789bd7ac021c1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  _WeightReference:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
 --- !u!114 &6865662980531929148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,20 +217,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcb87acefb3234469dab35a82d27f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8837597817821536130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907864465930945080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2f830f13ca5044192fdc12a17f9b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _WeightReference:
-    _UseConstant: 1
-    _VariableValue: 0
-    _Constant: {fileID: 11400000, guid: f25cee6952f5c184e9c0d56d3c9468cb, type: 2}
-  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}

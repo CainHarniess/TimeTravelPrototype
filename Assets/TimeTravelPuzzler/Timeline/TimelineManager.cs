@@ -23,7 +23,6 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
-        //[SerializeField] private CloneInitialiser _CloneInitialiser;
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
         [SerializeField] private CoroutineTimer _timer;
 
@@ -52,9 +51,6 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _timer = new CoroutineTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
 
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
-            //string initialiserName = nameof(_CloneInitialiser).ToEditorName();
-            //this.AddComponentInjectionByTagIfNotPresent(ref _CloneInitialiser, initialiserName,
-            //                                            Tags.PlayerClone);
 
             ConfigureEventRecorder();
             ConfigurePlaybacks();
