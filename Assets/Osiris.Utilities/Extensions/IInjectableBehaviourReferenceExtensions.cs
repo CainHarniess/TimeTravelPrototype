@@ -6,7 +6,7 @@ namespace Osiris.Utilities.Extensions
     public static class IInjectableBehaviourReferenceExtensions
     {
         public static bool IsInjectionPresent(this IInjectableBehaviour behaviour, IntReference field, string fieldName,
-                                                 LogLevel logLevel = LogLevel.Error)
+                                              LogLevel logLevel = LogLevel.Error)
         {
             string editorFieldName = fieldName.ToEditorName();
 
@@ -26,7 +26,7 @@ namespace Osiris.Utilities.Extensions
         }
         
         public static bool IsInjectionPresent(this IInjectableBehaviour behaviour, FloatReference field, string fieldName,
-                                                 LogLevel logLevel = LogLevel.Error)
+                                              LogLevel logLevel = LogLevel.Error)
         {
             string editorFieldName = fieldName.ToEditorName();
 
@@ -46,7 +46,7 @@ namespace Osiris.Utilities.Extensions
         }
 
         public static bool IsInjectionPresent(this IInjectableBehaviour behaviour, BoolReference field, string fieldName,
-                                                 LogLevel logLevel = LogLevel.Error)
+                                              LogLevel logLevel = LogLevel.Error)
         {
             string editorFieldName = fieldName.ToEditorName();
 
