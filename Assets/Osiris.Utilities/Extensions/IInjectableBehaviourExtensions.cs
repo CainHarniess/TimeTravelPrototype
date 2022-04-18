@@ -22,7 +22,7 @@ namespace Osiris.Utilities.Extensions
         }
 
         public static void AddComponentInjectionIfNotPresent<T>(this IInjectableBehaviour behaviour, ref T field,
-                                                                     string fieldName, GameObject gameObject,
+                                                                     string fieldName,
                                                                      LogLevel logLevel = LogLevel.Warning)
             where T : Component
         {
@@ -31,7 +31,7 @@ namespace Osiris.Utilities.Extensions
                 return;
             }
 
-            field = gameObject.GetComponent<T>();
+            field = behaviour.GameObject.GetComponent<T>();
             UnityConsoleLogger.LogAtLevel("Component injection added at run time.",
                                           logLevel,
                                           behaviour.GameObjectName);

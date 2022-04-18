@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2617508162607620887, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3617192292021637633, guid: 7b40d82185902204e886723cd7f7b0ac, type: 3}
     - target: {fileID: 8037800297854554929, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -59,6 +63,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8187890727696086969, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+      propertyPath: _SpriteFlipper
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fc67d10c13e12d46993fcc3615f5f52, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
 --- !u!1 &5907864465930945080 stripped
@@ -130,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7d5a376b9863a48a7eea3a916c2ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
+  _Logger: {fileID: 11400000, guid: 687917df60bb7d34687de9d24bb80da7, type: 2}
   _CloneMovement: {fileID: 0}
   _PlayerMoveButtonPressed: {fileID: 11400000, guid: da15777f25a713f44836ad72e8cda7fa, type: 2}
   _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}

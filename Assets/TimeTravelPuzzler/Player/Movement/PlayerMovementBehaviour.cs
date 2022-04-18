@@ -18,10 +18,12 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [SerializeField] private FloatReference _ColliderCastDistance;
         [SerializeField] private FloatReference _MovementDurationRef;
         [SerializeField] private PlayerMovementBuildDirector _MovementBuildDirector;
-        [SerializeField] private Animator _Animator;
+        [ReadOnly] [SerializeField] private Animator _Animator;
+        [ReadOnly] [SerializeField] private SpriteRenderer _Sprite;
+        [SerializeField] private SpriteFlipperUtility _SpriteFlipper;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeReference] private IPlayerMovement _PlayerMovement;
+        [ReadOnly] [SerializeReference] private IPlayerMovement _PlayerMovement;
 
         private float MovementDuration => _MovementDurationRef.Value;
         public ILogger Logger => _Logger;
@@ -33,7 +35,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
             this.IsInjectionPresent(_Logger, nameof(_Logger));
             this.IsInjectionPresent(_MovementDurationRef, nameof(_MovementDurationRef));
-            this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator), gameObject);
+            this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator));
+            this.AddComponentInjectionIfNotPresent(ref _Sprite, nameof(_Sprite));
 
             var collider = GetComponent<BoxCollider2D>();
             _PlayerMovement = _MovementBuildDirector.Construct(collider, _ColliderCastDistance.Value, transform, Logger,
@@ -55,6 +58,9 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         {
             _Animator.SetBool(AnimationParameters.IsMoving, true);
             _Animator.SetTrigger(AnimationParameters.IsMovingTrigger);
+
+            _SpriteFlipper.FlipSprite(_Sprite, movementDirection);
+
             float startTime = Time.time;
             float currentTime = startTime;
 

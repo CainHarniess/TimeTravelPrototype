@@ -12,5 +12,11 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         public const string MovementChannelFileName = "New Movement Channel";
         public const string MovementChannelPath = MenuRoot + "MovementChannel";
+
+        public const string PlayerSpriteFlipperFileName = "New Player Sprite Flipper";
+        public const string PlayerSpriteFlipperPath = MenuRoot + "PlayerSpriteFlipper";
+
+        public const string CloneSpriteFlipperFileName = "New Clone Sprite Flipper";
+        public const string CloneSpriteFlipperPath = MenuRoot + "CloneSpriteFlipper";
     }
 }

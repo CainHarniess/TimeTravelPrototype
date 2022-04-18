@@ -1,0 +1,2856 @@
+fileFormatVersion: 2
+guid: d283ddcf83d18dd48b1faa66d5ed86d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1110655004304827610
+    second: _Clone_Master_0
+  - first:
+      213: -8673983633404385525
+    second: _Clone_Master_1
+  - first:
+      213: -4027348100837046999
+    second: _Clone_Master_2
+  - first:
+      213: -3452508120555936267
+    second: _Clone_Master_3
+  - first:
+      213: -4798281579498394550
+    second: _Clone_Master_4
+  - first:
+      213: -18407368558045025
+    second: _Clone_Master_5
+  - first:
+      213: 6762261722461565983
+    second: _Clone_Master_6
+  - first:
+      213: -1145513754805711593
+    second: _Clone_Master_7
+  - first:
+      213: 3442124120767835389
+    second: _Clone_Master_8
+  - first:
+      213: 3311820338073668766
+    second: _Clone_Master_9
+  - first:
+      213: 5374518975360226604
+    second: _Clone_Master_10
+  - first:
+      213: 465370296061602742
+    second: _Clone_Master_11
+  - first:
+      213: -8711566496209743393
+    second: _Clone_Master_12
+  - first:
+      213: 7989242982575208837
+    second: _Clone_Master_13
+  - first:
+      213: -6329548849479485410
+    second: _Clone_Master_14
+  - first:
+      213: -902321087054519402
+    second: _Clone_Master_15
+  - first:
+      213: -1223266901664113298
+    second: _Clone_Master_16
+  - first:
+      213: -6364866939082185516
+    second: _Clone_Master_17
+  - first:
+      213: 2912724783738456558
+    second: _Clone_Master_18
+  - first:
+      213: 4056592852490892055
+    second: _Clone_Master_19
+  - first:
+      213: 533643033760552232
+    second: _Clone_Master_20
+  - first:
+      213: -1999829467960564426
+    second: _Clone_Master_21
+  - first:
+      213: 5677618120826622246
+    second: _Clone_Master_22
+  - first:
+      213: -864592635154277817
+    second: _Clone_Master_23
+  - first:
+      213: 1066089230633615769
+    second: _Clone_Master_24
+  - first:
+      213: -4431723733839319574
+    second: _Clone_Master_25
+  - first:
+      213: -1688028764353534863
+    second: _Clone_Master_26
+  - first:
+      213: 4000791943101491437
+    second: _Clone_Master_27
+  - first:
+      213: 2327046588233963605
+    second: _Clone_Master_28
+  - first:
+      213: -1783773471870078245
+    second: _Clone_Master_29
+  - first:
+      213: 7934754115540195866
+    second: _Clone_Master_30
+  - first:
+      213: 4688871857481565635
+    second: _Clone_Master_31
+  - first:
+      213: -3168068386176688941
+    second: _Clone_Master_32
+  - first:
+      213: -5222523751844153677
+    second: _Clone_Master_33
+  - first:
+      213: 3070103594671619632
+    second: _Clone_Master_34
+  - first:
+      213: -673470894441003407
+    second: _Clone_Master_35
+  - first:
+      213: 5245145107526353318
+    second: _Clone_Master_36
+  - first:
+      213: -6383420555462836685
+    second: _Clone_Master_37
+  - first:
+      213: -1989179849214829550
+    second: _Clone_Master_38
+  - first:
+      213: -8154020222885524283
+    second: _Clone_Master_39
+  - first:
+      213: -5711365472369331733
+    second: _Clone_Master_40
+  - first:
+      213: 2391367120993245629
+    second: _Clone_Master_41
+  - first:
+      213: -2426809201013010226
+    second: _Clone_Master_42
+  - first:
+      213: -2579114857125235062
+    second: _Clone_Master_43
+  - first:
+      213: -8230617827377955722
+    second: _Clone_Master_44
+  - first:
+      213: -4697174310702538581
+    second: _Clone_Master_45
+  - first:
+      213: -3439257804643715591
+    second: _Clone_Master_46
+  - first:
+      213: -661170842403622678
+    second: _Clone_Master_47
+  - first:
+      213: 4088502686191247873
+    second: _Clone_Master_48
+  - first:
+      213: 6584616401833890807
+    second: _Clone_Master_49
+  - first:
+      213: -2685758531855912614
+    second: _Clone_Master_50
+  - first:
+      213: 7006549440344451761
+    second: _Clone_Master_51
+  - first:
+      213: -8687477099697229790
+    second: _Clone_Master_52
+  - first:
+      213: -7571736118015218901
+    second: _Clone_Master_53
+  - first:
+      213: -751622011381290952
+    second: _Clone_Master_54
+  - first:
+      213: 8948615698549605032
+    second: _Clone_Master_55
+  - first:
+      213: 7631470743381236258
+    second: _Clone_Master_56
+  - first:
+      213: -5104113204080457030
+    second: _Clone_Master_57
+  - first:
+      213: -2192682174170776365
+    second: _Clone_Master_58
+  - first:
+      213: 3543877267383144984
+    second: _Clone_Master_59
+  - first:
+      213: 499414965077862235
+    second: _Clone_Master_60
+  - first:
+      213: -4362116195017396845
+    second: _Clone_Master_61
+  - first:
+      213: 9005915285137125322
+    second: _Clone_Master_62
+  - first:
+      213: 1408694682422228622
+    second: _Clone_Master_63
+  - first:
+      213: -2801775890845498568
+    second: _Clone_Master_64
+  - first:
+      213: 7442137717164725400
+    second: _Clone_Master_65
+  - first:
+      213: 7138874393039531625
+    second: _Clone_Master_66
+  - first:
+      213: -2313202984517262053
+    second: _Clone_Master_67
+  - first:
+      213: -4069600056179344845
+    second: _Clone_Master_68
+  - first:
+      213: 3653708501132443326
+    second: _Clone_Master_69
+  - first:
+      213: 1530926951536499776
+    second: _Clone_Master_70
+  - first:
+      213: 7700418790681951027
+    second: _Clone_Master_71
+  - first:
+      213: -4686067901643982640
+    second: _Clone_Master_72
+  - first:
+      213: -8401810761090407853
+    second: _Clone_Master_73
+  - first:
+      213: -605382461567725843
+    second: _Clone_Master_74
+  - first:
+      213: 1640668055735610939
+    second: _Clone_Master_75
+  - first:
+      213: 6018039318940955638
+    second: _Clone_Master_76
+  - first:
+      213: 570027099290241692
+    second: _Clone_Master_77
+  - first:
+      213: 1838797398080933709
+    second: _Clone_Master_78
+  - first:
+      213: 4337035613620538537
+    second: _Clone_Master_79
+  - first:
+      213: -1110414715931631088
+    second: _Clone_Master_80
+  - first:
+      213: 21619401918872911
+    second: _Clone_Master_81
+  - first:
+      213: 3001314031129927218
+    second: _Clone_Master_82
+  - first:
+      213: 6728745220679501180
+    second: _Clone_Master_83
+  - first:
+      213: -8607954188960479126
+    second: _Clone_Master_84
+  - first:
+      213: -3659565907343608161
+    second: _Clone_Master_85
+  - first:
+      213: 56602104894303325
+    second: _Clone_Master_86
+  - first:
+      213: -2889693941224526570
+    second: _Clone_Master_87
+  - first:
+      213: 4649318326441052211
+    second: _Clone_Master_88
+  - first:
+      213: -659612472335568704
+    second: _Clone_Master_89
+  - first:
+      213: -2661025964310104978
+    second: _Clone_Master_90
+  - first:
+      213: 8612240654359451042
+    second: _Clone_Master_91
+  - first:
+      213: 8153707932008404833
+    second: _Clone_Master_92
+  - first:
+      213: 5998775370818402726
+    second: _Clone_Master_93
+  - first:
+      213: 381221601922953032
+    second: _Clone_Master_94
+  - first:
+      213: 449602796359701582
+    second: _Clone_Master_95
+  - first:
+      213: 5084482778387223480
+    second: _Clone_Master_96
+  - first:
+      213: -3878600203170367780
+    second: _Clone_Master_97
+  - first:
+      213: 8886061111805247788
+    second: _Clone_Master_98
+  - first:
+      213: 328521574561971500
+    second: _Clone_Master_99
+  - first:
+      213: 4571816961211102209
+    second: _Clone_Master_100
+  - first:
+      213: -8235910938227184919
+    second: _Clone_Master_101
+  - first:
+      213: -4340240396213299527
+    second: _Clone_Master_102
+  - first:
+      213: -6312525896823841362
+    second: _Clone_Master_103
+  - first:
+      213: -292245905926823892
+    second: _Clone_Master_104
+  - first:
+      213: 5538365617283244325
+    second: _Clone_Master_105
+  - first:
+      213: -6067495278337415095
+    second: _Clone_Master_106
+  - first:
+      213: -8977386929122585836
+    second: _Clone_Master_107
+  - first:
+      213: -861177215703528787
+    second: _Clone_Master_108
+  - first:
+      213: -1606597163328371947
+    second: _Clone_Master_109
+  - first:
+      213: 3339601283305258629
+    second: _Clone_Master_110
+  - first:
+      213: -4757377780756504275
+    second: _Clone_Master_111
+  - first:
+      213: 3788806803941030684
+    second: _Clone_Master_112
+  - first:
+      213: -8980088939452797676
+    second: _Clone_Master_113
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 35
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _Clone_Master_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1191
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4699787d6d96f00800000000000000
+      internalID: 1110655004304827610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1200
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07216797d1df9780800000000000000
+      internalID: -8673983633404385525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1203
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92583c67d3cfb18c0800000000000000
+      internalID: -4027348100837046999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1152
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5ac12182a3610d0800000000000000
+      internalID: -3452508120555936267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1056
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ca2b96354196db0800000000000000
+      internalID: -4798281579498394550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1056
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9819d7889a9ebff0800000000000000
+      internalID: -18407368558045025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1080
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14fa85653168dd50800000000000000
+      internalID: 6762261722461565983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 1086
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d4b772f415a10f0800000000000000
+      internalID: -1145513754805711593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_8
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1092
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcab2396a1e4cf20800000000000000
+      internalID: 3442124120767835389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_9
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1089
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c8bcafc03f5fd20800000000000000
+      internalID: 3311820338073668766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2551fc5880269a40800000000000000
+      internalID: 5374518975360226604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_11
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb25c191d3557600800000000000000
+      internalID: 465370296061602742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_12
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd159347d6c4a1780800000000000000
+      internalID: -8711566496209743393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_13
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 999
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5897da0f92e7fde60800000000000000
+      internalID: 7989242982575208837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_14
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1002
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18fa465bdce828a0800000000000000
+      internalID: -6329548849479485410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_15
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1002
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69365c480cf4a73f0800000000000000
+      internalID: -902321087054519402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_16
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1005
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d51dceb35160fe0800000000000000
+      internalID: -1223266901664113298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1008
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4e06dcd337ba7a0800000000000000
+      internalID: -6364866939082185516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 960
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9053f22c31c6820800000000000000
+      internalID: 2912724783738456558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_19
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 960
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713bb13e4b9eb4830800000000000000
+      internalID: 4056592852490892055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_20
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 879
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825d8280381e76700800000000000000
+      internalID: 533643033760552232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_21
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 864
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6352ad6c1bd2f34e0800000000000000
+      internalID: -1999829467960564426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 879
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621113e7993face40800000000000000
+      internalID: 5677618120826622246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_23
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 864
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ad53244995004f0800000000000000
+      internalID: -864592635154277817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_24
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 903
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99149c2c1828bce00800000000000000
+      internalID: 1066089230633615769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_25
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 903
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aede6dd8eba5f72c0800000000000000
+      internalID: -4431723733839319574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_26
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 900
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174e01a48cae298e0800000000000000
+      internalID: -1688028764353534863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_27
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 864
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de82fcc331ba58730800000000000000
+      internalID: 4000791943101491437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_28
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 864
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5585873fa845b4020800000000000000
+      internalID: 2327046588233963605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 768
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd23b696a73ce37e0800000000000000
+      internalID: -1783773471870078245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_30
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 768
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a97d4f3d8ed1e60800000000000000
+      internalID: 7934754115540195866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_31
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 810
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5c3869c18321140800000000000000
+      internalID: 4688871857481565635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_32
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 816
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc1bc18692c804d0800000000000000
+      internalID: -3168068386176688941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_33
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 819
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6f94c515ed587b0800000000000000
+      internalID: -5222523751844153677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_34
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 819
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e3d0804f23b9a20800000000000000
+      internalID: 3070103594671619632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 768
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176874a2ac957a6f0800000000000000
+      internalID: -673470894441003407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_36
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 768
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a18c717faf7ac840800000000000000
+      internalID: 5245145107526353318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_37
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 675
+        width: 87
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ef5bb53d88967a0800000000000000
+      internalID: -6383420555462836685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 741
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c5f2d57730564e0800000000000000
+      internalID: -1989179849214829550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_39
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 732
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc8e832fc917de80800000000000000
+      internalID: -8154020222885524283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_40
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 753
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1befcec572db0b0800000000000000
+      internalID: -5711365472369331733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_41
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 678
+        width: 84
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9d95ef9b7df2120800000000000000
+      internalID: 2391367120993245629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_42
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 726
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec058f3b3ed325ed0800000000000000
+      internalID: -2426809201013010226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_43
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 738
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a863e12c3b4253cd0800000000000000
+      internalID: -2579114857125235062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_44
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 744
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cb32591b8f6cd80800000000000000
+      internalID: -8230617827377955722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_45
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 672
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba02c72e9d840deb0800000000000000
+      internalID: -4697174310702538581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_46
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 687
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5b837af3d4540d0800000000000000
+      internalID: -3439257804643715591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_47
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 684
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0bfa23f9c03d6f0800000000000000
+      internalID: -661170842403622678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_48
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 714
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102e8a108874db830800000000000000
+      internalID: 4088502686191247873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_49
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 714
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3158d0bb1416b50800000000000000
+      internalID: 6584616401833890807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_50
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 717
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51f04458d44abad0800000000000000
+      internalID: -2685758531855912614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_51
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 717
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba61fcf7934c3160800000000000000
+      internalID: 7006549440344451761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_52
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 714
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220b4362b91ef6780800000000000000
+      internalID: -8687477099697229790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_53
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 678
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b25b01e1acbe690800000000000000
+      internalID: -7571736118015218901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_54
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 681
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838e04e43c3b195f0800000000000000
+      internalID: -751622011381290952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_55
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 672
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a28887e09edf2c70800000000000000
+      internalID: 8948615698549605032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_56
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 672
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a5605353e68e960800000000000000
+      internalID: 7631470743381236258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_57
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 480
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba4769651c8a29b0800000000000000
+      internalID: -5104113204080457030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_58
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 519
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc383f0e270291e0800000000000000
+      internalID: -2192682174170776365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_59
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 528
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81254f139916e2130800000000000000
+      internalID: 3543877267383144984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_60
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 531
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57eaf4c3474ee600800000000000000
+      internalID: 499414965077862235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_61
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 384
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d620f9e66a673c0800000000000000
+      internalID: -4362116195017396845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_62
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 384
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acfebd78c307bfc70800000000000000
+      internalID: 9005915285137125322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_63
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 408
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8632ce9950bc8310800000000000000
+      internalID: 1408694682422228622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_64
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 414
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83386e5fba71e19d0800000000000000
+      internalID: -2801775890845498568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_65
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 420
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894d329d2d8c74760800000000000000
+      internalID: 7442137717164725400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_66
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 417
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ee045ef60621360800000000000000
+      internalID: 7138874393039531625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_67
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 288
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15a976342ad5efd0800000000000000
+      internalID: -2313202984517262053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_68
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 288
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a35818f40e587c0800000000000000
+      internalID: -4069600056179344845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_69
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 288
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebef2da068494b230800000000000000
+      internalID: 3653708501132443326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_70
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 288
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c976383f1fe3510800000000000000
+      internalID: 1530926951536499776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_71
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 288
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b375077126dda60800000000000000
+      internalID: 7700418790681951027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_72
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 327
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d87621421eb7feb0800000000000000
+      internalID: -4686067901643982640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_73
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 330
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352e623a0a5c66b80800000000000000
+      internalID: -8401810761090407853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_74
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 330
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee0101dbdf3997f0800000000000000
+      internalID: -605382461567725843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_75
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 333
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ea37077e2d4c610800000000000000
+      internalID: 1640668055735610939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_76
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 336
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f33fc920ee548350800000000000000
+      internalID: 6018039318940955638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_77
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 210
+        width: 60
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a8a8d60a429e700800000000000000
+      internalID: 570027099290241692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_78
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 192
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fc68ebd78b48910800000000000000
+      internalID: 1838797398080933709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_79
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 210
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac021879ee303c30800000000000000
+      internalID: 4337035613620538537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_80
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 192
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0126787f2b30790f0800000000000000
+      internalID: -1110414715931631088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_81
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 231
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d71a34bbecc4000800000000000000
+      internalID: 21619401918872911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_82
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 231
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e15eca53fc6a920800000000000000
+      internalID: 3001314031129927218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_83
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 228
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7585b6b02e416d50800000000000000
+      internalID: 6728745220679501180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_84
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 192
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68cc24a5476a8880800000000000000
+      internalID: -8607954188960479126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_85
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 192
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9677ac423c963dc0800000000000000
+      internalID: -3659565907343608161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_86
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 96
+        width: 69
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ca3c3805719c000800000000000000
+      internalID: 56602104894303325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_87
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 96
+        width: 66
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61da6b3bbaeb5e7d0800000000000000
+      internalID: -2889693941224526570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_88
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 96
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3388b3f7262b58040800000000000000
+      internalID: 4649318326441052211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_89
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 96
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0750183f598d6f0800000000000000
+      internalID: -659612472335568704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_90
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 138
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e647433fbf2221bd0800000000000000
+      internalID: -2661025964310104978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_91
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 144
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5d54bde33d48770800000000000000
+      internalID: 8612240654359451042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_92
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 147
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16755a9f92ac72170800000000000000
+      internalID: 8153707932008404833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_93
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 147
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a93ef8ba6eef3350800000000000000
+      internalID: 5998775370818402726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_94
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 3
+        width: 87
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84fa253f60f5a4500800000000000000
+      internalID: 381221601922953032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_95
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 69
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44da077c5f4d3600800000000000000
+      internalID: 449602796359701582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_96
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 60
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b39c50f526bf8640800000000000000
+      internalID: 5084482778387223480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_97
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6b5483aa17c2ac0800000000000000
+      internalID: -3878600203170367780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_98
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 6
+        width: 84
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2180953081a15b70800000000000000
+      internalID: 8886061111805247788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_99
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 54
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d71d8a1a42f8400800000000000000
+      internalID: 328521574561971500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_100
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 66
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104f71fbd4b527f30800000000000000
+      internalID: 4571816961211102209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_101
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eae63d23aa24bd80800000000000000
+      internalID: -8235910938227184919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_102
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 75
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6d7efea5e54c3c0800000000000000
+      internalID: -4340240396213299527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_103
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 15
+        width: 75
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead5c5c54276568a0800000000000000
+      internalID: -6312525896823841362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_104
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 9
+        width: 81
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c206b2e95ebb1fbf0800000000000000
+      internalID: -292245905926823892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_105
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 42
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521a7667f2a3cdc40800000000000000
+      internalID: 5538365617283244325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_106
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 42
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948a65af03debcba0800000000000000
+      internalID: -6067495278337415095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_107
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 45
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413d966f62ae96380800000000000000
+      internalID: -8977386929122585836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_108
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 45
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daac45192eb7c04f0800000000000000
+      internalID: -861177215703528787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_109
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 42
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51389ae546834b9e0800000000000000
+      internalID: -1606597163328371947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_110
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 6
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e39d65ca5a85e20800000000000000
+      internalID: 3339601283305258629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_111
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d212ca33d166afdb0800000000000000
+      internalID: -4757377780756504275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_112
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bfc77d6bb849430800000000000000
+      internalID: 3788806803941030684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Clone_Master_113
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d608820b0506380800000000000000
+      internalID: -8980088939452797676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
