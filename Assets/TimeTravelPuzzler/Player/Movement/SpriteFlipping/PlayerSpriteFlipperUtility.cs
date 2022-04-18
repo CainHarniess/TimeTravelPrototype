@@ -5,7 +5,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
     [CreateAssetMenu(fileName = AssetMenu.PlayerSpriteFlipperFileName, menuName = AssetMenu.PlayerSpriteFlipperPath)]
     public class PlayerSpriteFlipperUtility : SpriteFlipperUtility
     {
-        public override void FlipSprite(SpriteRenderer sprite, Vector2 movementDirection)
+        public override void FlipSpriteIfRequired(SpriteRenderer sprite, Vector2 movementDirection)
         {
             if (movementDirection.x < 0)
             {

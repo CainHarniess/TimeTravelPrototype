@@ -116,9 +116,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _PlayerTransform: {fileID: 0}
-  _DeactivationDelay:
+  _DeactivationDelayReference:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 6d2630b92ff5b194285fa47bb02ea85d, type: 2}
   _IsActive: 0
-  _ReplayCompletedChannel: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}
+  _RewindStarted: {fileID: 11400000, guid: 1bc4c220299eb864495bd5a3381e73b6, type: 2}
+  _ReplayCompleted: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}

@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
-        [SerializeField] private CloneInitialiser _CloneInitialiser;
+        //[SerializeField] private CloneInitialiser _CloneInitialiser;
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
         [SerializeField] private CoroutineTimer _timer;
 
@@ -32,6 +32,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeReference] private ITimelinePlayer _RewindPlayback;
         [SerializeReference] private IStopwatch _RewindProgressStopwatch;
         [SerializeReference] private ITimelinePlayer _ReplayPlayback;
+
+        [Header(InspectorHeaders.BroadcastsOn)]
+        [SerializeField] private RewindEventChannelSO _RewindStarted;
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private TimelineActionChannel _RecordableActionOccurred;
@@ -49,9 +52,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _timer = new CoroutineTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
 
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
-            string initialiserName = nameof(_CloneInitialiser).ToEditorName();
-            this.AddComponentInjectionByTagIfNotPresent(ref _CloneInitialiser, initialiserName,
-                                                        Tags.PlayerClone);
+            //string initialiserName = nameof(_CloneInitialiser).ToEditorName();
+            //this.AddComponentInjectionByTagIfNotPresent(ref _CloneInitialiser, initialiserName,
+            //                                            Tags.PlayerClone);
 
             ConfigureEventRecorder();
             ConfigurePlaybacks();
@@ -74,7 +77,10 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
             StopRecording();
             _RewindCompleted.Event += StopRewindStartReplay;
-            _CloneInitialiser.Activate();
+
+            _RewindStarted.Raise();
+            //_CloneInitialiser.Activate();
+
             _rewindTimerCoroutine = StartCoroutine(_timer.StartTimer());
             _rewindCoroutine = StartCoroutine(_RewindPlayback.Play(Time.time));
         }

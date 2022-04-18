@@ -4,15 +4,6 @@ using UnityEngine;
 
 namespace Osiris.Utilities
 {
-    public abstract class Timer : ScriptableObject
-    {
-        public abstract void StartTimer();
-
-        public abstract void StopTimer();
-
-        public abstract void Reset();
-    }
-
     public class CoroutineTimer
     {
         private float _duration;

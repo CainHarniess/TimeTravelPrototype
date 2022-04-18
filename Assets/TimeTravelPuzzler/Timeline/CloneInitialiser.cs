@@ -1,9 +1,9 @@
 using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core;
+using Osiris.Utilities;
 using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
-using System.Collections;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
 
@@ -18,15 +18,19 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeField] private Transform _PlayerTransform;
-        [SerializeField] private IntReference _DeactivationDelay;
+        [SerializeField] private SpriteRenderer _PlayerSprite;
+        [SerializeField] private IntReference _DeactivationDelayReference;
+        [SerializeField] private CoroutineTimer _PostRewindDectivationTimer;
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _IsActive;
 
         [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private ReplayEventChannelSO _ReplayCompletedChannel;
+        [SerializeField] private RewindEventChannelSO _RewindStarted;
+        [SerializeField] private ReplayEventChannelSO _ReplayCompleted;
 
         public ILogger Logger => _Logger;
+        private int DeactivationDelay => _DeactivationDelayReference.Value;
 
         protected override void Awake()
         {
@@ -36,14 +40,13 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _animator = GetComponent<Animator>();
 
             this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
-            this.AddComponentInjectionByTagIfNotPresent(ref _PlayerTransform,
-                                                        nameof(_PlayerTransform).ToEditorName(),
-                                                        Tags.Player);
+            GetPlayerReferences();
         }
 
         private void Start()
         {
             Deactivate();
+            _PostRewindDectivationTimer = new CoroutineTimer(DeactivationDelay, Deactivate);
         }
 
         [ContextMenu("Activate")]
@@ -54,8 +57,9 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 return;
             }
             SetStatus(true);
+            _sprite.flipX = _PlayerSprite.flipX;
             transform.position = _PlayerTransform.position;
-            _ReplayCompletedChannel.Event += DelayedDeactivation;
+            _ReplayCompleted.Event += DelayedDeactivation;
         }
 
         [ContextMenu("Deactivate")]
@@ -66,19 +70,12 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 return;
             }
             SetStatus(false);
-            _ReplayCompletedChannel.Event -= DelayedDeactivation;
+            _ReplayCompleted.Event -= DelayedDeactivation;
         }
 
         private void DelayedDeactivation()
         {
-            _Logger.Log("Rewind completion received.", gameObject);
-            StartCoroutine(DeactivateWithDelay());
-        }
-
-        private IEnumerator DeactivateWithDelay()
-        {
-            yield return new WaitForSeconds(_DeactivationDelay.Value);
-            Deactivate();
+            StartCoroutine(_PostRewindDectivationTimer.StartTimer());
         }
 
         private void SetStatus(bool isActive)
@@ -87,6 +84,28 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _collider.enabled = isActive;
             _animator.enabled = isActive;
             _IsActive = isActive;
+        }
+        
+        private void GetPlayerReferences()
+        {
+            this.AddComponentInjectionByTagIfNotPresent(ref _PlayerTransform,
+                                                                    nameof(_PlayerTransform),
+                                                                    Tags.Player);
+            this.AddComponentInjectionByTagIfNotPresent(ref _PlayerSprite,
+                                                        nameof(_PlayerSprite),
+                                                        Tags.Player);
+        }
+
+        private void OnEnable()
+        {
+            _RewindStarted.Event += Activate;
+            _ReplayCompleted.Event += DelayedDeactivation;
+        }
+
+        private void OnDisable()
+        {
+            _RewindStarted.Event -= Activate;
+            _ReplayCompleted.Event -= DelayedDeactivation;
         }
     }
 }

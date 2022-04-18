@@ -59,7 +59,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             _Animator.SetBool(AnimationParameters.IsMoving, true);
             _Animator.SetTrigger(AnimationParameters.IsMovingTrigger);
 
-            _SpriteFlipper.FlipSprite(_Sprite, movementDirection);
+            _SpriteFlipper.FlipSpriteIfRequired(_Sprite, movementDirection);
 
             float startTime = Time.time;
             float currentTime = startTime;
