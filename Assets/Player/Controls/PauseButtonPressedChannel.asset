@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PauseButtonPressedChannel
   m_EditorClassIdentifier: 
   _description: Channel notifying when the pause button has been pressed by the player.
-  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
+  _Logger: {fileID: 11400000, guid: 5c5cdaa0f4d1c5f4a8452e68c4e8f8ec, type: 2}

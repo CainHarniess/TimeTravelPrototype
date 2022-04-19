@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _description: Channel notifying the TimelineManager of replay completion. The Timeline
     manager will then stop the replay process and re-activate timeline event recording.
-  _Logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
+  _Logger: {fileID: 11400000, guid: 7717e640cafda854880d0f60b8df4e3f, type: 2}

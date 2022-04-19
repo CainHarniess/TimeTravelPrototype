@@ -44,12 +44,12 @@ namespace Osiris.Utilities.Events
         {
             if (Event != null)
             {
-                _Logger.Log($"Event request received on channel with parameter value {parameter}.", name);
+                _Logger.Log($"Event request with one parameter received on channel.", name);
                 Event.Invoke(parameter);
             }
             else
             {
-                _Logger.Log("Event request received on channel with parameter value {parameter}, "
+                _Logger.Log("Event request with one parameter received on channel, "
                             + "but no listeners are configured.", name);
             }
         }

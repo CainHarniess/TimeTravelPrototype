@@ -1,38 +1,26 @@
 ﻿using Osiris.EditorCustomisation;
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using UnityEngine;
-using OUL = Osiris.Utilities.Logging;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public abstract class FloorPadInteractorBase : MonoBehaviour
+    public abstract class FloorPadInteractorBase : OsirisMonoBehaviour, ILoggableBehaviour
     {
-        private string _gameObjectName;
-
-        [Header(InspectorHeaders.ControlVariables)]
+        [Header(InspectorHeaders.Injections)]
+        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeField] private IntReference _WeightReference;
 
-        [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
-
-        protected OUL.ILogger Logger { get => _Logger; }
         protected int Weight => _WeightReference.Value;
-        protected string GameObjectName
-        {
-            get
-            {
-                if (_gameObjectName == null)
-                {
-                    _gameObjectName = gameObject.name;
-                }
-                return _gameObjectName;
-            }
-        }
 
-        private void Awake()
+        public ILogger Logger => _Logger;
+
+        protected override void Awake()
         {
-            _Logger.Configure();
+            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
+            this.IsInjectionPresent(_WeightReference, nameof(_WeightReference).ToEditorName());
         }
     }
 }

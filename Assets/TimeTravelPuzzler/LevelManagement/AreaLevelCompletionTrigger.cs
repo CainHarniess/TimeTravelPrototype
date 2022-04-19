@@ -1,8 +1,7 @@
 using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Interactables;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Game
+namespace Osiris.TimeTravelPuzzler.LevelManagement
 {
     public class AreaLevelCompletionTrigger : MonoBehaviour, ILevelCompletionTrigger
     {
@@ -14,7 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Game
         private void Awake()
         {
             var sprite = GetComponent<SpriteRenderer>();
-            
+
             if (sprite == null)
             {
                 Debug.LogWarning("No sprite component attached to Area Level Completion trigger.");

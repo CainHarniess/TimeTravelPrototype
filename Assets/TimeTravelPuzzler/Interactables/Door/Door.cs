@@ -1,5 +1,5 @@
 using Osiris.EditorCustomisation;
-using Osiris.Testing;
+using Osiris.Testing.Abstractions;
 using System;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
