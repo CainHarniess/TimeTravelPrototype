@@ -1,0 +1,1155 @@
+fileFormatVersion: 2
+guid: 5efbbb24a05aa6e4a922c11126140b96
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5097156919723197743
+    second: _Player_Master_0
+  - first:
+      213: -5496809201501585494
+    second: _Player_Master_1
+  - first:
+      213: 2745910554949599821
+    second: _Player_Master_2
+  - first:
+      213: 907339530969014646
+    second: _Player_Master_3
+  - first:
+      213: 4298167961530156205
+    second: _Player_Master_4
+  - first:
+      213: 8930270709010076796
+    second: _Player_Master_5
+  - first:
+      213: 4804047054977218316
+    second: _Player_Master_6
+  - first:
+      213: -7121663935001941176
+    second: _Player_Master_7
+  - first:
+      213: 6977597047926000029
+    second: _Player_Master_8
+  - first:
+      213: 8019356435839150989
+    second: _Player_Master_9
+  - first:
+      213: -1377132671109468811
+    second: _Player_Master_10
+  - first:
+      213: -2669751357404265694
+    second: _Player_Master_11
+  - first:
+      213: -6818675991778802682
+    second: _Player_Master_12
+  - first:
+      213: -6687151054917899206
+    second: _Player_Master_13
+  - first:
+      213: 8676144788298021682
+    second: _Player_Master_14
+  - first:
+      213: 1193339339910760787
+    second: _Player_Master_15
+  - first:
+      213: 1231891635869736489
+    second: _Player_Master_16
+  - first:
+      213: -5038792203872747797
+    second: _Player_Master_17
+  - first:
+      213: 5604547164617898433
+    second: _Player_Master_18
+  - first:
+      213: 4864801196971919111
+    second: _Player_Master_19
+  - first:
+      213: -6030646650095866041
+    second: _Player_Master_20
+  - first:
+      213: -6593006208684373590
+    second: _Player_Master_21
+  - first:
+      213: -7238262571298678389
+    second: _Player_Master_22
+  - first:
+      213: 4484271653187779983
+    second: _Player_Master_23
+  - first:
+      213: -1736501075641981567
+    second: _Player_Master_24
+  - first:
+      213: 7564232405869108434
+    second: _Player_Master_25
+  - first:
+      213: 5872727359564771715
+    second: _Player_Master_26
+  - first:
+      213: -6304487554223477137
+    second: _Player_Master_27
+  - first:
+      213: -7611318045959517203
+    second: _Player_Master_28
+  - first:
+      213: -3344976926318885672
+    second: _Player_Master_29
+  - first:
+      213: 2380253272545981182
+    second: _Player_Master_30
+  - first:
+      213: -7791211590271825156
+    second: _Player_Master_31
+  - first:
+      213: -7537122451205453038
+    second: _Player_Master_32
+  - first:
+      213: 5217813707054973731
+    second: _Player_Master_33
+  - first:
+      213: -3410992280690183784
+    second: _Player_Master_34
+  - first:
+      213: 545178058019629925
+    second: _Player_Master_35
+  - first:
+      213: 8278740865710141446
+    second: _Player_Master_36
+  - first:
+      213: -7211750973702389139
+    second: _Player_Master_37
+  - first:
+      213: -2614207870548943263
+    second: _Player_Master_38
+  - first:
+      213: -2293325939105780371
+    second: _Player_Master_39
+  - first:
+      213: 8051413917935534722
+    second: _Player_Master_40
+  - first:
+      213: 4450353172748199412
+    second: _Player_Master_41
+  - first:
+      213: -1591572632512855587
+    second: _Player_Master_42
+  - first:
+      213: -8746532635746663068
+    second: _Player_Master_43
+  - first:
+      213: -5609257238965425780
+    second: _Player_Master_44
+  - first:
+      213: 7892721636819974263
+    second: _Player_Master_45
+  - first:
+      213: -2836330606562848535
+    second: _Player_Master_46
+  - first:
+      213: 2531882806327805855
+    second: _Player_Master_47
+  - first:
+      213: -1313798165463132982
+    second: _Player_Master_48
+  - first:
+      213: -7172478751043000320
+    second: _Player_Master_49
+  - first:
+      213: -8919866927365397773
+    second: _Player_Master_50
+  - first:
+      213: -259374974104496553
+    second: _Player_Master_51
+  - first:
+      213: 5809634990417112813
+    second: _Player_Master_52
+  - first:
+      213: -6850586966828964271
+    second: _Player_Master_53
+  - first:
+      213: -6345326609219127371
+    second: _Player_Master_54
+  - first:
+      213: -2245448236446803412
+    second: _Player_Master_55
+  - first:
+      213: 6913355726214231790
+    second: _Player_Master_56
+  - first:
+      213: -8355651076671661716
+    second: _Player_Master_57
+  - first:
+      213: -9121689018127173204
+    second: _Player_Master_58
+  - first:
+      213: 2322343950846474238
+    second: _Player_Master_59
+  - first:
+      213: -1392690841972987673
+    second: _Player_Master_60
+  - first:
+      213: 6825244469885958913
+    second: _Player_Master_61
+  - first:
+      213: -6081215776274263952
+    second: _Player_Master_62
+  - first:
+      213: -239586596654170014
+    second: _Player_Master_63
+  - first:
+      213: 7114290575181343107
+    second: _Player_Master_64
+  - first:
+      213: 8914053430941136039
+    second: _Player_Master_65
+  - first:
+      213: 7195385029526749000
+    second: _Player_Master_66
+  - first:
+      213: 2385075470736459341
+    second: _Player_Master_67
+  - first:
+      213: -3706747878925670177
+    second: _Player_Master_68
+  - first:
+      213: 6372817428284720108
+    second: _Player_Master_69
+  - first:
+      213: -5969260014440089530
+    second: _Player_Master_70
+  - first:
+      213: -4874471273865903468
+    second: _Player_Master_71
+  - first:
+      213: 9025410489018507272
+    second: _Player_Master_72
+  - first:
+      213: 4819032559958806579
+    second: _Player_Master_73
+  - first:
+      213: -8449219673598982875
+    second: _Player_Master_74
+  - first:
+      213: 520462775325913910
+    second: _Player_Master_75
+  - first:
+      213: -2828287530473564100
+    second: _Player_Master_76
+  - first:
+      213: -7219378375630954322
+    second: _Player_Master_77
+  - first:
+      213: 4805896807046691643
+    second: _Player_Master_78
+  - first:
+      213: -9182517187257894486
+    second: _Player_Master_79
+  - first:
+      213: 6653598104325645743
+    second: _Player_Master_80
+  - first:
+      213: 5653362168616803152
+    second: _Player_Master_81
+  - first:
+      213: 2601631008324433321
+    second: _Player_Master_82
+  - first:
+      213: 7955165261681785523
+    second: _Player_Master_83
+  - first:
+      213: -6708678125459187421
+    second: _Player_Master_84
+  - first:
+      213: -7985780713736753386
+    second: _Player_Master_85
+  - first:
+      213: -181392440871040625
+    second: _Player_Master_86
+  - first:
+      213: -4441698923067701047
+    second: _Player_Master_87
+  - first:
+      213: -5903871420566920078
+    second: _Player_Master_88
+  - first:
+      213: 5742643500065255313
+    second: _Player_Master_89
+  - first:
+      213: -1889092635158535125
+    second: _Player_Master_90
+  - first:
+      213: 2717957608031937629
+    second: _Player_Master_91
+  - first:
+      213: 3458162401436324384
+    second: _Player_Master_92
+  - first:
+      213: 4067544739584440205
+    second: _Player_Master_93
+  - first:
+      213: 2956519650143283929
+    second: _Player_Master_94
+  - first:
+      213: 6992555172008380204
+    second: _Player_Master_95
+  - first:
+      213: -4994306235889230893
+    second: _Player_Master_96
+  - first:
+      213: 969372022886336210
+    second: _Player_Master_97
+  - first:
+      213: 2710172308317977817
+    second: _Player_Master_98
+  - first:
+      213: 2150607204047642710
+    second: _Player_Master_99
+  - first:
+      213: 3048005508709191517
+    second: _Player_Master_100
+  - first:
+      213: -5667335575502239392
+    second: _Player_Master_101
+  - first:
+      213: -5630593340533194688
+    second: _Player_Master_102
+  - first:
+      213: -8547986278840369589
+    second: _Player_Master_103
+  - first:
+      213: -3241111933074644633
+    second: _Player_Master_104
+  - first:
+      213: -3208740702899616541
+    second: _Player_Master_105
+  - first:
+      213: -2765975997986872875
+    second: _Player_Master_106
+  - first:
+      213: 6332655410886565737
+    second: _Player_Master_107
+  - first:
+      213: -4071962211351063639
+    second: _Player_Master_108
+  - first:
+      213: 3732688662097703801
+    second: _Player_Master_109
+  - first:
+      213: -4151389092244927026
+    second: _Player_Master_110
+  - first:
+      213: -6897053833121803589
+    second: _Player_Master_111
+  - first:
+      213: -5795157174421622357
+    second: _Player_Master_112
+  - first:
+      213: 3851004703459482816
+    second: _Player_Master_113
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _Player_Master_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1152
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671e3120f74879c00800000000000000
+      internalID: 907339530969014646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1056
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da448f30df826ab30800000000000000
+      internalID: 4298167961530156205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1056
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c741f9e25e1beeb70800000000000000
+      internalID: 8930270709010076796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d6fe9c12173ece0800000000000000
+      internalID: -1377132671109468811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_11
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2234d4f094323fad0800000000000000
+      internalID: -2669751357404265694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_12
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 960
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6044a87ff423f51a0800000000000000
+      internalID: -6818675991778802682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 960
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9f8f9b3f957cd40800000000000000
+      internalID: 5604547164617898433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_19
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 960
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7070860f9ee338340800000000000000
+      internalID: 4864801196971919111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_20
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 879
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74fe22fc2d6de4ca0800000000000000
+      internalID: -6030646650095866041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_21
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 864
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa94c61d8cfe084a0800000000000000
+      internalID: -6593006208684373590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 879
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b899cb69a868c8b90800000000000000
+      internalID: -7238262571298678389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_23
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 864
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d7c945f455b3e30800000000000000
+      internalID: 4484271653187779983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_27
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 864
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e63a7d8f5f188a0800000000000000
+      internalID: -6304487554223477137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_28
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 864
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb001e409a2f5690800000000000000
+      internalID: -7611318045959517203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 768
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d482ec35314491d0800000000000000
+      internalID: -3344976926318885672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_30
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 768
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef270918dbb580120800000000000000
+      internalID: 2380253272545981182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 768
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56be8972e8cd09700800000000000000
+      internalID: 545178058019629925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_36
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 768
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600b92864fef3e270800000000000000
+      internalID: 8278740865710141446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_37
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 675
+        width: 87
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6244ebe2b6baeb90800000000000000
+      internalID: -7211750973702389139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 741
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e56eadac778bbd0800000000000000
+      internalID: -2614207870548943263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_39
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 732
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d296d75387c20e0800000000000000
+      internalID: -2293325939105780371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_40
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 753
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2820f26dc4e5cbf60800000000000000
+      internalID: 8051413917935534722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_41
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 678
+        width: 84
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f560b2b1a4d2cd30800000000000000
+      internalID: 4450353172748199412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_42
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 726
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd186dc8f1999e9e0800000000000000
+      internalID: -1591572632512855587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_43
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 738
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46585fda8e21e9680800000000000000
+      internalID: -8746532635746663068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_44
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 744
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c896da1a24ae722b0800000000000000
+      internalID: -5609257238965425780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_45
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 672
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778b1b1e284988d60800000000000000
+      internalID: 7892721636819974263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_46
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 687
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0d042475453a8d0800000000000000
+      internalID: -2836330606562848535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_47
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 684
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9786147ffd032320800000000000000
+      internalID: 2531882806327805855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_53
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 678
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1562d3b1373dde0a0800000000000000
+      internalID: -6850586966828964271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_54
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 681
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7f8a1611fd0f7a0800000000000000
+      internalID: -6345326609219127371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_55
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 672
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a9f01d9b096d0e0800000000000000
+      internalID: -2245448236446803412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Player_Master_56
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 672
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee679ea876c21ff50800000000000000
+      internalID: 6913355726214231790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

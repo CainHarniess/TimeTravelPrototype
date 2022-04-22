@@ -57,7 +57,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         public IEnumerator ContinuousMove(Vector2 movementDirection)
         {
             _Animator.SetBool(AnimationParameters.IsMoving, true);
-            _Animator.SetTrigger(AnimationParameters.IsMovingTrigger);
+            //_Animator.SetTrigger(AnimationParameters.IsMovingTrigger);
 
             _SpriteFlipper.FlipSpriteIfRequired(_Sprite, movementDirection);
 
@@ -78,6 +78,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                 currentTime += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
+
+            _cachedTransform.position = endPosition;
 
             _Animator.SetBool(AnimationParameters.IsMoving, false);
         }
