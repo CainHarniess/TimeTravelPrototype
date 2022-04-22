@@ -18,7 +18,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private PauseEventChannel _PauseButtonPressed;
 
-        void Awake()
+        protected override void Awake()
         {
             _gameObjectName = gameObject.name;
             _playerInput = GetComponent<PlayerInput>();

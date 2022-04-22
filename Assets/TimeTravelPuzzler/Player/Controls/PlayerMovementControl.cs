@@ -12,7 +12,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private PlayerMovementChannel _PlayerMoveButtonPressed;
 
-        void Awake()
+        protected override void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
             _movementAction = _playerInput.actions[ControlActions.Movement];
