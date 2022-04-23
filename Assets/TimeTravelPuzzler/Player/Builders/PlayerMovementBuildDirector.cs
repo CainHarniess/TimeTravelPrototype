@@ -9,10 +9,12 @@ namespace Osiris.TimeTravelPuzzler.Player
     public class PlayerMovementBuildDirector : DescriptionSO
     {
         [SerializeField] private PlayerMovementBuilder _Builder;
-        public IPlayerMovement Construct(Collider2D collider, float castDistance, Transform transform, ILogger logger, string gameObjectName)
+        public IPlayerMovement Construct(Collider2D collider, float castDistance, Transform transform, ILogger logger,
+                                         string gameObjectName, float vector2EqualsThreshold)
         {
             return _Builder.WithCollider2D(collider).WithCastDistance(castDistance).WithTransform(transform)
-                           .WithLogger(logger).WithGameObjectName(gameObjectName).Build();
+                           .WithLogger(logger).WithGameObjectName(gameObjectName)
+                           .WithVector2EqualsThreshold(vector2EqualsThreshold).Build();
         }
     }
 }

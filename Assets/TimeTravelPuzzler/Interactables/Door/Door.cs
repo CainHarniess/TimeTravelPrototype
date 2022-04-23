@@ -63,7 +63,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         private void SetComponentStatus(bool isActive)
         {
-            _rendererProxy.Enabled = isActive;
+            //_rendererProxy.Enabled = isActive;
             _colliderProxy.Enabled = isActive;
         }
     }

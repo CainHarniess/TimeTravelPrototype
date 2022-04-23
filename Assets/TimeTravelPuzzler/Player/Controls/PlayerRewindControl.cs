@@ -25,7 +25,7 @@ namespace Osiris.TimeTravelPuzzler.Player
         protected override void Awake()
         {
             base.Awake();
-            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
+            this.IsInjectionPresent(_Logger, nameof(_Logger));
             
             _playerInput = GetComponent<PlayerInput>();
             _rewindAction = _playerInput.actions[ControlActions.RewindTime];

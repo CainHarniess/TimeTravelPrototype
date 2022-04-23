@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4102972334562530825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: -1226187037
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.013616921, g: 0.2477887, b: 0.9622642, a: 1}
+  m_Sprite: {fileID: -7290589953880244424, guid: 5cef9f3cac239da42bd0a7f3b846ff7f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.0001776, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,14 +124,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BuildDirector: {fileID: 11400000, guid: 5b248e4ebb82d1d45921160fab025ae1, type: 2}
-  _isInitiallyClosed: 1
+  _isOpenInEditMode: 0
   _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
   _Door:
     id: 0
   references:
     version: 1
     00000000:
-      type: {class: , ns: , asm: }
+      type: {class: Door, ns: Osiris.TimeTravelPuzzler.Interactables.Doors, asm: Osiris.TimeTravelPuzzler.Interactables}
+      data:
+        _IsOpen: 0
 --- !u!114 &5681618379343991749
 MonoBehaviour:
   m_ObjectHideFlags: 0

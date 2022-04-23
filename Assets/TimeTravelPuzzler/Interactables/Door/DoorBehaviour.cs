@@ -1,46 +1,51 @@
 using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Interactable;
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using UnityEngine;
+using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     [ExecuteInEditMode]
-    public class DoorBehaviour : MonoBehaviour, IDoor
+    public partial class DoorBehaviour : OsirisMonoBehaviour, IDoor, ILoggableBehaviour
     {
-        private string _gameObjectName;
         private SpriteRenderer _sprite;
         private BoxCollider2D _collider;
 
-        [Header(InspectorHeaders.ControlVariables)]
+        [Header(InspectorHeaders.Injections)]
+        [SerializeField] private UnityConsoleLogger _Logger;
         [Tooltip(ToolTips.DoorBuildDirector)]
         [SerializeField] private DoorBuildDirectorSO _BuildDirector;
+        [SerializeField] private Animator _Animator;
+        [SerializeField] private Sprite _OpenSprite;
+        [SerializeField] private Sprite _ClosedSprite;
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _isOpenInEditMode;
-        [Tooltip(ILoggerToolTips.ToolTip)]
-        [SerializeField] private UnityConsoleLogger _Logger;
         [Tooltip(ToolTips.Door)]
         [SerializeReference] private IDoor _Door;
+        
+        public bool IsOpen => _Door.IsOpen;
 
-        private string GameObjectName
+        public ILogger Logger => _Logger;
+
+        protected override void Awake()
         {
-            get
+            base.Awake();
+            InitialiseDoor();
+            this.IsInjectionPresent(_Logger, nameof(_Logger));
+            this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator));
+
+            if (_isOpenInEditMode)
             {
-                if (_gameObjectName == null)
-                {
-                    _gameObjectName = gameObject.name;
-                }
-                return _gameObjectName;
+                _Animator.SetBool(AnimationParameters.IsOpen, true);
+            }
+            else
+            {
+                _Animator.SetBool(AnimationParameters.IsOpen, false);
             }
         }
-
-        private void Awake()
-        {
-            InitialiseDoor();
-        }
-
-
-        public bool IsOpen => _Door.IsOpen;
 
         public bool CanOpen()
         {
@@ -50,6 +55,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         public void Open()
         {
             _Door.Open();
+            _Animator.SetTrigger(AnimationParameters.DoorOpening);
         }
 
         public bool CanClose()
@@ -60,6 +66,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         public void Close()
         {
             _Door.Close();
+            _Animator.SetTrigger(AnimationParameters.DoorClosing);
         }
 
         [ContextMenu("Open door")]
@@ -68,6 +75,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
             InitialiseDoor();
             _Door.Open();
             _isOpenInEditMode = true;
+            _sprite.sprite = _OpenSprite;
         }
 
         [ContextMenu("Close door")]
@@ -76,16 +84,15 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
             InitialiseDoor();
             _Door.Close();
             _isOpenInEditMode = false;
+            _sprite.sprite = _ClosedSprite;
         }
-        
+
         private void InitialiseDoor()
         {
             _collider = GetComponent<BoxCollider2D>();
             _sprite = GetComponent<SpriteRenderer>();
             _Door = _BuildDirector.Construct(GameObjectName, _Logger, _sprite, _collider, _isOpenInEditMode);
         }
-
-
 
 
         private struct ToolTips

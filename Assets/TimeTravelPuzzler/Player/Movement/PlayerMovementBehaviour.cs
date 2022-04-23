@@ -22,6 +22,10 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [ReadOnly] [SerializeField] private SpriteRenderer _Sprite;
         [SerializeField] private SpriteFlipperUtility _SpriteFlipper;
 
+        [Header(InspectorHeaders.ControlVariables)]
+        [Tooltip(ToolTips.EqualsThreshold)]
+        [ReadOnly] [SerializeField] private float _EqualsThreshold = 0.02f;
+
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeReference] private IPlayerMovement _PlayerMovement;
 
@@ -39,8 +43,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             this.AddComponentInjectionIfNotPresent(ref _Sprite, nameof(_Sprite));
 
             var collider = GetComponent<BoxCollider2D>();
-            _PlayerMovement = _MovementBuildDirector.Construct(collider, _ColliderCastDistance.Value, transform, Logger,
-                                                               GameObjectName);
+            _PlayerMovement = _MovementBuildDirector.Construct(collider, _ColliderCastDistance.Value, transform,
+                                                               Logger, GameObjectName, _EqualsThreshold);
         }
 
         public bool CanMove(Vector2 movementDirection)
@@ -82,6 +86,15 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             _cachedTransform.position = endPosition;
 
             _Animator.SetBool(AnimationParameters.IsMoving, false);
+        }
+
+        private struct ToolTips
+        {
+            public const string EqualsThreshold = "The distance between two Vector2 instances below which they "
+                                                  + "are considered equal.\n"
+                                                  + "\n"
+                                                  + "This overrides the Unity default of 1e-5 because the so that "
+                                                  + "the normal surface collision calculation works correctly.";
         }
     }
 }

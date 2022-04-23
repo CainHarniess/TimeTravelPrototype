@@ -39,7 +39,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _collider = GetComponent<BoxCollider2D>();
             _animator = GetComponent<Animator>();
 
-            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
+            this.IsInjectionPresent(_Logger, nameof(_Logger));
             GetPlayerReferences();
         }
 

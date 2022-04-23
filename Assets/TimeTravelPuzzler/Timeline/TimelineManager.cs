@@ -49,7 +49,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
             _timer = new CoroutineTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
 
-            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
+            this.IsInjectionPresent(_Logger, nameof(_Logger));
 
             ConfigureEventRecorder();
             ConfigurePlaybacks();

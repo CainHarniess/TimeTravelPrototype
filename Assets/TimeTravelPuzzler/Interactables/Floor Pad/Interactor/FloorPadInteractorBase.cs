@@ -19,8 +19,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 
         protected override void Awake()
         {
-            this.IsInjectionPresent(_Logger, nameof(_Logger).ToEditorName());
-            this.IsInjectionPresent(_WeightReference, nameof(_WeightReference).ToEditorName());
+            this.IsInjectionPresent(_Logger, nameof(_Logger));
+            this.IsInjectionPresent(_WeightReference, nameof(_WeightReference));
         }
     }
 }

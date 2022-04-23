@@ -2,6 +2,7 @@
 using Osiris.Testing.Abstractions;
 using Osiris.TimeTravelPuzzler.Player.Movement;
 using Osiris.Utilities.ScriptableObjects;
+using System;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
 
@@ -21,6 +22,13 @@ namespace Osiris.TimeTravelPuzzler.Player
         public PlayerMovementBuilder WithCastDistance(float castDistance)
         {
             CastDistance = castDistance;
+            return this;
+        }
+
+        public float Vector2EqualsThreshold { get; private set; }
+        public PlayerMovementBuilder WithVector2EqualsThreshold(float vector2EqualsThreshold)
+        {
+            Vector2EqualsThreshold = vector2EqualsThreshold;
             return this;
         }
 
@@ -54,7 +62,8 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         public IPlayerMovement Build()
         {
-            return new PlayerMovement(Collider2D, CastDistance, Transform, Logger, GameObjectName);
+            return new PlayerMovement(Collider2D, CastDistance, Transform, Logger, GameObjectName,
+                                      Vector2EqualsThreshold);
         }
     }
 }

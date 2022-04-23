@@ -1,4 +1,5 @@
-﻿using Osiris.Testing.Abstractions;
+﻿using Osiris.EditorCustomisation;
+using Osiris.Testing.Abstractions;
 using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.Utilities.Extensions;
@@ -11,15 +12,16 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 {
     public class PlayerMovement : IPlayerMovement
     {
-        private ICollider2DProxy _collider;
-        private float _castDistance;
-        private ICollection<IMoveable> _currentMovables;
-        private ITransformProxy _transformProxy;
-        private ILogger _Logger;
-        private string _gameObjectName;
+        private readonly ICollider2DProxy _collider;
+        private readonly float _castDistance;
+        private readonly ICollection<IMoveable> _currentMovables;
+        private readonly ITransformProxy _transformProxy;
+        private readonly ILogger _Logger;
+        private readonly string _gameObjectName;
+        private readonly float _vector2EqualsThreshold;
 
         public PlayerMovement(ICollider2DProxy collider, float castDistance, ITransformProxy transform, ILogger logger,
-                              string gameObjectName)
+                              string gameObjectName, float vector2EqualsThreshold)
         {
             _collider = collider;
             _castDistance = castDistance;
@@ -27,6 +29,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             _transformProxy = transform;
             _Logger = logger;
             _gameObjectName = gameObjectName;
+            _vector2EqualsThreshold = vector2EqualsThreshold;
         }
 
         public bool CanMove(Vector2 movementDirection)
@@ -39,7 +42,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                 return true;
             }
 
-            if (!castResults.Any(r => r.normal == -movementDirection))
+            if (!castResults.Any(r => Vector2.Distance(-movementDirection, r.normal) < _vector2EqualsThreshold))
             {
                 _Logger.Log("Move request approved. No collider cast results perpendicular to movement direction.", _gameObjectName);
                 return true;
