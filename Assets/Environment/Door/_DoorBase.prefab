@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9217442261892500441}
   - component: {fileID: 2726024520647159828}
   - component: {fileID: 7714069177377114910}
+  - component: {fileID: 4589076678252559338}
+  - component: {fileID: 2498424168412184553}
   m_Layer: 0
   m_Name: _DoorBase
   m_TagString: Untagged
@@ -138,14 +140,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099916859638910674}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ecb5c91ad96ea24e9eaf26968c81ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stateAnimator: {fileID: 4589076678252559338}
   _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
   _BuildDirector: {fileID: 11400000, guid: 5b248e4ebb82d1d45921160fab025ae1, type: 2}
-  _Animator: {fileID: 9217442261892500441}
   _isOpenInEditMode: 0
   _Door:
     id: 0
@@ -168,3 +170,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
+--- !u!114 &4589076678252559338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099916859638910674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ad2d4890a82f47896203cffbea347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animator: {fileID: 9217442261892500441}
+  _spriteRenderer: {fileID: 2099916859638910672}
+  _OpenSprite: {fileID: 0}
+  _ClosedSprite: {fileID: 0}
+--- !u!114 &2498424168412184553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099916859638910674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de4f7c952d73344e9e0381a5f8edefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animator: {fileID: 9217442261892500441}
+  _MinFlickerDelay: 3
+  _MaxFlickerDelay: 8
+  _RandomTimer:
+    _TimePassed: 0
+    _Duration: 0

@@ -48,10 +48,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         public IDoor Build()
         {
-            ISpriteRendererProxy rendererProxy = new SpriteRendererProxy(SpriteRenderer);
             IBehaviourProxy colliderProxy = new BehaviourProxy(BoxCollider2D);
 
-            return new Door(GameObjectName, Logger, rendererProxy, colliderProxy, IsOpen);
+            return new Door(GameObjectName, Logger, colliderProxy, IsOpen);
         }
     }
 }

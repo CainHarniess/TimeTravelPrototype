@@ -9,7 +9,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
     public class DoorTests
     {
         private OUL.ILogger _loggerSub;
-        private IRendererProxy _rendererSub;
         private IBehaviourProxy _colliderSub;
 
         private Door _door;
@@ -18,10 +17,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         public void Initialise()
         {
             _loggerSub = Substitute.For<OUL.ILogger>();
-            _rendererSub = Substitute.For<IRendererProxy>();
             _colliderSub = Substitute.For<IBehaviourProxy>();
 
-            _door = new Door(string.Empty, _loggerSub, _rendererSub, _colliderSub, false);
+            _door = new Door(string.Empty, _loggerSub, _colliderSub, false);
         }
 
         [Test]
@@ -41,14 +39,12 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         public void Open_ShouldDeactivateRenderer()
         {
             _door.Open();
-            _rendererSub.Received().Enabled = false;
         }
 
         [Test]
         public void Open_RendererShouldBeDisabled()
         {
             _door.Open();
-            Assert.False(_rendererSub.Enabled);
         }
 
         [Test]
@@ -82,7 +78,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         public void Close_ShouldActivateRenderer()
         {
             _door.Close();
-            _rendererSub.Received().Enabled = true;
         }
 
         [Test]
@@ -90,7 +85,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Tests
         {
             _door.Open();
             _door.Close();
-            Assert.True(_rendererSub.Enabled);
         }
 
         [Test]

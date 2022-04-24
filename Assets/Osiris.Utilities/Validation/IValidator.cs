@@ -7,6 +7,11 @@
 
     public interface IValidator<T>
     {
-        bool IsValid(T weightChange);
+        bool IsValid(T parameter);
+    }
+
+    public interface IValidator<T, U>
+    {
+        bool IsValid(T parameter1, U parameter2);
     }
 }

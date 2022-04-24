@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &125778700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165154468960109666, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+  m_PrefabInstance: {fileID: 1368240722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ad2d4890a82f47896203cffbea347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139284777
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +173,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dccc5b48d2ad6ff4787a279e2948afe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &394251801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165154468960109666, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+  m_PrefabInstance: {fileID: 1398929438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ad2d4890a82f47896203cffbea347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -497,6 +519,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CyclicDoor (_DoorBase) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3165154468960109666, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _OpenSprite
+      value: 
+      objectReference: {fileID: 8407581621963258438, guid: ec95ca3dcc635d048aa8ecc7b7d1976f, type: 3}
+    - target: {fileID: 3165154468960109666, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _ClosedSprite
+      value: 
+      objectReference: {fileID: -7290589953880244424, guid: 5cef9f3cac239da42bd0a7f3b846ff7f, type: 3}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _stateAnimator
+      value: 
+      objectReference: {fileID: 125778700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
 --- !u!1001 &1398929438
@@ -506,6 +540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 677554896060281176, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8407581621963258438, guid: ec95ca3dcc635d048aa8ecc7b7d1976f, type: 3}
     - target: {fileID: 677554896060281177, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -554,8 +592,39 @@ PrefabInstance:
       propertyPath: m_Name
       value: CyclicDoor (_DoorBase) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 677554896060281179, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _Door._IsOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _stateAnimator
+      value: 
+      objectReference: {fileID: 394251801}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _isOpenInEditMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+--- !u!114 &1446401698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165154468960109666, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+  m_PrefabInstance: {fileID: 3607840300375864699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ad2d4890a82f47896203cffbea347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1524074575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,5 +5083,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: CyclicDoor (_DoorBase)
       objectReference: {fileID: 0}
+    - target: {fileID: 3573473328942534556, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
+      propertyPath: _stateAnimator
+      value: 
+      objectReference: {fileID: 1446401698}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}

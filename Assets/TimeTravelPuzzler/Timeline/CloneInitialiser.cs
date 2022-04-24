@@ -20,7 +20,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private Transform _PlayerTransform;
         [SerializeField] private SpriteRenderer _PlayerSprite;
         [SerializeField] private IntReference _DeactivationDelayReference;
-        [SerializeField] private CoroutineTimer _PostRewindDectivationTimer;
+        [SerializeField] private FixedCoroutineCallbackTimer _PostRewindDectivationTimer;
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _IsActive;
@@ -46,7 +46,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private void Start()
         {
             Deactivate();
-            _PostRewindDectivationTimer = new CoroutineTimer(DeactivationDelay, Deactivate);
+            _PostRewindDectivationTimer = new FixedCoroutineCallbackTimer(DeactivationDelay, Deactivate);
         }
 
         [ContextMenu("Activate")]

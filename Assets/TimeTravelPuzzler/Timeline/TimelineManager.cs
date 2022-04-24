@@ -23,7 +23,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
-        [SerializeField] private CoroutineTimer _timer;
+        [SerializeField] private FixedCoroutineCallbackTimer _FixedTimer;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeReference] private ListEventHistory _EventHistory;
@@ -47,7 +47,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             base.Awake();
 
-            _timer = new CoroutineTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
+            _FixedTimer = new FixedCoroutineCallbackTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
 
             this.IsInjectionPresent(_Logger, nameof(_Logger));
 
@@ -76,7 +76,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _RewindStarted.Raise();
             //_CloneInitialiser.Activate();
 
-            _rewindTimerCoroutine = StartCoroutine(_timer.StartTimer());
+            _rewindTimerCoroutine = StartCoroutine(_FixedTimer.StartTimer());
             _rewindCoroutine = StartCoroutine(_RewindPlayback.Play(Time.time));
         }
 

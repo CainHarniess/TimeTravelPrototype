@@ -11,16 +11,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
     {
         private readonly string _gameObjectName;
         private readonly ILogger _logger;
-        private readonly IRendererProxy _rendererProxy;
         private readonly IBehaviourProxy _colliderProxy;
 
         [ReadOnly] [SerializeField] private bool _IsOpen;
 
-        public Door(string gameObjectName, ILogger logger, IRendererProxy rendererProxy, IBehaviourProxy colliderProxy, bool isOpen)
+        public Door(string gameObjectName, ILogger logger, IBehaviourProxy colliderProxy, bool isOpen)
         {
             _gameObjectName = gameObjectName;
             _logger = logger;
-            _rendererProxy = rendererProxy;
             _colliderProxy = colliderProxy;
             _IsOpen = isOpen;
         }
@@ -63,7 +61,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         private void SetComponentStatus(bool isActive)
         {
-            //_rendererProxy.Enabled = isActive;
             _colliderProxy.Enabled = isActive;
         }
     }
