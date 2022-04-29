@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1106993088287823576
 Transform:
@@ -44,11 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 37a8a7705ad731349bbe081a64632fbf, type: 2}
-  _CloneInitialiser: {fileID: 0}
   _MaximumRewindTimeRef:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 611af761ddf94bc48b65e2ba5efbfd14, type: 2}
+  _FixedTimer:
+    _TimePassed: 0
+    _Duration: 0
   _EventHistory:
     id: 0
   _RewindPlayback:

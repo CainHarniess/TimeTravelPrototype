@@ -32,7 +32,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
             base.Awake();
             this.IsInjectionPresent(_Logger, nameof(_Logger));
             InitialiseDoor();
-            _stateAnimator.SetInitialState(IsOpen);
+
+            if (Application.IsPlaying(gameObject))
+            {
+                _stateAnimator.SetInitialState(IsOpen);
+            }
         }
 
         public bool CanOpen()
