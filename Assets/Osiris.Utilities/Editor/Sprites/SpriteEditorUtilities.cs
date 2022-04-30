@@ -7,9 +7,9 @@ namespace Osiris.Utilities.Sprites
 {
     public class SpriteEditorUtilities
     {
-        private static readonly string _resourcePath = "Door_Flicker";
+        private static readonly string _resourcePath = "Vat_Filled";
         private static string _assetPath;
-        private static readonly string _spriteName = "Door_Flicker_";
+        private static readonly string _spriteName = "Vat_Filled_";
 
         [MenuItem(MenuItems.SpriteSheetFilter)]
         public static void FilterSpriteSheet()
@@ -18,7 +18,7 @@ namespace Osiris.Utilities.Sprites
 
             SpriteMetaData[] spriteSheet = textureImporter.spritesheet;
 
-            ISpriteMetaDataFilter filter = new RectangularSpriteMetaDataFilter(192, 384, 384, 384);
+            ISpriteMetaDataFilter filter = new RectangularSpriteMetaDataFilter(16, 402, 1178, 1178);
 
             SpriteMetaData[] newSpriteSheet;
             newSpriteSheet = spriteSheet.Where(s => filter.Condition(s))
@@ -41,8 +41,8 @@ namespace Osiris.Utilities.Sprites
             textureImporter.spritesheet = newSpriteSheet;
         }
 
-        [MenuItem(MenuItems.UpdateAttributes)]
-        public static void UpdateAttributes()
+        [MenuItem(MenuItems.DoubleSpriteWidth)]
+        public static void DoubleSpriteWidth()
         {
             TextureImporter textureImporter = GetTextureImporterFromResourcePath();
             SpriteMetaData[] newSpriteSheet = textureImporter.spritesheet;
@@ -50,6 +50,39 @@ namespace Osiris.Utilities.Sprites
             for (int i = 0; i < newSpriteSheet.Length; i++)
             {
                 newSpriteSheet[i].rect.width *= 2;
+            }
+
+            textureImporter.spritesheet = newSpriteSheet;
+        }
+
+        [MenuItem(MenuItems.DoubleSpriteHeight)]
+        public static void DoubleSpriteHeight()
+        {
+            TextureImporter textureImporter = GetTextureImporterFromResourcePath();
+            SpriteMetaData[] newSpriteSheet = textureImporter.spritesheet;
+
+            for (int i = 0; i < newSpriteSheet.Length; i++)
+            {
+                newSpriteSheet[i].rect.height *= 2;
+            }
+
+            textureImporter.spritesheet = newSpriteSheet;
+        }
+
+        [MenuItem(MenuItems.SetCustomPivot)]
+        public static void SetCustomPivot()
+        {
+            TextureImporter textureImporter = GetTextureImporterFromResourcePath();
+            Vector2 customPivot = new Vector2(0.5f, 0.22f);
+            SpriteMetaData[] newSpriteSheet = textureImporter.spritesheet;
+            textureImporter.spritePivot = customPivot;
+
+
+            for (int i = 0; i < newSpriteSheet.Length; i++)
+            {
+                Debug.Log(newSpriteSheet[i].rect);
+                newSpriteSheet[i].pivot = customPivot;
+                Debug.Log(newSpriteSheet[i].pivot);
             }
 
             textureImporter.spritesheet = newSpriteSheet;
