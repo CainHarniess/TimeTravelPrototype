@@ -1,4 +1,4 @@
-﻿namespace Osiris.TimeTravelPuzzler.Interactable
+﻿namespace Osiris.TimeTravelPuzzler.Interactable.Doors.Animations
 {
     internal struct AnimationParameters
     {

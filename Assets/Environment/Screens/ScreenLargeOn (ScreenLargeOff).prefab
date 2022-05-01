@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3946425564684897740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4976871893376429030, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_Name
+      value: ScreenLargeOn (ScreenLargeOff)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976871893376429030, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648300731000652098, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193215065297972410, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 16072607754665666, guid: 38b34771c80900949bf6c84c7aa24634, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+--- !u!1 &8346827872585098794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4976871893376429030, guid: e1d899b872c30764a8631b4a92d7d61d, type: 3}
+  m_PrefabInstance: {fileID: 3946425564684897740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7611775944990314481
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346827872585098794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e9a6db978d76224e873999a82f435b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7611775944990314480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346827872585098794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfd665464297f24080268ea6213b9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: 5b515bbe964b4914a974c9c4d0bf10e9, type: 2}
+  _Animator: {fileID: 7611775944990314481}
+  _AnimationData: {fileID: 11400000, guid: 2613e6ca676559d4f98b2c95d7d7477d, type: 2}
+  _RandomTimer:
+    _TimePassed: 0
+    _Duration: 0

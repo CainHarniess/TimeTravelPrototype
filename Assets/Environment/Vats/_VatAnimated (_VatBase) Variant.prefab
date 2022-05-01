@@ -101,3 +101,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3087887983493513928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973373122835541094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfd665464297f24080268ea6213b9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: eac0720a55568b844882c820b544d509, type: 2}
+  _Animator: {fileID: 7596524129243541908}
+  _AnimationData: {fileID: 11400000, guid: 43ca5e795d0216e4fafaa88a33a7b152, type: 2}
+  _RandomTimer:
+    _TimePassed: 0
+    _Duration: 0

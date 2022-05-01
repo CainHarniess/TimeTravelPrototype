@@ -1,7 +1,9 @@
+using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace Osiris.Utilities.Extensions
+namespace Osiris.Utilities.DependencyInjection
 {
 
     public static class IInjectableBehaviourExtensions
@@ -22,8 +24,7 @@ namespace Osiris.Utilities.Extensions
         }
 
         public static void AddComponentInjectionIfNotPresent<T>(this IInjectableBehaviour behaviour, ref T field,
-                                                                     string fieldName,
-                                                                     LogLevel logLevel = LogLevel.Warning)
+                                                                string fieldName, LogLevel logLevel = LogLevel.Warning)
             where T : Component
         {
             if (behaviour.IsInjectionPresent(field, fieldName, logLevel))

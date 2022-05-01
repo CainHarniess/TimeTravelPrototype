@@ -1,7 +1,8 @@
-﻿using Osiris.Utilities.Logging;
+﻿using Osiris.Utilities.Extensions;
+using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 
-namespace Osiris.Utilities.Extensions
+namespace Osiris.Utilities.DependencyInjection
 {
     public static class IInjectableBehaviourReferenceExtensions
     {
@@ -24,7 +25,7 @@ namespace Osiris.Utilities.Extensions
             UnityConsoleLogger.LogAtLevel(message, logLevel, behaviour.GameObjectName);
             return false;
         }
-        
+
         public static bool IsInjectionPresent(this IInjectableBehaviour behaviour, FloatReference field, string fieldName,
                                               LogLevel logLevel = LogLevel.Error)
         {

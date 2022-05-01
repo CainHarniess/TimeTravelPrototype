@@ -1,5 +1,5 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.Utilities.Extensions;
+using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using UnityEngine;

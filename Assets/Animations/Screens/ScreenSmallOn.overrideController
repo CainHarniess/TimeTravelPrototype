@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ScreenSmallOn
+  m_Controller: {fileID: 9100000, guid: 3e9a6db978d76224e873999a82f435b0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: af974cea9ee019d4d80024d0b87cde34, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3ba50312b331a84c8372d01fdebdb6d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f934eaf5db324a46b6575917426185d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d3459566003a09041b6218b1d504d979, type: 2}

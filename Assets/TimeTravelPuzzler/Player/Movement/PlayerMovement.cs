@@ -66,7 +66,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                 if (!(result.collider.GetComponent<IMoveable>() is IMoveable movable))
                 {
                     _Logger.Log("Collider cast result does not implement IMoveable.", _gameObjectName);
-                    Debug.Log(result.collider.gameObject.name);
                     return false;
                 }
 

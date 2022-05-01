@@ -2,6 +2,7 @@ using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
 using Osiris.Utilities;
+using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;

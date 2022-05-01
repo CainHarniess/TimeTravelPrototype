@@ -1,4 +1,4 @@
-using Osiris.Utilities.Extensions;
+using Osiris.Utilities.DependencyInjection;
 
 namespace Osiris.Utilities.Logging
 {

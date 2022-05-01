@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2726024520647159828}
   - component: {fileID: 7714069177377114910}
   - component: {fileID: 4589076678252559338}
-  - component: {fileID: 2498424168412184553}
+  - component: {fileID: 7066821874385051505}
   m_Layer: 0
   m_Name: _DoorBase
   m_TagString: Untagged
@@ -182,11 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172ad2d4890a82f47896203cffbea347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
   _Animator: {fileID: 9217442261892500441}
   _spriteRenderer: {fileID: 2099916859638910672}
   _OpenSprite: {fileID: 0}
   _ClosedSprite: {fileID: 0}
---- !u!114 &2498424168412184553
+--- !u!114 &7066821874385051505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,12 +196,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2099916859638910674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de4f7c952d73344e9e0381a5f8edefc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cfd665464297f24080268ea6213b9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: 1b055bdea6ac5c9499681858e7dec241, type: 2}
   _Animator: {fileID: 9217442261892500441}
-  _MinFlickerDelay: 3
-  _MaxFlickerDelay: 8
+  _AnimationData: {fileID: 11400000, guid: 81745db0af0ff804e93c1ff5ffa4344d, type: 2}
   _RandomTimer:
     _TimePassed: 0
     _Duration: 0

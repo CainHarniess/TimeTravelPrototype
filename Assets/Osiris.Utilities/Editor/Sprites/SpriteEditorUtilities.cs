@@ -7,9 +7,8 @@ namespace Osiris.Utilities.Sprites
 {
     public class SpriteEditorUtilities
     {
-        private static readonly string _resourcePath = "Vat_Filled";
+        private static readonly string _resourcePath = "_Screen_Small_Master";
         private static string _assetPath;
-        private static readonly string _spriteName = "Vat_Filled_";
 
         [MenuItem(MenuItems.SpriteSheetFilter)]
         public static void FilterSpriteSheet()
@@ -18,7 +17,7 @@ namespace Osiris.Utilities.Sprites
 
             SpriteMetaData[] spriteSheet = textureImporter.spritesheet;
 
-            ISpriteMetaDataFilter filter = new RectangularSpriteMetaDataFilter(16, 402, 1178, 1178);
+            ISpriteMetaDataFilter filter = new RectangularSpriteMetaDataFilter(675, 1060, 1930, 2030);
 
             SpriteMetaData[] newSpriteSheet;
             newSpriteSheet = spriteSheet.Where(s => filter.Condition(s))
@@ -35,7 +34,7 @@ namespace Osiris.Utilities.Sprites
 
             for(int i = 0; i< newSpriteSheet.Length; i++)
             {
-                newSpriteSheet[i].name = _spriteName + i;
+                newSpriteSheet[i].name = _resourcePath + '_' + i;
             }
 
             textureImporter.spritesheet = newSpriteSheet;

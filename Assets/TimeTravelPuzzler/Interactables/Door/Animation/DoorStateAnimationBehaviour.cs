@@ -1,20 +1,22 @@
 using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Interactable;
+using Osiris.TimeTravelPuzzler.Interactable.Doors.Animations;
+using Osiris.Utilities.Animation;
+using Osiris.Utilities.DependencyInjection;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables.Doors
+namespace Osiris.TimeTravelPuzzler.Interactables.Doors.Animations
 {
-
-    public class StateAnimationBehaviour : AnimationBehaviour
+    public class DoorStateAnimationBehaviour : AnimationBehaviour
     {
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Sprite _OpenSprite;
         [SerializeField] private Sprite _ClosedSprite;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            base.Awake();
+            this.AddComponentInjectionIfNotPresent(ref _spriteRenderer, nameof(_spriteRenderer));
         }
 
         public void SetInitialState(bool isInitiallyOpen)

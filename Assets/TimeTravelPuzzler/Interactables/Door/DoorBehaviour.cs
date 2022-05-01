@@ -1,4 +1,7 @@
 using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Interactables.Doors.Animations;
+using Osiris.Utilities.Animation;
+using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using UnityEngine;
@@ -10,8 +13,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
     public partial class DoorBehaviour : OsirisMonoBehaviour, IDoor, ILoggableBehaviour
     {
         private BoxCollider2D _collider;
-        [SerializeField] private StateAnimationBehaviour _stateAnimator;
-        private FlickerAnimationBehaviour _flickerAnimator;
+        [SerializeField] private DoorStateAnimationBehaviour _stateAnimator;
+        private RegularTriggerAnimationBehaviour _flickerAnimator;
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -36,6 +39,15 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
             if (Application.IsPlaying(gameObject))
             {
                 _stateAnimator.SetInitialState(IsOpen);
+            }
+
+            if (_isOpenInEditMode)
+            {
+                DisableFlicker();
+            }
+            else
+            {
+                EnableFlicker();
             }
         }
 
@@ -66,8 +78,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         private void InitialiseDoor()
         {
             _collider = GetComponent<BoxCollider2D>();
-            _stateAnimator = GetComponent<StateAnimationBehaviour>();
-            _flickerAnimator = GetComponent<FlickerAnimationBehaviour>();
+            _stateAnimator = GetComponent<DoorStateAnimationBehaviour>();
+            _flickerAnimator = GetComponent<RegularTriggerAnimationBehaviour>();
 
             _Door = _BuildDirector.Construct(GameObjectName, _Logger, _collider, _isOpenInEditMode);
         }

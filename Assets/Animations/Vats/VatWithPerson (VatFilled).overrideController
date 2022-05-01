@@ -8,4 +8,8 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: VatWithPerson (VatFilled)
   m_Controller: {fileID: 9100000, guid: e62b3a60352d75b42a0f5a43f48efe46, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 30897a617efc5ec47801bbe18d6742d4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a34096620e9e435419a7c450f21bb073, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fd4996d0769d43740b8692e74801afd4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8d0d64f31376e564c87c59ad6777f160, type: 2}

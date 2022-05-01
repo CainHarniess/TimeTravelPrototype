@@ -3,7 +3,7 @@ using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline;
 using Osiris.Utilities.Commands;
-using Osiris.Utilities.Extensions;
+using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 using ILogger = Osiris.Utilities.Logging.ILogger;
