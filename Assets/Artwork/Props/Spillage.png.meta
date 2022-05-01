@@ -574,27 +574,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bin_Full
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 2042
-        width: 29
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 477054b170ab83c50800000000000000
-      internalID: 6645265789870212980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Spillage_Green_Small
       rect:
         serializedVersion: 2
@@ -624,7 +603,7 @@ TextureImporter:
         width: 20
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -645,7 +624,7 @@ TextureImporter:
         width: 80
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -666,7 +645,7 @@ TextureImporter:
         width: 41
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -687,7 +666,7 @@ TextureImporter:
         width: 60
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
