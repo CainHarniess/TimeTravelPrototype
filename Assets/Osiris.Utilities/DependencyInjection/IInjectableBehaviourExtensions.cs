@@ -1,6 +1,5 @@
 using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Osiris.Utilities.DependencyInjection
