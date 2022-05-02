@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 288563751389034766, guid: 006d56d75e2fde9498f774112d7b5b5b, type: 3}
       propertyPath: m_Name
-      value: Workstation_Off (_WorkstationBase)
+      value: WallUnit_Off (_WorkstationBase)
       objectReference: {fileID: 0}
     - target: {fileID: 2504313050012688015, guid: 006d56d75e2fde9498f774112d7b5b5b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -67,5 +67,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1024028747104302380, guid: 36ae66a2ccf0f8a4ca4a50e68768bcdc, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5192845207225560522, guid: 006d56d75e2fde9498f774112d7b5b5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 006d56d75e2fde9498f774112d7b5b5b, type: 3}

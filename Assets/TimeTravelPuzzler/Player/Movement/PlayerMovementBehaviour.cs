@@ -13,6 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
     public class PlayerMovementBehaviour : OsirisMonoBehaviour, IPlayerMovement, ILoggableBehaviour
     {
         private Transform _cachedTransform;
+        private WaitForEndOfFrame _cachedWaitInstance;
 
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -32,6 +33,18 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         private float MovementDuration => _MovementDurationRef.Value;
         public ILogger Logger => _Logger;
+
+        private WaitForEndOfFrame CachedWaitInstance
+        {
+            get
+            {
+                if (_cachedWaitInstance == null)
+                {
+                    _cachedWaitInstance = new WaitForEndOfFrame();
+                }
+                return _cachedWaitInstance;
+            }
+        }
 
         protected override void Awake()
         {
@@ -81,13 +94,16 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                                                          endPosition,
                                                          currentProgress);
                 currentTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
+                yield return CachedWaitInstance;
             }
 
             _cachedTransform.position = endPosition;
 
             _Animator.SetBool(AnimationParameters.IsMoving, false);
         }
+
+
+
 
         private struct ToolTips
         {

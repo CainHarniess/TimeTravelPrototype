@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 1024028747104302380, guid: c777985f12a3ae44482106f1de0d428e, type: 3}
     - target: {fileID: 4771466790293449572, guid: 48904352121b8c344b512de7bd452564, type: 3}
       propertyPath: m_Name
-      value: Workstation_On (_WorkstationAnimated) Variant
+      value: WallUnit_On (_WorkstationAnimated)
       objectReference: {fileID: 0}
     - target: {fileID: 6539197270918276203, guid: 48904352121b8c344b512de7bd452564, type: 3}
       propertyPath: m_Controller
@@ -71,5 +71,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1019565879418929056, guid: 48904352121b8c344b512de7bd452564, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48904352121b8c344b512de7bd452564, type: 3}

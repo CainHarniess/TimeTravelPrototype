@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 159b9b8b1dcb00941983f9877ff5c43f
+guid: 63b2c1ef6b6f2534ba5f0f6ff7525074
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -408,23 +408,323 @@ TextureImporter:
       213: 2131341788835892021
     second: _Props_Master_242
   - first:
-      213: -3537467675295117216
-    second: Spillage_0
+      213: 844051835450292408
+    second: _Screens_Master_0
   - first:
-      213: 1437390756988393035
-    second: Bin_Empty
+      213: 2952960770101495913
+    second: _Screens_Master_1
   - first:
-      213: 6645265789870212980
-    second: Bin_Full
+      213: -1803783155870143274
+    second: _Screens_Master_2
   - first:
-      213: 1024028747104302380
-    second: Workstation_On_Flicker_
+      213: 6349492134072462666
+    second: _Screens_Master_3
   - first:
-      213: 2581497348582627063
-    second: Workstation_On_Flicker_0
+      213: 8295844180922484277
+    second: _Screens_Master_4
   - first:
-      213: 8713898925162321935
-    second: Workstation_On_Flicker_1
+      213: 1849050753605383199
+    second: _Screens_Master_5
+  - first:
+      213: -3561593408473362523
+    second: _Screens_Master_6
+  - first:
+      213: 8784120606248629485
+    second: _Screens_Master_7
+  - first:
+      213: 4021499582959001459
+    second: _Screens_Master_8
+  - first:
+      213: 2423069687980658105
+    second: _Screens_Master_9
+  - first:
+      213: -7557920682312074081
+    second: _Screens_Master_10
+  - first:
+      213: -7338230997125995699
+    second: _Screens_Master_11
+  - first:
+      213: 2102874446427096141
+    second: _Screens_Master_12
+  - first:
+      213: 1254488025678825661
+    second: _Screens_Master_13
+  - first:
+      213: 6712356834632756405
+    second: _Screens_Master_14
+  - first:
+      213: -9073345892777176346
+    second: _Screens_Master_15
+  - first:
+      213: -3677075459295475765
+    second: _Screens_Master_16
+  - first:
+      213: 4571373105832253220
+    second: _Screens_Master_17
+  - first:
+      213: -1249505740067442403
+    second: _Screens_Master_18
+  - first:
+      213: 1010183616791650652
+    second: _Screens_Master_19
+  - first:
+      213: -6083177376363951661
+    second: _Screens_Master_20
+  - first:
+      213: -3114828803374836606
+    second: _Screens_Master_21
+  - first:
+      213: -3524239563811511999
+    second: _Screens_Master_22
+  - first:
+      213: -3515824599797573578
+    second: _Screens_Master_23
+  - first:
+      213: 8256752523928623113
+    second: _Screens_Master_24
+  - first:
+      213: 567338490397142383
+    second: _Screens_Master_25
+  - first:
+      213: -5593341402280866195
+    second: _Screens_Master_26
+  - first:
+      213: -8305275276776992522
+    second: _Screens_Master_27
+  - first:
+      213: 2200608640627642235
+    second: _Screens_Master_28
+  - first:
+      213: 1124473639257080705
+    second: _Screens_Master_29
+  - first:
+      213: -1781842216541021206
+    second: _Screens_Master_30
+  - first:
+      213: -1559302080966592976
+    second: _Screens_Master_31
+  - first:
+      213: 5105019444870729395
+    second: _Screens_Master_32
+  - first:
+      213: 7878852621504199595
+    second: _Screens_Master_33
+  - first:
+      213: 3378483794136353124
+    second: _Screens_Master_34
+  - first:
+      213: 2221733984392449191
+    second: _Screens_Master_35
+  - first:
+      213: 3780000934250077653
+    second: _Screens_Master_36
+  - first:
+      213: 5276247328941565653
+    second: _Screens_Master_37
+  - first:
+      213: -2792933082765685120
+    second: _Screens_Master_38
+  - first:
+      213: 4217413097222673020
+    second: _Screens_Master_39
+  - first:
+      213: -975404113409046251
+    second: _Screens_Master_40
+  - first:
+      213: -206442978983985506
+    second: _Screens_Master_41
+  - first:
+      213: -6325072019551871615
+    second: _Screens_Master_42
+  - first:
+      213: 3977261648503161076
+    second: _Screens_Master_43
+  - first:
+      213: 8722382143923754079
+    second: _Screens_Master_44
+  - first:
+      213: 338097644803093206
+    second: _Screens_Master_45
+  - first:
+      213: 1450003795192086889
+    second: _Screens_Master_46
+  - first:
+      213: 1726009064507995840
+    second: _Screens_Master_47
+  - first:
+      213: -896841334402733540
+    second: _Screens_Master_48
+  - first:
+      213: -743425694324687051
+    second: _Screens_Master_49
+  - first:
+      213: -7338484078190726023
+    second: _Screens_Master_50
+  - first:
+      213: -6309124459779053431
+    second: _Screens_Master_51
+  - first:
+      213: -3818950160493956991
+    second: _Screens_Master_52
+  - first:
+      213: 8202862431616049621
+    second: _Screens_Master_53
+  - first:
+      213: -4405074635474753232
+    second: _Screens_Master_54
+  - first:
+      213: -5866665608129874863
+    second: _Screens_Master_55
+  - first:
+      213: 4372261101211624349
+    second: _Screens_Master_56
+  - first:
+      213: 8923937244361665560
+    second: _Screens_Master_57
+  - first:
+      213: 4362602181294978671
+    second: _Screens_Master_58
+  - first:
+      213: -4872606749057040272
+    second: _Screens_Master_59
+  - first:
+      213: -4096308674065205143
+    second: _Screens_Master_60
+  - first:
+      213: -3670987194943695611
+    second: _Screens_Master_61
+  - first:
+      213: 7101100427734425547
+    second: _Screens_Master_62
+  - first:
+      213: 4666471700148801179
+    second: _Screens_Master_63
+  - first:
+      213: -6828567181870932244
+    second: _Screens_Master_64
+  - first:
+      213: 9027280392029872177
+    second: _Screens_Master_65
+  - first:
+      213: -8095073739736324669
+    second: _Screens_Master_66
+  - first:
+      213: -2426331036087924943
+    second: _Screens_Master_67
+  - first:
+      213: -2230402553851967961
+    second: _Screens_Master_68
+  - first:
+      213: 2082090666981610430
+    second: _Screens_Master_69
+  - first:
+      213: 6903426069969244278
+    second: _Screens_Master_70
+  - first:
+      213: 2648530590141039154
+    second: _Screens_Master_71
+  - first:
+      213: 2323909929796125976
+    second: _Screens_Master_72
+  - first:
+      213: -6914920062992936152
+    second: _Screens_Master_73
+  - first:
+      213: -6596466511223987081
+    second: _Screens_Master_74
+  - first:
+      213: 2118834094021452815
+    second: _Screens_Master_75
+  - first:
+      213: -541671548116699223
+    second: _Screens_Master_76
+  - first:
+      213: -8992092499899263607
+    second: _Screens_Master_77
+  - first:
+      213: -2245520195402079085
+    second: _Screens_Master_78
+  - first:
+      213: -3728104392764780431
+    second: _Screens_Master_79
+  - first:
+      213: -3952887771587808730
+    second: _Screens_Master_80
+  - first:
+      213: 8954657497990486313
+    second: _Screens_Master_81
+  - first:
+      213: 3727055801847079666
+    second: _Screens_Master_82
+  - first:
+      213: -6012573987348834353
+    second: _Screens_Master_83
+  - first:
+      213: -6872843351999364563
+    second: _Screens_Master_84
+  - first:
+      213: -3719377616623479774
+    second: _Screens_Master_85
+  - first:
+      213: -6842494819832891219
+    second: _Screens_Master_86
+  - first:
+      213: -5094786931493830024
+    second: _Screens_Master_87
+  - first:
+      213: -2920668034215720015
+    second: _Screens_Master_88
+  - first:
+      213: -4186353715371612066
+    second: _Screens_Master_89
+  - first:
+      213: 4687597317563643944
+    second: _Screens_Master_90
+  - first:
+      213: 4688098244234422159
+    second: _Screens_Master_91
+  - first:
+      213: 4449365051378781236
+    second: _Screens_Master_92
+  - first:
+      213: 58618039442886200
+    second: _Screens_Master_93
+  - first:
+      213: 3846495835269498546
+    second: _Screens_Master_94
+  - first:
+      213: 6287686518807370175
+    second: _Screens_Master_95
+  - first:
+      213: 2472660674084218090
+    second: _Screens_Master_96
+  - first:
+      213: -2529527509678630489
+    second: _Screens_Master_97
+  - first:
+      213: 8276068362915133107
+    second: _Screens_Master_98
+  - first:
+      213: -958336548710676032
+    second: _Screens_Master_99
+  - first:
+      213: 5057448102803938464
+    second: Screen_Small_Off_0
+  - first:
+      213: 374440137960961808
+    second: Screen_Small_Off_1
+  - first:
+      213: 121617138967860070
+    second: Cabinet_0
+  - first:
+      213: 3024283466456708435
+    second: Cabinet_1
+  - first:
+      213: -3770661377982925299
+    second: Wiring_0
+  - first:
+      213: -4512294157400758690
+    second: Wiring_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -526,13 +826,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Workstation_On_Flicker_
+      name: Wiring_0
       rect:
         serializedVersion: 2
-        x: 1163
-        y: 1835
-        width: 77
-        height: 53
+        x: 1085
+        y: 1250
+        width: 41
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,50 +840,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c25b0fe48b4163e00800000000000000
-      internalID: 1024028747104302380
+      spriteID: d06fa0d547bebabc0800000000000000
+      internalID: -3770661377982925299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Workstation_On_Flicker_0
+      name: Wiring_1
       rect:
         serializedVersion: 2
-        x: 1259
-        y: 1835
-        width: 77
-        height: 53
+        x: 1181
+        y: 1250
+        width: 41
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f651e2492253d320800000000000000
-      internalID: 2581497348582627063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Workstation_On_Flicker_1
-      rect:
-        serializedVersion: 2
-        x: 1355
-        y: 1835
-        width: 77
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0855fa77ecfde870800000000000000
-      internalID: 8713898925162321935
+      spriteID: e56ae0afe5c1161c0800000000000000
+      internalID: -4512294157400758690
       vertices: []
       indices: 
       edges: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36ae66a2ccf0f8a4ca4a50e68768bcdc
+guid: c777985f12a3ae44482106f1de0d428e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -418,7 +418,7 @@ TextureImporter:
     second: Bin_Full
   - first:
       213: 1024028747104302380
-    second: Workstation_Off_0
+    second: WallUnit_On_Idle
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -520,15 +520,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Workstation_Off_0
+      name: WallUnit_On_Idle
       rect:
         serializedVersion: 2
         x: 971
-        y: 1739
+        y: 1835
         width: 77
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
