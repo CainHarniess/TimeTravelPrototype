@@ -13,6 +13,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _IsOn;
+        public bool IsOn => _IsOn;
 
 
         protected override void Awake()

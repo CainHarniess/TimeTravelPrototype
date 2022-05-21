@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ScreenFlickerAnimationData
   m_EditorClassIdentifier: 
   _description: 
-  _ParameterName: Flicker
-  _MinFlickerDelay: 3
-  _MaxFlickerDelay: 8
+  _MinimumInterval: 3
+  _MaximumInterval: 8
+  _Parameter: Flicker

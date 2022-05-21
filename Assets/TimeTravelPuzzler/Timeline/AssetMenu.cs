@@ -4,10 +4,10 @@
     {
         public const string MenuRoot = "ScriptableObjects/Timeline/";
 
-        public const string TimelineEventChannelFileName = "TimelineEventChannel";
+        public const string TimelineEventChannelFileName = "New Timeline Event Channel";
         public const string TimelineEventChannelPath = AssetMenu.MenuRoot + "TimelineEventChannel";
 
-        public const string RewindEventChannelFileName = "RewindEventChannel";
+        public const string RewindEventChannelFileName = "New Rewind Event Channel";
         public const string RewindEventChannelPath = AssetMenu.MenuRoot + "RewindEventChannel";
 
         public const string ReplayEventChannelFileName = "New Replay Event Channel";

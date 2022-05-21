@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6973373122835541094, guid: c8a9aba80c7250a47843e746b9edde46, type: 3}
       propertyPath: m_Name
-      value: VatWithPerson (_VatAnimated) Variant
+      value: VatWithPerson (_VatAnimated)
       objectReference: {fileID: 0}
     - target: {fileID: 7596524129243541908, guid: c8a9aba80c7250a47843e746b9edde46, type: 3}
       propertyPath: m_Controller

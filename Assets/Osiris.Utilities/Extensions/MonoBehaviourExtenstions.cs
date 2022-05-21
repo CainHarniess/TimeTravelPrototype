@@ -1,5 +1,4 @@
-﻿using Osiris.Utilities.Logging;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Osiris.Utilities.Extensions
 {
@@ -7,15 +6,14 @@ namespace Osiris.Utilities.Extensions
     {
         public static void TryStopCoroutine(this MonoBehaviour monoBehaviour, Coroutine coroutine)
         {
-            if (coroutine != null)
+            if (coroutine == null)
             {
-                monoBehaviour.StopCoroutine(coroutine);
+                Debug.Log("coroutine is null");
+                return;
             }
-            else
-            {
-                string message = "No rewind playback coroutine to stop.";
-                UnityConsoleLogger.LogAtLevel(message, LogLevel.Warning, monoBehaviour.gameObject.name);
-            }
+            Debug.Log("coroutine is not null");
+
+            monoBehaviour.StopCoroutine(coroutine);
         }
     }
 }

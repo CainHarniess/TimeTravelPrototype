@@ -1,17 +1,19 @@
-﻿using Osiris.Utilities.ScriptableObjects;
+﻿using ILogger = Osiris.Utilities.Logging.ILogger;
+using Osiris.Utilities.ScriptableObjects;
 using UnityEngine;
 
 namespace Osiris.Utilities.Animation
 {
-    [CreateAssetMenu(fileName = AssetMenu.RegularTriggerAnimationDataFileName, menuName = AssetMenu.RegularTriggerAnimationDataPath)]
-    public class RegularAnimationData : DescriptionSO
+    public abstract class RegularAnimationData : DescriptionSO
     {
-        [SerializeField] private string _ParameterName;
-        [SerializeField] private float _MinFlickerDelay;
-        [SerializeField] private float _MaxFlickerDelay;
+        [SerializeField] private float _MinimumInterval;
+        [SerializeField] private float _MaximumInterval;
 
-        public string ParameterName { get => _ParameterName; }
-        public float MinFlickerDelay { get => _MinFlickerDelay; }
-        public float MaxFlickerDelay { get => _MaxFlickerDelay; }
+        public float MinimumInterval { get => _MinimumInterval; }
+        public float MaximumInterval { get => _MaximumInterval; }
+
+        public abstract string GetParameter();
+
+        public abstract bool IsValid(Animator animator, string gameObjectName, ILogger logger);
     }
 }

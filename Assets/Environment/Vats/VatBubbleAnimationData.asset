@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: VatBubbleAnimationData
   m_EditorClassIdentifier: 
   _description: 
-  _ParameterName: Bubble
-  _MinFlickerDelay: 3
-  _MaxFlickerDelay: 8
+  _MinimumInterval: 3
+  _MaximumInterval: 8
+  _Parameter: Bubble

@@ -104,6 +104,20 @@ MonoBehaviour:
   _Logger: {fileID: 11400000, guid: 5b515bbe964b4914a974c9c4d0bf10e9, type: 2}
   _Animator: {fileID: 7611775944990314481}
   _AnimationData: {fileID: 11400000, guid: 2613e6ca676559d4f98b2c95d7d7477d, type: 2}
+  _EventDispatcher: {fileID: 5620213481303766474}
   _RandomTimer:
     _TimePassed: 0
     _Duration: 0
+--- !u!114 &5620213481303766474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346827872585098794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b233f5d4207519c40abc3e00ee6d52de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animator: {fileID: 7611775944990314481}

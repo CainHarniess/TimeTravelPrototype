@@ -33,6 +33,13 @@ namespace Osiris.Utilities
             _MaxDuration = maxDuration;
         }
 
+        public RandomCoroutineCallbackTimer(Action callback, float minDuration, float maxDuration)
+            : base(callback)
+        {
+            _MinDuration = minDuration;
+            _MaxDuration = maxDuration;
+        }
+
         public override IEnumerator StartTimer()
         {
             GenerateDuration();
