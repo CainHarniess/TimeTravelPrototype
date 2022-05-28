@@ -9,9 +9,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
     [ExecuteInEditMode]
     public partial class DoorBehaviour : LoggableMonoBehaviour, IDoor, IInjectableBehaviour
     {
-        private BoxCollider2D _collider;
 
         [Header(InspectorHeaders.Injections)]
+        [SerializeField] private BoxCollider2D _Collider;
         [Tooltip(ToolTips.DoorBuildDirector)]
         [SerializeField] private DoorBuildDirectorSO _BuildDirector;
         [SerializeField] private DoorStateAnimationBehaviour _StateAnimator;
@@ -74,12 +74,12 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         private void InitialiseDoor()
         {
-            this.AddComponentInjectionIfNotPresent(ref _collider, nameof(_collider));
+            this.AddComponentInjectionIfNotPresent(ref _Collider, nameof(_Collider));
             this.AddComponentInjectionIfNotPresent(ref _StateAnimator, nameof(_StateAnimator));
             this.AddComponentInjectionIfNotPresent(ref _FlickerAnimator, nameof(_FlickerAnimator));
             this.AddComponentInjectionIfNotPresent(ref _SfxPlayer, nameof(_SfxPlayer));
 
-            _Door = _BuildDirector.Construct(GameObjectName, Logger, _collider, _isOpenInEditMode);
+            _Door = _BuildDirector.Construct(GameObjectName, Logger, _Collider, _isOpenInEditMode);
         }
 
         private void EnableFlicker()

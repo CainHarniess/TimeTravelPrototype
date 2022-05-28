@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: OpenSfxData
   m_EditorClassIdentifier: 
   _description: 
-  _Clip: {fileID: 8300000, guid: 149dfdfe5af4ca94b8078b45cc3bbcbf, type: 3}
+  _Clip: {fileID: 8300000, guid: e3d9d4af0ff72d14081d89c546182e4b, type: 3}
