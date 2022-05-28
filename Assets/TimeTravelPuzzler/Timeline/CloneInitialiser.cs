@@ -2,7 +2,6 @@ using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core;
 using Osiris.Utilities;
 using Osiris.Utilities.DependencyInjection;
-using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using UnityEngine;
@@ -41,7 +40,8 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _animator = GetComponent<Animator>();
 
             this.IsInjectionPresent(_Logger, nameof(_Logger));
-            GetPlayerReferences();
+            this.IsInjectionPresent(_DeactivationDelayReference, nameof(_DeactivationDelayReference));
+            GetPlayerGameObjectReferences();
         }
 
         private void Start()
@@ -87,11 +87,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _IsActive = isActive;
         }
         
-        private void GetPlayerReferences()
+        private void GetPlayerGameObjectReferences()
         {
             this.AddComponentInjectionByTagIfNotPresent(ref _PlayerTransform,
-                                                                    nameof(_PlayerTransform),
-                                                                    Tags.Player);
+                                                        nameof(_PlayerTransform),
+                                                        Tags.Player);
             this.AddComponentInjectionByTagIfNotPresent(ref _PlayerSprite,
                                                         nameof(_PlayerSprite),
                                                         Tags.Player);

@@ -13,14 +13,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         private IInteractable<int> _interactable;
 
         [Header(InspectorHeaders.ControlVariables)]
-        [SerializeField] private FloorPadCommandBuildDirectorSO _CommandDirector;
+        [SerializeField] private CommandBuildDirectorSO _CommandDirector;
         [SerializeField] private InteractableBuildDirectorSO _InteractableDirector;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private TimelineActionChannel _TimelineEventOccurred;
 
         protected IWeightedFloorPad FloorPad { get => _floorPad; }
-        protected FloorPadCommandBuildDirectorSO CommandDirector => _CommandDirector;
+        protected CommandBuildDirectorSO CommandDirector => _CommandDirector;
         protected IEventChannelSO<IRewindableCommand> TimelineEventOccurred { get => _TimelineEventOccurred; }
 
         private void Awake()

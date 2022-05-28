@@ -8,10 +8,8 @@ namespace Osiris.Utilities.Extensions
         {
             if (coroutine == null)
             {
-                Debug.Log("coroutine is null");
                 return;
             }
-            Debug.Log("coroutine is not null");
 
             monoBehaviour.StopCoroutine(coroutine);
         }

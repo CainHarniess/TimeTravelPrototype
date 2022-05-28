@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler
 {
-    public class PlayerTriggerHandler : MonoBehaviour
+    public class LevelCompletionTriggerHandler : MonoBehaviour
     {
         private void OnTriggerEnter2D(Collider2D other)
         {

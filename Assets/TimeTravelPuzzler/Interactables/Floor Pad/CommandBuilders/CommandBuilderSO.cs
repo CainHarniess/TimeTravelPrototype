@@ -4,47 +4,47 @@ using Osiris.Utilities.Commands;
 using System;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     [CreateAssetMenu(fileName = AssetMenu.CommandBuilderFileName, menuName = AssetMenu.CommandBuilderPath)]
-    public class FloorPadCommandBuilderSO : ScriptableObject
+    public class CommandBuilderSO : ScriptableObject
     {
         public int CandidateWeight { get; private set; }
-        public FloorPadCommandBuilderSO WithCandidateWeight(int candidateWeight)
+        public CommandBuilderSO WithCandidateWeight(int candidateWeight)
         {
             CandidateWeight = candidateWeight;
             return this;
         }
 
         public Func<bool> CanExecute { get; protected set; }
-        public FloorPadCommandBuilderSO WithCanExecute(Func<bool> candidateWeight)
+        public CommandBuilderSO WithCanExecute(Func<bool> candidateWeight)
         {
             CanExecute = candidateWeight;
             return this;
         }
 
         public Action Execute { get; private set; }
-        public FloorPadCommandBuilderSO WithExecute(Action execute)
+        public CommandBuilderSO WithExecute(Action execute)
         {
             Execute = execute;
             return this;
         }
 
         public Action<int> AdjustWeight { get; private set; }
-        public FloorPadCommandBuilderSO WithAdjustWeight(Action<int> adjustWeight)
+        public CommandBuilderSO WithAdjustWeight(Action<int> adjustWeight)
         {
             AdjustWeight = adjustWeight;
             return this;
         }
         public string CommandDescription { get; private set; }
-        public FloorPadCommandBuilderSO WithCommandDescription(string commandDescription)
+        public CommandBuilderSO WithCommandDescription(string commandDescription)
         {
             CommandDescription = commandDescription;
             return this;
         }
 
         public ICommand Inverse { get; private set; }
-        public FloorPadCommandBuilderSO WithInverse(ICommand inverse)
+        public CommandBuilderSO WithInverse(ICommand inverse)
         {
             Inverse = inverse;
             return this;

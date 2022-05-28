@@ -3,12 +3,12 @@ using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.Commands;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-    public abstract class FloorPadCommandBuildDirectorSO : ScriptableObject
+    public abstract class CommandBuildDirectorSO : ScriptableObject
     {
-        [SerializeField] private FloorPadCommandBuilderSO _CommandBuilder;
-        protected FloorPadCommandBuilderSO CommandBuilder => _CommandBuilder;
+        [SerializeField] private CommandBuilderSO _CommandBuilder;
+        protected CommandBuilderSO CommandBuilder => _CommandBuilder;
 
         public IRewindableCommand Construct(IWeightedFloorPad floorPad, int candidateWeight)
         {

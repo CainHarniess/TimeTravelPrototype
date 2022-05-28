@@ -83,7 +83,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public void Press()
         {
             _IsPressed = true;
-            _spriteEffect.OnPress();
             _pressed.Raise();
         }
 
@@ -108,7 +107,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Release()
         {
             _IsPressed = false;
-            _spriteEffect.OnRelease();
             _released.Raise();
         }
     }

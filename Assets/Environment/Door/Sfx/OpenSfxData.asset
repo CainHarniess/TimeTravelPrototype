@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19c27767e86090042a7d53e2e8519aab, type: 3}
-  m_Name: DoorFlickerAnimationData
+  m_Script: {fileID: 11500000, guid: 15146672b0ec9df4f8bb6d95abe6b561, type: 3}
+  m_Name: OpenSfxData
   m_EditorClassIdentifier: 
   _description: 
-  _MinimumInterval: 3
-  _MaximumInterval: 8
-  _Parameter: Flicker
+  _Clip: {fileID: 8300000, guid: 149dfdfe5af4ca94b8078b45cc3bbcbf, type: 3}

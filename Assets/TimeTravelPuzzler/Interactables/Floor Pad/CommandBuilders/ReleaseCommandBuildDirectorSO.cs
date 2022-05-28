@@ -3,16 +3,16 @@ using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.Commands;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     [CreateAssetMenu(fileName = AssetMenu.ReleaseBuildDirectorFileName, menuName = AssetMenu.ReleaseBuildDirectorPath)]
-    public class ReleaseFloorPadCommandBuildDirectorSO : FloorPadCommandBuildDirectorSO
+    public class ReleaseCommandBuildDirectorSO : CommandBuildDirectorSO
     {
         protected override ICommand BuildInverse(IWeightedFloorPad floorPad, int candidateWeight)
         {
             return CommandBuilder.WithCandidateWeight(candidateWeight).WithCanExecute(floorPad.CanPress)
-                                              .WithExecute(floorPad.Press).WithAdjustWeight(floorPad.AddWeight)
-                                              .WithCommandDescription("Floor pad release inverse").Build();
+                                 .WithExecute(floorPad.Press).WithAdjustWeight(floorPad.AddWeight)
+                                 .WithCommandDescription("Floor pad release inverse").Build();
         }
 
         protected override IRewindableCommand BuildCommand(IWeightedFloorPad floorPad, int candidateWeight, ICommand inverse)

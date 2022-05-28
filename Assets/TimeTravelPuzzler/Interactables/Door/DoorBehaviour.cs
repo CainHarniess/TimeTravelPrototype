@@ -2,24 +2,22 @@ using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Interactables.Doors.Animations;
 using Osiris.Utilities.Animation;
 using Osiris.Utilities.DependencyInjection;
-using Osiris.Utilities.Extensions;
-using Osiris.Utilities.Logging;
 using UnityEngine;
-using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
     [ExecuteInEditMode]
-    public partial class DoorBehaviour : OsirisMonoBehaviour, IDoor, ILoggableBehaviour
+    public partial class DoorBehaviour : LoggableMonoBehaviour, IDoor, IInjectableBehaviour
     {
         private BoxCollider2D _collider;
-        [SerializeField] private DoorStateAnimationBehaviour _stateAnimator;
-        private RegularTriggerAnimationBehaviour _flickerAnimator;
 
         [Header(InspectorHeaders.Injections)]
-        [SerializeField] private UnityConsoleLogger _Logger;
         [Tooltip(ToolTips.DoorBuildDirector)]
         [SerializeField] private DoorBuildDirectorSO _BuildDirector;
+        [SerializeField] private DoorStateAnimationBehaviour _StateAnimator;
+        [SerializeField] private RegularTriggerAnimationBehaviour _FlickerAnimator;
+        [SerializeField] private DoorSfxPlayer _SfxPlayer;
+
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeField] private bool _isOpenInEditMode;
@@ -28,17 +26,14 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 
         public bool IsOpen => _Door.IsOpen;
 
-        public ILogger Logger => _Logger;
-
         protected override void Awake()
         {
             base.Awake();
-            this.IsInjectionPresent(_Logger, nameof(_Logger));
             InitialiseDoor();
 
             if (Application.IsPlaying(gameObject))
             {
-                _stateAnimator.SetInitialState(IsOpen);
+                _StateAnimator.SetInitialState(IsOpen);
             }
 
             if (_isOpenInEditMode)
@@ -59,7 +54,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         public void Open()
         {
             _Door.Open();
-            _stateAnimator.Open();
+            _StateAnimator.Open();
+            _SfxPlayer.OnOpen();
             DisableFlicker();
         }
 
@@ -71,27 +67,29 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         public void Close()
         {
             _Door.Close();
-            _stateAnimator.Close();
+            _StateAnimator.Close();
+            _SfxPlayer.OnClose();
             EnableFlicker();
         }
 
         private void InitialiseDoor()
         {
-            _collider = GetComponent<BoxCollider2D>();
-            _stateAnimator = GetComponent<DoorStateAnimationBehaviour>();
-            _flickerAnimator = GetComponent<RegularTriggerAnimationBehaviour>();
+            this.AddComponentInjectionIfNotPresent(ref _collider, nameof(_collider));
+            this.AddComponentInjectionIfNotPresent(ref _StateAnimator, nameof(_StateAnimator));
+            this.AddComponentInjectionIfNotPresent(ref _FlickerAnimator, nameof(_FlickerAnimator));
+            this.AddComponentInjectionIfNotPresent(ref _SfxPlayer, nameof(_SfxPlayer));
 
-            _Door = _BuildDirector.Construct(GameObjectName, _Logger, _collider, _isOpenInEditMode);
+            _Door = _BuildDirector.Construct(GameObjectName, Logger, _collider, _isOpenInEditMode);
         }
 
         private void EnableFlicker()
         {
-            _flickerAnimator.enabled = true;
+            _FlickerAnimator.enabled = true;
         }
 
         private void DisableFlicker()
         {
-            _flickerAnimator.enabled = false;
+            _FlickerAnimator.enabled = false;
         }
 
 
@@ -101,7 +99,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         {
             InitialiseDoor();
             _Door.Open();
-            _stateAnimator.SetInitialState(true);
+            _StateAnimator.SetInitialState(true);
             _isOpenInEditMode = true;
         }
 
@@ -110,7 +108,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.Doors
         {
             InitialiseDoor();
             _Door.Close();
-            _stateAnimator.SetInitialState(false);
+            _StateAnimator.SetInitialState(false);
             _isOpenInEditMode = false;
         }
 

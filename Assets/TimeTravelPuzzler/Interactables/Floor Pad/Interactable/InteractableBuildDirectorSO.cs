@@ -9,7 +9,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     public class InteractableBuildDirectorSO : ScriptableObject
     {
         [SerializeField] InteractableBuilderSO _builder;
-        public IInteractable<int> Construct(IWeightedFloorPad floorPad, FloorPadCommandBuildDirectorSO commandBuildDirector,
+        public IInteractable<int> Construct(IWeightedFloorPad floorPad, CommandBuildDirectorSO commandBuildDirector,
                                             IEventChannelSO<IRewindableCommand> timelineEventChannel)
         {
             return _builder.WithFloorPad(floorPad).WithDirector(commandBuildDirector)

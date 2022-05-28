@@ -68,12 +68,60 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3854096289123389953, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854096289123389953, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
       propertyPath: _floorPadBuildDirector
       value: 
       objectReference: {fileID: 11400000, guid: 26997a106eb299e44ae8c083c0b4ecff, type: 2}
     - target: {fileID: 6510306272890066926, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
       propertyPath: m_Name
-      value: OneWayFloorPad  (_FloorPadBase)
+      value: OneWayFloorPad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3854096289123389953, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
+--- !u!1 &4011314127497164349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6510306272890066926, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
+  m_PrefabInstance: {fileID: 7922480447100379603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6789868472071563172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3731294531662268023, guid: a9e1fb50d7b8f54428efd666604ee204, type: 3}
+  m_PrefabInstance: {fileID: 7922480447100379603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011314127497164349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32bbdcfc7993e04998b2554d7931af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3164243588790507433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011314127497164349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70f3bd2c357f6745ba363362acea6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RequiredPressWeight:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 34197d51ff1cce0428abad310abc4d5c, type: 2}
+  _floorPadBuildDirector: {fileID: 11400000, guid: 26997a106eb299e44ae8c083c0b4ecff, type: 2}
+  _SfxPlayer: {fileID: 6789868472071563172}
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  _FloorPad:
+    id: 0
+  _Pressed: {fileID: 11400000, guid: 7b54426e98416524684900ae847c01e3, type: 2}
+  _Released: {fileID: 11400000, guid: 56a5504b115e034439d867e92ea46f64, type: 2}
+  references:
+    version: 1
+    00000000:
+      type: {class: , ns: , asm: }

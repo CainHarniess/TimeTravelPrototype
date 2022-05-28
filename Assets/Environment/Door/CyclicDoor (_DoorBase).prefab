@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099916859638910674, guid: bfefbe61e25d7b547875e2acfe7fb6a0, type: 3}
       propertyPath: m_Name
-      value: CyclicDoor (_DoorBase) Variant
+      value: CyclicDoor (_DoorBase)
       objectReference: {fileID: 0}
     - target: {fileID: 4589076678252559338, guid: bfefbe61e25d7b547875e2acfe7fb6a0, type: 3}
       propertyPath: _OpenSprite

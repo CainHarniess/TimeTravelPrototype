@@ -15,8 +15,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             return this;
         }
 
-        public FloorPadCommandBuildDirectorSO CommandBuildDirector { get; private set; }
-        public InteractableBuilderSO WithDirector(FloorPadCommandBuildDirectorSO commandBuildDirector)
+        public CommandBuildDirectorSO CommandBuildDirector { get; private set; }
+        public InteractableBuilderSO WithDirector(CommandBuildDirectorSO commandBuildDirector)
         {
             CommandBuildDirector = commandBuildDirector;
             return this;

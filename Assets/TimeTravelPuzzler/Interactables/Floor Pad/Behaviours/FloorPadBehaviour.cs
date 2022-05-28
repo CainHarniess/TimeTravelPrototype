@@ -10,14 +10,15 @@ using ILogger = Osiris.Utilities.Logging.ILogger;
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
 
-    public class WeightedFloorPadBehaviour : MonoBehaviour, IWeightedFloorPad
+    public class FloorPadBehaviour : MonoBehaviour, IWeightedFloorPad
     {
         private string _gameObjectName;
         private IFloorPadSpriteHandler _spriteHandler;
 
-        [Header(InspectorHeaders.ControlVariables)]
+        [Header(InspectorHeaders.Injections)]
         [SerializeField] private IntReference _RequiredPressWeight;
         [SerializeField] private FloorPadBuildDirectorSO _floorPadBuildDirector;
+        [SerializeField] private FloorpadSfxPlayer _SfxPlayer;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -47,6 +48,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public int CurrentPressWeight { get => _FloorPad.CurrentPressWeight; }
         public bool IsPressed { get => _FloorPad.IsPressed; }
         public IWeightedFloorPad FloorPad { get => _FloorPad; }
+        protected FloorpadSfxPlayer SfxPlayer => _SfxPlayer;
 
         protected virtual void Awake()
         {
@@ -54,6 +56,10 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             _spriteHandler = new PrimitiveFloorPadSpriteHandler(new SpriteRendererProxy(GetComponent<SpriteRenderer>()));
             _FloorPad = _floorPadBuildDirector.Construct(this, _Logger, GameObjectName, SpriteHandler, _Pressed,
                                                          _Released);
+            if (_SfxPlayer == null)
+            {
+                _SfxPlayer = GetComponent<FloorpadSfxPlayer>();
+            }
         }
 
         public void AddWeight(int weightToAdd)
@@ -74,6 +80,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Press()
         {
             _FloorPad.Press();
+            SpriteHandler.OnPress();
+            _SfxPlayer.OnPress();
         }
 
         public virtual bool CanRelease()
@@ -84,6 +92,8 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Release()
         {
             _FloorPad.Release();
+            SpriteHandler.OnRelease();
+            _SfxPlayer.OnRelease();
         }
     }
 }

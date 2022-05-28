@@ -1,4 +1,5 @@
 ﻿using Osiris.EditorCustomisation;
+using Osiris.TimeTravelPuzzler.Player.Audio;
 using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
@@ -23,6 +24,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [ReadOnly] [SerializeField] private Animator _Animator;
         [ReadOnly] [SerializeField] private SpriteRenderer _Sprite;
         [SerializeField] private SpriteFlipperUtility _SpriteFlipper;
+        [SerializeField] private FootstepSfxPlayer _footstepSfx;
 
         [Header(InspectorHeaders.ControlVariables)]
         [Tooltip(ToolTips.EqualsThreshold)]
@@ -30,6 +32,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         [Header(InspectorHeaders.DebugVariables)]
         [ReadOnly] [SerializeReference] private IPlayerMovement _PlayerMovement;
+        [ReadOnly] [SerializeField] private bool _IsMoving;
 
         private float MovementDuration => _MovementDurationRef.Value;
         public ILogger Logger => _Logger;
@@ -55,14 +58,20 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             this.IsInjectionPresent(_MovementDurationRef, nameof(_MovementDurationRef));
             this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator));
             this.AddComponentInjectionIfNotPresent(ref _Sprite, nameof(_Sprite));
+            this.AddComponentInjectionIfNotPresent(ref _footstepSfx, nameof(_footstepSfx));
 
             var collider = GetComponent<BoxCollider2D>();
             _PlayerMovement = _MovementBuildDirector.Construct(collider, _ColliderCastDistance.Value, transform,
                                                                Logger, GameObjectName, _EqualsThreshold);
+            _IsMoving = false;
         }
 
         public bool CanMove(Vector2 movementDirection)
         {
+            if (_IsMoving)
+            {
+                return false;
+            }
             return _PlayerMovement.CanMove(movementDirection);
         }
 
@@ -74,9 +83,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         public IEnumerator ContinuousMove(Vector2 movementDirection)
         {
+            _IsMoving = true;
             _Animator.SetBool(AnimationParameters.IsMoving, true);
-            //_Animator.SetTrigger(AnimationParameters.IsMovingTrigger);
-
             _SpriteFlipper.FlipSpriteIfRequired(_Sprite, movementDirection);
 
             float startTime = Time.time;
@@ -86,6 +94,10 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             Vector3 endPosition = startPosition + movementDirection.ToVector3();
 
             float currentProgress = 0;
+
+            // Playing footstep before and after loop works quite will with current
+            // Movement speed.
+            _footstepSfx.PlaySfx();
 
             while (currentProgress < 1)
             {
@@ -97,9 +109,12 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                 yield return CachedWaitInstance;
             }
 
+            _footstepSfx.PlaySfx();
+
             _cachedTransform.position = endPosition;
 
             _Animator.SetBool(AnimationParameters.IsMoving, false);
+            _IsMoving = false;
         }
 
 

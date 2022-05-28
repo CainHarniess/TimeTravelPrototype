@@ -3,10 +3,10 @@ using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.Commands;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     [CreateAssetMenu(fileName = AssetMenu.PressCommandBuildDirectorFileName, menuName = AssetMenu.PressCommandBuildDirectorPath)]
-    public class PressFloorPadCommandBuildDirectorSO : FloorPadCommandBuildDirectorSO
+    public class PressCommandBuildDirectorSO : CommandBuildDirectorSO
     {
         protected override ICommand BuildInverse(IWeightedFloorPad floorPad, int candidateWeight)
         {

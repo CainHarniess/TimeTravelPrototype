@@ -7,10 +7,10 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     public class FloorPadInteractable : IInteractable<int>
     {
         private readonly IWeightedFloorPad _floorPad;
-        private readonly FloorPadCommandBuildDirectorSO _commandBuildDirector;
+        private readonly CommandBuildDirectorSO _commandBuildDirector;
         private readonly IEventChannelSO<IRewindableCommand> _recordableActionOccurred;
 
-        public FloorPadInteractable(IWeightedFloorPad floorPad, FloorPadCommandBuildDirectorSO commandBuildDirector,
+        public FloorPadInteractable(IWeightedFloorPad floorPad, CommandBuildDirectorSO commandBuildDirector,
                                     IEventChannelSO<IRewindableCommand> recordableActionOccurred)
         {
             _floorPad = floorPad;

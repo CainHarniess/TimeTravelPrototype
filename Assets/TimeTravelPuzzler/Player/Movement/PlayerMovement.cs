@@ -3,6 +3,7 @@ using Osiris.Testing.Abstractions;
 using Osiris.TimeTravelPuzzler.Core;
 using Osiris.TimeTravelPuzzler.Movement;
 using Osiris.Utilities.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -81,6 +82,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             return true;
         }
 
+        [Obsolete("Continuous player movement applied by PlayerMovementBehaviour class in favour of this method.")]
         public void Move(Vector2 movementDirection)
         {
             _transformProxy.Position += movementDirection.ToVector3();

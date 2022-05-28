@@ -24,5 +24,8 @@
 
         public const string EventChannel1FileName = "New Event Channel 1";
         public const string EventChannel1Path = MenuRoot + "EventChannel 1";
+
+        public const string AudioClipDataFileName = "New Audio Clip Data";
+        public const string AudioClipDataPath = MenuRoot + "AudioClipData";
     }
 }

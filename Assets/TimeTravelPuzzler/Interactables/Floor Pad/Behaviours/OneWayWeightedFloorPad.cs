@@ -2,6 +2,7 @@
 using Osiris.Utilities.Events;
 using Osiris.Utilities.Validation;
 using System;
+using UnityEngine;
 using OUL = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
@@ -26,8 +27,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 
         public void PressInverse()
         {
-            IsPressed = false;
-            SpriteEffect.OnRelease();
+            base.Release();
         }
     }
 }

@@ -1,22 +1,20 @@
-﻿using Osiris.TimeTravelPuzzler.Interactables.FloorPads;
-using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
+﻿using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.Commands;
 using System;
 using UnityEngine;
 
-namespace Osiris.TimeTravelPuzzler.Interactables
+namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
     [CreateAssetMenu(fileName = AssetMenu.OneWayPressCommandDirectorFileName, menuName = AssetMenu.OneWayPressCommandDirectorPath)]
-    public class OneWayFloorPadPressCommandBuildDirectorSO : PressFloorPadCommandBuildDirectorSO
+    public class OneWayPressCommandBuildDirectorSO : PressCommandBuildDirectorSO
     {
         protected override ICommand BuildInverse(IWeightedFloorPad floorPad, int candidateWeight)
         {
             Action execute;
 
-            if (floorPad is WeightedFloorPadBehaviour floorPadBehaviour
-                && floorPadBehaviour.FloorPad is OneWayWeightedFloorPad oneWayFloorPad)
+            if (floorPad is OneWayFloorPadBehaviour oneWayFloorPadBehaviour)
             {
-                execute = oneWayFloorPad.PressInverse;
+                execute = oneWayFloorPadBehaviour.PressInverse;
             }
             else
             {
