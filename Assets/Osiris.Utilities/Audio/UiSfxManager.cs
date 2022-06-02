@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Osiris.Utilities.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class UiSfxManager : LoggableMonoBehaviour
+    public class UiSfxManager : MonoBehaviour
     {
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private AudioSource _AudioSource;
@@ -12,10 +12,8 @@ namespace Osiris.Utilities.Audio
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private AudioClipDataEventChannel _SfxRequested;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-
             if (_AudioSource == null)
             {
                 _AudioSource = GetComponent<AudioSource>();
@@ -34,7 +32,7 @@ namespace Osiris.Utilities.Audio
                 _AudioSource.clip = clipData.Clip;
             }
 
-            _AudioSource.PlayDelayed(0);
+            _AudioSource.Play();
         }
 
         private void OnDisable()

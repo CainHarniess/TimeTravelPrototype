@@ -31,11 +31,13 @@ namespace Osiris.TimeTravelPuzzler.Player
         protected override void OnEnable()
         {
             _pauseAction.performed += OnPausePerformed;
+            LevelCompleted.Event += DeactivateControl;
         }
 
         protected override void OnDisable()
         {
             _pauseAction.performed -= OnPausePerformed;
+            LevelCompleted.Event -= DeactivateControl;
         }
     }
 }

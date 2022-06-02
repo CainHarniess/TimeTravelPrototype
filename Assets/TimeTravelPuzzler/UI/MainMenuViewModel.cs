@@ -2,9 +2,8 @@ using Osiris.EditorCustomisation;
 using Osiris.GameManagement;
 using Osiris.SceneManagement.Core;
 using Osiris.SceneManagement.Core.Events;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.References;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,25 +20,26 @@ namespace Osiris.TimeTravelPuzzler.UI
         [SerializeField] private SceneChangeEventSO _SceneChangeChannel;
         [SerializeField] private ApplicationEventChannel _ApplicationExit;
         [SerializeField] private TransitionChannelSO _TransitionChannel;
+        [SerializeField] private EventChannelSO _MusicRequested;
 
         private float TransitionDuration => _TransitionDurationRef.Value;
 
-        public void Play()
+        private void Start()
         {
-            Logger.Log("Play clicked.", GameObjectName);
-            _TransitionChannel.StartTransitionStep(isTransitionOut: true);
-
-            StartCoroutine(ExecuteAfterTransition(() =>
-            {
-                var asyncOp = SceneManager.LoadSceneAsync(_GameplayPersistant.BuildIndex, LoadSceneMode.Additive);
-                asyncOp.completed += OnGameplayPersistantLoaded;
-            }));
+            _MusicRequested.Raise();
         }
 
-        private IEnumerator ExecuteAfterTransition(Action onCompleted)
+        public void Play()
         {
-            yield return new WaitForSeconds(TransitionDuration);
-            onCompleted();
+            _TransitionChannel.StartTransitionStep(isTransitionOut: true);
+
+            StartCoroutine(ExecuteAfterDelay(LoadGameplayPersistantScene, TransitionDuration));
+        }
+
+        private void LoadGameplayPersistantScene()
+        {
+            var asyncOp = SceneManager.LoadSceneAsync(_GameplayPersistant.BuildIndex, LoadSceneMode.Additive);
+            asyncOp.completed += OnGameplayPersistantLoaded;
         }
 
         private void OnGameplayPersistantLoaded(AsyncOperation asyncOp)

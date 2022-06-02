@@ -1,5 +1,6 @@
 ﻿using Osiris.EditorCustomisation;
 using Osiris.GameManagement;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.References;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,11 +21,13 @@ namespace Osiris.TimeTravelPuzzler
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private PauseEventChannel _GamePaused;
         [SerializeField] private PauseEventChannel _GameUnpaused;
+        [SerializeField] private EventChannelSO _LevelCompleted;
 
         protected PlayerInput PlayerInput => _playerInput;
         protected bool IsControlActive { get => _isControlActive; set => _isControlActive = value; }
-        protected PauseEventChannel GamePaused { get => _GamePaused; }
-        protected PauseEventChannel GameUnpaused { get => _GameUnpaused; }
+        protected PauseEventChannel GamePaused => _GamePaused;
+        protected PauseEventChannel GameUnpaused => _GameUnpaused;
+        public EventChannelSO LevelCompleted => _LevelCompleted;
 
         protected override void Awake()
         {
@@ -51,12 +54,14 @@ namespace Osiris.TimeTravelPuzzler
         {
             _GamePaused.Event += DeactivateControl;
             _GameUnpaused.Event += ActivateControl;
+            _LevelCompleted.Event += DeactivateControl;
         }
 
         protected virtual void OnDisable()
         {
-            _GamePaused.Event += DeactivateControl;
-            _GameUnpaused.Event += ActivateControl;
+            _GamePaused.Event -= DeactivateControl;
+            _GameUnpaused.Event -= ActivateControl;
+            _LevelCompleted.Event -= DeactivateControl;
         }
     }
 }

@@ -77,7 +77,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         public void Move(Vector2 movementDirection)
         {
-            //_playerMovement.Move(movementDirection);
             StartCoroutine(ContinuousMove(movementDirection));
         }
 
@@ -95,8 +94,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
             float currentProgress = 0;
 
-            // Playing footstep before and after loop works quite will with current
-            // Movement speed.
             _footstepSfx.PlaySfx();
 
             while (currentProgress < 1)

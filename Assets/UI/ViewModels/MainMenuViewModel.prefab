@@ -53,3 +53,4 @@ MonoBehaviour:
   _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
   _ApplicationExit: {fileID: 11400000, guid: 3fad0613bbca82943bff10511b419d69, type: 2}
   _TransitionChannel: {fileID: 11400000, guid: dd59ba3cdef4931489721e4347915707, type: 2}
+  _MusicRequested: {fileID: 11400000, guid: 536e9bb1f4f8da7418bd66c317c241c5, type: 2}
