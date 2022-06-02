@@ -27,5 +27,8 @@
 
         public const string AudioClipDataFileName = "New Audio Clip Data";
         public const string AudioClipDataPath = MenuRoot + "AudioClipData";
+
+        public const string AudioClipDataEventChannelFileName = "Audio Clip Data Event Channel";
+        public const string AudioClipDataEventChannelPath = MenuRoot + "AudioClipDataChannel";
     }
 }

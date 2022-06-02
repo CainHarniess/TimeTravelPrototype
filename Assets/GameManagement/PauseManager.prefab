@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 1807665ea57c48d4c9623fc06baff0ee, type: 2}
-  _IsPaused: 0
+  _PauseSfx: {fileID: 11400000, guid: e4cfab6cc5f9e334898e03563b555d19, type: 2}
   _PlayerPauseEventChannel: {fileID: 11400000, guid: 6ebca37493d4c9446b7544be0ddf327e, type: 2}
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
+  _SfxRequested: {fileID: 11400000, guid: 88432279bb36abb48954c522dbe370f9, type: 2}
+  _IsPaused: 0

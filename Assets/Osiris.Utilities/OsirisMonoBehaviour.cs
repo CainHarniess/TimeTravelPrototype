@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 namespace Osiris
 {
@@ -13,6 +15,12 @@ namespace Osiris
         {
             _cachedGameObject = gameObject;
             _cachedGameObjectName = _cachedGameObject.name;
+        }
+
+        protected IEnumerator ExecuteAfterDelay(Action action, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            action();
         }
     }
 }

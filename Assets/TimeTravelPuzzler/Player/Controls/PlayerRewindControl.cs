@@ -1,35 +1,23 @@
 using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
-using Osiris.Utilities.DependencyInjection;
-using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Player
 {
     public class PlayerRewindControl : PlayerControl, ILoggableBehaviour
     {
-        private PlayerInput _playerInput;
         private InputAction _rewindAction;
-
-        [Header(InspectorHeaders.Injections)]
-        [SerializeField] private UnityConsoleLogger _Logger;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private RewindEventChannelSO _PlayerRewindRequested;
         [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
 
-        public ILogger Logger => _Logger;
-
         protected override void Awake()
         {
             base.Awake();
-            this.IsInjectionPresent(_Logger, nameof(_Logger));
-            
-            _playerInput = GetComponent<PlayerInput>();
-            _rewindAction = _playerInput.actions[ControlActions.RewindTime];
+            _rewindAction = PlayerInput.actions[ControlActions.RewindTime];
         }
 
         private void OnRewindStarted(InputAction.CallbackContext obj)

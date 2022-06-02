@@ -918,6 +918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1528892802874622460, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
+      propertyPath: _SubmissionSfx
+      value: 
+      objectReference: {fileID: 11400000, guid: d38f067594ca0074082123b1691f9383, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 222e206c297f0cb4794719e00c6504f0, type: 3}
 --- !u!224 &1507903455 stripped

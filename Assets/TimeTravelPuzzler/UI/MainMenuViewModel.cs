@@ -2,7 +2,6 @@ using Osiris.EditorCustomisation;
 using Osiris.GameManagement;
 using Osiris.SceneManagement.Core;
 using Osiris.SceneManagement.Core.Events;
-using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using System;
 using System.Collections;
@@ -11,17 +10,12 @@ using UnityEngine.SceneManagement;
 
 namespace Osiris.TimeTravelPuzzler.UI
 {
-    public class MainMenuViewModel : MonoBehaviour
+    public class MainMenuViewModel : LoggableMonoBehaviour
     {
-        private string _gameObjectName;
-
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private SceneSO _GameplayPersistant;
         [SerializeField] private SceneSO _MainMenuScene;
         [SerializeField] private FloatReference _TransitionDurationRef;
-
-        [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private SceneChangeEventSO _SceneChangeChannel;
@@ -30,14 +24,9 @@ namespace Osiris.TimeTravelPuzzler.UI
 
         private float TransitionDuration => _TransitionDurationRef.Value;
 
-        private void Awake()
-        {
-            _gameObjectName = gameObject.name;
-        }
-
         public void Play()
         {
-            _Logger.Log("Play clicked.", _gameObjectName);
+            Logger.Log("Play clicked.", GameObjectName);
             _TransitionChannel.StartTransitionStep(isTransitionOut: true);
 
             StartCoroutine(ExecuteAfterTransition(() =>
@@ -59,14 +48,9 @@ namespace Osiris.TimeTravelPuzzler.UI
             SceneManager.UnloadSceneAsync(_MainMenuScene.BuildIndex);
         }
 
-        public void LoadOptionsMenu()
-        {
-            _Logger.Log("Options clicked.", _gameObjectName);
-        }
-
         public void ApplicationExit()
         {
-            _Logger.Log("Exit clicked.", _gameObjectName);
+            Logger.Log("Exit clicked.", GameObjectName);
             _ApplicationExit.Raise();
         }
     }

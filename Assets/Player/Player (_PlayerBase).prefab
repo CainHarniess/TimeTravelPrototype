@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae035126d11d9eb4bb28937b8e40ec92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneTransitionDuration:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 91c781c78122a5c498829ec57971cc84, type: 2}
   _isControlActive: 0
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
@@ -107,6 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83195732814afb2438c13b8b95ccb9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneTransitionDuration:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 91c781c78122a5c498829ec57971cc84, type: 2}
   _isControlActive: 0
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
@@ -175,6 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500aab95fd4b77e458f77d20e024c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SceneTransitionDuration:
+    _UseConstant: 1
+    _VariableValue: 0
+    _Constant: {fileID: 11400000, guid: 91c781c78122a5c498829ec57971cc84, type: 2}
   _isControlActive: 0
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}

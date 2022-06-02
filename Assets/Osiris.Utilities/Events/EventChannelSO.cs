@@ -30,8 +30,7 @@ namespace Osiris.Utilities.Events
         }
     }
 
-    [CreateAssetMenu(fileName = AssetMenu.EventChannel1FileName, menuName = AssetMenu.EventChannel1Path)]
-    public class EventChannelSO<T> : ScriptableObject, IEventChannelSO<T>
+    public abstract class EventChannelSO<T> : DescriptionSO, IEventChannelSO<T>
     {
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;

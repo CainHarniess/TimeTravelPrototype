@@ -18,11 +18,11 @@ namespace Osiris.Utilities.Animation
                 _Animator.GetComponent<Animator>();
             }
         }
-
-        private readonly string _methodName = "OnCompleted";
+#pragma warning disable IDE0051  // Method is called by an animation event.
         private void OnCompleted()
         {
             AnimationCompleted?.Invoke();
         }
+#pragma warning restore  IDE0051         
     }
 }

@@ -1,16 +1,14 @@
 using Osiris.EditorCustomisation;
+using Osiris.Utilities.Audio;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 
 namespace Osiris.GameManagement
 {
-    public class PauseManagerBehaviour : MonoBehaviour
+    public class PauseManagerBehaviour : LoggableMonoBehaviour
     {
-        private string _gameObjectName;
-
-        [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
-        [ReadOnly] [SerializeField] private bool _IsPaused;
+        [Header(InspectorHeaders.Injections)]
+        [SerializeField] private AudioClipData _PauseSfx;
 
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private PauseEventChannel _PlayerPauseEventChannel;
@@ -18,16 +16,20 @@ namespace Osiris.GameManagement
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private PauseEventChannel _GamePaused;
         [SerializeField] private PauseEventChannel _GameUnpaused;
+        [SerializeField] private AudioClipDataEventChannel _SfxRequested;
 
-        void Awake()
+        [Header(InspectorHeaders.DebugVariables)]
+        [ReadOnly] [SerializeField] private bool _IsPaused;
+
+        protected override void Awake()
         {
-            _gameObjectName = gameObject.name;
+            base.Awake();
             _IsPaused = false;
         }
 
         private void OnPausePressed()
         {
-            _Logger.Log("Pause press received.", _gameObjectName);
+            Logger.Log("Pause press received.", GameObjectName);
 
             if (_IsPaused)
             {
@@ -39,15 +41,16 @@ namespace Osiris.GameManagement
 
         private void Pause()
         {
-            _Logger.Log("Game paused.", _gameObjectName);
+            Logger.Log("Game paused.", GameObjectName);
             _GamePaused.Raise();
             Time.timeScale = 0;
             _IsPaused = true;
+            _SfxRequested.Raise(_PauseSfx);
         }
 
         private void Unpause()
         {
-            _Logger.Log("Game unpaused.", _gameObjectName);
+            Logger.Log("Game unpaused.", GameObjectName);
             _GameUnpaused.Raise();
             Time.timeScale = 1;
             _IsPaused = false;

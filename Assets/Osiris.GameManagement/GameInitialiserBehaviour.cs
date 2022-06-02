@@ -21,7 +21,10 @@ namespace Osiris.GameManagement
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private SceneChangeEventSO _StartUp;
 
-        
+        private void Awake()
+        {
+            Cursor.visible = false;
+        }
 
         private void Start()
         {

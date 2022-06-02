@@ -6,7 +6,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 {
     public class PlayerMovementControl : PlayerControl
     {
-        private PlayerInput _playerInput;
         private InputAction _movementAction;
 
         [Header(InspectorHeaders.BroadcastsOn)]
@@ -14,8 +13,8 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
         protected override void Awake()
         {
-            _playerInput = GetComponent<PlayerInput>();
-            _movementAction = _playerInput.actions[ControlActions.Movement];
+            base.Awake();
+            _movementAction = PlayerInput.actions[ControlActions.Movement];
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext obj)

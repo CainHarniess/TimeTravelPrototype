@@ -35,4 +35,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Persistant Gameplay.unity
     guid: 263de1154905a8d4cbae896f7e9895de
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: cede21e4c8efef04eb364acb2362f634, type: 2}
