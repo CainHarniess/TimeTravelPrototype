@@ -1,6 +1,5 @@
 using Osiris.EditorCustomisation;
 using Osiris.Utilities.Audio;
-using Osiris.Utilities.Logging;
 using UnityEngine;
 
 namespace Osiris.GameManagement
@@ -43,9 +42,9 @@ namespace Osiris.GameManagement
         {
             Logger.Log("Game paused.", GameObjectName);
             _GamePaused.Raise();
+            _SfxRequested.Raise(_PauseSfx);
             Time.timeScale = 0;
             _IsPaused = true;
-            _SfxRequested.Raise(_PauseSfx);
         }
 
         private void Unpause()

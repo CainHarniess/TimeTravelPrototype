@@ -3,13 +3,12 @@ using Osiris.GameManagement;
 using Osiris.TimeTravelPuzzler.GameManagement;
 using Osiris.Utilities.Logging;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Osiris.TimeTravelPuzzler.UI
 {
-    public class PauseMenuViewModel : MonoBehaviour
+    public class PauseMenuViewModel : LoggableMonoBehaviour
     {
-        private string _gameObjectName;
-
         [Header(InspectorHeaders.ControlVariables)]
 #if UNITY_EDITOR
         [Tooltip(ToolTips.MainCameraPrefab)]
@@ -17,9 +16,8 @@ namespace Osiris.TimeTravelPuzzler.UI
 #endif
         [Tooltip(ToolTips.PauseMenuUI)]
         [SerializeField] private GameObject _PauseMenuUI;
-
-        [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
+        [SerializeField] private EventSystem _EventSystem;
+        [SerializeField] private GameObject _ResumeButton;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [Tooltip(ToolTips.PlayerPaused)]
@@ -33,47 +31,18 @@ namespace Osiris.TimeTravelPuzzler.UI
         [Tooltip(ToolTips.GameUnpaused)]
         [SerializeField] private PauseEventChannel _GameUnpaused;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _gameObjectName = gameObject.name;
+            base.Awake();
+
+            if (_ResumeButton == null)
+            {
+                Logger.Log("Resume button game object not specified in the inspector ahead of run time.",
+                           GameObjectName, LogLevel.Error);
+            }
 #if UNITY_EDITOR
             CameraColdStartUp();
 #endif
-        }
-
-        public void Resume()
-        {
-            _PlayerPaused.Raise();
-        }
-
-        public void Options()
-        {
-            _Logger.Log("Options clicked.", _gameObjectName);
-        }
-
-        public void MainMenu()
-        {
-            _Logger.Log("Main Menu clicked.", _gameObjectName);
-            _PlayerPaused.Raise();
-            _ReturnToMainMenu.Raise();
-        }
-
-        private void OnPaused()
-        {
-            if (_PauseMenuUI.activeInHierarchy)
-            {
-                _Logger.Log("Pause UI is already inactive in the scene hierarchy.", _gameObjectName, LogLevel.Warning);
-            }
-            _PauseMenuUI.SetActive(true);
-        }
-
-        private void OnUnpaused()
-        {
-            if (!_PauseMenuUI.activeInHierarchy)
-            {
-                _Logger.Log("Pause UI is already active in the scene hierarchy.", _gameObjectName, LogLevel.Warning);
-            }
-            _PauseMenuUI.SetActive(false);
         }
 
         private void OnEnable()
@@ -82,12 +51,57 @@ namespace Osiris.TimeTravelPuzzler.UI
             _GameUnpaused.Event += OnUnpaused;
         }
 
+        public void Resume()
+        {
+            _PlayerPaused.Raise();
+        }
+
+        public void MainMenu()
+        {
+            _PlayerPaused.Raise();
+            _ReturnToMainMenu.Raise();
+        }
+
+        private void OnPaused()
+        {
+            if (_PauseMenuUI.activeInHierarchy)
+            {
+                Logger.Log("Pause UI is already active in the scene hierarchy.",
+                           GameObjectName, LogLevel.Warning);
+            }
+            _PauseMenuUI.SetActive(true);
+            SelectResumeButton();
+        }
+
+
+        private void OnUnpaused()
+        {
+            if (!_PauseMenuUI.activeInHierarchy)
+            {
+                Logger.Log("Pause UI is already inactive in the scene hierarchy.",
+                           GameObjectName, LogLevel.Warning);
+            }
+            DeselectMenuButton();
+            _PauseMenuUI.SetActive(false);
+
+        }
+        
+        private void SelectResumeButton()
+        {
+            _EventSystem.SetSelectedGameObject(_ResumeButton);
+        }
+
+        private void DeselectMenuButton()
+        {
+            _EventSystem.SetSelectedGameObject(null);
+        }
+
+
         private void OnDisable()
         {
             _GamePaused.Event -= OnPaused;
             _GameUnpaused.Event -= OnUnpaused;
         }
-
 
 #if UNITY_EDITOR
         /// <summary>
