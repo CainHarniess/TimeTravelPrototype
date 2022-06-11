@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bf4570cf9027d7a41b8408d9eeaf3a0a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _Logger: {fileID: 11400000, guid: 5705ef5ca30bd344daaa59e30c59be67, type: 2}
+  - _Collider: {instanceID: 0}
+  - _Clip: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

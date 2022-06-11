@@ -3,7 +3,11 @@ guid: 2a0682e918e3a9b4eb0effcdb19c042d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _Logger: {fileID: 11400000, guid: 5705ef5ca30bd344daaa59e30c59be67, type: 2}
+  - _FootstepAudioSource: {instanceID: 0}
+  - _NormalFootstep: {instanceID: 0}
+  - _GrateFootstep: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

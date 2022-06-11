@@ -3,7 +3,9 @@ guid: a25b0988b34bd7347b68e5bc68f92003
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _Logger: {fileID: 11400000, guid: 5705ef5ca30bd344daaa59e30c59be67, type: 2}
+  - _FootstepAudioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

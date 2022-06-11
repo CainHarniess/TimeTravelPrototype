@@ -165,9 +165,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a124ab402293884db213789e4a20a18, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e5b9a63e11f3a8b4a8fef1eb139cc786, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.508
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -317,5 +317,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _FootstepAudioSource: {fileID: 2675361247512089631}
-  _NormalFootstep: {fileID: 8300000, guid: 6a124ab402293884db213789e4a20a18, type: 3}
-  _GrateFootstep: {fileID: 8300000, guid: 850f304d9eb309f4690199d64d490f72, type: 3}
+  _NormalFootstep: {fileID: 8300000, guid: e5b9a63e11f3a8b4a8fef1eb139cc786, type: 3}
+  _GrateFootstep: {fileID: 8300000, guid: 4ebaaf27aa23a0446b8fd874d60909e5, type: 3}
