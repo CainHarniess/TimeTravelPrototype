@@ -79,6 +79,5 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
                 handler.OnRelease();
             }
         }
-
     }
 }
