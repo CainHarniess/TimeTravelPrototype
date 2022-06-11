@@ -15,8 +15,7 @@
             }
             
             oneWayFloorPad.PressInverse();
-            SpriteHandler.OnRelease();
-            SfxPlayer.OnRelease();
+            HandleRelease();
         }
     }
 }

@@ -1,9 +1,10 @@
+using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
 using Osiris.Utilities.DependencyInjection;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables
 {
-    public class FloorPadAnimationBehaviour : LoggableMonoBehaviour, IInjectableBehaviour
+    public class FloorPadAnimationBehaviour : LoggableMonoBehaviour, IInjectableBehaviour, IFloorPadBehaviourHandler
     {
         [SerializeField] private Animator _Animator;
 

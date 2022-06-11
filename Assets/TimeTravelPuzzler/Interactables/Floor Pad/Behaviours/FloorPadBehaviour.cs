@@ -1,71 +1,35 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.Testing;
 using Osiris.TimeTravelPuzzler.Interactables.FloorPads.Core;
-using Osiris.Utilities.Events;
-using Osiris.Utilities.Logging;
+using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.References;
 using UnityEngine;
-using ILogger = Osiris.Utilities.Logging.ILogger;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
 {
-
-    public class FloorPadBehaviour : MonoBehaviour, IWeightedFloorPad
+    public class FloorPadBehaviour : LoggableMonoBehaviour, IWeightedFloorPad, IInjectableBehaviour
     {
-        private string _gameObjectName;
-        private IFloorPadSpriteHandler _spriteHandler;
-
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private IntReference _RequiredPressWeight;
         [SerializeField] private FloorPadBuildDirectorSO _floorPadBuildDirector;
-        [SerializeField] private FloorpadSfxPlayer _SfxPlayer;
-        [SerializeField] private FloorPadAnimationBehaviour _AnimationBehaviour;
+        private IFloorPadBehaviourHandler[] _BehaviourHandlers;
 
         [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeReference] private IWeightedFloorPad _FloorPad;
         
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private FloorPadEventChannelSO _Pressed;
         [SerializeField] private FloorPadEventChannelSO _Released;
 
-        protected string GameObjectName
-        {
-            get
-            {
-                if (_gameObjectName == null)
-                {
-                    _gameObjectName = gameObject.name;
-                }
-                return _gameObjectName;
-            }
-        }
-        protected IFloorPadSpriteHandler SpriteHandler { get => _spriteHandler; }
-        protected ILogger Logger { get => _Logger; }
-        protected IEventChannelSO Pressed { get => _Pressed; }
-        protected IEventChannelSO Released { get => _Released; }
-        
         public int RequiredPressWeight => _RequiredPressWeight.Value;
         public int CurrentPressWeight { get => _FloorPad.CurrentPressWeight; }
         public bool IsPressed { get => _FloorPad.IsPressed; }
         public IWeightedFloorPad FloorPad { get => _FloorPad; }
-        protected FloorpadSfxPlayer SfxPlayer => _SfxPlayer;
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
-            _Logger.Configure();
-            _spriteHandler = new PrimitiveFloorPadSpriteHandler(new SpriteRendererProxy(GetComponent<SpriteRenderer>()));
-            _FloorPad = _floorPadBuildDirector.Construct(this, _Logger, GameObjectName, SpriteHandler, _Pressed,
-                                                         _Released);
-            if (_SfxPlayer == null)
-            {
-                _SfxPlayer = GetComponent<FloorpadSfxPlayer>();
-            }
-
-            if (_AnimationBehaviour == null)
-            {
-                _AnimationBehaviour = GetComponent<FloorPadAnimationBehaviour>();
-            }
+            base.Awake();
+            _FloorPad = _floorPadBuildDirector.Construct(this, Logger, GameObjectName, _Pressed, _Released);
+            _BehaviourHandlers = GetComponents<IFloorPadBehaviourHandler>();
         }
 
         public void AddWeight(int weightToAdd)
@@ -86,9 +50,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Press()
         {
             _FloorPad.Press();
-            SpriteHandler.OnPress();
-            _SfxPlayer.OnPress();
-            _AnimationBehaviour.OnPress();
+            HandlePress();
         }
 
         public virtual bool CanRelease()
@@ -99,9 +61,24 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         public virtual void Release()
         {
             _FloorPad.Release();
-            SpriteHandler.OnRelease();
-            _SfxPlayer.OnRelease();
-            _AnimationBehaviour.OnRelease();
+            HandleRelease();
         }
+
+        private void HandlePress()
+        {
+            foreach (IFloorPadBehaviourHandler handler in _BehaviourHandlers)
+            {
+                handler.OnPress();
+            }
+        }
+
+        protected void HandleRelease()
+        {
+            foreach (IFloorPadBehaviourHandler handler in _BehaviourHandlers)
+            {
+                handler.OnRelease();
+            }
+        }
+
     }
 }

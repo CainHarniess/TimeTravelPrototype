@@ -8,7 +8,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     {
         public override IWeightedFloorPad Build()
         {
-            return new OneWayWeightedFloorPad(Behaviour, Logger, GameObjectName, SpriteHandler, PressValidator,
+            return new OneWayWeightedFloorPad(Behaviour, Logger, GameObjectName, PressValidator,
                                               ReleaseValidator, PressedChannel, ReleasedChannel);
         }
     }

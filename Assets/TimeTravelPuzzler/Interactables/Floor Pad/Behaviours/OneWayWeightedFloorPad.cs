@@ -2,7 +2,6 @@
 using Osiris.Utilities.Events;
 using Osiris.Utilities.Validation;
 using System;
-using UnityEngine;
 using OUL = Osiris.Utilities.Logging;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
@@ -11,11 +10,9 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
     public class OneWayWeightedFloorPad : WeightedFloorPad
     {
         public OneWayWeightedFloorPad(IWeightedFloorPad floorPadBehaviour, OUL::ILogger logger, string gameObjectName,
-                                      IFloorPadSpriteHandler spriteEffect, IValidator<int> pressValidator,
-                                      IValidator<int> releaseValidator, IEventChannelSO pressed,
-                                      IEventChannelSO released)
-            : base(floorPadBehaviour, logger, gameObjectName, spriteEffect, pressValidator, releaseValidator, pressed,
-                   released)
+                                      IValidator<int> pressValidator, IValidator<int> releaseValidator,
+                                      IEventChannelSO pressed, IEventChannelSO released)
+            : base(floorPadBehaviour, logger, gameObjectName, pressValidator, releaseValidator, pressed, released)
         {
             
         }

@@ -11,7 +11,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         [SerializeField] private FloorPadBuilderSO _FloorPadBuilder;
         protected FloorPadBuilderSO FloorPadBuilder => _FloorPadBuilder;
         public abstract IWeightedFloorPad Construct(IWeightedFloorPad floorPadBehaviour, ILogger logger,
-                                                    string gameObjectName, IFloorPadSpriteHandler spriteHandler,
-                                                    IEventChannelSO pressedChannel, IEventChannelSO releasedChannel);
+                                                    string gameObjectName, IEventChannelSO pressedChannel,
+                                                    IEventChannelSO releasedChannel);
     }
 }

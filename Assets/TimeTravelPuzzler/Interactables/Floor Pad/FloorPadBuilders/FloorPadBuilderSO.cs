@@ -34,13 +34,6 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             return this;
         }
 
-        public IFloorPadSpriteHandler SpriteHandler { get; private set; }
-        public FloorPadBuilderSO WithSpriteHandler(IFloorPadSpriteHandler spriteHandler)
-        {
-            SpriteHandler = spriteHandler;
-            return this;
-        }
-
         public IValidator<int> PressValidator { get; private set; }
         public FloorPadBuilderSO WithPressValidator(IValidator<int> pressValidator)
         {
