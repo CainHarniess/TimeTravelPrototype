@@ -12,10 +12,12 @@ GameObject:
   - component: {fileID: -8336396621809255026}
   - component: {fileID: 7967762330342485296}
   - component: {fileID: 5580322736523988007}
+  - component: {fileID: -548123149189047242}
   - component: {fileID: 3854096289123389953}
   - component: {fileID: 2526336231953665503}
   - component: {fileID: 7979454968038832324}
   - component: {fileID: 3731294531662268023}
+  - component: {fileID: 6550000216369019886}
   m_Layer: 0
   m_Name: _FloorPadBase
   m_TagString: Untagged
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -1226187037
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: 16037dbd798344f57a526d53d48f5ead, type: 3}
+  m_Sprite: {fileID: -238708356562746042, guid: c7e040ee796cdce4caa47b6cdf00cef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +107,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 0.875, y: 0.875}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -126,7 +128,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -210,6 +212,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-548123149189047242
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510306272890066926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3854096289123389953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +249,7 @@ MonoBehaviour:
     _Constant: {fileID: 11400000, guid: 34197d51ff1cce0428abad310abc4d5c, type: 2}
   _floorPadBuildDirector: {fileID: 0}
   _SfxPlayer: {fileID: 3731294531662268023}
+  _AnimationBehaviour: {fileID: 0}
   _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
   _FloorPad:
     id: 0
@@ -282,3 +304,17 @@ MonoBehaviour:
   _AudioSource: {fileID: 5580322736523988007}
   _PressClipData: {fileID: 11400000, guid: 56494020d95647144885161230420bca, type: 2}
   _ReleaseClipData: {fileID: 11400000, guid: 86d4b821ba19c7d45b37416942ce9639, type: 2}
+--- !u!114 &6550000216369019886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510306272890066926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ca86007ad3b974a89298876de6e704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Logger: {fileID: 11400000, guid: fae094446b8f9a6498ae4fcbf4759405, type: 2}
+  _Animator: {fileID: -548123149189047242}

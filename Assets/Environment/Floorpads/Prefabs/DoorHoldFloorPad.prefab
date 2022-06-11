@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 579872117843761422, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579872117843761422, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579872117843761422, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2346085482687633462, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6780860699815834478, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}
       propertyPath: m_Name
-      value: DoorHoldFloorPad (_FloorPadBase) Variant
+      value: DoorHoldFloorPad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 863d73d76ad9a8a4e89d99e109cec0e1, type: 3}

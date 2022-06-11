@@ -1502,7 +1502,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2094452554}
     m_Modifications:
     - target: {fileID: 2599939660866337725, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_Name
@@ -1510,7 +1510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1530,15 +1530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1554,6 +1554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
+--- !u!4 &618284133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8829582955105021622, guid: 056a8b515d0efe542987f9e8aaa3a04a, type: 3}
+  m_PrefabInstance: {fileID: 618284132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &635309052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5583,7 +5588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 677554896060281178, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
       propertyPath: m_Name
-      value: IntermediaryDoor (CyclicDoor)
+      value: IntermediaryDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588454c1d9578044fb6bce9e74097bdc, type: 3}
@@ -6142,6 +6147,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Size.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Size.y
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830125725239290776, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2012840093224721217, guid: 0097c43f4031cc149844799e91702841, type: 3}
       propertyPath: _Channel
       value: 
@@ -6224,7 +6257,23 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ca6267d88b9ed6249a1e4d87de704002, type: 2}
     - target: {fileID: 6742830433057882616, guid: 0097c43f4031cc149844799e91702841, type: 3}
       propertyPath: m_Name
-      value: Intermediary DoorOneWayFloorPad  (OneWayFloorPad) Variant
+      value: FloorPad Intermedary Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591155950284356390, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591155950284356390, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591155950284356390, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591155950284356390, guid: 0097c43f4031cc149844799e91702841, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.875
       objectReference: {fileID: 0}
     - target: {fileID: 8291525395474033374, guid: 0097c43f4031cc149844799e91702841, type: 3}
       propertyPath: _Channel
@@ -6376,6 +6425,7 @@ Transform:
   - {fileID: 942267682}
   - {fileID: 1979258657}
   - {fileID: 1164559238}
+  - {fileID: 618284133}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

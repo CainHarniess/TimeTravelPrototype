@@ -19,6 +19,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
         [SerializeField] private IntReference _RequiredPressWeight;
         [SerializeField] private FloorPadBuildDirectorSO _floorPadBuildDirector;
         [SerializeField] private FloorpadSfxPlayer _SfxPlayer;
+        [SerializeField] private FloorPadAnimationBehaviour _AnimationBehaviour;
 
         [Header(InspectorHeaders.DebugVariables)]
         [SerializeField] private UnityConsoleLogger _Logger;
@@ -60,6 +61,11 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             {
                 _SfxPlayer = GetComponent<FloorpadSfxPlayer>();
             }
+
+            if (_AnimationBehaviour == null)
+            {
+                _AnimationBehaviour = GetComponent<FloorPadAnimationBehaviour>();
+            }
         }
 
         public void AddWeight(int weightToAdd)
@@ -82,6 +88,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             _FloorPad.Press();
             SpriteHandler.OnPress();
             _SfxPlayer.OnPress();
+            _AnimationBehaviour.OnPress();
         }
 
         public virtual bool CanRelease()
@@ -94,6 +101,7 @@ namespace Osiris.TimeTravelPuzzler.Interactables.FloorPads
             _FloorPad.Release();
             SpriteHandler.OnRelease();
             _SfxPlayer.OnRelease();
+            _AnimationBehaviour.OnRelease();
         }
     }
 }

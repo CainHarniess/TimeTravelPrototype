@@ -2601,6 +2601,10 @@ PrefabInstance:
       propertyPath: _interactables.Array.data[1]
       value: 
       objectReference: {fileID: 1975233165}
+    - target: {fileID: 3768696041301768645, guid: f91f91aaa9b93cb4fbad606d4b22b7ce, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e9bed3261d3b3ee4781297dfa7019233, type: 2}
     - target: {fileID: 7057419753386696014, guid: f91f91aaa9b93cb4fbad606d4b22b7ce, type: 3}
       propertyPath: _interactables.Array.size
       value: 2
