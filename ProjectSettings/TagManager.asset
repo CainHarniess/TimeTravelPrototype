@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerClone
+  - Collectible
   layers:
   - Default
   - TransparentFX

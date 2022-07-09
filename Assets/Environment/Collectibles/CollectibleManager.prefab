@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3138662205483129145
+--- !u!1 &7336413201368173130
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3138662205483129144}
-  - component: {fileID: 4580658348159812303}
+  - component: {fileID: 170851298651871892}
+  - component: {fileID: 5816069436239813805}
   m_Layer: 0
-  m_Name: LevelCompletionController
+  m_Name: CollectibleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3138662205483129144
+--- !u!4 &170851298651871892
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138662205483129145}
+  m_GameObject: {fileID: 7336413201368173130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,17 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4580658348159812303
+--- !u!114 &5816069436239813805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138662205483129145}
+  m_GameObject: {fileID: 7336413201368173130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a017e7c3da08e774aaeba5f3c98f2c0c, type: 3}
+  m_Script: {fileID: 11500000, guid: c78b51afd85e5a740b4f37963c013739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TriggerEvent: {fileID: 11400000, guid: df7c5370a416ebc40bfe785d7226840e, type: 2}
-  _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
+  _Logger: {fileID: 11400000, guid: 8c7ac553f66583e42a4fc3308808783f, type: 2}
+  _CollectibleCount: 0
+  _AllCollected: {fileID: 11400000, guid: df7c5370a416ebc40bfe785d7226840e, type: 2}
+  _Collected: {fileID: 11400000, guid: 539be4cc46d10b84d9d54255e35ebef2, type: 2}

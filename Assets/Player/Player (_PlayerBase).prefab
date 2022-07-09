@@ -156,6 +156,18 @@ MonoBehaviour:
   _CloneMovement: {fileID: 0}
   _PlayerMoveButtonPressed: {fileID: 11400000, guid: da15777f25a713f44836ad72e8cda7fa, type: 2}
   _TimelineEventChannel: {fileID: 11400000, guid: 60d44e5766255294a8e0b3687866c64a, type: 2}
+--- !u!114 &6024266950150156208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907864465930945080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014fa1ff6972fec41bfa2ae233bf55bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6721297795453072377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,15 +240,3 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7724075532776639723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907864465930945080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcb87acefb3234469dab35a82d27f40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
