@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: 15bbb9f4014e9e348904b297d201c2d8, type: 2}
     - target: {fileID: 1700881200516838390, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
       propertyPath: m_Name
-      value: PlayerClone (_PlayerBase)
+      value: Clone (_PlayerBase)
       objectReference: {fileID: 0}
     - target: {fileID: 1700881200516838390, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
       propertyPath: m_TagString
@@ -42,6 +42,14 @@ PrefabInstance:
     - target: {fileID: 2617508162607620887, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617508162607620887, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+      propertyPath: m_SortingOrder
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617508162607620887, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5355232133255773221, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
       propertyPath: m_Enabled
@@ -116,10 +124,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _PlayerTransform: {fileID: 0}
+  _PlayerSprite: {fileID: 0}
   _DeactivationDelayReference:
     _UseConstant: 1
     _VariableValue: 0
     _Constant: {fileID: 11400000, guid: 6d2630b92ff5b194285fa47bb02ea85d, type: 2}
+  _PostRewindDectivationTimer:
+    _TimePassed: 0
+    _Duration: 0
   _IsActive: 0
   _RewindStarted: {fileID: 11400000, guid: 1bc4c220299eb864495bd5a3381e73b6, type: 2}
   _ReplayCompleted: {fileID: 11400000, guid: 57ebe49736100bf4a8f0f8f858f71d48, type: 2}

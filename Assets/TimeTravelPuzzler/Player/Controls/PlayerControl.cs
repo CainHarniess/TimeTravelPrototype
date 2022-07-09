@@ -37,31 +37,31 @@ namespace Osiris.TimeTravelPuzzler
         private void Start()
         {
             // Blocks player input until the scene fade in has completed.
-            StartCoroutine(ExecuteAfterDelay(ActivateControl, 0.75f * _SceneTransitionDuration.Value));
+            StartCoroutine(ExecuteAfterDelay(Activate, 0.75f * _SceneTransitionDuration.Value));
         }
 
-        protected virtual void DeactivateControl()
+        protected virtual void Deactivate()
         {
             _isControlActive = false;
         }
 
-        protected virtual void ActivateControl()
+        protected virtual void Activate()
         {
             _isControlActive = true;
         }
 
         protected virtual void OnEnable()
         {
-            _GamePaused.Event += DeactivateControl;
-            _GameUnpaused.Event += ActivateControl;
-            _LevelCompleted.Event += DeactivateControl;
+            _GamePaused.Event += Deactivate;
+            _GameUnpaused.Event += Activate;
+            _LevelCompleted.Event += Deactivate;
         }
 
         protected virtual void OnDisable()
         {
-            _GamePaused.Event -= DeactivateControl;
-            _GameUnpaused.Event -= ActivateControl;
-            _LevelCompleted.Event -= DeactivateControl;
+            _GamePaused.Event -= Deactivate;
+            _GameUnpaused.Event -= Activate;
+            _LevelCompleted.Event -= Deactivate;
         }
     }
 }
