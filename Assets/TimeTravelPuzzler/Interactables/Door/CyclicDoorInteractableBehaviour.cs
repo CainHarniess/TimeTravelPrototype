@@ -5,37 +5,21 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Interactables.Doors
 {
-    public class CyclicDoorInteractableBehaviour : MonoBehaviour, IInteractable
+    public class CyclicDoorInteractableBehaviour : LoggableMonoBehaviour, IInteractable
     {
-        private string _gameObjectName;
         private IDoor _doorBehaviour;
 
-        [Header(InspectorHeaders.DebugVariables)]
-        [SerializeField] private UnityConsoleLogger _Logger;
-
-
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _doorBehaviour = GetComponent<IDoor>();
-        }
-
-        private string GameObjectName
-        {
-            get
-            {
-                if (_gameObjectName == null)
-                {
-                    _gameObjectName = gameObject.name;
-                }
-                return _gameObjectName;
-            }
         }
 
         public void Interact()
         {
             if (_doorBehaviour.CanOpen())
             {
-                _Logger.Log("Door can open.", GameObjectName);
+                Logger.Log("Door can open.", GameObjectName);
                 _doorBehaviour.Open();
             }
             else if (_doorBehaviour.CanClose())
