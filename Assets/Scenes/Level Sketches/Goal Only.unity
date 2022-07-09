@@ -2967,7 +2967,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1198288655
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.00003182888, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4291,6 +4291,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8891716584136122172, guid: 14025824d322c62409944d1a21aca260, type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14025824d322c62409944d1a21aca260, type: 3}
 --- !u!4 &2090020090 stripped
@@ -4494,6 +4498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121782182}
     m_Modifications:
+    - target: {fileID: 4765865415234116003, guid: 87e455135d642244e910f9d0f631f317, type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6389339187573713773, guid: 87e455135d642244e910f9d0f631f317, type: 3}
       propertyPath: m_Name
       value: ScreenSmallOn (ScreenSmallOff)
@@ -4608,6 +4616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7833193891688342031, guid: 8374974de3bd9e04d856f7ed060714cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8374974de3bd9e04d856f7ed060714cc, type: 3}
 --- !u!4 &3408009299904885818 stripped
@@ -4622,6 +4634,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 121782182}
     m_Modifications:
+    - target: {fileID: 5147790937587884406, guid: 3ba690812cce13a4e8102314b4e03624, type: 3}
+      propertyPath: m_SortingOrder
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 8346827872585098794, guid: 3ba690812cce13a4e8102314b4e03624, type: 3}
       propertyPath: m_Name
       value: ScreenLargeOn (ScreenLargeOff)

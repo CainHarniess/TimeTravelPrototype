@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500aab95fd4b77e458f77d20e024c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Logger: {fileID: 0}
+  _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _SceneTransitionDuration:
     _UseConstant: 1
     _VariableValue: 0
@@ -195,6 +195,9 @@ MonoBehaviour:
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
   _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
   _PlayerMoveButtonPressed: {fileID: 11400000, guid: da15777f25a713f44836ad72e8cda7fa, type: 2}
+  _RewindStarted: {fileID: 11400000, guid: 1bc4c220299eb864495bd5a3381e73b6, type: 2}
+  _RewindCompleted: {fileID: 11400000, guid: ea35bb84944fc234fa7e85d037a5d641, type: 2}
+  _PlayerRewindCancelled: {fileID: 11400000, guid: a8746ebcd4b123f4991c3a2c99f135bd, type: 2}
 --- !u!114 &7667379950605794758
 MonoBehaviour:
   m_ObjectHideFlags: 0

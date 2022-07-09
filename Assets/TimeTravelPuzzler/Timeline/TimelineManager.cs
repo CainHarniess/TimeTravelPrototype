@@ -75,7 +75,6 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             _RewindCompleted.Event += StopRewindStartReplay;
 
             _RewindStarted.Raise();
-            //_CloneInitialiser.Activate();
 
             _rewindTimerCoroutine = StartCoroutine(_FixedTimer.StartTimer());
             _rewindCoroutine = StartCoroutine(_RewindPlayback.Play(Time.time));
