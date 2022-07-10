@@ -7,7 +7,7 @@ namespace Osiris.Utilities.Animation
 {
 
     [CreateAssetMenu(fileName = AssetMenu.RegularTriggerAnimationDataFileName, menuName = AssetMenu.RegularTriggerAnimationDataPath)]
-    public class SingleStateRegularAimationData : RegularAnimationData
+    public class SingleStateRegularAnimationData : RegularAnimationData
     {
         [SerializeField] private string _Parameter;
 

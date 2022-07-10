@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Osiris.Utilities.Animation
 {
     [CreateAssetMenu(fileName = AssetMenu.MultiStateRegularTriggerAnimationDataFileName, menuName = AssetMenu.MultiStateRegularTriggerAnimationDataPath)]
-    public class MultiStateRegularAimationData : RegularAnimationData
+    public class MultiStateRegularAnimationData : RegularAnimationData
     {
         [SerializeField] private string[] _Paramenters;
         
