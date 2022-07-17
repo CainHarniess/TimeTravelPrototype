@@ -7,6 +7,7 @@ using Osiris.Utilities.Extensions;
 using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using Osiris.Utilities.Timing;
+using Osiris.Utilities.Variables;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,18 +43,22 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [SerializeField] private RewindEventChannelSO _RewindCompleted;
         [SerializeField] private ReplayEventChannelSO _ReplayCompleted;
 
+        [Header(InspectorHeaders.WritesTo)]
+        [SerializeField] private BoolVariableSO _IsRewinding;
+
         public Utilities.Logging.ILogger Logger => _Logger;
         
         protected override void Awake()
         {
             base.Awake();
 
-            _FixedTimer = new FixedCoroutineCallbackTimer(_MaximumRewindTimeRef.Value, StopRewindStartReplay);
+            _FixedTimer = new FixedCoroutineCallbackTimer(_MaximumRewindTimeRef.Value, TryStopRewindTryStartReplay);
 
             this.IsInjectionPresent(_Logger, nameof(_Logger));
 
             ConfigureEventRecorder();
             ConfigurePlaybacks();
+            _IsRewinding.Value = false;
         }
 
         private void Start()
@@ -72,16 +77,18 @@ namespace Osiris.TimeTravelPuzzler.Timeline
             Logger.Log("Rewind request approved.", GameObjectName);
 
             StopRecording();
-            _RewindCompleted.Event += StopRewindStartReplay;
+            _RewindCompleted.Event += TryStopRewindTryStartReplay;
 
             _RewindStarted.Raise();
+            _IsRewinding.Value = true;
 
             _rewindTimerCoroutine = StartCoroutine(_FixedTimer.StartTimer());
             _rewindCoroutine = StartCoroutine(_RewindPlayback.Play(Time.time));
         }
 
-        private void StopRewindStartReplay()
+        private void TryStopRewindTryStartReplay()
         {
+            Debug.Log("Truing to stop rewind.");
             TryStopRewindProcess();
             TryStartReplayProcess(_RewindProgressStopwatch.DeltaTime);
         }
@@ -94,6 +101,7 @@ namespace Osiris.TimeTravelPuzzler.Timeline
                 return;
             }
             _RewindPlayback.Stop();
+            _IsRewinding.Value = false;
 
             this.TryStopCoroutine(_rewindCoroutine);
             this.TryStopCoroutine(_rewindTimerCoroutine);
@@ -164,14 +172,14 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         {
             _RecordableActionOccurred.Event += Record;
             _PlayerRewindRequested.Event += TryStartRewindProcess;
-            _PlayerRewindCancelled.Event += StopRewindStartReplay;
+            _PlayerRewindCancelled.Event += TryStopRewindTryStartReplay;
         }
 
         private void OnDisable()
         {
             _RecordableActionOccurred.Event -= Record;
             _PlayerRewindRequested.Event -= TryStartRewindProcess;
-            _PlayerRewindCancelled.Event -= StopRewindStartReplay;
+            _PlayerRewindCancelled.Event -= TryStopRewindTryStartReplay;
         }
     }
 }

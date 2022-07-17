@@ -51,6 +51,7 @@ MonoBehaviour:
   _FixedTimer:
     _TimePassed: 0
     _Duration: 0
+  _IsRewinding: {fileID: 11400000, guid: 11433cfd71a84a04a8a52bfdca1d98d8, type: 2}
   _EventHistory:
     id: 0
   _RewindPlayback:

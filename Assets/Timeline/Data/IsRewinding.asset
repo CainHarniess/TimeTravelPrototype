@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812b002165608f249aedd5a9442b587a, type: 3}
-  m_Name: LevelRestartChannel
+  m_Script: {fileID: 11500000, guid: 90299e32ef62288458aabfc6f8fcad92, type: 3}
+  m_Name: IsRewinding
   m_EditorClassIdentifier: 
-  _description: 
-  _Logger: {fileID: 11400000, guid: 1807665ea57c48d4c9623fc06baff0ee, type: 2}
+  _value: 0

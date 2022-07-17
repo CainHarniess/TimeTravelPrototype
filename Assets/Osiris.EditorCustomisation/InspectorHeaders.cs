@@ -9,5 +9,7 @@
         public const string DebugVariables = "Debug Variables";
         public const string Usability = "Usability";
         public const string Injections = "Injections";
+        public const string ReadsFrom = "Reads From";
+        public const string WritesTo = "Writes To";
     }
 }

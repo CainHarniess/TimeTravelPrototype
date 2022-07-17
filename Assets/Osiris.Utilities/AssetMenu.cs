@@ -30,5 +30,8 @@
 
         public const string AudioClipDataEventChannelFileName = "Audio Clip Data Event Channel";
         public const string AudioClipDataEventChannelPath = MenuRoot + "AudioClipDataChannel";
+
+        public const string BoolVariableFileName = "New Bool Variable";
+        public const string BoolVariablePath = MenuRoot + "Bool Variable";
     }
 }

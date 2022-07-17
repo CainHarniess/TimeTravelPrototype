@@ -6,6 +6,6 @@ namespace Osiris.Utilities.Values
         where T : struct
     {
         [SerializeField] private T _value;
-        public T Value { get => _value; }
+        public T Value { get => _value; protected set => _value = value; }
     }
 }

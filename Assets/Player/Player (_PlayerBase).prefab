@@ -121,6 +121,7 @@ MonoBehaviour:
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
   _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  _IsRewinding: {fileID: 11400000, guid: 11433cfd71a84a04a8a52bfdca1d98d8, type: 2}
   _PlayerRewindRequested: {fileID: 11400000, guid: 1a2820802e59e754aa7f261568ad0fc9, type: 2}
   _PlayerRewindCancelled: {fileID: 11400000, guid: a8746ebcd4b123f4991c3a2c99f135bd, type: 2}
 --- !u!114 &4759724710412088048
