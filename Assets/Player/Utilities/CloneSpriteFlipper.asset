@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91e467bb6567cc4ab9593f7b4b543c4, type: 3}
   m_Name: CloneSpriteFlipper
   m_EditorClassIdentifier: 
-  IsRewind: 0
-  _RewindStarted: {fileID: 11400000, guid: 1bc4c220299eb864495bd5a3381e73b6, type: 2}
-  _RewindCompleted: {fileID: 11400000, guid: ea35bb84944fc234fa7e85d037a5d641, type: 2}
+  _IsRewinding: {fileID: 11400000, guid: 11433cfd71a84a04a8a52bfdca1d98d8, type: 2}
