@@ -3,7 +3,9 @@ using Osiris.SceneManagement.Core;
 using Osiris.SceneManagement.Core.Events;
 using Osiris.SceneManagement.Extensions;
 using Osiris.TimeTravelPuzzler.GameManagement;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,10 +44,12 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private LevelCompletionEventChannel _SceneSequencerChannel;
         [SerializeField] private GameNavigationChannel _ReturnToMainMenu;
+        [SerializeField] private EventChannelSO _RestartLevelRequested;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private SceneChangeEventSO _SceneChangeChannel;
         [SerializeField] private TransitionChannelSO _TransitionChannel;
+        [SerializeField] private EventChannelSO _RestartLevelCompleted;
 
         private void Awake()
         {
@@ -95,6 +99,7 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
             _currentLevelSequenceIndex = 0;
             _CurrentLevel = _LevelArray[_currentLevelSequenceIndex];
         }
+
         private void GetPreviousLevelReferences()
         {
             _previousLevelSequenceIndex = _currentLevelSequenceIndex == 0
@@ -144,16 +149,28 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
             _SceneChangeChannel.Raise(scenesToLoad, scenesToUnload);
         }
 
+        private void RestartCurrentLevel()
+        {
+            var sceneToReload = new SceneSO[]
+            {
+                _CurrentLevel,
+            };
+
+            _SceneChangeChannel.Raise(sceneToReload, sceneToReload);
+        }
+
         private void OnEnable()
         {
             _SceneSequencerChannel.Event += IterateScenes;
             _ReturnToMainMenu.Event += ReturnToMainMenu;
+            _RestartLevelRequested.Event += RestartCurrentLevel;
         }
 
         private void OnDisable()
         {
             _SceneSequencerChannel.Event -= IterateScenes;
             _ReturnToMainMenu.Event -= ReturnToMainMenu;
+            _RestartLevelRequested.Event -= RestartCurrentLevel;
         }
 
 

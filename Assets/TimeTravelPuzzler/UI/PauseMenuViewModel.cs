@@ -1,6 +1,7 @@
 using Osiris.EditorCustomisation;
 using Osiris.GameManagement;
 using Osiris.TimeTravelPuzzler.GameManagement;
+using Osiris.Utilities.Events;
 using Osiris.Utilities.Logging;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +25,7 @@ namespace Osiris.TimeTravelPuzzler.UI
         [SerializeField] private PauseEventChannel _PlayerPaused;
         [Tooltip(ToolTips.ReturnToMainMenu)]
         [SerializeField] private GameNavigationChannel _ReturnToMainMenu;
+        [SerializeField] private EventChannelSO _LevelRestarted;
 
         [Header(InspectorHeaders.ListensTo)]
         [Tooltip(ToolTips.GamePaused)]
@@ -40,9 +42,6 @@ namespace Osiris.TimeTravelPuzzler.UI
                 Logger.Log("Resume button game object not specified in the inspector ahead of run time.",
                            GameObjectName, LogLevel.Error);
             }
-#if UNITY_EDITOR
-            CameraColdStartUp();
-#endif
         }
 
         private void OnEnable()
@@ -54,6 +53,12 @@ namespace Osiris.TimeTravelPuzzler.UI
         public void Resume()
         {
             _PlayerPaused.Raise();
+        }
+
+        public void Restart()
+        {
+            _PlayerPaused.Raise();
+            _LevelRestarted.Raise();
         }
 
         public void MainMenu()
@@ -72,7 +77,6 @@ namespace Osiris.TimeTravelPuzzler.UI
             _PauseMenuUI.SetActive(true);
             SelectResumeButton();
         }
-
 
         private void OnUnpaused()
         {
@@ -103,23 +107,6 @@ namespace Osiris.TimeTravelPuzzler.UI
             _GameUnpaused.Event -= OnUnpaused;
         }
 
-#if UNITY_EDITOR
-        /// <summary>
-        /// Instantiates a main camera in the scene at run time if one is not already present in the scene.
-        /// </summary>
-        /// <remarks>
-        /// Methos is only defined when running in the Unity editor.
-        /// </remarks>
-        private void CameraColdStartUp()
-        {
-            GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-            if (mainCamera != null)
-            {
-                return;
-            }
-            GameObject.Instantiate(_MainCameraPrefab);
-        }
-#endif
 
         private struct ToolTips
         {

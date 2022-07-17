@@ -64,5 +64,6 @@ MonoBehaviour:
   _PreviousLevel: {fileID: 0}
   _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
   _ReturnToMainMenu: {fileID: 11400000, guid: d85e57c98ff94894996a93d20e607aeb, type: 2}
+  _RestartLevelRequested: {fileID: 11400000, guid: 4185650c6b18ba64395d6f7a0bcffa0b, type: 2}
   _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
   _TransitionChannel: {fileID: 11400000, guid: dd59ba3cdef4931489721e4347915707, type: 2}

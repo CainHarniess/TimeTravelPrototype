@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e053e37ed12d06040b4d0b332dc491da, type: 3}
-  m_Name: UILogger
+  m_Script: {fileID: 11500000, guid: 812b002165608f249aedd5a9442b587a, type: 3}
+  m_Name: LevelRestartChannel
   m_EditorClassIdentifier: 
-  _DisplayLogging: 1
+  _description: 
+  _Logger: {fileID: 0}
