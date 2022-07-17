@@ -78,6 +78,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1700881200516838390, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
   m_PrefabInstance: {fileID: 5072826823822651854}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4751368923147822976 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 546639531983230542, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+  m_PrefabInstance: {fileID: 5072826823822651854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7153554590813152721 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2675361247512089631, guid: e80fa4c7d7ae671419233850dd66a244, type: 3}
+  m_PrefabInstance: {fileID: 5072826823822651854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &283877692760454328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,10 +217,14 @@ MonoBehaviour:
   _GamePaused: {fileID: 11400000, guid: bffe711d62ab1314698b1f698524e9ba, type: 2}
   _GameUnpaused: {fileID: 11400000, guid: 6864602d1f23bfc4b8d2650396f9415f, type: 2}
   _LevelCompleted: {fileID: 11400000, guid: 9a496bdffa7d7d74daccd925e9d343fe, type: 2}
+  _AudioSource: {fileID: 7153554590813152721}
+  _Animator: {fileID: 4751368923147822976}
+  _MovementErrorClip: {fileID: 11400000, guid: d38f067594ca0074082123b1691f9383, type: 2}
   _PlayerMoveButtonPressed: {fileID: 11400000, guid: da15777f25a713f44836ad72e8cda7fa, type: 2}
   _RewindStarted: {fileID: 11400000, guid: 1bc4c220299eb864495bd5a3381e73b6, type: 2}
   _RewindCompleted: {fileID: 11400000, guid: ea35bb84944fc234fa7e85d037a5d641, type: 2}
   _PlayerRewindCancelled: {fileID: 11400000, guid: a8746ebcd4b123f4991c3a2c99f135bd, type: 2}
+  _IsRewinding: {fileID: 11400000, guid: 11433cfd71a84a04a8a52bfdca1d98d8, type: 2}
 --- !u!114 &7667379950605794758
 MonoBehaviour:
   m_ObjectHideFlags: 0

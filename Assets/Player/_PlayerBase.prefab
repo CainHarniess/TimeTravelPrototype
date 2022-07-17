@@ -276,7 +276,7 @@ MonoBehaviour:
   _Animator: {fileID: 546639531983230542}
   _Sprite: {fileID: 2617508162607620887}
   _SpriteFlipper: {fileID: 0}
-  _footstepSfx: {fileID: 5429497720918307954}
+  _FootstepSfx: {fileID: 5429497720918307954}
   _EqualsThreshold: 0.02
   _PlayerMovement:
     id: 0
@@ -317,5 +317,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Logger: {fileID: 11400000, guid: 48709ae27af9ac44f8671cda40742861, type: 2}
   _FootstepAudioSource: {fileID: 2675361247512089631}
-  _NormalFootstep: {fileID: 8300000, guid: e5b9a63e11f3a8b4a8fef1eb139cc786, type: 3}
-  _GrateFootstep: {fileID: 8300000, guid: 4ebaaf27aa23a0446b8fd874d60909e5, type: 3}

@@ -2,9 +2,7 @@ using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Core.Commands;
 using Osiris.TimeTravelPuzzler.Timeline.Core;
 using Osiris.Utilities;
-using Osiris.Utilities.DependencyInjection;
 using Osiris.Utilities.Extensions;
-using Osiris.Utilities.Logging;
 using Osiris.Utilities.References;
 using Osiris.Utilities.Timing;
 using Osiris.Utilities.Variables;
@@ -13,7 +11,7 @@ using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Timeline
 {
-    public class TimelineManager : OsirisMonoBehaviour, ILoggableBehaviour
+    public class TimelineManager : LoggableMonoBehaviour
     {
         private ITimelineEventFactory<ITimelineEvent> _eventFactory;
         private IRecorder _eventRecorder;
@@ -23,7 +21,6 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         private Coroutine _rewindTimerCoroutine;
 
         [Header(InspectorHeaders.Injections)]
-        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeField] private FloatReference _MaximumRewindTimeRef;
         [SerializeField] private FixedCoroutineCallbackTimer _FixedTimer;
 
@@ -46,15 +43,11 @@ namespace Osiris.TimeTravelPuzzler.Timeline
         [Header(InspectorHeaders.WritesTo)]
         [SerializeField] private BoolVariableSO _IsRewinding;
 
-        public Utilities.Logging.ILogger Logger => _Logger;
-        
         protected override void Awake()
         {
             base.Awake();
 
             _FixedTimer = new FixedCoroutineCallbackTimer(_MaximumRewindTimeRef.Value, TryStopRewindTryStartReplay);
-
-            this.IsInjectionPresent(_Logger, nameof(_Logger));
 
             ConfigureEventRecorder();
             ConfigurePlaybacks();

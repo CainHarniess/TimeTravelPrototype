@@ -1,6 +1,8 @@
 using Osiris.EditorCustomisation;
 using Osiris.TimeTravelPuzzler.Timeline;
-using System;
+using Osiris.Utilities.Audio;
+using Osiris.Utilities.DependencyInjection;
+using Osiris.Utilities.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +12,12 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
     {
         private InputAction _movementAction;
 
+
+        [Header(InspectorHeaders.Injections)]
+        [SerializeField] private AudioSource _AudioSource;
+        [SerializeField] private Animator _Animator;
+        [SerializeField] private AudioClipData _MovementErrorClip;
+
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private PlayerMovementChannel _PlayerMoveButtonPressed;
 
@@ -18,16 +26,27 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [SerializeField] private RewindEventChannelSO _RewindCompleted;
         [SerializeField] private RewindEventChannelSO _PlayerRewindCancelled;
 
+        [Header(InspectorHeaders.ReadsFrom)]
+        [SerializeField] private BoolVariableSO _IsRewinding;
+
         protected override void Awake()
         {
             base.Awake();
             _movementAction = PlayerInput.actions[ControlActions.Movement];
+            this.AddComponentInjectionIfNotPresent(ref _AudioSource, nameof(_AudioSource));
+            this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator));
+            this.IsInjectionPresent(_MovementErrorClip, nameof(_MovementErrorClip));
         }
 
         private void OnMovementPerformed(InputAction.CallbackContext obj)
         {
             if (!IsControlActive)
             {
+                if (_IsRewinding.Value)
+                {
+                    _AudioSource.PlayOneShot(_MovementErrorClip.Clip);
+                    _Animator.SetTrigger(AnimationParameters.RejectMovement);
+                }
                 return;
             }
 

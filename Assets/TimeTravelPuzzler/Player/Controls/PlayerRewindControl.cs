@@ -45,9 +45,7 @@ namespace Osiris.TimeTravelPuzzler.Player
 
         private void OnGameResumed()
         {
-            float pressValuee = _rewindAction.ReadValue<float>();
-            Debug.Log(pressValuee);
-            if (pressValuee == 1)
+            if (_rewindAction.ReadValue<float>() == 1)
             {
                 Logger.Log("Rewind button pressed at resume.", GameObjectName);
                 return;

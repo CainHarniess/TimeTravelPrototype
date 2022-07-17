@@ -11,20 +11,19 @@ using ILogger = Osiris.Utilities.Logging.ILogger;
 namespace Osiris.TimeTravelPuzzler.Player.Movement
 {
 
-    public class PlayerMovementBehaviour : OsirisMonoBehaviour, IPlayerMovement, ILoggableBehaviour
+    public class PlayerMovementBehaviour : LoggableMonoBehaviour, IPlayerMovement
     {
         private Transform _cachedTransform;
         private WaitForEndOfFrame _cachedWaitInstance;
 
         [Header(InspectorHeaders.Injections)]
-        [SerializeField] private UnityConsoleLogger _Logger;
         [SerializeField] private FloatReference _ColliderCastDistance;
         [SerializeField] private FloatReference _MovementDurationRef;
         [SerializeField] private PlayerMovementBuildDirector _MovementBuildDirector;
         [ReadOnly] [SerializeField] private Animator _Animator;
         [ReadOnly] [SerializeField] private SpriteRenderer _Sprite;
         [SerializeField] private SpriteFlipperUtility _SpriteFlipper;
-        [SerializeField] private FootstepSfxPlayer _footstepSfx;
+        [SerializeField] private FootstepSfxPlayer _FootstepSfx;
 
         [Header(InspectorHeaders.ControlVariables)]
         [Tooltip(ToolTips.EqualsThreshold)]
@@ -35,7 +34,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
         [ReadOnly] [SerializeField] private bool _IsMoving;
 
         private float MovementDuration => _MovementDurationRef.Value;
-        public ILogger Logger => _Logger;
 
         private WaitForEndOfFrame CachedWaitInstance
         {
@@ -54,11 +52,10 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             base.Awake();
             _cachedTransform = transform;
 
-            this.IsInjectionPresent(_Logger, nameof(_Logger));
             this.IsInjectionPresent(_MovementDurationRef, nameof(_MovementDurationRef));
             this.AddComponentInjectionIfNotPresent(ref _Animator, nameof(_Animator));
             this.AddComponentInjectionIfNotPresent(ref _Sprite, nameof(_Sprite));
-            this.AddComponentInjectionIfNotPresent(ref _footstepSfx, nameof(_footstepSfx));
+            this.AddComponentInjectionIfNotPresent(ref _FootstepSfx, nameof(_FootstepSfx));
 
             var collider = GetComponent<BoxCollider2D>();
             _PlayerMovement = _MovementBuildDirector.Construct(collider, _ColliderCastDistance.Value, transform,
@@ -94,7 +91,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
 
             float currentProgress = 0;
 
-            _footstepSfx.PlaySfx();
+            _FootstepSfx.PlaySfx();
 
             while (currentProgress < 1)
             {
@@ -106,7 +103,7 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
                 yield return CachedWaitInstance;
             }
 
-            _footstepSfx.PlaySfx();
+            _FootstepSfx.PlaySfx();
 
             _cachedTransform.position = endPosition;
 

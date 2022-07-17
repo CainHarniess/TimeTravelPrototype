@@ -5,5 +5,6 @@ namespace Osiris.TimeTravelPuzzler.Player
         public const string IsMoving = "IsMoving";
         public const string IsMovingTrigger = "IsMovingTrigger";
         public const string LongitudinalDirection = "LongitudinalDirection";
+        public const string RejectMovement = "RejectMovement";
     }
 }
