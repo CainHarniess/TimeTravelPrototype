@@ -12687,7 +12687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3020312083236643583, guid: 03612e8322b7ad54da1b1ef50637ddad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3020312083236643583, guid: 03612e8322b7ad54da1b1ef50637ddad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12748,6 +12748,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194994888}
     m_Modifications:
+    - target: {fileID: 3655564300413808991, guid: c3a863d59eca43a469feebc6361c9181, type: 3}
+      propertyPath: m_SortingOrder
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5463435892373530130, guid: c3a863d59eca43a469feebc6361c9181, type: 3}
       propertyPath: m_Name
       value: Cabinet_2 (_CabinetBase) (1)
@@ -12902,6 +12906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194994888}
     m_Modifications:
+    - target: {fileID: 333564364144782986, guid: 2153c6e4a03e8154f8ae6e15a90b72e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7899336052257077150, guid: 2153c6e4a03e8154f8ae6e15a90b72e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -13245,6 +13253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StorageBox_Grey_Dirty (_StorageBoxBase)
       objectReference: {fileID: 0}
+    - target: {fileID: 4214910921793602614, guid: 8b54460b8a2888449b633855ee9b1d9e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4946095213883349699, guid: 8b54460b8a2888449b633855ee9b1d9e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13438,6 +13450,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3655564300413808991, guid: c3a863d59eca43a469feebc6361c9181, type: 3}
+      propertyPath: m_SortingOrder
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 5463435892373530130, guid: c3a863d59eca43a469feebc6361c9181, type: 3}
       propertyPath: m_Name
       value: Cabinet_2 (_CabinetBase)
@@ -13503,6 +13519,10 @@ PrefabInstance:
     - target: {fileID: 84900420819009789, guid: 82731ebee3344f349ba8268842def115, type: 3}
       propertyPath: m_Name
       value: StorageBox_Grey_Clean (_StorageBoxBase)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735087248813687365, guid: 82731ebee3344f349ba8268842def115, type: 3}
+      propertyPath: m_SortingOrder
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6570377053640023216, guid: 82731ebee3344f349ba8268842def115, type: 3}
       propertyPath: m_RootOrder

@@ -88,7 +88,6 @@ namespace Osiris.TimeTravelPuzzler.Timeline
 
         private void TryStopRewindTryStartReplay()
         {
-            Debug.Log("Truing to stop rewind.");
             TryStopRewindProcess();
             TryStartReplayProcess(_RewindProgressStopwatch.DeltaTime);
         }
