@@ -17,6 +17,7 @@ namespace Osiris.TimeTravelPuzzler.UI
         [Header(InspectorHeaders.Injections)]
         [SerializeField] private FloatReference _RewindAllowance;
         [SerializeField] private Slider _Slider;
+        [SerializeField] private GameObject _GameplayUI;
 
         [Header(InspectorHeaders.ControlVariables)]
         [SerializeField] private float _RefillSpeed = 1;
@@ -26,6 +27,7 @@ namespace Osiris.TimeTravelPuzzler.UI
         [SerializeField] private EventChannelSO _RewindCompleted;
         [SerializeField] private EventChannelSO _PlayerRewindCancelled;
         [SerializeField] private EventChannelSO _ReplayCompleted;
+        [SerializeField] private EventChannelSO _EndGameReached;
 
         private WaitForEndOfFrame CachedEndOfFrameWait
         {
@@ -91,12 +93,23 @@ namespace Osiris.TimeTravelPuzzler.UI
             this.TryStopCoroutine(_refillCoroutine);
         }
 
+        private void ActivateUI()
+        {
+            _GameplayUI.SetActive(true);
+        }
+
+        private void DeactivateUI()
+        {
+            _GameplayUI.SetActive(false);
+        }
+
         private void OnEnable()
         {
             _RewindStarted.Event += StartDepletion;
             _RewindCompleted.Event += StopDepletion;
             _PlayerRewindCancelled.Event += StopDepletion;
             _ReplayCompleted.Event += StartRefill;
+            _EndGameReached.Event += DeactivateUI;
         }
         
         private void OnDisable()
@@ -105,6 +118,7 @@ namespace Osiris.TimeTravelPuzzler.UI
             _RewindCompleted.Event -= StopDepletion;
             _PlayerRewindCancelled.Event -= StopDepletion;
             _ReplayCompleted.Event -= StartRefill;
+            _EndGameReached.Event -= DeactivateUI;
         }
     }
 }

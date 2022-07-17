@@ -758,6 +758,10 @@ PrefabInstance:
       propertyPath: _Slider
       value: 
       objectReference: {fileID: 539412463}
+    - target: {fileID: 631808339118591449, guid: 5fe8bfb4b688e41468160a8f10fea884, type: 3}
+      propertyPath: _GameplayUI
+      value: 
+      objectReference: {fileID: 1279892470}
     - target: {fileID: 2293919718385647139, guid: 5fe8bfb4b688e41468160a8f10fea884, type: 3}
       propertyPath: m_RootOrder
       value: 3

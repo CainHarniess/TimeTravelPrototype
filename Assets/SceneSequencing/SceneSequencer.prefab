@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a851c5a7ccd005a4aaf897a902bb4c88, type: 2}
   - {fileID: 11400000, guid: 5ccdffafbafdf0a468d61199e5190f8a, type: 2}
   - {fileID: 11400000, guid: cc8d01b492f94de45abc1ae8287f7dfc, type: 2}
+  - {fileID: 11400000, guid: abfefef3786cbc14d94eef1588481da8, type: 2}
   _Logger: {fileID: 11400000, guid: 9a5860a5b57bf8343b2e331311bafe50, type: 2}
   _scenesToLoad: 2
   _scenesLoaded: 0
@@ -64,6 +65,9 @@ MonoBehaviour:
   _PreviousLevel: {fileID: 0}
   _SceneSequencerChannel: {fileID: 11400000, guid: 39e822f5f1308074f9a9a01375087a4e, type: 2}
   _ReturnToMainMenu: {fileID: 11400000, guid: d85e57c98ff94894996a93d20e607aeb, type: 2}
+  _ReturnToMainMenuFromEndGame: {fileID: 11400000, guid: 1208ceb7eaa2f4d4da698a51be53c0b2, type: 2}
   _RestartLevelRequested: {fileID: 11400000, guid: 4185650c6b18ba64395d6f7a0bcffa0b, type: 2}
+  _EndGameReached: {fileID: 11400000, guid: 86ee0dd5da9d2394e86a3db9e233a54c, type: 2}
   _SceneChangeChannel: {fileID: 11400000, guid: 6b9e53d343f57f345bcb1cd10e29c81a, type: 2}
   _TransitionChannel: {fileID: 11400000, guid: dd59ba3cdef4931489721e4347915707, type: 2}
+  _RestartLevelCompleted: {fileID: 11400000, guid: 4185650c6b18ba64395d6f7a0bcffa0b, type: 2}

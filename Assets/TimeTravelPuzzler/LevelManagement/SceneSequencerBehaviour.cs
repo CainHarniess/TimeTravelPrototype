@@ -44,7 +44,9 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
         [Header(InspectorHeaders.ListensTo)]
         [SerializeField] private LevelCompletionEventChannel _SceneSequencerChannel;
         [SerializeField] private GameNavigationChannel _ReturnToMainMenu;
+        [SerializeField] private GameNavigationChannel _ReturnToMainMenuFromEndGame;
         [SerializeField] private EventChannelSO _RestartLevelRequested;
+        [SerializeField] private EventChannelSO _EndGameReached;
 
         [Header(InspectorHeaders.BroadcastsOn)]
         [SerializeField] private SceneChangeEventSO _SceneChangeChannel;
@@ -149,6 +151,24 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
             _SceneChangeChannel.Raise(scenesToLoad, scenesToUnload);
         }
 
+        public void ReturnToMainMenuFromEndGame()
+        {
+            var scenesToUnload = new SceneSO[]
+            {
+                _CurrentLevel,
+                _PersistantGameplay,
+            };
+            _Logger.Log(scenesToUnload.Stringify(), _gameObjectName);
+
+            var scenesToLoad = new SceneSO[]
+            {
+                _MainMenu
+            };
+            _Logger.Log(scenesToLoad.Stringify(), _gameObjectName);
+
+            _SceneChangeChannel.Raise(scenesToLoad, scenesToUnload);
+        }
+
         private void RestartCurrentLevel()
         {
             var sceneToReload = new SceneSO[]
@@ -159,11 +179,18 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
             _SceneChangeChannel.Raise(sceneToReload, sceneToReload);
         }
 
+        private void OnEndGameReached()
+        {
+            SceneManager.UnloadSceneAsync(_PauseMenu.BuildIndex);
+        }
+
         private void OnEnable()
         {
             _SceneSequencerChannel.Event += IterateScenes;
             _ReturnToMainMenu.Event += ReturnToMainMenu;
             _RestartLevelRequested.Event += RestartCurrentLevel;
+            _EndGameReached.Event += OnEndGameReached;
+            _ReturnToMainMenuFromEndGame.Event += ReturnToMainMenuFromEndGame;
         }
 
         private void OnDisable()
@@ -171,6 +198,8 @@ namespace Osiris.TimeTravelPuzzler.LevelManagement
             _SceneSequencerChannel.Event -= IterateScenes;
             _ReturnToMainMenu.Event -= ReturnToMainMenu;
             _RestartLevelRequested.Event -= RestartCurrentLevel;
+            _EndGameReached.Event -= OnEndGameReached;
+            _ReturnToMainMenuFromEndGame.Event -= ReturnToMainMenuFromEndGame;
         }
 
 

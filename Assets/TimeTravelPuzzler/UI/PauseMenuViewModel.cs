@@ -11,10 +11,6 @@ namespace Osiris.TimeTravelPuzzler.UI
     public class PauseMenuViewModel : LoggableMonoBehaviour
     {
         [Header(InspectorHeaders.ControlVariables)]
-#if UNITY_EDITOR
-        [Tooltip(ToolTips.MainCameraPrefab)]
-        [SerializeField] private GameObject _MainCameraPrefab;
-#endif
         [Tooltip(ToolTips.PauseMenuUI)]
         [SerializeField] private GameObject _PauseMenuUI;
         [SerializeField] private EventSystem _EventSystem;
