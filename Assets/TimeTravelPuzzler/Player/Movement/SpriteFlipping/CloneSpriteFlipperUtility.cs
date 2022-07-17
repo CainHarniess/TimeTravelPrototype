@@ -1,5 +1,5 @@
 ﻿using Osiris.EditorCustomisation;
-using Osiris.TimeTravelPuzzler.Timeline;
+using Osiris.Utilities.Variables;
 using UnityEngine;
 
 namespace Osiris.TimeTravelPuzzler.Player.Movement
@@ -8,15 +8,11 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
     public class CloneSpriteFlipperUtility : PlayerSpriteFlipperUtility
     {
         [Header(InspectorHeaders.DebugVariables)]
-        [ReadOnly] [SerializeField] private bool IsRewind = false;
-
-        [Header(InspectorHeaders.ListensTo)]
-        [SerializeField] private RewindEventChannelSO _RewindStarted;
-        [SerializeField] private RewindEventChannelSO _RewindCompleted;
+        [SerializeField] private BoolVariableSO _IsRewinding;
 
         public override void FlipSpriteIfRequired(SpriteRenderer sprite, Vector2 movementDirection)
         {
-            if (!IsRewind)
+            if (!_IsRewinding.Value)
             {
                 base.FlipSpriteIfRequired(sprite, movementDirection);
                 return;
@@ -30,28 +26,6 @@ namespace Osiris.TimeTravelPuzzler.Player.Movement
             {
                 sprite.flipX = true;
             }
-        }
-
-        private void OnRewindStarted()
-        {
-            IsRewind = true;
-        }
-
-        private void OnRewindCompleted()
-        {
-            IsRewind = false;
-        }
-
-        private void OnEnable()
-        {
-            _RewindStarted.Event += OnRewindStarted;
-            _RewindCompleted.Event += OnRewindCompleted;
-        }
-
-        private void OnDisable()
-        {
-            _RewindStarted.Event -= OnRewindStarted;
-            _RewindCompleted.Event -= OnRewindCompleted;
         }
     }
 }
